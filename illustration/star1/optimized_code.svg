@@ -1,0 +1,90 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="code-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1A2D3A" />
+      <stop offset="100%" stop-color="#0A1118" />
+    </radialGradient>
+    <linearGradient id="code-glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#213B4D" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#111B24" stop-opacity="0.9" />
+    </linearGradient>
+    <filter id="code-glow">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="code-shadow">
+      <feDropShadow dx="0" dy="25" stdDeviation="25" flood-color="#00E5FF" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#code-bg)" rx="100" />
+
+  <!-- Animated Cyber Space Grid -->
+  <g stroke="#00E5FF" stroke-width="2" opacity="0.15" filter="url(#code-glow)">
+    <g transform="perspective(500) rotateX(60) translate(0, -300)">
+      <animateTransform attributeName="transform" type="translate" values="0,-100; 0,100" dur="4s" repeatCount="indefinite" />
+      <path d="M-1000 200 L2000 200 M-1000 300 L2000 300 M-1000 400 L2000 400 M-1000 500 L2000 500 M-1000 600 L2000 600 M-1000 700 L2000 700" />
+      <path d="M100 -1000 L100 2000 M300 -1000 L300 2000 M500 -1000 L500 2000 M700 -1000 L700 2000 M900 -1000 L900 2000" />
+    </g>
+  </g>
+
+  <!-- Master Holographic Code Window -->
+  <g filter="url(#code-shadow)" style="transform-origin: 512px 512px;">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-25; 0,0" dur="3.5s" repeatCount="indefinite" ease-in-out="ease-in-out" />
+    <animateTransform attributeName="transform" type="rotate" values="0; 2; -1; 0" dur="7s" repeatCount="indefinite" additive="sum" />
+    
+    <!-- Main Editor Body -->
+    <rect x="112" y="200" width="800" height="624" rx="24" fill="url(#code-glass)" stroke="#00E5FF" stroke-width="4" />
+    <!-- Editor Header Bar -->
+    <rect x="112" y="200" width="800" height="80" rx="24" fill="#0D1B2A" />
+    <path d="M 112 280 h 800 v -20 h -800 z" fill="#0D1B2A" />
+    
+    <!-- Exquisite Mac-style UI Dots -->
+    <circle cx="178" cy="240" r="16" fill="#FF5F56" filter="url(#code-glow)" />
+    <circle cx="238" cy="240" r="16" fill="#FFBD2E" filter="url(#code-glow)" />
+    <circle cx="298" cy="240" r="16" fill="#27C93F" filter="url(#code-glow)" />
+
+    <!-- Sidebar Window -->
+    <rect x="112" y="280" width="200" height="544" fill="#0A141A" stroke="#00E5FF" stroke-width="2" />
+    <!-- Sidebar files representation -->
+    <rect x="140" y="320" width="140" height="12" rx="6" fill="#4B6A78" />
+    <rect x="140" y="360" width="100" height="12" rx="6" fill="#4B6A78" />
+    <rect x="160" y="400" width="110" height="12" rx="6" fill="#00E5FF" opacity="0.8" filter="url(#code-glow)" />
+    <rect x="160" y="440" width="120" height="12" rx="6" fill="#4B6A78" />
+
+    <!-- Code Syntax Highlighter Display -->
+    <g transform="translate(360, 320)" stroke-linecap="round" filter="url(#code-glow)">
+      <!-- Line 1: Keyword & Function -->
+      <line x1="0" y1="0" x2="80" y2="0" stroke="#C678DD" stroke-width="24" />
+      <line x1="100" y1="0" x2="260" y2="0" stroke="#61AFEF" stroke-width="24" />
+      <line x1="280" y1="0" x2="320" y2="0" stroke="#ABB2BF" stroke-width="24" />
+      
+      <!-- Line 2: Parameters -->
+      <line x1="40" y1="60" x2="160" y2="60" stroke="#E5C07B" stroke-width="24" />
+      <line x1="180" y1="60" x2="380" y2="60" stroke="#98C379" stroke-width="24" />
+      
+      <!-- Line 3: Loops & conditions -->
+      <line x1="40" y1="120" x2="120" y2="120" stroke="#C678DD" stroke-width="24" />
+      <line x1="140" y1="120" x2="340" y2="120" stroke="#ABB2BF" stroke-width="24" />
+      
+      <!-- Line 4: Inner loop Logic -->
+      <line x1="80" y1="180" x2="180" y2="180" stroke="#56B6C2" stroke-width="24" />
+      <line x1="200" y1="180" x2="380" y2="180" stroke="#E06C75" stroke-width="24" />
+      
+      <!-- Line 5: Typing animation -->
+      <line x1="80" y1="240" x2="420" y2="240" stroke="#98C379" stroke-width="24" stroke-dasharray="340" stroke-dashoffset="340">
+        <animate attributeName="stroke-dashoffset" values="340; 0; 0" dur="2s" repeatCount="indefinite" />
+      </line>
+      
+      <!-- Line 6: Closing brackets -->
+      <line x1="40" y1="300" x2="60" y2="300" stroke="#ABB2BF" stroke-width="24" />
+      <line x1="0" y1="360" x2="20" y2="360" stroke="#ABB2BF" stroke-width="24" />
+    </g>
+
+    <!-- Super bright typing Caret Cursor -->
+    <rect x="790" y="548" width="12" height="32" rx="6" fill="#00E5FF" filter="url(#code-glow)">
+      <animate attributeName="opacity" values="1;0;1" dur="0.8s" repeatCount="indefinite" />
+      <animate attributeName="x" values="460; 790; 790" dur="2s" repeatCount="indefinite" />
+    </rect>
+  </g>
+</svg>

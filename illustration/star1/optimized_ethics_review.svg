@@ -1,0 +1,170 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Premium Glow Effects -->
+    <filter id="er-ultra-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur1" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur1" />
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="er-green-neon" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="10" flood-color="#00FFAA" flood-opacity="0.9"/>
+      <feDropShadow dx="0" dy="0" stdDeviation="25" flood-color="#00E676" flood-opacity="0.5"/>
+    </filter>
+    <filter id="er-blue-neon" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#00E5FF" flood-opacity="0.8"/>
+    </filter>
+    <filter id="er-pink-neon" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="12" flood-color="#FF4081" flood-opacity="0.8"/>
+    </filter>
+
+    <!-- Sophisticated Gradients -->
+    <linearGradient id="er-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F0C29" />
+      <stop offset="50%" stop-color="#302B63" />
+      <stop offset="100%" stop-color="#24243E" />
+    </linearGradient>
+    <linearGradient id="er-gold-metallic" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B8860B" />
+      <stop offset="25%" stop-color="#FFD700" />
+      <stop offset="50%" stop-color="#FFF8DC" />
+      <stop offset="75%" stop-color="#FFD700" />
+      <stop offset="100%" stop-color="#DAA520" />
+    </linearGradient>
+    <radialGradient id="er-hologram-scan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00FFAA" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#00FFAA" stop-opacity="0" />
+    </radialGradient>
+    
+    <clipPath id="er-main-shield">
+      <path d="M 512 80 L 880 200 L 850 600 C 820 800 512 960 512 960 C 512 960 204 800 174 600 L 144 200 Z" />
+    </clipPath>
+  </defs>
+
+  <!-- Outer Ambient Glow / Base -->
+  <g filter="url(#er-ultra-glow)">
+    <path d="M 512 90 L 860 210 L 830 590 C 800 780 512 940 512 940 C 512 940 224 780 194 590 L 164 210 Z" fill="none" stroke="#6200EA" stroke-width="25" opacity="0.4"/>
+  </g>
+
+  <!-- Main Shield Background -->
+  <path d="M 512 80 L 880 200 L 850 600 C 820 800 512 960 512 960 C 512 960 204 800 174 600 L 144 200 Z" fill="url(#er-bg-grad)" stroke="url(#er-gold-metallic)" stroke-width="8" />
+  
+  <!-- Internal Tech Linework -->
+  <g clip-path="url(#er-main-shield)" opacity="0.3" stroke="#00E5FF" stroke-width="1.5" fill="none">
+    <!-- Grid -->
+    <path d="M0 200 L1024 200 M0 300 L1024 300 M0 400 L1024 400 M0 600 L1024 600 M0 700 L1024 700 M0 800 L1024 800" stroke-dasharray="4 4"/>
+    <path d="M300 0 L300 1024 M400 0 L400 1024 M624 0 L624 1024 M724 0 L724 1024" stroke-dasharray="4 4"/>
+    
+    <!-- Circuity nodes -->
+    <circle cx="250" cy="350" r="10" /> <path d="M260 350 L 400 350 L 450 400" />
+    <circle cx="774" cy="450" r="10" /> <path d="M764 450 L 600 450 L 550 500" />
+  </g>
+
+  <!-- Holographic Scanner Sweep -->
+  <g clip-path="url(#er-main-shield)">
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0,-200; 0,1000; 0,-200" dur="5s" repeatCount="indefinite" />
+      <rect x="0" y="0" width="1024" height="150" fill="url(#er-hologram-scan)" />
+      <line x1="0" y1="150" x2="1024" y2="150" stroke="#00FFAA" stroke-width="4" filter="url(#er-green-neon)" />
+    </g>
+  </g>
+
+  <!-- Central Balance Scale Structure -->
+  <g>
+    <!-- Central Pillar -->
+    <path d="M 490 700 L 534 700 L 522 300 L 502 300 Z" fill="url(#er-gold-metallic)" />
+    <rect x="452" y="700" width="120" height="18" rx="4" fill="url(#er-gold-metallic)" />
+    <polygon points="512,260 542,320 482,320" fill="url(#er-gold-metallic)" />
+    <!-- Glowing Core at Fulcrum -->
+    <circle cx="512" cy="300" r="18" fill="#00E5FF" filter="url(#er-blue-neon)">
+      <animate attributeName="r" values="16; 22; 16" dur="2s" repeatCount="indefinite" />
+    </circle>
+
+    <!-- Beam & Pans with Dynamic Balance -->
+    <g style="transform-origin: 512px 300px;">
+      <!-- Subtle float/balance animation -->
+      <animateTransform attributeName="transform" type="rotate" values="0; 5; -5; 0" keyTimes="0; 0.3; 0.7; 1" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" dur="10s" repeatCount="indefinite" />
+      
+      <!-- The Beam -->
+      <path d="M 280 295 L 744 295 L 744 305 L 280 305 Z" fill="url(#er-gold-metallic)" />
+      
+      <!-- Left Pan (Human/Ethics side) -->
+      <g style="transform-origin: 280px 300px;">
+        <animateTransform attributeName="transform" type="rotate" values="0; -5; 5; 0" keyTimes="0; 0.3; 0.7; 1" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" dur="10s" repeatCount="indefinite" />
+        
+        <path d="M 280 300 L 200 520 M 280 300 L 360 520" stroke="url(#er-gold-metallic)" stroke-width="2" fill="none" opacity="0.8"/>
+        <path d="M 190 520 Q 280 570 370 520 L 350 540 Q 280 590 210 540 Z" fill="url(#er-gold-metallic)" />
+        
+        <!-- Human Heart / Ethics Core -->
+        <g transform="translate(280, 470)">
+          <g>
+            <!-- Beating Animation -->
+            <animateTransform attributeName="transform" type="scale" values="1; 1.2; 1; 1.05; 1" keyTimes="0; 0.1; 0.2; 0.3; 1" dur="1.5s" repeatCount="indefinite" />
+            <path d="M 0 15 C -30 -20, -60 10, 0 50 C 60 10, 30 -20, 0 15 Z" fill="#FF4081" filter="url(#er-pink-neon)" />
+            <!-- Inner Energy Node -->
+            <circle cx="0" cy="15" r="8" fill="#FFF" opacity="0.8" />
+          </g>
+        </g>
+      </g>
+
+      <!-- Right Pan (Data/AI side) -->
+      <g style="transform-origin: 744px 300px;">
+        <animateTransform attributeName="transform" type="rotate" values="0; -5; 5; 0" keyTimes="0; 0.3; 0.7; 1" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1" dur="10s" repeatCount="indefinite" />
+        
+        <path d="M 744 300 L 664 520 M 744 300 L 824 520" stroke="url(#er-gold-metallic)" stroke-width="2" fill="none" opacity="0.8"/>
+        <path d="M 654 520 Q 744 570 834 520 L 814 540 Q 744 590 674 540 Z" fill="url(#er-gold-metallic)" />
+        
+        <!-- Neural Net / Data Core -->
+        <g transform="translate(744, 460)">
+          <g>
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-10; 0,0" dur="3s" repeatCount="indefinite" />
+            <!-- Core Hexagon -->
+            <polygon points="0,-30 26,-15 26,15 0,30 -26,15 -26,-15" fill="#00E5FF" filter="url(#er-blue-neon)" opacity="0.9" />
+            <!-- Orbiting Data Rings -->
+            <ellipse cx="0" cy="0" rx="45" ry="15" fill="none" stroke="#00FFAA" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="4s" repeatCount="indefinite" />
+            </ellipse>
+            <ellipse cx="0" cy="0" rx="15" ry="45" fill="none" stroke="#00E5FF" stroke-width="2">
+              <animateTransform attributeName="transform" type="rotate" values="360; 0" dur="5s" repeatCount="indefinite" />
+            </ellipse>
+            <!-- Center bright spot -->
+            <circle cx="0" cy="0" r="6" fill="#FFF" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- The "Emerald Validation Seal" -->
+  <g transform="translate(512, 800)" filter="url(#er-green-neon)">
+    <!-- Expanding Shockwave Ring -->
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#00FFAA" stroke-width="4">
+      <animate attributeName="r" values="50; 120" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1; 0" dur="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Base Plaque for Text -->
+    <path d="M -160 -40 L 160 -40 L 180 0 L 160 40 L -160 40 L -180 0 Z" fill="#000" fill-opacity="0.6" stroke="#00FFAA" stroke-width="3" />
+    
+    <!-- Verified Holographic Badge -->
+    <circle cx="-130" cy="0" r="22" fill="#00FFAA" />
+    <path d="M -140 0 L -132 8 L -118 -6" fill="none" stroke="#000" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <text x="10" y="12" font-family="'Orbitron', 'Courier New', sans-serif" font-weight="900" font-size="32" fill="#FFFFFF" text-anchor="middle" letter-spacing="6">
+      APPROVED
+      <animate attributeName="opacity" values="0.8; 1; 0.8" dur="1s" repeatCount="indefinite" />
+    </text>
+    <text x="10" y="30" font-family="'Courier New', monospace" font-size="10" fill="#00FFAA" text-anchor="middle" letter-spacing="8">ETHICS COMMITTEE</text>
+  </g>
+
+  <!-- Digital Particles Rising -->
+  <g fill="#00E5FF" filter="url(#er-blue-neon)">
+     <circle cx="350" cy="800" r="3"><animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="0,0; 0,-150" dur="2s" repeatCount="indefinite"/></circle>
+     <circle cx="650" cy="750" r="4"><animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="0.5s"/><animateTransform attributeName="transform" type="translate" values="0,0; 0,-200" dur="3s" repeatCount="indefinite" begin="0.5s"/></circle>
+     <circle cx="450" cy="850" r="2.5"><animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite" begin="1s"/><animateTransform attributeName="transform" type="translate" values="0,0; 0,-180" dur="2.5s" repeatCount="indefinite" begin="1s"/></circle>
+     <circle cx="580" cy="820" r="3.5"><animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="1.2s"/><animateTransform attributeName="transform" type="translate" values="0,0; 0,-160" dur="4s" repeatCount="indefinite" begin="1.2s"/></circle>
+  </g>
+</svg>

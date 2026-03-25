@@ -1,0 +1,44 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="cover-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="15" stdDeviation="20" flood-color="#2196F3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <g filter="url(#cover-glow)">
+    <g style="transform-origin: 512px 512px;">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20; 0,0" dur="4s" repeatCount="indefinite" />
+      
+      <!-- Let letter float up out of envelope -->
+      <g>
+        <animateTransform attributeName="transform" type="translate" values="0,0; 0,-80; 0,0" dur="4s" repeatCount="indefinite" />
+        <!-- Letter content -->
+        <rect x="262" y="162" width="500" height="700" rx="20" fill="#FAFAFA" />
+        <line x1="340" y1="280" x2="550" y2="280" stroke="#1976D2" stroke-width="20" stroke-linecap="round" />
+        <line x1="340" y1="360" x2="684" y2="360" stroke="#BDBDBD" stroke-width="16" stroke-linecap="round" />
+        <line x1="340" y1="420" x2="684" y2="420" stroke="#BDBDBD" stroke-width="16" stroke-linecap="round" />
+        <line x1="340" y1="480" x2="500" y2="480" stroke="#BDBDBD" stroke-width="16" stroke-linecap="round" />
+        
+        <!-- Wax seal on letter -->
+        <circle cx="512" cy="700" r="60" fill="#E53935" />
+        <circle cx="512" cy="700" r="40" stroke="#B71C1C" stroke-width="4" fill="none" stroke-dasharray="10 5" />
+      </g>
+      
+      <!-- Envelope Bottom Front -->
+      <path d="M162 462 L512 762 L862 462 V862 H162 Z" fill="#E0E0E0" stroke="#BDBDBD" stroke-width="10" stroke-linejoin="round" />
+      <!-- Envelope Side Flaps -->
+      <path d="M162 462 L400 660 L162 862 Z M862 462 L624 660 L862 862 Z" fill="#EEEEEE" />
+      
+      <!-- Floating Hearts / Ideas -->
+      <g fill="#42A5F5">
+        <circle cx="300" cy="200" r="15">
+          <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
+          <animate attributeName="cy" values="200; 100" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="700" cy="250" r="25">
+          <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
+          <animate attributeName="cy" values="250; 100" dur="3s" repeatCount="indefinite" />
+        </circle>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,126 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <radialGradient id="jcen-bg" cx="50%" cy="50%" r="75%">
+            <stop offset="0%" stop-color="#1e293b"/>
+            <stop offset="60%" stop-color="#0f172a"/>
+            <stop offset="100%" stop-color="#020617"/>
+        </radialGradient>
+        <linearGradient id="jcen-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#38bdf8"/>
+            <stop offset="50%" stop-color="#0284c7"/>
+            <stop offset="100%" stop-color="#0c4a6e"/>
+        </linearGradient>
+        <filter id="jcen-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="5" result="blur1"/>
+            <feGaussianBlur stdDeviation="10" result="blur2"/>
+            <feMerge>
+                <feMergeNode in="blur2"/>
+                <feMergeNode in="blur1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <pattern id="jcen-blueprint" width="40" height="40" patternUnits="userSpaceOnUse" opacity="0.15">
+            <rect width="40" height="40" fill="none" stroke="#38bdf8" stroke-width="0.5"/>
+            <path d="M 0 20 L 40 20 M 20 0 L 20 40" stroke="#0ea5e9" stroke-width="0.25"/>
+            <circle cx="20" cy="20" r="1" fill="#38bdf8" />
+        </pattern>
+        <!-- UI Marker Target -->
+        <g id="jcen-target">
+            <path d="M 0 15 L 0 0 L 15 0" fill="none" stroke="#22d3ee" stroke-width="2"/>
+            <circle cx="3" cy="3" r="1.5" fill="#38bdf8"/>
+        </g>
+    </defs>
+
+    <rect width="400" height="600" fill="url(#jcen-bg)"/>
+    <rect width="400" height="600" fill="url(#jcen-blueprint)"/>
+    
+    <!-- Corner Markers -->
+    <use href="#jcen-target" x="20" y="20"/>
+    <use href="#jcen-target" x="380" y="20" transform="rotate(90 380 20)"/>
+    <use href="#jcen-target" x="380" y="580" transform="rotate(180 380 580)"/>
+    <use href="#jcen-target" x="20" y="580" transform="rotate(270 20 580)"/>
+
+    <!-- Background Engineering Concentric Rings -->
+    <g stroke="#0ea5e9" opacity="0.1" fill="none">
+        <circle cx="200" cy="260" r="190" stroke-width="0.5" stroke-dasharray="4 8"/>
+        <circle cx="200" cy="260" r="160" stroke-width="0.25" stroke-dasharray="20 10"/>
+        <!-- Centering crosshairs -->
+        <path d="M 10 260 L 390 260 M 200 70 L 200 450" stroke-width="0.25" stroke-dasharray="5 5"/>
+    </g>
+
+    <!-- Precision Animated Gears & Core -->
+    <g transform="translate(200, 260)" filter="url(#jcen-glow)">
+        <!-- Outer Perfect Geometric Gear -->
+        <g>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/>
+            <!-- Mathematically Perfect Teeth via pathLength and dasharray (No wobble!) -->
+            <circle cx="0" cy="0" r="110" fill="none" stroke="url(#jcen-blue)" stroke-width="12" pathLength="320" stroke-dasharray="10 10" stroke-linecap="round"/>
+            <!-- Base ring -->
+            <circle cx="0" cy="0" r="102" fill="none" stroke="#0284c7" stroke-width="6"/>
+            <!-- Inner technical track -->
+            <circle cx="0" cy="0" r="88" fill="none" stroke="#38bdf8" stroke-width="1.5" pathLength="100" stroke-dasharray="3 3"/>
+            <!-- Connection spokes -->
+            <path d="M 0 -88 L 0 -116 M 0 88 L 0 116 M 88 0 L 116 0 M -88 0 L -116 0" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+        </g>
+
+        <!-- Counter-Rotating Data Ring -->
+        <g>
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="25s" repeatCount="indefinite"/>
+            <!-- Secondary thin ring -->
+            <circle cx="0" cy="0" r="75" fill="none" stroke="#0ea5e9" stroke-width="1"/>
+            <!-- Moving data blocks -->
+            <circle cx="0" cy="0" r="75" fill="none" stroke="#22d3ee" stroke-width="6" pathLength="100" stroke-dasharray="15 35 5 45"/>
+            
+            <!-- Geometric Octagon -->
+            <polygon points="0,-60 42.4,-42.4 60,0 42.4,42.4 0,60 -42.4,42.4 -60,0 -42.4,-42.4" fill="none" stroke="#0284c7" stroke-width="2"/>
+            <!-- Additional nodes on octagon -->
+            <circle cx="0" cy="-60" r="3" fill="#22d3ee" />
+            <circle cx="60" cy="0" r="3" fill="#22d3ee" />
+            <circle cx="0" cy="60" r="3" fill="#22d3ee" />
+            <circle cx="-60" cy="0" r="3" fill="#22d3ee" />
+            <!-- Octagon inner accent -->
+            <circle cx="0" cy="0" r="54" fill="none" stroke="#0c4a6e" stroke-width="2" stroke-dasharray="10 5" />
+        </g>
+
+        <!-- Stationary Processor Core -->
+        <g>
+            <!-- Chip Pins Base using repeating dash arrays on rect paths -->
+            <rect x="-35" y="-20" width="70" height="40" fill="none" stroke="#0ea5e9" stroke-width="4" pathLength="20" stroke-dasharray="1 1" opacity="0.6"/>
+            <rect x="-20" y="-35" width="40" height="70" fill="none" stroke="#0ea5e9" stroke-width="4" pathLength="20" stroke-dasharray="1 1" opacity="0.6"/>
+            
+            <!-- Main Chip Body -->
+            <rect x="-32" y="-32" width="64" height="64" fill="#020617" stroke="#38bdf8" stroke-width="2" rx="6"/>
+            <!-- Internal circuitry lines -->
+            <path d="M -20 -20 L 20 -20 M -20 -10 L 20 -10 M -20 10 L 20 10 M -20 20 L 20 20 M -20 -20 L -20 20 M 20 -20 L 20 20" fill="none" stroke="#0c4a6e" stroke-width="1"/>
+            
+            <!-- Crypto Keyhole / Shield -->
+            <circle cx="0" cy="0" r="14" fill="#0f172a" stroke="#22d3ee" stroke-width="2"/>
+            <!-- A lock/keyhole shape inside the chip -->
+            <circle cx="0" cy="-3" r="4" fill="#22d3ee"/>
+            <path d="M -4 -1 L 4 -1 L 6 8 L -6 8 Z" fill="#22d3ee"/>
+            <circle cx="0" cy="0" r="4" fill="#020617">
+                <animate attributeName="opacity" values="0;0.8;0" dur="2s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+    </g>
+
+    <!-- Surrounding Circuit Traces to the Core -->
+    <g fill="none" stroke="#0284c7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.8">
+        <path d="M 40 100 L 100 100 L 140 140 L 140 170"/>
+        <circle cx="40" cy="100" r="3" fill="#38bdf8"/>
+        <path d="M 360 100 L 300 100 L 260 140 L 260 170"/>
+        <circle cx="360" cy="100" r="3" fill="#38bdf8"/>
+        <path d="M 40 420 L 100 420 L 140 380 L 140 350"/>
+        <circle cx="40" cy="420" r="3" fill="#38bdf8"/>
+        <path d="M 360 420 L 300 420 L 260 380 L 260 350"/>
+        <circle cx="360" cy="420" r="3" fill="#38bdf8"/>
+    </g>
+
+    <!-- Typography -->
+    <g transform="translate(200, 500)">
+        <text x="0" y="0" text-anchor="middle" fill="#bae6fd" font-family="'Orbitron', 'Courier New', Courier, monospace" font-size="32" font-weight="900" letter-spacing="6" filter="url(#jcen-glow)">JCEN</text>
+        <text x="0" y="30" text-anchor="middle" fill="#7dd3fc" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" font-size="11" font-weight="600" letter-spacing="2">JOURNAL OF CRYPTOGRAPHIC ENGINEERING</text>
+        <path d="M -80 45 L 80 45" stroke="#0ea5e9" stroke-width="2" opacity="0.4"/>
+        <path d="M -30 45 L 30 45" stroke="#22d3ee" stroke-width="4" filter="url(#jcen-glow)"/>
+    </g>
+</svg>

@@ -1,0 +1,55 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="power-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0f172a"/>
+            <stop offset="100%" stop-color="#000000"/>
+        </linearGradient>
+        <filter id="glow-power">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <pattern id="grid-power" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+            <path d="M 10 0 L 10 20 M 0 10 L 20 10" fill="none" stroke="#0f172a" stroke-width="0.2"/>
+        </pattern>
+    </defs>
+    
+    <rect width="400" height="600" fill="url(#power-bg)"/>
+    
+    <!-- Oscilloscope Display Entire screen -->
+    <g transform="translate(200, 260)">
+        <!-- Oscilloscope casing -->
+        <rect x="-180" y="-180" width="360" height="340" rx="10" fill="#000000" stroke="#334155" stroke-width="4"/>
+        <rect x="-170" y="-170" width="340" height="320" rx="5" fill="#020617"/>
+        <rect x="-170" y="-170" width="340" height="320" rx="5" fill="url(#grid-power)"/>
+        
+        <!-- Signal Grid Lines -->
+        <line x1="-170" y1="-20" x2="170" y2="-20" stroke="#1e293b" stroke-width="1"/>
+        <line x1="0" y1="-170" x2="0" y2="150" stroke="#1e293b" stroke-width="1"/>
+        
+        <!-- Flat Power Signal -->
+        <path d="M-170 -20 L170 -20" fill="none" stroke="#10b981" stroke-width="2" filter="url(#glow-power)"/>
+        
+        <!-- Noisy floor -->
+        <path d="M-170 -18 Q-120 -25 -90 -16 T-30 -20 T30 -17 T90 -22 T170 -18" fill="none" stroke="#047857" stroke-width="1" opacity="0.6">
+            <animate attributeName="d" values="M-170 -18 Q-120 -25 -90 -16 T-30 -20 T30 -17 T90 -22 T170 -18;M-170 -23 Q-120 -15 -90 -25 T-30 -18 T30 -23 T90 -16 T170 -23;M-170 -18 Q-120 -25 -90 -16 T-30 -20 T30 -17 T90 -22 T170 -18" dur="0.2s" repeatCount="indefinite"/>
+        </path>
+        
+        <!-- Metrics -->
+        <rect x="100" y="-160" width="60" height="20" rx="2" fill="#1e1e1e" stroke="#334155"/>
+        <text x="130" y="-146" fill="#10b981" font-family="'Courier New', monospace" font-size="10" text-anchor="middle" filter="url(#glow-power)">Δt = CONST</text>
+
+        <rect x="-160" y="110" width="140" height="30" rx="2" fill="#ef4444" opacity="0.2"/>
+        <text x="-90" y="130" fill="#ef4444" font-family="'Courier New', monospace" font-size="12" font-weight="bold" text-anchor="middle">PEAK: NONE</text>
+
+        <rect x="20" y="110" width="140" height="30" rx="2" fill="#ef4444" opacity="0.2"/>
+        <text x="90" y="130" fill="#ef4444" font-family="'Courier New', monospace" font-size="12" font-weight="bold" text-anchor="middle">CORR: 0.0001</text>
+    </g>
+    
+    <!-- Bottom Label -->
+    <g transform="translate(200, 530)">
+        <rect x="-120" y="-25" width="240" height="50" rx="5" fill="#022c22" stroke="#10b981" stroke-width="2"/>
+        <text x="0" y="-2" text-anchor="middle" fill="#6ee7b7" font-family="'Times New Roman', serif" font-size="18" font-weight="bold">侧信道功耗平坦</text>
+        <text x="0" y="15" text-anchor="middle" fill="#34d399" font-family="'Courier New', Courier, monospace" font-size="10" letter-spacing="1">CONSTANT-TIME / MASKING SECURE</text>
+    </g>
+</svg>

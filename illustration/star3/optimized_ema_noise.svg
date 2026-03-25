@@ -1,0 +1,73 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="ema-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0f172a"/>
+            <stop offset="100%" stop-color="#000000"/>
+        </linearGradient>
+        <filter id="static-ema" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="3" result="noise">
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="15">
+            </feDisplacementMap>
+        </filter>
+        <filter id="glow-ema">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <pattern id="grid-ema" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+        </pattern>
+    </defs>
+    
+    <rect width="400" height="600" fill="url(#ema-bg)"/>
+    <rect width="400" height="600" fill="url(#grid-ema)"/>
+    
+    <!-- ElectroMagnetic Emanation Diagram -->
+    <g transform="translate(200, 260) scale(1.6)">
+        <rect x="-40" y="-40" width="80" height="80" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+        <text x="0" y="5" fill="#93c5fd" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">CPU</text>
+        
+        <!-- EM Waves -->
+        <g stroke="#3b82f6" stroke-width="1.5" fill="none">
+            <circle cx="0" cy="0" r="40">
+                <animate attributeName="r" values="40;100" dur="2s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.8;0" dur="2s" repeatCount="indefinite" />
+            </circle>
+            <circle cx="0" cy="0" r="40">
+                <animate attributeName="r" values="40;100" dur="2s" begin="1s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.8;0" dur="2s" begin="1s" repeatCount="indefinite" />
+            </circle>
+        </g>
+        
+        <!-- Overwhelming Noise Field -->
+        <g opacity="0.8">
+            <circle cx="0" cy="0" r="100" fill="none" stroke="#ef4444" stroke-width="8" filter="url(#static-ema)">
+                <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite" />
+                <animate attributeName="r" values="96;104;96" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="0" cy="0" r="70" fill="none" stroke="#fca5a5" stroke-width="6" filter="url(#static-ema)">
+                <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="12s" repeatCount="indefinite" />
+                <animate attributeName="r" values="73;68;73" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="0" cy="0" r="130" fill="none" stroke="#b91c1c" stroke-width="10" filter="url(#static-ema)">
+                <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="15s" repeatCount="indefinite" />
+                <animate attributeName="r" values="125;135;125" dur="5s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="3.5s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <text x="0" y="110" fill="#ef4444" font-family="'Courier New', monospace" font-size="16" font-weight="bold" text-anchor="middle" filter="url(#glow-ema)">
+            SNR &lt;&lt; 0 dB
+            <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite"/>
+        </text>
+        <rect x="-65" y="130" width="130" height="20" rx="3" fill="#1e1e1e" stroke="#fbbf24" stroke-width="1"/>
+        <text x="0" y="143" fill="#fbbf24" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">Shielding Active</text>
+    </g>
+
+    <!-- Bottom Label -->
+    <g transform="translate(200, 530)">
+        <rect x="-120" y="-25" width="240" height="50" rx="5" fill="#4c0519" stroke="#ef4444" stroke-width="2"/>
+        <text x="0" y="-2" text-anchor="middle" fill="#fca5a5" font-family="'Times New Roman', serif" font-size="18" font-weight="bold">电磁侧信道被干扰</text>
+        <text x="0" y="15" text-anchor="middle" fill="#f87171" font-family="'Courier New', Courier, monospace" font-size="10" letter-spacing="1">NOISE OVERWHELMS EM EMANATION</text>
+    </g>
+</svg>

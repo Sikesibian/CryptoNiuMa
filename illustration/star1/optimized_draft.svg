@@ -1,0 +1,106 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="draft-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1A2D3A" />
+      <stop offset="100%" stop-color="#0A1118" />
+    </radialGradient>
+    <linearGradient id="cyber-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD54F" />
+      <stop offset="100%" stop-color="#F57F17" />
+    </linearGradient>
+    <filter id="draft-glow">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="pencil-shadow">
+      <feDropShadow dx="15" dy="25" stdDeviation="15" flood-color="#E65100" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#draft-bg)" rx="100" />
+  
+  <!-- Cyber-grid Drafting Background -->
+  <g stroke="#F57F17" stroke-width="2" opacity="0.15">
+    <pattern id="draft-grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" />
+    </pattern>
+    <rect width="1024" height="1024" fill="url(#draft-grid)" />
+    <!-- Pulse grid opacity -->
+    <animate attributeName="opacity" values="0.15; 0.3; 0.15" dur="4s" repeatCount="indefinite" />
+  </g>
+
+  <!-- Massive Layered Glowing Draft Paper -->
+  <g filter="url(#pencil-shadow)" style="transform-origin: 512px 512px;">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20; 0,0" dur="4s" repeatCount="indefinite" />
+    
+    <!-- Background Paper 2 -->
+    <rect x="180" y="140" width="664" height="800" rx="30" fill="#FFF9C4" opacity="0.6" transform="rotate(-4 512 512)" />
+    <!-- Background Paper 1 -->
+    <rect x="200" y="160" width="624" height="800" rx="30" fill="#FFF59D" opacity="0.8" transform="rotate(2 512 512)" />
+    
+    <!-- Main Paper -->
+    <rect x="220" y="180" width="584" height="780" rx="30" fill="#FFFFFF" />
+    
+    <!-- Gold Foil Binding -->
+    <path d="M220 180 h584 v120 h-584 z" fill="url(#cyber-gold)" />
+    <path d="M220 300 h584 v15 h-584 z" fill="#F57F17" />
+    
+    <!-- Binding Holes & Rings -->
+    <g transform="translate(0, 240)">
+      <circle cx="330" cy="0" r="24" fill="#3E2723" />
+      <circle cx="512" cy="0" r="24" fill="#3E2723" />
+      <circle cx="694" cy="0" r="24" fill="#3E2723" />
+      <!-- Silver Rings -->
+      <path d="M 330 -40 C 300 -40, 290 40, 330 40" fill="none" stroke="#E0E0E0" stroke-width="12" stroke-linecap="round" />
+      <path d="M 512 -40 C 482 -40, 472 40, 512 40" fill="none" stroke="#E0E0E0" stroke-width="12" stroke-linecap="round" />
+      <path d="M 694 -40 C 664 -40, 654 40, 694 40" fill="none" stroke="#E0E0E0" stroke-width="12" stroke-linecap="round" />
+    </g>
+    
+    <!-- Red Margin Line Glowing -->
+    <line x1="300" y1="315" x2="300" y2="960" stroke="#FF5252" stroke-width="6" opacity="0.8" filter="url(#draft-glow)" />
+    
+    <!-- Animated Neon Text Lines -->
+    <g stroke-linecap="round" filter="url(#draft-glow)">
+      <!-- Line 1 -->
+      <line x1="340" y1="420" x2="740" y2="420" stroke="#FFB300" stroke-width="16" stroke-dasharray="400">
+      </line>
+      <!-- Line 2 -->
+      <line x1="340" y1="520" x2="650" y2="520" stroke="#FFB300" stroke-width="16" stroke-dasharray="310">
+      </line>
+      <!-- Line 3 -->
+      <line x1="340" y1="620" x2="720" y2="620" stroke="#FFCA28" stroke-width="16" stroke-dasharray="380">
+      </line>
+      <!-- Line 4 (Writing in progress) -->
+      <line x1="340" y1="720" x2="550" y2="720" stroke="#FFA000" stroke-width="16" stroke-dasharray="210">
+      </line>
+    </g>
+    
+    <!-- Majestic Cyber Stylus / Pencil -->
+    <g transform="translate(680, 520) rotate(-40)">
+      <animateTransform attributeName="transform" type="rotate" values="-40; -35; -40" dur="2s" repeatCount="indefinite" additive="sum" />
+      <animateTransform attributeName="transform" type="translate" values="0,0; -20,20; 0,0" dur="3s" repeatCount="indefinite" additive="sum" />
+      
+      <!-- High-tech glowing core -->
+      <polygon points="0,0 20,60 -20,60" fill="#FFE082" />
+      <polygon points="-8,36 8,36 0,0" fill="#1C1C1C" />
+      <!-- Pencil Body -->
+      <rect x="-24" y="60" width="48" height="280" rx="8" fill="url(#cyber-gold)" />
+      <rect x="-12" y="60" width="24" height="280" fill="#FFC107" />
+      <!-- Glowing ring on pencil -->
+      <rect x="-24" y="300" width="48" height="15" fill="#FFF" filter="url(#draft-glow)">
+         <animate attributeName="opacity" values="0.5; 1; 0.5" dur="1s" repeatCount="indefinite" />
+      </rect>
+      <!-- Metal eraser holder -->
+      <rect x="-24" y="340" width="48" height="40" fill="#9E9E9E" />
+      <!-- Eraser -->
+      <path d="M -24 380 h 48 v 30 a 24 24 0 0 1 -48 0 z" fill="#EF5350" />
+      
+      <!-- Magic Sparks from tip -->
+      <g filter="url(#draft-glow)">
+        <circle cx="0" cy="0" r="6" fill="#FFF"><animate attributeName="r" values="6;15;6" dur="0.8s" repeatCount="indefinite"/></circle>
+        <circle cx="-15" cy="-15" r="4" fill="#FFCA28"><animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite"/></circle>
+        <circle cx="20" cy="-20" r="5" fill="#FFC107"><animate attributeName="opacity" values="0;1;0" dur="1.6s" repeatCount="indefinite"/></circle>
+      </g>
+    </g>
+  </g>
+</svg>

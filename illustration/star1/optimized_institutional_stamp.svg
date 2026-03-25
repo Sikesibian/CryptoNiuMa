@@ -1,0 +1,109 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Deep sophisticated glow for the red ink -->
+    <filter id="stamp-glow-advanced" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="2" dy="8" stdDeviation="15" flood-color="#8B0000" flood-opacity="0.3"/>
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Paper texture underneath -->
+    <filter id="paper-texture" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.05 0" in="noise" result="coloredNoise" />
+      <feBlend in="SourceGraphic" in2="coloredNoise" mode="multiply" />
+    </filter>
+
+    <radialGradient id="ink-gradient" cx="50%" cy="50%" r="50%" fx="30%" fy="30%">
+      <stop offset="0%" stop-color="#E53935" />
+      <stop offset="80%" stop-color="#C62828" />
+      <stop offset="100%" stop-color="#8E0000" />
+    </radialGradient>
+    
+    <radialGradient id="document-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F5F5DC" /> <!-- Slight ivory/parchment tint -->
+    </radialGradient>
+    
+    <!-- Text path for circular text -->
+    <path id="stamp-text-path-top" d="M 232,512 A 280,280 0 0,1 792,512" />
+    <path id="stamp-text-path-bottom" d="M 772,512 A 260,260 0 0,1 252,512" />
+  </defs>
+
+  <!-- Background Document Paper -->
+  <rect x="50" y="50" width="924" height="924" rx="20" fill="url(#document-bg)" filter="url(#paper-texture)" />
+  
+  <!-- Subtle document grid lines -->
+  <g stroke="#E0E0E0" stroke-width="2" opacity="0.5">
+    <line x1="100" y1="200" x2="924" y2="200" />
+    <line x1="100" y1="300" x2="924" y2="300" />
+    <line x1="100" y1="400" x2="924" y2="400" />
+    <line x1="100" y1="800" x2="924" y2="800" />
+    <line x1="100" y1="900" x2="924" y2="900" />
+  </g>
+
+  <!-- Official Document Signature Lines -->
+  <text x="150" y="850" font-family="'Times New Roman', serif" font-size="24" fill="#333" font-style="italic">Authorized Signature:</text>
+  <line x1="380" y1="850" x2="850" y2="850" stroke="#757575" stroke-width="2" stroke-dasharray="8 4" />
+  
+  <!-- The Stamp -->
+  <g filter="url(#stamp-glow-advanced)">
+    <!-- Base container for the whole stamp animation -->
+    <g style="transform-origin: 512px 512px;">
+      <!-- Main Stamp Appears/Presses Down Animation -->
+      <animateTransform attributeName="transform" type="scale" values="1.5; 0.95; 1; 1" keyTimes="0; 0.15; 0.25; 1" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0; 1; 1; 1" keyTimes="0; 0.1; 0.9; 1" dur="4s" repeatCount="indefinite" />
+      
+      <!-- Rotate just the stamp graphics -->
+      <g style="transform-origin: 512px 512px;" fill="url(#ink-gradient)" stroke="url(#ink-gradient)">
+        <animateTransform attributeName="transform" type="rotate" values="-15; -15; -15" dur="4s" repeatCount="indefinite" /> <!-- Slightly angled realistically -->
+        
+        <!-- Outer thick border -->
+        <circle cx="512" cy="512" r="320" fill="none" stroke-width="20" />
+        <!-- Inner thin border 1 -->
+        <circle cx="512" cy="512" r="300" fill="none" stroke-width="6" />
+        <!-- Inner thin border 2 -->
+        <circle cx="512" cy="512" r="210" fill="none" stroke-width="4" />
+        
+        <!-- Concentric dashed security ring -->
+        <circle cx="512" cy="512" r="285" fill="none" stroke-width="2" stroke-dasharray="4 8" />
+
+        <!-- Circular Text Top: UNIVERSITY / INSTITUTION NAME -->
+        <text font-family="'Times New Roman', Times, serif" font-weight="900" font-size="65" fill="#C62828" letter-spacing="8">
+          <textPath href="#stamp-text-path-top" startOffset="50%" text-anchor="middle">UNIVERSITY OF TECHNOLOGY</textPath>
+        </text>
+
+        <!-- Circular Text Bottom: DEPARTMENT / OFFICIAL -->
+        <text font-family="'Arial', sans-serif" font-weight="bold" font-size="45" fill="#C62828" letter-spacing="4">
+          <textPath href="#stamp-text-path-bottom" startOffset="50%" text-anchor="middle">OFFICIAL ACADEMIC SEAL</textPath>
+        </text>
+
+        <!-- Big Center Star - Classic Red Stamp Element -->
+        <polygon points="512,350 550,450 660,460 570,530 600,630 512,570 424,630 454,530 364,460 474,450" fill="url(#ink-gradient)" opacity="0.9" />
+        
+        <!-- Serial Number / Anti-counterfeit ID -->
+        <text x="512" y="680" font-family="'Courier New', Courier, monospace" font-weight="bold" font-size="28" fill="#B71C1C" text-anchor="middle" letter-spacing="2">NO. 2026032588</text>
+        
+        <!-- Distressed/Grunge Overlay Mask (Simulated by drawing tiny random lines to make it look imperfect/stamped) -->
+        <!-- These act as "missing ink" spots -->
+        <g stroke="url(#document-bg)" stroke-width="3" opacity="0.8">
+           <line x1="300" y1="400" x2="330" y2="405" />
+           <line x1="600" y1="250" x2="615" y2="280" />
+           <line x1="500" y1="700" x2="520" y2="690" />
+           <line x1="700" y1="550" x2="730" y2="540" />
+           <line x1="250" y1="600" x2="280" y2="620" />
+           <circle cx="450" cy="350" r="4" fill="url(#document-bg)" />
+           <circle cx="650" cy="550" r="5" fill="url(#document-bg)" />
+           <circle cx="350" cy="650" r="3" fill="url(#document-bg)" />
+        </g>
+      </g>
+      
+      <!-- Stamping Action "Shockwave" / Dust particle effect when stamp hits document -->
+      <circle cx="512" cy="512" r="330" fill="none" stroke="#E53935" stroke-width="5">
+          <animate attributeName="r" values="320; 380; 400" keyTimes="0; 0.2; 1" dur="4s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0; 0.5; 0" keyTimes="0; 0.15; 0.4" dur="4s" repeatCount="indefinite" />
+          <animate attributeName="stroke-width" values="10; 2; 0" keyTimes="0; 0.2; 1" dur="4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+</svg>

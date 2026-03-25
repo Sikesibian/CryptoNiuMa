@@ -1,0 +1,192 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <radialGradient id="fc-bg" cx="50%" cy="50%" r="75%">
+            <stop offset="0%" stop-color="#381005"/>
+            <stop offset="35%" stop-color="#1e0700"/>
+            <stop offset="70%" stop-color="#050100"/>
+            <stop offset="100%" stop-color="#000000"/>
+        </radialGradient>
+        <radialGradient id="fc-core-glow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#d97706" stop-opacity="0.4"/>
+            <stop offset="100%" stop-color="#d97706" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="fc-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fef08a"/>
+            <stop offset="30%" stop-color="#f59e0b"/>
+            <stop offset="70%" stop-color="#fbbf24"/>
+            <stop offset="100%" stop-color="#92400e"/>
+        </linearGradient>
+        <linearGradient id="fc-coin-side" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#451a03"/>
+            <stop offset="15%" stop-color="#d97706"/>
+            <stop offset="50%" stop-color="#78350f"/>
+            <stop offset="85%" stop-color="#f59e0b"/>
+            <stop offset="100%" stop-color="#280f02"/>
+        </linearGradient>
+        <linearGradient id="fc-trend" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#34d399"/>
+            <stop offset="100%" stop-color="#10b981" stop-opacity="0.3"/>
+        </linearGradient>
+        <filter id="fc-glow-intense" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="8" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        <filter id="fc-glow-soft">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        <pattern id="fc-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 40 L 0 40 0 0" fill="none" stroke="#78350f" stroke-width="0.3" opacity="0.4"/>
+            <path d="M 18 20 L 22 20 M 20 18 L 20 22" stroke="#fcd34d" stroke-width="0.5" opacity="0.4"/>
+            <circle cx="0" cy="40" r="1.5" fill="#10b981" opacity="0.4"/>
+        </pattern>
+    </defs>
+
+    <rect width="400" height="600" fill="url(#fc-bg)"/>
+    <rect width="400" height="600" fill="url(#fc-grid)"/>
+    
+    <circle cx="200" cy="240" r="160" fill="url(#fc-core-glow)" filter="url(#fc-glow-intense)"/>
+
+    <!-- Cryptocurrency Orbital Rings -->
+    <g transform="translate(200, 240)" fill="none" stroke-linecap="round" filter="url(#fc-glow-soft)">
+        <!-- Outer dashed ring -->
+        <ellipse cx="0" cy="0" rx="160" ry="60" stroke="#78350f" stroke-width="1.5" stroke-dasharray="10 10">
+            <animate attributeName="stroke-dashoffset" values="0;20" dur="4s" repeatCount="indefinite" additive="sum"/>
+        </ellipse>
+        <!-- Middle tech ring -->
+        <ellipse cx="0" cy="0" rx="130" ry="45" stroke="#d97706" stroke-width="2" stroke-dasharray="30 15 5 15">
+            <animate attributeName="stroke-dashoffset" values="65;0" dur="8s" repeatCount="indefinite"/>
+        </ellipse>
+        <!-- Inner precision ring -->
+        <ellipse cx="0" cy="0" rx="100" ry="32" stroke="#fef08a" stroke-width="1" opacity="0.6"/>
+    </g>
+
+    <!-- Market Action / Trend lines -->
+    <g transform="translate(200, 240)" filter="url(#fc-glow-intense)">
+        <!-- Bullish Trend Holographic Arrow -->
+        <path d="M -140 70 C -120 10 -40 -60 100 -70" fill="none" stroke="url(#fc-trend)" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+        <!-- Animated data stream along the path -->
+        <path d="M -140 70 C -120 10 -40 -60 100 -70" fill="none" stroke="#34d399" stroke-width="1.5" stroke-dasharray="6 8">
+            <animate attributeName="stroke-dashoffset" values="28;0" dur="1s" repeatCount="indefinite"/>
+        </path>
+        
+        <!-- High-tech angular arrowhead -->
+        <g transform="translate(100, -70) rotate(-5)">
+            <!-- Main tactical pointer -->
+            <polygon points="-18,-11 6,0 -18,11 -10,0" fill="#34d399" stroke="#059669" stroke-width="1.5"/>
+            <!-- Incandescent bright core -->
+            <polygon points="-2,-4 8,0 -2,4 1,0" fill="#a7f3d0"/>
+            <!-- Pulsing trailing chevrons (holographic echoes) -->
+            <path d="M -25,-15 L -5,0 L -25,15" fill="none" stroke="#34d399" stroke-width="2" opacity="0.7">
+                <animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.5s" repeatCount="indefinite"/>
+            </path>
+            <path d="M -33,-19 L -13,0 L -33,19" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.4"/>
+            <!-- Target coordinate dot -->
+            <circle cx="18" cy="0" r="1.5" fill="#10b981"/>
+        </g>
+        
+        <!-- Floating Candlesticks representing Finance -->
+        <g stroke="#10b981" stroke-width="1.5" opacity="0.7">
+            <!-- Box 1 -->
+            <line x1="-120" y1="20" x2="-120" y2="40"/>
+            <rect x="-124" y="25" width="8" height="10" fill="#065f46"/>
+            <!-- Box 2 -->
+            <line x1="130" y1="-20" x2="130" y2="-50"/>
+            <rect x="126" y="-45" width="8" height="15" fill="#065f46" stroke="#34d399"/>
+        </g>
+        <g stroke="#ef4444" stroke-width="1.5" opacity="0.6">
+            <!-- Bearish red candle for contrast -->
+            <line x1="140" y1="10" x2="140" y2="35"/>
+            <rect x="136" y="15" width="8" height="15" fill="#7f1d1d"/>
+        </g>
+    </g>
+
+    <!-- Distributed Ledger / Blockchain Hex Nodes -->
+    <g transform="translate(200, 240)" stroke="url(#fc-gold)" stroke-width="1" filter="url(#fc-glow-intense)">
+        <!-- Connections -->
+        <path d="M -110 -40 L -60 -80 L 40 -90 L 90 -40" fill="none" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6"/>
+        
+        <!-- Hex Nodes -->
+        <g fill="#280f02">
+            <g transform="translate(-110, -40)"><polygon points="0,-12 10,-6 10,6 0,12 -10,6 -10,-6"/><circle cx="0" cy="0" r="2" fill="#fcd34d"/></g>
+            <g transform="translate(-60, -80)"><polygon points="0,-12 10,-6 10,6 0,12 -10,6 -10,-6"/><circle cx="0" cy="0" r="2" fill="#fcd34d"/></g>
+            <g transform="translate(40, -90)"><polygon points="0,-12 10,-6 10,6 0,12 -10,6 -10,-6"/><circle cx="0" cy="0" r="2" fill="#fcd34d"/></g>
+            <g transform="translate(90, -40)"><polygon points="0,-12 10,-6 10,6 0,12 -10,6 -10,-6"/><circle cx="0" cy="0" r="2" fill="#fcd34d"/></g>
+        </g>
+    </g>
+
+    <!-- Main Stack of Premium Cryptographic Coins -->
+    <g transform="translate(200, 245)" filter="url(#fc-glow-intense)">
+        <!-- Bottom Coin -->
+        <g transform="translate(0, 40)">
+            <path d="M -75 0 L -75 12 A 75 22 0 0 0 75 12 L 75 0 Z" fill="url(#fc-coin-side)"/>
+            <ellipse cx="0" cy="0" rx="75" ry="22" fill="#451a03" stroke="#92400e" stroke-width="1.5"/>
+        </g>
+        
+        <!-- Middle Coin -->
+        <g transform="translate(0, 20)">
+            <path d="M -80 0 L -80 14 A 80 24 0 0 0 80 14 L 80 0 Z" fill="url(#fc-coin-side)"/>
+            <ellipse cx="0" cy="0" rx="80" ry="24" fill="#381005" stroke="#b45309" stroke-width="1.5"/>
+        </g>
+
+        <!-- Top Hero Coin -->
+        <g transform="translate(0, 0)">
+            <!-- Exaggerated Coin Edge / Side -->
+            <path d="M -85 0 L -85 16 A 85 26 0 0 0 85 16 L 85 0 Z" fill="url(#fc-coin-side)"/>
+            <!-- Edge ridges via dotted path on the rim curve -->
+            <path d="M -85 0 A 85 26 0 0 0 85 0" fill="none" stroke="#fef08a" stroke-width="2" stroke-dasharray="3 4" opacity="0.6"/>
+            
+            <!-- Main Surface -->
+            <ellipse cx="0" cy="0" rx="85" ry="26" fill="#1c0a00" stroke="url(#fc-gold)" stroke-width="3"/>
+            
+            <!-- Intricate Rings -->
+            <ellipse cx="0" cy="0" rx="70" ry="22" fill="none" stroke="#fcd34d" stroke-width="1" stroke-dasharray="6 3"/>
+            <ellipse cx="0" cy="0" rx="60" ry="18" fill="#381005" stroke="#f59e0b" stroke-width="2"/>
+            <ellipse cx="0" cy="0" rx="55" ry="16" fill="none" stroke="#fef08a" stroke-width="0.5"/>
+            <ellipse cx="0" cy="0" rx="45" ry="13" fill="#1c0a00" stroke="#fef08a" stroke-width="1.5"/>
+            
+            <!-- Cryptography Lock & Smart Contract Symbol -->
+            <g stroke="url(#fc-gold)" stroke-linecap="round" stroke-linejoin="round" transform="translate(0, -1)">
+                <!-- Blockchain lock shackle -->
+                <path d="M -12 -5 C -12 -18 12 -18 12 -5" fill="none" stroke-width="2.5"/>
+                <rect x="-16" y="-5" width="32" height="20" rx="3" fill="#451a03" stroke-width="2"/>
+                <!-- Keyhole / Chip -->
+                <path d="M -3 3 L 3 3 M 0 -1 L 0 8" stroke-width="1.5" stroke="#fcd34d"/>
+                <circle cx="0" cy="2" r="1.5" fill="#fcd34d"/>
+            </g>
+            
+            <!-- Circuit lines spanning outwards on the coin -->
+            <g stroke="#f59e0b" stroke-width="1" opacity="0.5">
+                <line x1="-45" y1="0" x2="-60" y2="0"/>
+                <line x1="45" y1="0" x2="60" y2="0"/>
+                <line x1="0" y1="13" x2="0" y2="18"/>
+                <line x1="0" y1="-13" x2="0" y2="-18"/>
+            </g>
+        </g>
+    </g>
+
+    <!-- Immersive Tech Branding -->
+    <g transform="translate(200, 480)" filter="url(#fc-glow-intense)">
+        <!-- Architectural Cyber Frame -->
+        <path d="M -150 -15 L -120 -15 L -105 15 L 105 15 L 120 -15 L 150 -15" fill="none" stroke="url(#fc-gold)" stroke-width="2"/>
+        <polygon points="-100 15 -85 25 85 25 100 15" fill="#280f02" stroke="#b45309" stroke-width="1.5"/>
+        
+        <text x="0" y="-2" text-anchor="middle" fill="#fef08a" font-family="'Times New Roman', Times, serif" font-size="46" font-weight="900" letter-spacing="8">FC</text>
+    </g>
+    
+    <g transform="translate(200, 540)" filter="url(#fc-glow-soft)">
+        <!-- Decorative framing for text -->
+        <line x1="-120" y1="-10" x2="-80" y2="-10" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+        <line x1="80" y1="-10" x2="120" y2="-10" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+        
+        <text x="0" y="5" text-anchor="middle" fill="#fcd34d" font-family="'Courier New', Courier, monospace" font-size="15" font-weight="bold" letter-spacing="4">FINANCIAL CRYPTOGRAPHY</text>
+        
+        <!-- Status indicator lights nodes -->
+        <circle cx="-135" cy="0" r="3" fill="#10b981">
+            <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="135" cy="0" r="3" fill="#10b981">
+            <animate attributeName="opacity" values="1;0.2;1" dur="2s" begin="1s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+</svg>

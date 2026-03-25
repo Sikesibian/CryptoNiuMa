@@ -1,0 +1,985 @@
+/* ==========================================
+   密码学抽卡系统 - 华丽版样式重构
+   ========================================== */
+
+:root {
+    --bg-deep: #020306;
+    --bg-gradient: radial-gradient(ellipse at 20% 50%, #0a0f1e 0%, transparent 50%),
+                   radial-gradient(ellipse at 80% 80%, #1a1030 0%, transparent 40%),
+                   radial-gradient(ellipse at 50% 0%, #0d1a2d 0%, var(--bg-deep) 70%);
+    
+    /* 5星 - 至尊暗金 */
+    --star-5: #D4AF37;
+    --star-5-light: #FFF8DC;
+    --star-5-glow: rgba(212, 175, 55, 0.6);
+    --star-5-gradient: linear-gradient(135deg, #FFD700 0%, #D4AF37 50%, #B8860B 100%);
+    
+    /* 4星 - 秘银紫晶 */
+    --star-4: #9B59B6;
+    --star-4-light: #E8D5F2;
+    --star-4-glow: rgba(155, 89, 182, 0.6);
+    --star-4-gradient: linear-gradient(135deg, #C39BD3 0%, #9B59B6 50%, #7D3C98 100%);
+    
+    /* 3星 - 深海蓝钢 */
+    --star-3: #34495E;
+    --star-3-light: #85C1E9;
+    --star-3-glow: rgba(52, 73, 94, 0.6);
+    --star-3-gradient: linear-gradient(135deg, #5D6D7E 0%, #34495E 50%, #1B2631 100%);
+    
+    --glass-bg: linear-gradient(135deg, rgba(12, 14, 20, 0.9) 0%, rgba(4, 5, 8, 0.98) 100%);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --crypto-green: #00ff41;
+
+    /* 2星 - 秘银灰 */
+    --star-2: #6B7280;
+    --star-2-light: #9CA3AF;
+    --star-2-glow: rgba(107, 114, 128, 0.5);
+    --star-2-gradient: linear-gradient(135deg, #9CA3AF 0%, #6B7280 50%, #4B5563 100%);
+    
+    /* 1星 - 星光银 */
+    --star-1: #9CA3AF;
+    --star-1-light: #E5E7EB;
+    --star-1-glow: rgba(156, 163, 175, 0.5);
+    --star-1-gradient: linear-gradient(135deg, #E5E7EB 0%, #9CA3AF 50%, #6B7280 100%);
+    
+    /* 动画时间函数 */
+    --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 全局背景与氛围 */
+body, html {
+    margin: 0; padding: 0; 
+    background: var(--bg-deep);
+    background-image: var(--bg-gradient);
+    font-family: 'Noto Serif SC', sans-serif;
+    color: #fff; overflow: hidden; user-select: none;
+    width: 100vw; height: 100vh; perspective: 2000px;
+    display: flex; justify-content: center; align-items: center;
+}
+
+#app-container {
+    position: relative;
+    z-index: 1;
+    background: var(--bg-deep);
+    background-image: var(--bg-gradient);
+    overflow: hidden; 
+    box-shadow: 0 0 50px rgba(0,0,0,0.8);
+    transform-origin: center center;
+    -webkit-font-smoothing: antialiased;
+    image-rendering: high-quality;
+}
+
+/* 暗角与光晕 */
+.vignette {
+    position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background: radial-gradient(circle at 50% 50%, transparent 0%, #010103 80%);
+}
+
+/* 屏幕切换与布局 */
+.screen {
+    position: absolute; inset: 0; display: none; 
+    flex-direction: column; justify-content: center; align-items: center;
+}
+#home-screen { display: flex; }
+
+/* 顶部导航 - 赛博仪表盘 */
+.top-nav {
+    position: absolute; top: 0; left: 0; width: 100%; 
+    padding: clamp(10px, 3vh, 25px) clamp(20px, 4vw, 50px);
+    display: flex; justify-content: space-between; align-items: center; 
+    z-index: 50;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent);
+    flex-wrap: nowrap;
+    gap: 15px;
+}
+
+/* 右侧资源区容器组 */
+.top-nav .flex.gap-6 {
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: clamp(8px, 1.5vw, 24px); /* 动态间隙 */
+}
+
+.flex.gap-6 {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.nav-logo { 
+    display: flex; align-items: center; color: var(--star-5); 
+    font-family: 'JetBrains Mono'; font-weight: 300; 
+    font-size: clamp(0.7rem, 1.5vh, 0.9rem);
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px var(--star-5-glow);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-shrink: 1; 
+    min-width: 0; 
+    margin-right: 10px;
+}
+
+.nav-logo span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.resource-pill {
+    background: rgba(0, 0, 0, 0.5); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* 动态缩小内边距 */
+    padding: clamp(4px, 1vh, 6px) clamp(8px, 1.5vw, 20px); 
+    border-radius: 4px; 
+    display: flex; align-items: center; 
+    gap: clamp(4px, 1vw, 12px); /* 动态内部间距 */
+    backdrop-filter: blur(20px); 
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.5);
+    font-family: 'JetBrains Mono'; 
+    position: relative; overflow: hidden;
+    transition: all 0.3s var(--ease-smooth);
+    /* 强制单行 */
+    white-space: nowrap;
+    font-size: clamp(0.7rem, 1.5vh, 0.9rem);
+    flex-shrink: 0; /* 资源数值绝对不能被挤压变形 */
+}
+
+.resource-pill::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+    background: var(--star-5); 
+    box-shadow: 0 0 10px var(--star-5);
+}
+
+.resource-pill:hover {
+    transform: translateY(-2px);
+    border-color: var(--star-5);
+    box-shadow: 
+        inset 0 0 30px rgba(0,0,0,0.8),
+        0 8px 30px rgba(212, 175, 55, 0.2);
+}
+
+/* 主Banner - 高奢玻璃拟态 */
+.banner-glass {
+    width: 90%; /* 从固定 1100px 改为 90% */
+    max-width: 1100px; /* 增加最大宽度限制 */
+    height: 540px; border-radius: 12px;
+    background: var(--glass-bg); 
+    backdrop-filter: blur(40px);
+    border: 1px solid var(--glass-border); 
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 
+        0 60px 120px -30px rgba(0,0,0,0.9), 
+        inset 0 0 60px rgba(0,0,0,0.5),
+        0 0 0 1px rgba(255,255,255,0.05);
+    display: flex; position: relative; overflow: visible !important;
+}
+
+.banner-title { 
+    font-size: clamp(2.5rem, 5vw, 4rem); 
+    font-weight: 900; 
+    line-height: 1.2; 
+    margin-bottom: 25px; 
+    letter-spacing: 6px;
+    word-break: keep-all; 
+    text-shadow: 0 15px 40px rgba(0,0,0,0.9);
+}
+/* 动态光晕背景 */
+.banner-glow {
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.15) 0%, transparent 50%);
+    animation: glow-pulse 4s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.banner-content { 
+    padding: 60px 60px; flex: 1.2; z-index: 2; 
+    display: flex; flex-direction: column; justify-content: center; 
+    position: relative;
+}
+
+.badge { 
+    background: var(--star-5-gradient);
+    color: #000; font-family: 'JetBrains Mono'; 
+    font-weight: 900; font-size: 0.75rem; 
+    padding: 6px 14px; border-radius: 4px; 
+    width: max-content; margin-bottom: 30px;
+    letter-spacing: 3px; 
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+}
+
+.text-gradient { 
+    background: linear-gradient(135deg, #ffffff 0%, #c0c8d8 50%, #8a94a8 100%); 
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 5px 15px rgba(255,255,255,0.1));
+}
+
+.banner-desc { 
+    font-size: 0.8rem; color: #9aa5b8; line-height: 1.4; 
+    font-family: 'Noto Serif SC', sans-serif; max-width: 85%;
+}
+
+/* 抽卡按钮组 - 磁吸悬浮 */
+.btn-group { display: flex; gap: 25px; margin-top: 45px; }
+
+.btn-warp {
+    position: relative; overflow: hidden; 
+    border: none; padding: 12px 45px; border-radius: 6px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    cursor: pointer; 
+    transition: all 0.4s var(--ease-expo-out);
+    height: 75px; min-width: 200px;
+}
+
+.btn-warp.standard { 
+    background: rgba(255,255,255,0.05); 
+    border: 1px solid rgba(255,255,255,0.2); 
+    color: #d0d8e8;
+}
+
+.btn-warp.standard:hover { 
+    background: rgba(255,255,255,0.12); 
+    border-color: var(--star-5); 
+    color: #fff;
+    box-shadow: 
+        0 0 30px rgba(212, 175, 55, 0.3),
+        inset 0 0 20px rgba(212, 175, 55, 0.1);
+    transform: translateY(-3px);
+}
+
+.btn-warp.premium { 
+    background: var(--star-5-gradient);
+    color: #0b0d14; 
+    box-shadow: 
+        0 15px 35px rgba(212, 175, 55, 0.35),
+        inset 0 1px 0 rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn-warp.premium:hover { 
+    box-shadow: 
+        0 25px 50px rgba(212, 175, 55, 0.5),
+        0 0 60px rgba(212, 175, 55, 0.3); 
+    filter: brightness(1.15); 
+    transform: translateY(-4px) scale(1.02);
+}
+
+.btn-warp.premium:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.btn-text { font-weight: 900; font-size: 1.2rem; letter-spacing: 4px; }
+.btn-warp.premium .btn-text { text-shadow: 0 1px 2px rgba(255,255,255,0.4); }
+
+.cost { 
+    font-family: 'JetBrains Mono'; font-size: 0.7rem; 
+    opacity: 0.8; margin-top: 6px; font-weight: 700; letter-spacing: 2px;
+}
+
+/* 右侧艺术区 */
+.banner-art {
+    position: absolute;
+    right: -285px;
+    top: -190px;
+    width: 800px;
+    height: 900px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+/* ==========================================
+   Banner Art 专属动效 (赛博过载风)
+   ========================================== */
+
+/* 1. 全局呼吸悬浮 */
+.banner-art {
+    animation: art-levitate 6s ease-in-out infinite;
+}
+
+@keyframes art-levitate {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+}
+
+/* 2. 核心深渊脉冲 */
+.core-circle {
+    transform-origin: 400px 380px;
+    animation: core-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes core-pulse {
+    0%, 100% { transform: scale(1); filter: url(#neon-gold) brightness(1); }
+    50% { transform: scale(1.05); filter: url(#neon-gold) brightness(1.3); }
+}
+
+/* 3. 机械阵列无休止旋转 */
+.ring-1 { transform-origin: 400px 380px; animation: spin-cw 20s linear infinite; }
+.ring-2 { transform-origin: 400px 380px; animation: spin-ccw 15s linear infinite; }
+.ring-3 { transform-origin: 400px 380px; animation: spin-cw 30s linear infinite; }
+
+@keyframes spin-cw { 100% { transform: rotate(360deg); } }
+@keyframes spin-ccw { 100% { transform: rotate(-360deg); } }
+
+/* 4. NaN 故障抖动 (Glitch) */
+.core-text {
+    animation: glitch-skew 0.15s infinite;
+    transform-origin: 400px 480px;
+}
+
+@keyframes glitch-skew {
+    0%, 100% { transform: rotate(-8deg) translate(0, 0) skew(0deg); }
+    20% { transform: rotate(-8deg) translate(-2px, 1px) skew(-5deg); }
+    40% { transform: rotate(-8deg) translate(2px, -2px) skew(5deg); }
+    60% { transform: rotate(-8deg) translate(-1px, 2px) skew(-2deg); }
+    80% { transform: rotate(-8deg) translate(1px, -1px) skew(2deg); }
+}
+
+/* 5. 警报标签断电闪烁 */
+.warning-label {
+    animation: warning-flicker 4s infinite;
+}
+.warning-label.delay-1 { animation-delay: 1.2s; }
+.warning-label.delay-2 { animation-delay: 2.5s; }
+
+@keyframes warning-flicker {
+    0%, 100% { opacity: 1; }
+    33% { opacity: 1; }
+    34% { opacity: 0; }
+    35% { opacity: 1; }
+    36% { opacity: 0.3; }
+    37% { opacity: 1; }
+    80% { opacity: 1; }
+    81% { opacity: 0; }
+    82% { opacity: 1; }
+}
+
+/* 6. 眼神神经质抽搐 */
+.overload-eyes {
+    transform-origin: 400px 315px;
+    animation: eye-twitch 4s infinite;
+}
+
+@keyframes eye-twitch {
+    0%, 90%, 100% { transform: translate(0, -20px) scale(1); }
+    92% { transform: translate(0, -20px) scale(1.1) skewX(15deg); }
+    94% { transform: translate(0, -20px) scale(0.9) skewX(-15deg); }
+}
+
+/* ==========================================
+   单抽结果 - 史诗级3D卡片
+   ========================================== */
+.single-layout { 
+    display: flex; align-items: center; justify-content: space-between; 
+    gap: clamp(2rem, 4vw, 6rem); width: 100%; max-width: 1400px; 
+    padding: 0 clamp(30px, 4vw, 80px); z-index: 10;
+}
+
+/* 左侧信息区 */
+.single-info { 
+    flex: 1 1 auto;
+    min-width: 0;
+    position: relative; 
+    padding-left: clamp(20px, 3vw, 60px); 
+    border-left: 1px solid rgba(255,255,255,0.08);
+}
+
+/* 动态稀有度光柱 */
+.single-info::before {
+    content: ''; position: absolute; left: -2px; top: 0; height: 100%; width: 4px;
+    background: currentColor;
+    box-shadow: 
+        0 0 30px currentColor, 
+        0 0 60px currentColor,
+        0 0 100px currentColor;
+    animation: pillar-pulse 2s ease-in-out infinite;
+}
+
+@keyframes pillar-pulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+.path-icon-container { 
+    display: inline-block; padding: 8px 20px; margin-bottom: 30px;
+    background: rgba(255,255,255,0.05); 
+    border: 1px solid rgba(255,255,255,0.2); 
+    border-radius: 4px; 
+    font-family: 'JetBrains Mono'; font-weight: 700; letter-spacing: 5px; 
+    font-size: 0.85rem; 
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.5);
+    position: relative; overflow: hidden;
+}
+
+.path-icon-container::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: scan-line 3s infinite;
+}
+
+@keyframes scan-line {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.item-name { 
+    font-size: clamp(2.5rem, 4vw, 4.5rem); /* 从固定 5rem 调整为自适应 */
+    font-weight: 900; letter-spacing: 6px; line-height: 1.2;
+    word-break: break-word; /* 允许长文本换行 */
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.7) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    text-shadow: 0 25px 50px rgba(0,0,0,0.9); 
+    margin-bottom: 15px;
+    animation: title-shine 3s ease-in-out infinite;
+}
+
+.item-name {
+    font-size: clamp(2.4rem, 3.2vw + 1.5rem, 6.6rem); 
+    font-weight: 900; 
+    /* 字母间距也必须做流体缩放，否则在小字号下固定的 6px 会导致单词过长被切断 */
+    letter-spacing: clamp(1px, 0.4vw, 6px); 
+    line-height: 1.2;
+    word-break: break-word; 
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,0.7) 100%);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 25px 50px rgba(0,0,0,0.9); 
+    margin-bottom: 15px;
+    animation: title-shine 3s ease-in-out infinite;
+}
+
+/* 卡片描述 */
+.card-desc { 
+    position: absolute; 
+    bottom: 0px; 
+    left: 20px; 
+    right: 20px; 
+    font-family: 'Noto Serif SC', sans-serif; 
+    font-size: 0.95rem; 
+    color: #b0b8c8; 
+    text-align: center; 
+    line-height: 1.6;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 20%, transparent);
+    padding: 25px 15px 15px; 
+    border-radius: 8px;
+    word-break: break-word; 
+    transform: translateZ(50px);
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+/* 滚动条样式保留即可 */
+.card-desc::-webkit-scrollbar { width: 4px; }
+.card-desc::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 2px; }
+
+@keyframes title-shine {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.2); }
+}
+
+.stars-display { 
+    font-size: clamp(2.5rem, 2.5vw + 0.5rem, 4rem);
+    letter-spacing: clamp(4px, 1.5vw, 15px); 
+    margin-top: clamp(8px, 1.2vw, 15px);
+    filter: drop-shadow(0 0 15px currentColor); 
+    animation: stars-twinkle 1.5s ease-in-out infinite;
+}
+
+@keyframes stars-twinkle {
+    0%, 100% { opacity: 0.9; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+}
+
+/* 3D卡片容器 */
+.single-card-wrapper { 
+    perspective: 2000px; 
+    margin-right: 80px;
+    transform-style: preserve-3d;
+}
+
+/* 主卡片 - 全息材质 */
+.card-3d { 
+    width: 400px; height: 580px; 
+    border-radius: 16px; 
+    position: relative; 
+    transform-style: preserve-3d; 
+    transition: transform 0.15s ease-out;
+    background: linear-gradient(145deg, rgba(25,28,40,0.95) 0%, rgba(8,10,15,0.98) 100%);
+    box-shadow: 
+        -30px 40px 80px rgba(0,0,0,0.9),
+        0 0 0 1px rgba(255,255,255,0.08),
+        inset 0 0 60px rgba(0,0,0,0.8);
+    overflow: hidden;
+}
+
+/* 卡片内发光边框 */
+.card-border { 
+    position: absolute; inset: 0; pointer-events: none; 
+    border-radius: 16px;
+    border: 3px solid currentColor; 
+    opacity: 0.6;
+    box-shadow: 
+        inset 0 0 40px currentColor,
+        0 0 30px currentColor;
+    animation: border-glow 3s ease-in-out infinite;
+}
+
+@keyframes border-glow {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+}
+
+/* 全息纹理层 */
+.card-3d::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* 彩虹全息膜效果 */
+.card-3d::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255,0,0,0.03) 0%,
+        rgba(255,165,0,0.03) 20%,
+        rgba(255,255,0,0.03) 40%,
+        rgba(0,255,0,0.03) 60%,
+        rgba(0,0,255,0.03) 80%,
+        rgba(238,130,238,0.03) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+.card-3d:hover::after {
+    opacity: 1;
+}
+
+/* 卡面艺术区 */
+.card-art { 
+    position: absolute; 
+    inset: 0;
+    transform: translateZ(80px); /* 保持 3D 弹出效果 */
+    width: 100%; 
+    height: 100%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    pointer-events: none;
+}
+
+.card-art svg {
+    width: 95%; 
+    height: 95%;
+    filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
+    animation: icon-float 4s ease-in-out infinite;
+    transform-origin: center center;
+}
+
+@keyframes icon-float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-12px) scale(1.02); }
+}
+
+/* 玻璃高光层 */
+.card-glare { 
+    position: absolute; inset: 0; 
+    border-radius: 16px; pointer-events: none;
+    background: radial-gradient(
+        circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(255,255,255,0.15) 0%,
+        rgba(255,255,255,0.05) 30%,
+        transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+    mix-blend-mode: overlay;
+}
+
+.card-3d:hover .card-glare {
+    opacity: 1;
+}
+
+/* 稀有度粒子特效容器 */
+.particles-container {
+    position: absolute; inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.particle {
+    position: absolute;
+    width: 4px; height: 4px;
+    background: currentColor;
+    border-radius: 50%;
+    opacity: 0;
+    animation: particle-float 4s ease-out infinite;
+}
+
+@keyframes particle-float {
+    0% {
+        opacity: 0;
+        transform: translateY(100%) scale(0);
+    }
+    10% {
+        opacity: 1;
+        transform: translateY(90%) scale(1);
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20%) scale(0.5);
+    }
+}
+
+/* ==========================================
+   十连结果 - 阵列展示
+   ========================================== */
+.multi-grid { 
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr); 
+    gap: clamp(10px, 2vw, 30px); 
+    width: 92%; 
+    max-width: 1200px; 
+    margin-top: 30px;
+    transform: perspective(1000px) rotateX(10deg) rotateY(-5deg); 
+    transform-style: preserve-3d; 
+    z-index: 10;
+}
+
+.multi-card { 
+    width: 100%; aspect-ratio: 5 / 8; height: auto;
+    position: relative; overflow: hidden;
+    background: linear-gradient(180deg, rgba(25,30,45,0.95) 0%, rgba(8,10,18,0.98) 100%);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-end; 
+    padding: 10% 5% 8%; /* 缩小左右 padding 给文字留出更多空间 */
+    transition: all 0.5s var(--ease-expo-out);
+    border-left: 2px solid rgba(255,255,255,0.08);
+    border-right: 2px solid rgba(255,255,255,0.08);
+    transform-style: preserve-3d;
+}
+/* 顶部稀有度指示 */
+.multi-card::after {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+    background: currentColor; 
+    box-shadow: 0 0 15px currentColor, 0 0 30px currentColor;
+}
+
+/* 底部环境光 */
+.multi-card::before { 
+    content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; 
+    background: linear-gradient(to top, currentColor, transparent); 
+    opacity: 0.1;
+    transition: opacity 0.4s;
+}
+
+.multi-card:hover { 
+    transform: translateZ(80px) scale(1.1) rotateY(5deg); 
+    z-index: 20;
+    box-shadow: 
+        -30px 40px 60px rgba(0,0,0,0.8),
+        0 0 40px rgba(0,0,0,0.5);
+}
+
+.multi-card:hover::before { opacity: 0.25; }
+
+.mc-art { 
+    position: relative; 
+    margin-top: 10%; /* 百分比防拥挤 */
+    margin-bottom: auto; 
+    filter: drop-shadow(0 20px 20px rgba(0,0,0,0.9)); 
+    transition: all 0.4s var(--ease-elastic);
+}
+
+.multi-card:hover .mc-art { 
+    transform: translateY(-10%) scale(1.15) translateZ(30px); 
+}
+
+/* 图标液态缩放 */
+.mc-art svg {
+    width: clamp(45px, 5.5vw, 90px); 
+    height: clamp(45px, 5.5vw, 90px);
+}
+
+.mc-path { 
+    font-size: clamp(0.55rem, 0.8vw, 0.7rem); 
+    margin-bottom: 6%; 
+    font-family: 'JetBrains Mono'; 
+    border: 1px solid rgba(255,255,255,0.25); 
+    background: rgba(0,0,0,0.6);
+    padding: 2% 8%; border-radius: 4px; 
+    color: #bbb; z-index: 2;
+    letter-spacing: 1px;
+    white-space: nowrap; 
+}
+
+.mc-name { 
+    font-size: clamp(0.8rem, 1.2vw, 1.1rem); /* 字体流体缩放 */
+    font-weight: 800; 
+    text-align: center; line-height: 1.3; 
+    z-index: 2; 
+    text-shadow: 0 3px 6px rgba(0,0,0,1);
+    letter-spacing: 1px;
+    word-break: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 95%; /* 防止太靠近边缘 */
+}
+
+.mc-stars { 
+    font-size: clamp(0.6rem, 1vw, 0.9rem); 
+    letter-spacing: clamp(1px, 0.5vw, 4px); 
+    margin-top: 6%; z-index: 2;
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+/* ==========================================
+   交互元素
+   ========================================== */
+.continue-hint { 
+    position: absolute; bottom: 50px; 
+    font-family: 'JetBrains Mono'; 
+    font-size: 0.9rem; color: #6a7a94; 
+    animation: blink 2s infinite; 
+    cursor: pointer; z-index: 10; 
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(106, 122, 148, 0.5);
+}
+
+@keyframes blink { 
+    0%, 100% { opacity: 0.3; } 
+    50% { opacity: 1; } 
+}
+
+/* 闪光遮罩 */
+#flash-overlay { 
+    position: absolute; inset: 0; 
+    background: #fff; 
+    z-index: 999; 
+    opacity: 0; 
+    pointer-events: none; 
+    mix-blend-mode: screen;
+}
+
+/* 关闭按钮 */
+.close-btn {
+    position: absolute; top: 60px; right: 40px;
+    width: 50px; height: 50px;
+    cursor: pointer;
+    z-index: 100;
+    display: none;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s var(--ease-smooth);
+}
+
+.close-btn::before,
+.close-btn::after {
+    content: ''; position: absolute;
+    top: 50%; left: 50%;
+    width: 20px; height: 2px;
+    background: rgba(255,255,255,0.6);
+    transition: all 0.3s;
+}
+
+.close-btn::before { transform: translate(-50%, -50%) rotate(45deg); }
+.close-btn::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+.close-btn:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: var(--star-5);
+    transform: rotate(90deg);
+}
+
+.close-btn:hover::before,
+.close-btn:hover::after {
+    background: var(--star-5);
+    box-shadow: 0 0 10px var(--star-5);
+}
+
+/* 跳过按钮 */
+.skip-btn {
+    position: absolute; top: 85px; right: 60px; 
+    z-index: 100;
+    font-family: 'JetBrains Mono'; 
+    font-weight: 800; font-size: 0.9rem;
+    color: rgba(255,255,255,0.7); 
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 10px 24px; border-radius: 4px; 
+    cursor: pointer;
+    transition: all 0.3s var(--ease-smooth); 
+    letter-spacing: 3px; 
+    backdrop-filter: blur(15px);
+    background: rgba(0,0,0,0.4);
+    display: none;
+}
+
+.skip-btn:hover {
+    color: #fff; 
+    border-color: var(--star-5);
+    background: rgba(212, 175, 55, 0.15);
+    box-shadow: 
+        0 0 30px rgba(212, 175, 55, 0.4), 
+        inset 0 0 15px rgba(212, 175, 55, 0.2);
+    transform: translateY(-2px);
+}
+
+.loading-tips {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.tips-text {
+    font-family: 'JetBrains Mono';
+    font-size: 0.9rem;
+    color: var(--star-5);
+    margin-bottom: 15px;
+    animation: pulse 2s infinite;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--star-5);
+    width: 0%;
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--star-5);
+}
+
+/* 3d */
+.effect3d-wrapper {
+    perspective: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.effect3d-sphere-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg); 
+    transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: grab;
+}
+
+.effect3d-sphere-container:active {
+    cursor: grabbing;
+}
+
+.effect3d-sphere-surface {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, #1a1a2e, #0f0c29);
+    border-radius: 50%;
+    box-shadow: 0 0 60px rgba(212, 175, 55, 0.4), inset 0 0 40px rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(212, 175, 55, 0.5);
+    overflow: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.effect3d-sphere-surface svg, 
+.effect3d-sphere-surface img {
+    width: 85%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+
+/* 竖屏提示 UI 与动画 */
+#orientation-prompt {
+    display: none; /* 默认隐藏 */
+    position: fixed; inset: 0; z-index: 99999;
+    background: #020306;
+    flex-direction: column; justify-content: center; align-items: center;
+    color: var(--star-5);
+    text-align: center;
+    font-family: 'JetBrains Mono', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#orientation-prompt svg {
+    width: 60px; height: 60px;
+    margin-bottom: 25px;
+    animation: rotate-device 2s infinite ease-in-out;
+}
+
+@keyframes rotate-device {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(-90deg); }
+    100% { transform: rotate(-90deg); }
+}
+
+/* ==========================================
+   多维响应式引擎 (针对较方正或窄屏设备)
+   ========================================== */
+
+/* 场景 1：屏幕宽度小于 1300px，或长宽比小于 4:3 (偏方正) */
+@media (max-width: 1300px), (max-aspect-ratio: 4/3) {
+    /* 缩小主页 Banner 灯泡 */
+    .banner-glass { width: 92%; height: 500px; }
+    .banner-art {
+        width: 600px; 
+        height: 675px; 
+        right: -150px; 
+        top: -80px;
+    }
+}
+
+/* ==========================================
+   安全抖动引擎 (免疫 zoom 坐标崩溃)
+   ========================================== */
+@keyframes panic-shake-anim {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(-10px, 5px) rotate(-2deg); }
+    50% { transform: translate(10px, -5px) rotate(2deg); }
+    75% { transform: translate(-5px, 10px) rotate(-1deg); }
+}
+
+.panic-shake-active {
+    /* 使用 !important 强行覆盖原有的呼吸浮动 */
+    animation: panic-shake-anim 0.1s infinite !important; 
+}

@@ -1,0 +1,68 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="pqc-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#02081a"/>
+            <stop offset="100%" stop-color="#0a122e"/>
+        </linearGradient>
+        <linearGradient id="pqc-cyan" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#00f2fe"/>
+            <stop offset="100%" stop-color="#4facfe"/>
+        </linearGradient>
+        <filter id="quantum-glow">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <radialGradient id="q-field" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(79, 172, 254, 0.3)"/>
+            <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+    </defs>
+
+    <rect width="400" height="600" fill="url(#pqc-bg)"/>
+    <circle cx="200" cy="260" r="180" fill="url(#q-field)"/>
+
+    <g transform="translate(200, 260)">
+        <g stroke="rgba(0,242,254,0.2)" stroke-width="1">
+            <line x1="-150" y1="0" x2="150" y2="0"/>
+            <line x1="0" y1="-150" x2="0" y2="150"/>
+            <line x1="-100" y1="-100" x2="100" y2="100"/>
+            <line x1="-100" y1="100" x2="100" y2="-100"/>
+        </g>
+        
+        <g stroke="#00f2fe" stroke-width="2" fill="none" opacity="0.8">
+            <ellipse cx="0" cy="0" rx="130" ry="45" transform="rotate(0)">
+                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="0" cy="0" rx="130" ry="45" transform="rotate(60)">
+                <animateTransform attributeName="transform" type="rotate" from="60" to="420" dur="8s" repeatCount="indefinite"/>
+            </ellipse>
+            <ellipse cx="0" cy="0" rx="130" ry="45" transform="rotate(120)">
+                <animateTransform attributeName="transform" type="rotate" from="120" to="480" dur="8s" repeatCount="indefinite"/>
+            </ellipse>
+        </g>
+
+        <g fill="#4facfe" filter="url(#quantum-glow)">
+            <circle cx="130" cy="0" r="5">
+                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="130" cy="0" r="5">
+                <animateTransform attributeName="transform" type="rotate" from="120" to="480" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="-130" cy="0" r="3">
+                <animateTransform attributeName="transform" type="rotate" from="240" to="600" dur="6s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+
+        <polygon points="0,-35 30,-15 30,20 0,40 -30,20 -30,-15" fill="rgba(2,8,26,0.9)" stroke="#4facfe" stroke-width="3" filter="url(#quantum-glow)"/>
+        <rect x="-6" y="-5" width="12" height="15" rx="3" fill="#00f2fe"/>
+        <circle cx="0" cy="12" r="3" fill="#00f2fe"/>
+    </g>
+
+    <text x="200" y="520" text-anchor="middle" fill="#00f2fe" font-family="'Orbitron', monospace" font-size="32" font-weight="900" letter-spacing="4" filter="url(#quantum-glow)">PQCrypto</text>
+    <text x="200" y="550" text-anchor="middle" fill="#4facfe" font-family="sans-serif" font-size="14" letter-spacing="1" opacity="0.9">POST-QUANTUM CRYPTOGRAPHY</text>
+    
+    <rect x="50" y="570" width="300" height="1" fill="#00f2fe" opacity="0.5"/>
+</svg>

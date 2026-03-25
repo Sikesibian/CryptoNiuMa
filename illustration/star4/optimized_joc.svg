@@ -1,0 +1,520 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&amp;family=JetBrains+Mono:wght@100;300&amp;display=swap');
+            
+            .title-joc { font-family: 'Cinzel', serif; font-weight: 800; }
+            .subtitle-main { font-family: 'Cinzel', serif; font-weight: 600; letter-spacing: 0.35em; }
+            .micro-text { font-family: 'JetBrains Mono', monospace; font-weight: 300; letter-spacing: 0.25em; }
+            
+            /* LaTeX 级公式排版 */
+            .math-text { font-family: 'Cormorant Garamond', serif; font-weight: 600; letter-spacing: 0.05em; }
+            .math-italic { font-style: italic; }
+            .math-op { font-style: normal; font-weight: 400; }
+        </style>
+
+        <radialGradient id="amethyst-bg" cx="50%" cy="40%" r="70%">
+            <stop offset="0%" stop-color="#1A0A2E"/>
+            <stop offset="50%" stop-color="#0B0314"/>
+            <stop offset="100%" stop-color="#030008"/>
+        </radialGradient>
+
+        <linearGradient id="antique-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFF2D4"/>
+            <stop offset="35%" stop-color="#D4AF37"/>
+            <stop offset="70%" stop-color="#8B6508"/>
+            <stop offset="100%" stop-color="#3A2800"/>
+        </linearGradient>
+
+        <filter id="gold-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="super-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="8" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="deep-shadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000" flood-opacity="0.95"/>
+        </filter>
+        <filter id="inner-engrave" x="-20%" y="-20%" width="140%" height="140%">
+            <feOffset dx="0" dy="1"/>
+            <feGaussianBlur stdDeviation="1" result="offset-blur"/>
+            <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+            <feFlood flood-color="black" flood-opacity="0.8" result="color"/>
+            <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+            <feComposite operator="over" in="shadow" in2="SourceGraphic"/>
+        </filter>
+
+        <path id="seal-text-path" d="M -14 0 A 14 14 0 1 1 14 0 A 14 14 0 1 1 -14 0" fill="none"/>
+    </defs>
+    
+    <rect width="400" height="600" fill="url(#amethyst-bg)"/>
+    <circle cx="200" cy="220" r="190" fill="url(#antique-gold)" opacity="0.02" filter="url(#super-glow)"/>
+
+    <g transform="translate(200, 220)">
+        <g>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="240s" repeatCount="indefinite"/>
+            <line x1="0" y1="0" x2="219.4" y2="0.0" stroke="url(#antique-gold)" stroke-width="1" opacity="0.13124382462197215"/>
+<line x1="0" y1="0" x2="208.8" y2="36.8" stroke="url(#antique-gold)" stroke-width="1" opacity="0.11183123450608916"/>
+<line x1="0" y1="0" x2="325.6" y2="118.5" stroke="url(#antique-gold)" stroke-width="1" opacity="0.099704927192659"/>
+<line x1="0" y1="0" x2="209.7" y2="121.1" stroke="url(#antique-gold)" stroke-width="1" opacity="0.11265661902937432"/>
+<line x1="0" y1="0" x2="260.8" y2="218.8" stroke="url(#antique-gold)" stroke-width="1" opacity="0.0549049318638282"/>
+<line x1="0" y1="0" x2="167.8" y2="200.0" stroke="url(#antique-gold)" stroke-width="1" opacity="0.07640956591582598"/>
+<line x1="0" y1="0" x2="162.3" y2="281.1" stroke="url(#antique-gold)" stroke-width="1" opacity="0.10579562121501457"/>
+<line x1="0" y1="0" x2="78.5" y2="215.7" stroke="url(#antique-gold)" stroke-width="1" opacity="0.06575328306986647"/>
+<line x1="0" y1="0" x2="37.8" y2="214.5" stroke="url(#antique-gold)" stroke-width="1" opacity="0.07056115277994157"/>
+<line x1="0" y1="0" x2="0.0" y2="266.2" stroke="url(#antique-gold)" stroke-width="1" opacity="0.0981922059240351"/>
+<line x1="0" y1="0" x2="-45.1" y2="256.0" stroke="url(#antique-gold)" stroke-width="1" opacity="0.08807439893482175"/>
+<line x1="0" y1="0" x2="-104.6" y2="287.3" stroke="url(#antique-gold)" stroke-width="1" opacity="0.07557297790295535"/>
+<line x1="0" y1="0" x2="-110.0" y2="190.5" stroke="url(#antique-gold)" stroke-width="1" opacity="0.12168349239372375"/>
+<line x1="0" y1="0" x2="-206.5" y2="246.2" stroke="url(#antique-gold)" stroke-width="1" opacity="0.13195256040188774"/>
+<line x1="0" y1="0" x2="-249.8" y2="209.6" stroke="url(#antique-gold)" stroke-width="1" opacity="0.05100286840012907"/>
+<line x1="0" y1="0" x2="-184.3" y2="106.4" stroke="url(#antique-gold)" stroke-width="1" opacity="0.14451458271989603"/>
+<line x1="0" y1="0" x2="-334.0" y2="121.6" stroke="url(#antique-gold)" stroke-width="1" opacity="0.10613703281525474"/>
+<line x1="0" y1="0" x2="-325.3" y2="57.4" stroke="url(#antique-gold)" stroke-width="1" opacity="0.08266958960271799"/>
+<line x1="0" y1="0" x2="-246.9" y2="0.0" stroke="url(#antique-gold)" stroke-width="1" opacity="0.08757127005903527"/>
+<line x1="0" y1="0" x2="-294.4" y2="-51.9" stroke="url(#antique-gold)" stroke-width="1" opacity="0.08890152643592444"/>
+<line x1="0" y1="0" x2="-212.7" y2="-77.4" stroke="url(#antique-gold)" stroke-width="1" opacity="0.11978128471531858"/>
+<line x1="0" y1="0" x2="-239.3" y2="-138.1" stroke="url(#antique-gold)" stroke-width="1" opacity="0.07255333969164623"/>
+<line x1="0" y1="0" x2="-229.6" y2="-192.7" stroke="url(#antique-gold)" stroke-width="1" opacity="0.06631660728716302"/>
+<line x1="0" y1="0" x2="-147.1" y2="-175.4" stroke="url(#antique-gold)" stroke-width="1" opacity="0.07178147887500395"/>
+<line x1="0" y1="0" x2="-112.6" y2="-195.0" stroke="url(#antique-gold)" stroke-width="1" opacity="0.13623889460936756"/>
+<line x1="0" y1="0" x2="-73.0" y2="-200.5" stroke="url(#antique-gold)" stroke-width="1" opacity="0.06315159416744945"/>
+<line x1="0" y1="0" x2="-59.1" y2="-335.1" stroke="url(#antique-gold)" stroke-width="1" opacity="0.12635558292939078"/>
+<line x1="0" y1="0" x2="-0.0" y2="-320.8" stroke="url(#antique-gold)" stroke-width="1" opacity="0.1160706454250761"/>
+<line x1="0" y1="0" x2="50.2" y2="-284.4" stroke="url(#antique-gold)" stroke-width="1" opacity="0.08740271382489376"/>
+<line x1="0" y1="0" x2="114.4" y2="-314.4" stroke="url(#antique-gold)" stroke-width="1" opacity="0.11243130954876748"/>
+<line x1="0" y1="0" x2="178.4" y2="-309.0" stroke="url(#antique-gold)" stroke-width="1" opacity="0.09620747951490541"/>
+<line x1="0" y1="0" x2="163.7" y2="-195.1" stroke="url(#antique-gold)" stroke-width="1" opacity="0.1288598286296515"/>
+<line x1="0" y1="0" x2="241.0" y2="-202.3" stroke="url(#antique-gold)" stroke-width="1" opacity="0.11149807597891048"/>
+<line x1="0" y1="0" x2="299.5" y2="-172.9" stroke="url(#antique-gold)" stroke-width="1" opacity="0.09002809090069316"/>
+<line x1="0" y1="0" x2="331.2" y2="-120.6" stroke="url(#antique-gold)" stroke-width="1" opacity="0.06886540739604396"/>
+<line x1="0" y1="0" x2="333.3" y2="-58.8" stroke="url(#antique-gold)" stroke-width="1" opacity="0.11944493319771947"/>
+
+        </g>
+        
+        <circle cx="0" cy="0" r="120" fill="none" stroke="url(#antique-gold)" stroke-width="0.8" stroke-dasharray="4 7" opacity="0.3">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="61.970449968834075s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="0" cy="0" r="165" fill="none" stroke="url(#antique-gold)" stroke-width="0.8" stroke-dasharray="4 14" opacity="0.3">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="60.19036587647899s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="0" cy="0" r="200" fill="none" stroke="url(#antique-gold)" stroke-width="0.8" stroke-dasharray="4 14" opacity="0.3">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="74.29716902275445s" repeatCount="indefinite"/>
+        </circle>
+        
+
+        <g class="math-text" fill="url(#antique-gold)" opacity="0.9" filter="url(#gold-glow)" text-anchor="middle">
+            <text x="0" y="-130" font-size="11">
+                <tspan class="math-italic">H(X)</tspan> 
+                <tspan class="math-op"> = -∑</tspan> 
+                <tspan class="math-italic">P(x)</tspan> 
+                <tspan class="math-op">log₂</tspan> 
+                <tspan class="math-italic">P(x)</tspan>
+            </text>
+            <text x="0" y="-110" font-size="7" opacity="0.8">
+                <tspan class="math-op">Pr[</tspan><tspan class="math-italic">Enc(k, m₀)</tspan><tspan class="math-op"> = </tspan><tspan class="math-italic">c</tspan><tspan class="math-op">] = Pr[</tspan><tspan class="math-italic">Enc(k, m₁)</tspan><tspan class="math-op"> = </tspan><tspan class="math-italic">c</tspan><tspan class="math-op">]</tspan>
+            </text>
+            <text x="0" y="145" font-size="8.5" opacity="0.85">
+                <tspan class="math-italic">Adv</tspan><tspan class="math-op" font-size="5" dy="2">A</tspan><tspan class="math-op" font-size="5" dy="-4">CPA</tspan><tspan class="math-op" dy="2">(</tspan><tspan class="math-italic">λ</tspan><tspan class="math-op">) ≤ negl(</tspan><tspan class="math-italic">λ</tspan><tspan class="math-op">)</tspan>
+            </text>
+        </g>
+
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0,4; 0,-4; 0,4" dur="8s" ease="ease-in-out" repeatCount="indefinite"/>
+            <path d="M 0 85 C -45 65.0, -130 85, -150 40 L -150 -60 C -110 -20, -45 -45, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="1.2" opacity="0.85" filter="url(#gold-glow)"/>
+<path d="M 0 85 C  45 65.0,  130 85,  150 40 L  150 -60 C  110 -20,  45 -45, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="1.2" opacity="0.85" filter="url(#gold-glow)"/>
+<path d="M -15 -5 C -45 -17, -100 -11, -130 -27" stroke="#D4AF37" stroke-width="0.6" stroke-dasharray="1 3 4 2 8 3" fill="none" opacity="0.4"/>
+<path d="M  15 -5 C  45 -17,  100 -11,  130 -27" stroke="#D4AF37" stroke-width="0.6" stroke-dasharray="5 2 2 3 6 2" fill="none" opacity="0.4"/>
+<path d="M -15 6 C -45 -6, -100 0, -130 -16" stroke="#D4AF37" stroke-width="0.6" stroke-dasharray="1 3 4 2 8 3" fill="none" opacity="0.4"/>
+<path d="M  15 6 C  45 -6,  100 0,  130 -16" stroke="#D4AF37" stroke-width="0.6" stroke-dasharray="5 2 2 3 6 2" fill="none" opacity="0.4"/>
+<path d="M -15 17 C -45 5, -100 11, -130 -5" stroke="#D4AF37" stroke-width="0.6" stroke-dasharray="1 3 4 2 8 3" fill="none" opacity="0.4"/>
+<path d="M  15 17 C  45 5,  100 11,  130 -5" stroke="#D4AF37" stroke-width="0.6" stroke-dasharray="5 2 2 3 6 2" fill="none" opacity="0.4"/>
+<path d="M -15 28 C -45 16, -100 22, -130 6" stroke="#D4AF37" stroke-width="0.6" stroke-dasharray="1 3 4 2 8 3" fill="none" opacity="0.4"/>
+<path d="M  15 28 C  45 16,  100 22,  130 6" stroke="#D4AF37" stroke-width="0.6" stroke-dasharray="5 2 2 3 6 2" fill="none" opacity="0.4"/>
+<path d="M -15 39 C -45 27, -100 33, -130 17" stroke="#D4AF37" stroke-width="0.6" stroke-dasharray="1 3 4 2 8 3" fill="none" opacity="0.4"/>
+<path d="M  15 39 C  45 27,  100 33,  130 17" stroke="#D4AF37" stroke-width="0.6" stroke-dasharray="5 2 2 3 6 2" fill="none" opacity="0.4"/>
+<path d="M -15 50 C -45 38, -100 44, -130 28" stroke="#D4AF37" stroke-width="0.6" stroke-dasharray="1 3 4 2 8 3" fill="none" opacity="0.4"/>
+<path d="M  15 50 C  45 38,  100 44,  130 28" stroke="#D4AF37" stroke-width="0.6" stroke-dasharray="5 2 2 3 6 2" fill="none" opacity="0.4"/>
+<path d="M 0 85 C -45 62.0, -130 80, -150 35 L -150 -65 C -110 -25, -45 -50, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.7999999999999999" filter="url(#gold-glow)"/>
+<path d="M 0 85 C  45 62.0,  130 80,  150 35 L  150 -65 C  110 -25,  45 -50, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.7999999999999999" filter="url(#gold-glow)"/>
+<path d="M 0 85 C -45 59.0, -130 75, -150 30 L -150 -70 C -110 -30, -45 -55, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.75" filter="url(#gold-glow)"/>
+<path d="M 0 85 C  45 59.0,  130 75,  150 30 L  150 -70 C  110 -30,  45 -55, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.75" filter="url(#gold-glow)"/>
+<path d="M 0 85 C -45 56.0, -130 70, -150 25 L -150 -75 C -110 -35, -45 -60, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.7" filter="url(#gold-glow)"/>
+<path d="M 0 85 C  45 56.0,  130 70,  150 25 L  150 -75 C  110 -35,  45 -60, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.7" filter="url(#gold-glow)"/>
+<path d="M 0 85 C -45 53.0, -130 65, -150 20 L -150 -80 C -110 -40, -45 -65, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.6499999999999999" filter="url(#gold-glow)"/>
+<path d="M 0 85 C  45 53.0,  130 65,  150 20 L  150 -80 C  110 -40,  45 -65, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.6499999999999999" filter="url(#gold-glow)"/>
+<path d="M 0 85 C -45 50.0, -130 60, -150 15 L -150 -85 C -110 -45, -45 -70, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.6" filter="url(#gold-glow)"/>
+<path d="M 0 85 C  45 50.0,  130 60,  150 15 L  150 -85 C  110 -45,  45 -70, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.6" filter="url(#gold-glow)"/>
+<path d="M 0 85 C -45 47.0, -130 55, -150 10 L -150 -90 C -110 -50, -45 -75, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.5499999999999999" filter="url(#gold-glow)"/>
+<path d="M 0 85 C  45 47.0,  130 55,  150 10 L  150 -90 C  110 -50,  45 -75, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.5499999999999999" filter="url(#gold-glow)"/>
+<path d="M 0 85 C -45 44.0, -130 50, -150 5 L -150 -95 C -110 -55, -45 -80, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.49999999999999994" filter="url(#gold-glow)"/>
+<path d="M 0 85 C  45 44.0,  130 50,  150 5 L  150 -95 C  110 -55,  45 -80, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.49999999999999994" filter="url(#gold-glow)"/>
+<path d="M 0 85 C -45 41.0, -130 45, -150 0 L -150 -100 C -110 -60, -45 -85, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.44999999999999996" filter="url(#gold-glow)"/>
+<path d="M 0 85 C  45 41.0,  130 45,  150 0 L  150 -100 C  110 -60,  45 -85, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.44999999999999996" filter="url(#gold-glow)"/>
+<path d="M 0 85 C -45 38.0, -130 40, -150 -5 L -150 -105 C -110 -65, -45 -90, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.39999999999999997" filter="url(#gold-glow)"/>
+<path d="M 0 85 C  45 38.0,  130 40,  150 -5 L  150 -105 C  110 -65,  45 -90, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.39999999999999997" filter="url(#gold-glow)"/>
+<path d="M 0 85 C -45 35.0, -130 35, -150 -10 L -150 -110 C -110 -70, -45 -95, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.35" filter="url(#gold-glow)"/>
+<path d="M 0 85 C  45 35.0,  130 35,  150 -10 L  150 -110 C  110 -70,  45 -95, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.35" filter="url(#gold-glow)"/>
+<path d="M 0 85 C -45 32.0, -130 30, -150 -15 L -150 -115 C -110 -75, -45 -100, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.29999999999999993" filter="url(#gold-glow)"/>
+<path d="M 0 85 C  45 32.0,  130 30,  150 -15 L  150 -115 C  110 -75,  45 -100, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.29999999999999993" filter="url(#gold-glow)"/>
+<path d="M 0 85 C -45 29.0, -130 25, -150 -20 L -150 -120 C -110 -80, -45 -105, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.2499999999999999" filter="url(#gold-glow)"/>
+<path d="M 0 85 C  45 29.0,  130 25,  150 -20 L  150 -120 C  110 -80,  45 -105, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.2499999999999999" filter="url(#gold-glow)"/>
+<path d="M 0 85 C -45 26.0, -130 20, -150 -25 L -150 -125 C -110 -85, -45 -110, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.19999999999999996" filter="url(#gold-glow)"/>
+<path d="M 0 85 C  45 26.0,  130 20,  150 -25 L  150 -125 C  110 -85,  45 -110, 0 -25 Z" fill="rgba(212, 175, 55, 0.02)" stroke="url(#antique-gold)" stroke-width="0.5" opacity="0.19999999999999996" filter="url(#gold-glow)"/>
+<line x1="0" y1="-25" x2="0" y2="85" stroke="#FFF" stroke-width="1.5" filter="url(#super-glow)" opacity="0.9"/>
+
+            <circle cx="0" cy="0" r="16" fill="#FFF" filter="url(#super-glow)">
+                <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <path d="M 0 -14 L 3 -3 L 14 0 L 3 3 L 0 14 L -3 3 L -14 0 L -3 -3 Z" fill="url(#antique-gold)"/>
+            
+        <circle cx="-59.1" cy="26.6" r="1.0826675303619213" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-30.4" dur="7.471793234731217s" begin="4.27843872207851s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.471793234731217s" begin="4.27843872207851s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="93.0" cy="0.8" r="0.5564068492409772" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-26.1" dur="5.106865729759729s" begin="1.403590520471436s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="5.106865729759729s" begin="1.403590520471436s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="92.5" cy="71.6" r="0.9492664349910387" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-49.8" dur="8.508675326885676s" begin="1.093187382146753s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="8.508675326885676s" begin="1.093187382146753s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-71.6" cy="1.6" r="0.6627906823985771" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20.2" dur="8.992528501682623s" begin="4.530352353395819s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="8.992528501682623s" begin="4.530352353395819s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-151.8" cy="-87.3" r="1.1979732738193718" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-58.1" dur="7.339091762521445s" begin="4.90948241453365s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.339091762521445s" begin="4.90948241453365s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="131.1" cy="-16.2" r="0.6937702256646786" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-45.9" dur="9.812545342114085s" begin="3.9009311164132705s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="9.812545342114085s" begin="3.9009311164132705s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-126.5" cy="-0.1" r="0.5853098990850534" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-49.3" dur="6.6870820752754945s" begin="4.58243212788995s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="6.6870820752754945s" begin="4.58243212788995s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-76.8" cy="105.4" r="0.7905622346930332" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-50.8" dur="8.68283906476833s" begin="2.1633448228466867s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="8.68283906476833s" begin="2.1633448228466867s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="129.6" cy="-61.2" r="0.690446687849964" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-27.6" dur="9.35763936990716s" begin="2.4497091103757014s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="9.35763936990716s" begin="2.4497091103757014s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="145.4" cy="-53.9" r="0.9802451059851229" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-30.9" dur="9.50762966394483s" begin="4.603748483496064s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="9.50762966394483s" begin="4.603748483496064s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-109.9" cy="72.8" r="0.9086846203821994" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-27.5" dur="6.79377128425861s" begin="0.7368440501416379s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="6.79377128425861s" begin="0.7368440501416379s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="94.9" cy="-108.6" r="0.5424334628692713" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-52.3" dur="7.24260883580202s" begin="1.3702943144768236s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.24260883580202s" begin="1.3702943144768236s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="37.5" cy="-29.2" r="1.3702696860019308" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-38.6" dur="7.054897278070133s" begin="3.251151072701313s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.054897278070133s" begin="3.251151072701313s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-32.0" cy="-52.7" r="0.5715397439483318" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-37.6" dur="7.707068246343143s" begin="0.5735081757544108s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.707068246343143s" begin="0.5735081757544108s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="74.6" cy="-105.7" r="1.6260890279745452" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20.8" dur="8.138313828050231s" begin="2.0493928829701464s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="8.138313828050231s" begin="2.0493928829701464s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="11.7" cy="-34.3" r="1.703936882199502" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-35.8" dur="8.629321037564502s" begin="1.417929777833073s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="8.629321037564502s" begin="1.417929777833073s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-110.2" cy="10.4" r="0.9566973348318821" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-59.0" dur="8.628941099138096s" begin="2.2015050249309356s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="8.628941099138096s" begin="2.2015050249309356s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="139.2" cy="-17.3" r="1.368510889121185" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-47.3" dur="5.556918118892995s" begin="0.6327670096746507s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="5.556918118892995s" begin="0.6327670096746507s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="38.0" cy="-39.9" r="0.8188295598197448" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-39.9" dur="5.831533298163475s" begin="1.640748277486882s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="5.831533298163475s" begin="1.640748277486882s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-154.6" cy="107.3" r="0.9442107154793287" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-35.4" dur="7.574897122621461s" begin="1.2699593319798526s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.574897122621461s" begin="1.2699593319798526s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="121.4" cy="46.9" r="0.9391626229044794" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-23.9" dur="8.770124435366164s" begin="3.0956050322162043s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="8.770124435366164s" begin="3.0956050322162043s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-45.4" cy="-33.8" r="1.246906203879357" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-57.1" dur="9.283117174981449s" begin="4.7139333247633814s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="9.283117174981449s" begin="4.7139333247633814s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-2.5" cy="-59.2" r="0.6839709096876663" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-47.2" dur="7.026189310291866s" begin="3.286651864914449s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.026189310291866s" begin="3.286651864914449s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-2.0" cy="-6.9" r="1.1813153708969555" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-25.4" dur="5.463340396481265s" begin="3.0620314760738525s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="5.463340396481265s" begin="3.0620314760738525s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-113.7" cy="-84.6" r="1.4926493816372668" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-41.6" dur="8.850116067061995s" begin="3.79269389189497s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="8.850116067061995s" begin="3.79269389189497s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="129.2" cy="-71.0" r="0.9403836422565834" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-45.0" dur="8.13777088766756s" begin="3.0388334042899983s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="8.13777088766756s" begin="3.0388334042899983s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="99.4" cy="31.8" r="1.6168630229912209" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-22.2" dur="6.6597560578370105s" begin="0.3316522654721499s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="6.6597560578370105s" begin="0.3316522654721499s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-23.2" cy="-69.5" r="0.7132611148531157" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-33.9" dur="5.795043356983362s" begin="1.9388194135416381s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="5.795043356983362s" begin="1.9388194135416381s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="91.0" cy="-14.8" r="0.7791887699357569" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-21.4" dur="9.052397458832228s" begin="3.0987628051612615s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="9.052397458832228s" begin="3.0987628051612615s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-37.7" cy="11.7" r="0.8941999204540201" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-29.0" dur="5.193040345371288s" begin="0.4733769683174244s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="5.193040345371288s" begin="0.4733769683174244s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-42.0" cy="-64.1" r="0.6149909169920263" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-41.8" dur="9.715034399621299s" begin="4.596937250336225s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="9.715034399621299s" begin="4.596937250336225s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="3.9" cy="101.3" r="1.027011683365667" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-56.7" dur="9.859304577644993s" begin="4.361567873050907s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="9.859304577644993s" begin="4.361567873050907s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="78.5" cy="-46.1" r="0.5230292186379457" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-40.6" dur="7.5978940863050335s" begin="2.346458545262537s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.5978940863050335s" begin="2.346458545262537s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-118.2" cy="-91.6" r="1.2070404380560094" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-55.8" dur="7.717677778014192s" begin="2.472504435535838s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.717677778014192s" begin="2.472504435535838s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="159.7" cy="108.4" r="0.5791594545761609" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-48.3" dur="7.35630501762466s" begin="1.1210865610645215s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.35630501762466s" begin="1.1210865610645215s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-126.7" cy="-86.7" r="1.7153680841631813" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-33.7" dur="5.320243155503706s" begin="0.4544034531097868s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="5.320243155503706s" begin="0.4544034531097868s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-61.5" cy="-74.2" r="0.5072492835854143" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-33.5" dur="5.769880709222907s" begin="3.4392118131070353s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="5.769880709222907s" begin="3.4392118131070353s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-65.3" cy="-66.1" r="0.8822565209873685" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-22.0" dur="6.338235754969103s" begin="3.392655805952023s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="6.338235754969103s" begin="3.392655805952023s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="57.5" cy="-3.2" r="1.2784968696120576" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-58.7" dur="9.504398319386784s" begin="3.3776827495321733s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="9.504398319386784s" begin="3.3776827495321733s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="22.0" cy="-32.7" r="0.8159868032129494" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-30.4" dur="9.33564476502745s" begin="2.1984109462335937s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="9.33564476502745s" begin="2.1984109462335937s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-144.5" cy="71.0" r="0.9997307443361748" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-53.5" dur="8.224988814146311s" begin="0.4921035090963144s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="8.224988814146311s" begin="0.4921035090963144s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="116.8" cy="-67.6" r="0.9846247283889722" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-29.6" dur="5.7387644646274945s" begin="1.116100234441193s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="5.7387644646274945s" begin="1.116100234441193s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-132.6" cy="-58.5" r="0.65155456725954" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-44.8" dur="6.811384893507757s" begin="4.146134359231818s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="6.811384893507757s" begin="4.146134359231818s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="9.8" cy="-87.1" r="1.7430217507893444" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-38.2" dur="5.853079044144273s" begin="0.45545063419006604s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="5.853079044144273s" begin="0.45545063419006604s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="66.7" cy="-26.9" r="0.8505684010989588" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-29.4" dur="5.479099183352314s" begin="1.2410239054489591s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="5.479099183352314s" begin="1.2410239054489591s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="71.9" cy="-34.1" r="1.3583674633470102" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-23.7" dur="6.127873171354134s" begin="0.47551755593811695s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="6.127873171354134s" begin="0.47551755593811695s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="19.4" cy="86.4" r="0.8952856694818192" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-27.3" dur="7.584079417761224s" begin="1.980049383807203s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.584079417761224s" begin="1.980049383807203s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-102.9" cy="89.0" r="0.5620168633370969" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-27.5" dur="8.421123572678052s" begin="4.4766270015818606s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="8.421123572678052s" begin="4.4766270015818606s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-109.6" cy="-97.4" r="1.4680899149649265" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-24.0" dur="6.8989166568775815s" begin="3.487221647133636s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="6.8989166568775815s" begin="3.487221647133636s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="158.3" cy="37.0" r="1.2725947804686222" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-55.3" dur="7.705335166227709s" begin="1.0135577085353742s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.705335166227709s" begin="1.0135577085353742s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="66.7" cy="-20.9" r="1.3380751816653884" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-37.6" dur="7.8093049059432555s" begin="1.652060345664104s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.8093049059432555s" begin="1.652060345664104s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-98.8" cy="-30.7" r="0.7103355184273613" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-44.9" dur="5.99906081090422s" begin="2.772722869066015s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="5.99906081090422s" begin="2.772722869066015s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="44.3" cy="37.3" r="1.2493430353228239" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-37.7" dur="9.28709605450275s" begin="4.937856138688551s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="9.28709605450275s" begin="4.937856138688551s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-148.5" cy="103.5" r="0.9340058140807824" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-20.4" dur="5.649267194268862s" begin="0.383565222070516s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="5.649267194268862s" begin="0.383565222070516s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-35.4" cy="94.9" r="1.5004526390112514" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-41.8" dur="7.283187385140118s" begin="0.20835379428493783s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.283187385140118s" begin="0.20835379428493783s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-69.7" cy="-60.4" r="0.6089122880176101" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-24.3" dur="8.916284066249126s" begin="2.344679279029429s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="8.916284066249126s" begin="2.344679279029429s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-26.3" cy="91.4" r="0.8814985260061334" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-39.2" dur="7.993253125290652s" begin="4.587658464367016s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="7.993253125290652s" begin="4.587658464367016s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="41.1" cy="24.3" r="0.6254240423744871" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-41.7" dur="9.676597250101143s" begin="0.04333434559120164s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="9.676597250101143s" begin="0.04333434559120164s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-115.8" cy="108.1" r="1.3647828295772113" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-42.7" dur="9.62413600234624s" begin="0.42822368108723696s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="9.62413600234624s" begin="0.42822368108723696s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="-46.7" cy="52.8" r="1.274815428567389" fill="#FFD700" opacity="0" filter="url(#gold-glow)">
+            <animateTransform attributeName="transform" type="translate" values="0,0; 0,-39.6" dur="8.448938959810516s" begin="2.2794181426311173s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0;0.8;0" dur="8.448938959810516s" begin="2.2794181426311173s" repeatCount="indefinite"/>
+        </circle>
+        
+        </g>
+    </g>
+
+    <g transform="translate(200, 520)">
+        
+        <polygon points="-145,-38 145,-38 155,0 145,38 -145,38 -155,0" fill="#0C0514" stroke="url(#antique-gold)" stroke-width="2" filter="url(#deep-shadow)"/>
+        <polygon points="-139,-32 139,-32 147,0 139,32 -139,32 -147,0" fill="none" stroke="url(#antique-gold)" stroke-width="0.8" opacity="0.5"/>
+
+        <g transform="translate(0, -38)" filter="url(#inner-engrave)">
+            <circle cx="0" cy="0" r="22" fill="#0C0514" stroke="url(#antique-gold)" stroke-width="1.5" filter="url(#deep-shadow)"/>
+            <circle cx="0" cy="0" r="18" fill="none" stroke="url(#antique-gold)" stroke-width="0.5" stroke-dasharray="1 3"/>
+            
+            <path d="M 0 -6 A 4 4 0 1 1 0 2 L 2 7 L -2 7 Z" fill="url(#antique-gold)" opacity="0.85"/>
+            
+            <text class="micro-text" font-size="3.5" fill="url(#antique-gold)" opacity="0.8">
+                <textPath href="#seal-text-path" startOffset="50%" text-anchor="middle">PEER REVIEWED</textPath>
+            </text>
+        </g>
+
+        <g filter="url(#gold-glow)">
+            <text x="-16" y="4" text-anchor="end" class="title-joc" font-size="34" fill="url(#antique-gold)">J</text>
+            
+            <g transform="translate(0, -0.5) scale(0.9)">
+                <path d="M 0 -20 C 10 -20, 15 -12, 15 -5 C 15 2, 10 9, 0 9 C -10 9, -15 2, -15 -5 C -15 -12, -10 -20, 0 -20 Z M 0 -11 C -2.5 -11, -4.5 -9, -4.5 -6.5 C -4.5 -4.5, -3.2 -3, -1.8 -2.5 L -4.5 4.5 L 4.5 4.5 L 1.8 -2.5 C 3.2 -3, 4.5 -4.5, 4.5 -6.5 C 4.5 -9, 2.5 -11, 0 -11 Z" fill="url(#antique-gold)"/>
+                
+                <circle cx="0" cy="-6.5" r="1.5" fill="#FFF" filter="url(#super-glow)">
+                    <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite"/>
+                </circle>
+            </g>
+
+            <text x="16" y="4" text-anchor="start" class="title-joc" font-size="34" fill="url(#antique-gold)">C</text>
+        </g>
+        
+        <path d="M-60 11 L0 10.5 L60 11 L0 11.5 Z" fill="url(#antique-gold)" opacity="0.6"/>
+        <polygon points="0,9.5 2,11 0,12.5 -2,11" fill="url(#antique-gold)"/>
+
+        <text x="0" y="21" text-anchor="middle" class="subtitle-main" font-size="7.5" fill="#FFFFFF" opacity="0.95">JOURNAL OF CRYPTOLOGY</text>
+        
+        <text x="0" y="31" text-anchor="middle" class="micro-text" font-size="4.2" fill="#D4AF37" opacity="0.7">THE FLAGSHIP JOURNAL OF THE IACR  ❖  EST. 1988</text>
+
+        <circle cx="-135" cy="0" r="2.5" fill="url(#antique-gold)" filter="url(#gold-glow)"/>
+        <circle cx="-135" cy="0" r="1" fill="#0C0514"/>
+        <circle cx="135" cy="0" r="2.5" fill="url(#antique-gold)" filter="url(#gold-glow)"/>
+        <circle cx="135" cy="0" r="1" fill="#0C0514"/>
+    </g>
+</svg>

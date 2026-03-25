@@ -1,0 +1,183 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dark/Deep Background Gradients -->
+    <radialGradient id="phd-bg-dark" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="60%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#020617" />
+    </radialGradient>
+    <linearGradient id="phd-glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="100%" stop-color="#F8FAFC" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="phd-primary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60A5FA" /> <!-- Lighter Blue -->
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+    <linearGradient id="phd-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <filter id="phd-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <filter id="phd-glow">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="phd-strong-glow">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Dark Tech Base Background -->
+  <rect width="1024" height="1024" fill="url(#phd-bg-dark)" rx="100" />
+
+  <!-- Blueprint Grid Background Pattern (Dark subtle) -->
+  <g stroke="#334155" stroke-width="1.5" opacity="0.4">
+    <pattern id="phd-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" />
+    </pattern>
+    <rect width="1024" height="1024" fill="url(#phd-grid)" rx="100" />
+  </g>
+
+  <!-- Ambient Glowing Orbs (Soft against dark) -->
+  <circle cx="200" cy="200" r="160" fill="#1E3A8A" opacity="0.6" filter="blur(60px)">
+    <animate attributeName="cx" values="200; 250; 200" dur="10s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="850" cy="800" r="220" fill="#92400E" opacity="0.5" filter="blur(70px)">
+    <animate attributeName="cy" values="800; 750; 800" dur="12s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Floating Tech Radar Rings (Background Depth) -->
+  <g stroke="#475569" fill="none" opacity="0.4" style="transform-origin: 512px 512px;">
+    <circle cx="512" cy="512" r="450" stroke-width="2" stroke-dasharray="10 20">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="512" cy="512" r="350" stroke-width="1" />
+  </g>
+
+  <!-- Main Central Proposal Document (Light Foreground) -->
+  <g transform="translate(512, 500)" filter="url(#phd-shadow)">
+    <animateTransform attributeName="transform" type="translate" values="512,500; 512,480; 512,500" dur="6s" repeatCount="indefinite" ease-in-out="ease-in-out" />
+    
+    <!-- Document Base Panel -->
+    <rect x="-320" y="-360" width="640" height="720" rx="20" fill="url(#phd-glass)" stroke="#94A3B8" stroke-width="2" />
+    
+    <!-- Windows Style Header Bar -->
+    <path d="M-320 -320 L 320 -320 L 320 -340 C 320 -351 311 -360 300 -360 L -300 -360 C -311 -360 -320 -351 -320 -340 Z" fill="#E2E8F0" />
+    <line x1="-320" y1="-320" x2="320" y2="-320" stroke="#CBD5E1" stroke-width="2" />
+    
+    <!-- Windows Controls (Top Right) -->
+    <g transform="translate(220, -350)" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="0" y1="14" x2="12" y2="14" />
+      <rect x="28" y="4" width="12" height="12" />
+      <line x1="56" y1="4" x2="68" y2="16" />
+      <line x1="68" y1="4" x2="56" y2="16" />
+    </g>
+    
+    <!-- Document Header Text -->
+    <text x="-290" y="-333" font-family="'Segoe UI', Roboto, sans-serif" font-weight="600" font-size="15" fill="#1E293B">Ph_D_Proposal_Blueprint.pdf</text>
+
+    <!-- Document Content Abstract -->
+    <rect x="-260" y="-270" width="220" height="14" rx="7" fill="#3B82F6" opacity="0.9" />
+    <rect x="-260" y="-230" width="520" height="8" rx="4" fill="#94A3B8" />
+    <rect x="-260" y="-200" width="440" height="8" rx="4" fill="#94A3B8" />
+    <rect x="-260" y="-170" width="480" height="8" rx="4" fill="#94A3B8" />
+
+    <!-- Highly Detailed Futuristic Data Target / Radar Matrix -->
+    <g transform="translate(0, 50)">
+      <!-- Outer Setup Rings -->
+      <circle cx="0" cy="0" r="180" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2" />
+      <circle cx="0" cy="0" r="140" fill="none" stroke="#3B82F6" stroke-width="4" stroke-dasharray="10 15" opacity="0.8">
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="20s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="0" cy="0" r="80" fill="none" stroke="#64748B" stroke-width="2" stroke-dasharray="4 8" />
+      
+      <!-- Axis Crosshairs -->
+      <path d="M-200 0 L200 0 M0 -200 L0 200" stroke="#64748B" stroke-width="2" opacity="0.5" stroke-dasharray="6 6" />
+      
+      <!-- Animated Radar Sector Scan -->
+      <path d="M0 0 L 0 -140 A 140 140 0 0 1 140 0 Z" fill="url(#phd-primary)" opacity="0.2">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite" />
+      </path>
+      
+      <!-- Inner Core Receptacle -->
+      <circle cx="0" cy="0" r="50" fill="#DBEAFE" stroke="#3B82F6" stroke-width="3" />
+      <circle cx="0" cy="0" r="20" fill="#F59E0B" filter="url(#phd-glow)">
+         <animate attributeName="r" values="18; 24; 18" dur="2s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    
+    <!-- Bottom Document Text Blocks -->
+    <rect x="-260" y="270" width="340" height="8" rx="4" fill="#64748B" />
+    <rect x="-260" y="300" width="220" height="8" rx="4" fill="#64748B" />
+  </g>
+
+  <!-- Epic 3D Style Precision Dart (Pinning the Proposal Target) -->
+  <g transform="translate(512, 550)" filter="url(#phd-shadow)">
+     <animateTransform attributeName="transform" type="translate" values="512,550; 512,530; 512,550" dur="4s" repeatCount="indefinite" ease-in-out="ease-in-out" />
+     
+     <!-- Ripple Impact Effect -->
+     <circle cx="0" cy="0" r="0" fill="none" stroke="#60A5FA" stroke-width="4" opacity="0">
+        <animate attributeName="r" values="20; 200" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="1; 0" dur="2.5s" repeatCount="indefinite" />
+     </circle>
+
+     <!-- Dart / Pin Graphic -->
+     <g transform="translate(-100, -100) rotate(-45)">
+        <!-- Dart Shaft/Body -->
+        <path d="M0 -90 L12 -15 L0 140 L-12 -15 Z" fill="url(#phd-primary)" />
+        <!-- Sharp Highlight -->
+        <path d="M0 -90 L6 -15 L0 120 L0 -90 Z" fill="#93C5FD" />
+        
+        <!-- Glowing Core Tip -->
+        <circle cx="0" cy="140" r="10" fill="#FDE68A" filter="url(#phd-strong-glow)" />
+        
+        <!-- Aerodynamic Fins -->
+        <path d="M-12 -70 L-45 -100 L-12 -45 Z" fill="#3B82F6" />
+        <path d="M12 -70 L45 -100 L12 -45 Z" fill="#60A5FA" />
+        <path d="M0 -80 L0 -125 L-12 -90 Z" fill="#1D4ED8" />
+        <path d="M0 -80 L0 -125 L12 -90 Z" fill="#2563EB" />
+     </g>
+  </g>
+
+  <!-- Massive High-Quality Gold "APPROVED" Seal / Badge -->
+  <g transform="translate(780, 780)" filter="url(#phd-shadow)">
+    <animateTransform attributeName="transform" type="translate" values="780,780; 780,765; 780,780" dur="7s" repeatCount="indefinite" ease-in-out="ease-in-out" />
+    
+    <!-- Sunburst Outline Edge -->
+    <path d="M0 -110 L16 -88 L44 -93 L50 -66 L77 -55 L66 -27 L93 -11 L71 11 L93 33 L66 49 L77 77 L50 88 L44 116 L16 99 L0 121 L-16 99 L-44 116 L-50 88 L-77 77 L-66 49 L-93 33 L-71 11 L-93 -11 L-66 -27 L-77 -55 L-50 -66 L-44 -93 L-16 -88 Z" fill="url(#phd-accent)" />
+    
+    <!-- Badge Background -->
+    <circle cx="0" cy="0" r="88" fill="#FFFBEB" />
+    
+    <!-- Inner Detailing Rings -->
+    <g style="transform-origin: 0px 0px;">
+       <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="25s" repeatCount="indefinite" linear="linear" />
+       <circle cx="0" cy="0" r="78" fill="none" stroke="#B45309" stroke-width="2.5" stroke-dasharray="8 6" />
+    </g>
+    <circle cx="0" cy="0" r="70" fill="#FEF3C7" />
+    
+    <!-- Powerful Approved Checkmark -->
+    <path d="M-30 -5 L-10 15 L35 -25" fill="none" stroke="#D97706" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <text x="0" y="48" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="22" fill="#D97706" text-anchor="middle" letter-spacing="2.5">APPROVED</text>
+  </g>
+
+  <!-- Floating Sparkles / Geometric Ornaments -->
+  <g fill="#FDE68A" filter="url(#phd-glow)">
+    <polygon points="220,250 225,270 245,275 225,280 220,300 215,280 195,275 215,270">
+       <animate attributeName="opacity" values="0.2; 1; 0.2" dur="3s" repeatCount="indefinite" />
+    </polygon>
+    <polygon points="850,200 854,212 866,216 854,220 850,232 846,220 834,216 846,212">
+       <animate attributeName="opacity" values="0.1; 0.9; 0.1" dur="4s" repeatCount="indefinite" delay="1.5s" />
+    </polygon>
+    <circle cx="150" cy="700" r="5" fill="#60A5FA">
+       <animate attributeName="cy" values="700; 650; 700" dur="6s" repeatCount="indefinite" />
+       <animate attributeName="opacity" values="0; 1; 0" dur="6s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

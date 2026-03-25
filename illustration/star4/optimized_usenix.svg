@@ -1,0 +1,718 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&amp;family=JetBrains+Mono:wght@300;500;800&amp;family=Orbitron:wght@700;900&amp;display=swap');
+            
+            .usenix-title { font-family: 'Orbitron', sans-serif; font-weight: 900; letter-spacing: 0.18em; }
+            .usenix-sub { font-family: 'JetBrains Mono', monospace; font-weight: 800; letter-spacing: 0.25em; }
+            .usenix-micro { font-family: 'JetBrains Mono', monospace; font-weight: 500; letter-spacing: 0.15em; }
+            .ring-text { font-family: 'JetBrains Mono', monospace; font-weight: 500; letter-spacing: 0.3em; }
+        </style>
+
+        <radialGradient id="kernel-bg" cx="50%" cy="40%" r="70%">
+            <stop offset="0%" stop-color="#0F1123"/>
+            <stop offset="50%" stop-color="#06070D"/>
+            <stop offset="100%" stop-color="#020204"/>
+        </radialGradient>
+
+        <linearGradient id="cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#E0FFFF"/>
+            <stop offset="50%" stop-color="#00E5FF"/>
+            <stop offset="100%" stop-color="#0088CC"/>
+        </linearGradient>
+
+        <linearGradient id="magenta-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#F8C8FF"/>
+            <stop offset="50%" stop-color="#B14DFF">
+                <animate attributeName="stop-color" values="#B14DFF;#FF007F;#B14DFF" dur="4s" repeatCount="indefinite"/>
+            </stop>
+            <stop offset="100%" stop-color="#4A00E0"/>
+        </linearGradient>
+
+        <filter id="glow-ring" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="plaque-shadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#000" flood-opacity="0.95"/>
+        </filter>
+
+        <path id="syscall-ring" d="M 0 -135 A 135 135 0 1 1 -0.1 -135" />
+    </defs>
+    
+    <rect width="400" height="600" fill="url(#kernel-bg)"/>
+    
+    <g stroke="rgba(0, 229, 255, 0.04)" stroke-width="1">
+        <line x1="200" y1="0" x2="200" y2="600"/>
+        <line x1="0" y1="240" x2="400" y2="240"/>
+        <circle cx="200" cy="240" r="180" fill="none" stroke-dasharray="2 4"/>
+    </g>
+
+    
+        <g opacity="0.07662331667606762" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.07662331667606762;0.27662331667606765;0.07662331667606762" dur="5.407011171385161s" repeatCount="indefinite"/>
+            <text x="15" y="40">0xC6CC</text>
+            <text x="15" y="50" font-size="6" fill="#A8B2C1">AAED2FE9</text>
+        </g>
+        
+        <g opacity="0.14888735535663677" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.14888735535663677;0.3488873553566368;0.14888735535663677" dur="7.916545327341109s" repeatCount="indefinite"/>
+            <text x="15" y="70">0x13B2</text>
+            <text x="15" y="80" font-size="6" fill="#A8B2C1">AF846AB1</text>
+        </g>
+        
+        <g opacity="0.11971079663072015" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.11971079663072015;0.31971079663072016;0.11971079663072015" dur="5.713028825363761s" repeatCount="indefinite"/>
+            <text x="15" y="100">0x8698</text>
+            <text x="15" y="110" font-size="6" fill="#A8B2C1">40C1E9E2</text>
+        </g>
+        
+        <g opacity="0.05975790368380643" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.05975790368380643;0.25975790368380647;0.05975790368380643" dur="3.633219794581456s" repeatCount="indefinite"/>
+            <text x="15" y="130">0x24A0</text>
+            <text x="15" y="140" font-size="6" fill="#A8B2C1">FC1AF884</text>
+        </g>
+        
+        <g opacity="0.13041717107906442" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.13041717107906442;0.33041717107906443;0.13041717107906442" dur="5.307204054224046s" repeatCount="indefinite"/>
+            <text x="15" y="160">0x95A7</text>
+            <text x="15" y="170" font-size="6" fill="#A8B2C1">30F9DFC2</text>
+        </g>
+        
+        <g opacity="0.13688861080946382" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.13688861080946382;0.33688861080946386;0.13688861080946382" dur="3.768911311112861s" repeatCount="indefinite"/>
+            <text x="15" y="190">0xBB42</text>
+            <text x="15" y="200" font-size="6" fill="#A8B2C1">E496E614</text>
+        </g>
+        
+        <g opacity="0.10449271673289072" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.10449271673289072;0.30449271673289074;0.10449271673289072" dur="6.326924675022003s" repeatCount="indefinite"/>
+            <text x="15" y="220">0x5FBB</text>
+            <text x="15" y="230" font-size="6" fill="#A8B2C1">425F5BE5</text>
+        </g>
+        
+        <g opacity="0.050185479175152065" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.050185479175152065;0.2501854791751521;0.050185479175152065" dur="5.093166039662579s" repeatCount="indefinite"/>
+            <text x="15" y="250">0xCA5C</text>
+            <text x="15" y="260" font-size="6" fill="#A8B2C1">D0D7956E</text>
+        </g>
+        
+        <g opacity="0.06103304634241971" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.06103304634241971;0.26103304634241975;0.06103304634241971" dur="3.4965235478368806s" repeatCount="indefinite"/>
+            <text x="15" y="280">0xD06F</text>
+            <text x="15" y="290" font-size="6" fill="#A8B2C1">D46E3961</text>
+        </g>
+        
+        <g opacity="0.15952740727887496" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.15952740727887496;0.359527407278875;0.15952740727887496" dur="3.780117560207384s" repeatCount="indefinite"/>
+            <text x="15" y="310">0x5547</text>
+            <text x="15" y="320" font-size="6" fill="#A8B2C1">FDC428C3</text>
+        </g>
+        
+        <g opacity="0.1572627696374182" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.1572627696374182;0.3572627696374182;0.1572627696374182" dur="5.189398225668972s" repeatCount="indefinite"/>
+            <text x="15" y="340">0xF8BB</text>
+            <text x="15" y="350" font-size="6" fill="#A8B2C1">6EFC6854</text>
+        </g>
+        
+        <g opacity="0.2235447532105192" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.2235447532105192;0.4235447532105192;0.2235447532105192" dur="3.0666199595534085s" repeatCount="indefinite"/>
+            <text x="15" y="370">0x2749</text>
+            <text x="15" y="380" font-size="6" fill="#A8B2C1">F931B704</text>
+        </g>
+        
+        <g opacity="0.0776263494138828" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.0776263494138828;0.2776263494138828;0.0776263494138828" dur="3.255678741663297s" repeatCount="indefinite"/>
+            <text x="15" y="400">0x2A30</text>
+            <text x="15" y="410" font-size="6" fill="#A8B2C1">E5B71C30</text>
+        </g>
+        
+        <g opacity="0.2453127504893894" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.2453127504893894;0.4453127504893894;0.2453127504893894" dur="7.700817729081801s" repeatCount="indefinite"/>
+            <text x="15" y="430">0x658F</text>
+            <text x="15" y="440" font-size="6" fill="#A8B2C1">0F8691FA</text>
+        </g>
+        
+        <g opacity="0.0814696827663019" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.0814696827663019;0.2814696827663019;0.0814696827663019" dur="3.354319176751793s" repeatCount="indefinite"/>
+            <text x="15" y="460">0x9054</text>
+            <text x="15" y="470" font-size="6" fill="#A8B2C1">EDA8806D</text>
+        </g>
+        
+        <g opacity="0.18048487325022522" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.18048487325022522;0.38048487325022523;0.18048487325022522" dur="5.978062186904771s" repeatCount="indefinite"/>
+            <text x="15" y="490">0x1D93</text>
+            <text x="15" y="500" font-size="6" fill="#A8B2C1">E5C61070</text>
+        </g>
+        
+        <g opacity="0.21624500041851874" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.21624500041851874;0.41624500041851875;0.21624500041851874" dur="7.450774059923093s" repeatCount="indefinite"/>
+            <text x="15" y="520">0xD08D</text>
+            <text x="15" y="530" font-size="6" fill="#A8B2C1">06C5B76E</text>
+        </g>
+        
+        <g opacity="0.08146953956223113" font-family="'JetBrains Mono', monospace" font-size="8" fill="#00E5FF">
+            <animate attributeName="opacity" values="0.08146953956223113;0.28146953956223114;0.08146953956223113" dur="3.155976508588073s" repeatCount="indefinite"/>
+            <text x="15" y="550">0xFF6E</text>
+            <text x="15" y="560" font-size="6" fill="#A8B2C1">292D58B3</text>
+        </g>
+        
+        <g opacity="0.2596421575941802" font-family="'JetBrains Mono', monospace" font-size="7" fill="#B14DFF" text-anchor="end">
+            <animate attributeName="opacity" values="0.2596421575941802;0.5596421575941801;0.2596421575941802" dur="7.759293664662412s" repeatCount="indefinite"/>
+            <text x="385" y="60">pop rdi; ret</text>
+            <circle cx="390" cy="58" r="1.5" fill="#B14DFF"/>
+        </g>
+        
+        <g opacity="0.2605738231891786" font-family="'JetBrains Mono', monospace" font-size="7" fill="#B14DFF" text-anchor="end">
+            <animate attributeName="opacity" values="0.2605738231891786;0.5605738231891786;0.2605738231891786" dur="5.053690023080263s" repeatCount="indefinite"/>
+            <text x="385" y="100">mov eax, 11</text>
+            <circle cx="390" cy="98" r="1.5" fill="#B14DFF"/>
+        </g>
+        
+        <g opacity="0.11130248494803666" font-family="'JetBrains Mono', monospace" font-size="7" fill="#B14DFF" text-anchor="end">
+            <animate attributeName="opacity" values="0.11130248494803666;0.4113024849480367;0.11130248494803666" dur="6.5905327997318555s" repeatCount="indefinite"/>
+            <text x="385" y="140">syscall</text>
+            <circle cx="390" cy="138" r="1.5" fill="#B14DFF"/>
+        </g>
+        
+        <g opacity="0.25550301293649624" font-family="'JetBrains Mono', monospace" font-size="7" fill="#B14DFF" text-anchor="end">
+            <animate attributeName="opacity" values="0.25550301293649624;0.5555030129364962;0.25550301293649624" dur="6.093278080140434s" repeatCount="indefinite"/>
+            <text x="385" y="180">int 0x80</text>
+            <circle cx="390" cy="178" r="1.5" fill="#B14DFF"/>
+        </g>
+        
+        <g opacity="0.24099631973524752" font-family="'JetBrains Mono', monospace" font-size="7" fill="#B14DFF" text-anchor="end">
+            <animate attributeName="opacity" values="0.24099631973524752;0.5409963197352475;0.24099631973524752" dur="8.970933647081988s" repeatCount="indefinite"/>
+            <text x="385" y="220">int 0x80</text>
+            <circle cx="390" cy="218" r="1.5" fill="#B14DFF"/>
+        </g>
+        
+        <g opacity="0.14528947092331607" font-family="'JetBrains Mono', monospace" font-size="7" fill="#B14DFF" text-anchor="end">
+            <animate attributeName="opacity" values="0.14528947092331607;0.44528947092331606;0.14528947092331607" dur="7.706072562605218s" repeatCount="indefinite"/>
+            <text x="385" y="260">xor eax, eax</text>
+            <circle cx="390" cy="258" r="1.5" fill="#B14DFF"/>
+        </g>
+        
+        <g opacity="0.2733947350093384" font-family="'JetBrains Mono', monospace" font-size="7" fill="#B14DFF" text-anchor="end">
+            <animate attributeName="opacity" values="0.2733947350093384;0.5733947350093385;0.2733947350093384" dur="7.7853732827570035s" repeatCount="indefinite"/>
+            <text x="385" y="300">leave; ret</text>
+            <circle cx="390" cy="298" r="1.5" fill="#B14DFF"/>
+        </g>
+        
+        <g opacity="0.19696878464174802" font-family="'JetBrains Mono', monospace" font-size="7" fill="#B14DFF" text-anchor="end">
+            <animate attributeName="opacity" values="0.19696878464174802;0.496968784641748;0.19696878464174802" dur="5.768697811583285s" repeatCount="indefinite"/>
+            <text x="385" y="340">xor eax, eax</text>
+            <circle cx="390" cy="338" r="1.5" fill="#B14DFF"/>
+        </g>
+        
+        <g opacity="0.19876125721339272" font-family="'JetBrains Mono', monospace" font-size="7" fill="#B14DFF" text-anchor="end">
+            <animate attributeName="opacity" values="0.19876125721339272;0.4987612572133927;0.19876125721339272" dur="5.332323705481011s" repeatCount="indefinite"/>
+            <text x="385" y="380">xor eax, eax</text>
+            <circle cx="390" cy="378" r="1.5" fill="#B14DFF"/>
+        </g>
+        
+        <g opacity="0.15066943355467127" font-family="'JetBrains Mono', monospace" font-size="7" fill="#B14DFF" text-anchor="end">
+            <animate attributeName="opacity" values="0.15066943355467127;0.45066943355467126;0.15066943355467127" dur="6.388762396337021s" repeatCount="indefinite"/>
+            <text x="385" y="420">jmp rsp</text>
+            <circle cx="390" cy="418" r="1.5" fill="#B14DFF"/>
+        </g>
+        
+        <g opacity="0.22179983535758782" font-family="'JetBrains Mono', monospace" font-size="7" fill="#B14DFF" text-anchor="end">
+            <animate attributeName="opacity" values="0.22179983535758782;0.5217998353575878;0.22179983535758782" dur="6.026258105957338s" repeatCount="indefinite"/>
+            <text x="385" y="460">mov eax, 11</text>
+            <circle cx="390" cy="458" r="1.5" fill="#B14DFF"/>
+        </g>
+        
+        <g opacity="0.23620656635202977" font-family="'JetBrains Mono', monospace" font-size="7" fill="#B14DFF" text-anchor="end">
+            <animate attributeName="opacity" values="0.23620656635202977;0.5362065663520298;0.23620656635202977" dur="5.212516315225772s" repeatCount="indefinite"/>
+            <text x="385" y="500">syscall</text>
+            <circle cx="390" cy="498" r="1.5" fill="#B14DFF"/>
+        </g>
+        
+
+    <g transform="translate(200, 240)">
+        
+        
+        <circle cx="0" cy="0" r="150" fill="none" stroke="#00E5FF" stroke-width="1.5" stroke-dasharray="2 8 15 8" opacity="0.6" filter="url(#glow-ring)">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="0" cy="0" r="120" fill="none" stroke="#4D94FF" stroke-width="1.5" stroke-dasharray="40 20" opacity="0.6" filter="url(#glow-ring)">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="30s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="0" cy="0" r="90" fill="none" stroke="#B14DFF" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.6" filter="url(#glow-ring)">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="0" cy="0" r="60" fill="none" stroke="#FF007F" stroke-width="1.5" stroke-dasharray="12 4" opacity="0.6" filter="url(#glow-ring)">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="10s" repeatCount="indefinite"/>
+        </circle>
+        
+
+        <g opacity="0.6" class="ring-text" font-size="6" fill="#00E5FF" filter="url(#glow-ring)">
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="50s" repeatCount="indefinite"/>
+            <text><textPath href="#syscall-ring" startOffset="0%">execve() mmap() ptrace() fork() socket() mprotect() execve() mmap() ptrace() fork() socket() mprotect() execve() mmap() ptrace() fork() socket() mprotect() </textPath></text>
+        </g>
+
+        <circle cx="0" cy="0" r="45" fill="url(#magenta-grad)" opacity="0.08" filter="url(#glow-ring)">
+            <animate attributeName="r" values="45;55;45" dur="3s" repeatCount="indefinite"/>
+        </circle>
+
+        <g>
+            <animateTransform attributeName="transform" type="translate" values="0,3; 0,-3; 0,3" dur="4s" ease="ease-in-out" repeatCount="indefinite"/>
+            
+    <g filter="url(#glow-cyan)">
+        <polygon points="-4,-40 4,-40 2,40 -2,40" fill="url(#cyan-grad)"/>
+        <polygon points="-6,-40 6,-40 0,-65" fill="#FFF"/>
+        
+        <path d="M -4 10 L -25 -5 L -25 -30" fill="none" stroke="url(#cyan-grad)" stroke-width="3"/>
+        <polygon points="-30,-30 -20,-30 -25,-55" fill="#00E5FF"/>
+        <circle cx="-25" cy="-5" r="3" fill="#FFF"/>
+        
+        <path d="M 4 10 L 25 -5 L 25 -30" fill="none" stroke="url(#cyan-grad)" stroke-width="3"/>
+        <polygon points="20,-30 30,-30 25,-55" fill="#00E5FF"/>
+        <circle cx="25" cy="-5" r="3" fill="#FFF"/>
+        
+        <circle cx="0" cy="25" r="8" fill="url(#magenta-grad)"/>
+        <circle cx="0" cy="25" r="3" fill="#FFF"/>
+        <path d="M -15 25 L 15 25 M 0 10 L 0 40" stroke="#FFF" stroke-width="1" opacity="0.5"/>
+    </g>
+    
+            
+            <path d="M 0 -80 L 40 -40 L 30 40 L 0 70 L -30 40 L -40 -40 Z" fill="none" stroke="url(#cyan-grad)" stroke-width="1" opacity="0.4" stroke-dasharray="10 5" filter="url(#glow-cyan)"/>
+            <path d="M 0 -80 L 40 -40 L 30 40 L 0 70 L -30 40 L -40 -40 Z" fill="rgba(0, 229, 255, 0.05)"/>
+        </g>
+        
+        
+        <g transform="translate(-135.525035812987, 36.76349999298358)">
+            <animateTransform attributeName="transform" type="translate" values="-135.525035812987,36.76349999298358; -135.525035812987,-8.2" dur="3.5134324459937623s" begin="2.6088639409467635s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="6.9" fill="#FFFFFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="3.5134324459937623s" begin="2.6088639409467635s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(-13.324748247600354, 20.402011942776454)">
+            <animateTransform attributeName="transform" type="translate" values="-13.324748247600354,20.402011942776454; -13.324748247600354,-32.8" dur="5.252683338050948s" begin="3.1400486900303024s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="5.1" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="5.252683338050948s" begin="3.1400486900303024s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(-124.32109200668053, 9.984488744502187)">
+            <animateTransform attributeName="transform" type="translate" values="-124.32109200668053,9.984488744502187; -124.32109200668053,-57.8" dur="6.6917596603269125s" begin="3.8762690311665016s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="7.7" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="6.6917596603269125s" begin="3.8762690311665016s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(-59.25504926932348, -118.79000995192823)">
+            <animateTransform attributeName="transform" type="translate" values="-59.25504926932348,-118.79000995192823; -59.25504926932348,-160.3" dur="5.5321259450732665s" begin="0.5135682207840278s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="4.8" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="5.5321259450732665s" begin="0.5135682207840278s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(78.2035256671291, 4.342404027476704)">
+            <animateTransform attributeName="transform" type="translate" values="78.2035256671291,4.342404027476704; 78.2035256671291,-57.5" dur="4.5393112232454165s" begin="3.91311417539363s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="7.1" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="4.5393112232454165s" begin="3.91311417539363s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(144.38922326629296, 23.345647491499903)">
+            <animateTransform attributeName="transform" type="translate" values="144.38922326629296,23.345647491499903; 144.38922326629296,-18.6" dur="5.207407282484064s" begin="2.777897851281725s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="7.1" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="5.207407282484064s" begin="2.777897851281725s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(-7.2225328934996185, 91.72680473997235)">
+            <animateTransform attributeName="transform" type="translate" values="-7.2225328934996185,91.72680473997235; -7.2225328934996185,44.5" dur="4.867973898869521s" begin="1.3315793147831907s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="5.1" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="4.867973898869521s" begin="1.3315793147831907s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(-62.04977825344011, -90.08943230732862)">
+            <animateTransform attributeName="transform" type="translate" values="-62.04977825344011,-90.08943230732862; -62.04977825344011,-141.2" dur="5.520044115425335s" begin="3.0306376071795795s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="5.3" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="5.520044115425335s" begin="3.0306376071795795s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(7.914313989783807, -138.21363070780143)">
+            <animateTransform attributeName="transform" type="translate" values="7.914313989783807,-138.21363070780143; 7.914313989783807,-179.5" dur="3.2204989235516637s" begin="2.228016319615544s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="5.8" fill="#FFFFFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="3.2204989235516637s" begin="2.228016319615544s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(-190.08089797563804, 34.9274757740755)">
+            <animateTransform attributeName="transform" type="translate" values="-190.08089797563804,34.9274757740755; -190.08089797563804,-14.3" dur="7.4181265420541855s" begin="3.3252902227977965s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="7.3" fill="#FFFFFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="7.4181265420541855s" begin="3.3252902227977965s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(104.49287133150415, -104.04089183898918)">
+            <animateTransform attributeName="transform" type="translate" values="104.49287133150415,-104.04089183898918; 104.49287133150415,-177.0" dur="7.270871381065239s" begin="0.269410565537902s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="6.5" fill="#FFFFFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="7.270871381065239s" begin="0.269410565537902s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(187.48235434832583, -59.86294567450385)">
+            <animateTransform attributeName="transform" type="translate" values="187.48235434832583,-59.86294567450385; 187.48235434832583,-103.8" dur="4.883479878805526s" begin="2.4061323932088357s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="7.5" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="4.883479878805526s" begin="2.4061323932088357s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(-94.59903686264953, 28.359711757081897)">
+            <animateTransform attributeName="transform" type="translate" values="-94.59903686264953,28.359711757081897; -94.59903686264953,-20.7" dur="3.702810194196415s" begin="1.187270011583906s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="5.3" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="3.702810194196415s" begin="1.187270011583906s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(29.11011849288792, 113.1908004704)">
+            <animateTransform attributeName="transform" type="translate" values="29.11011849288792,113.1908004704; 29.11011849288792,37.4" dur="7.684124537165502s" begin="1.9739083361639618s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="6.8" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="7.684124537165502s" begin="1.9739083361639618s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(-189.43974358157666, 142.42664463136055)">
+            <animateTransform attributeName="transform" type="translate" values="-189.43974358157666,142.42664463136055; -189.43974358157666,73.4" dur="3.665104533341298s" begin="0.07885122356717256s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="6.3" fill="#FFFFFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="3.665104533341298s" begin="0.07885122356717256s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(143.33079758211846, -49.79843949309158)">
+            <animateTransform attributeName="transform" type="translate" values="143.33079758211846,-49.79843949309158; 143.33079758211846,-90.8" dur="7.8306026479533735s" begin="0.7253244030801489s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="6.1" fill="#FFFFFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="7.8306026479533735s" begin="0.7253244030801489s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(130.52486401866588, 75.5025545834836)">
+            <animateTransform attributeName="transform" type="translate" values="130.52486401866588,75.5025545834836; 130.52486401866588,23.3" dur="6.712158678751959s" begin="2.8393744512126067s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="6.6" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="6.712158678751959s" begin="2.8393744512126067s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(-102.80880239415828, -147.17219010673276)">
+            <animateTransform attributeName="transform" type="translate" values="-102.80880239415828,-147.17219010673276; -102.80880239415828,-208.9" dur="3.5556153851725583s" begin="1.2072085999419229s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="4.1" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="3.5556153851725583s" begin="1.2072085999419229s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(-143.5418910917723, 101.80768042567837)">
+            <animateTransform attributeName="transform" type="translate" values="-143.5418910917723,101.80768042567837; -143.5418910917723,44.1" dur="5.9973062910801715s" begin="1.4988840243023627s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="5.0" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="5.9973062910801715s" begin="1.4988840243023627s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(163.45038741252085, 131.20302116505172)">
+            <animateTransform attributeName="transform" type="translate" values="163.45038741252085,131.20302116505172; 163.45038741252085,69.2" dur="3.272112805997173s" begin="3.877157491380052s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="7.1" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="3.272112805997173s" begin="3.877157491380052s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(100.94582928138487, 105.97020743733165)">
+            <animateTransform attributeName="transform" type="translate" values="100.94582928138487,105.97020743733165; 100.94582928138487,37.8" dur="7.7263913387385585s" begin="3.331412588530984s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="4.3" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="7.7263913387385585s" begin="3.331412588530984s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(146.7027399611586, -50.823143874298154)">
+            <animateTransform attributeName="transform" type="translate" values="146.7027399611586,-50.823143874298154; 146.7027399611586,-119.0" dur="3.6983283280331958s" begin="2.273194280617468s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="6.3" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="3.6983283280331958s" begin="2.273194280617468s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(2.5398853397348944, -74.74785903990698)">
+            <animateTransform attributeName="transform" type="translate" values="2.5398853397348944,-74.74785903990698; 2.5398853397348944,-120.7" dur="6.826392136902625s" begin="2.4838444814260425s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="4.1" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="6.826392136902625s" begin="2.4838444814260425s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(-189.5284718755843, -14.802023052546389)">
+            <animateTransform attributeName="transform" type="translate" values="-189.5284718755843,-14.802023052546389; -189.5284718755843,-87.7" dur="6.261214359049832s" begin="2.3369665191434876s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="7.3" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="6.261214359049832s" begin="2.3369665191434876s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(50.45149798493998, 82.23194185346134)">
+            <animateTransform attributeName="transform" type="translate" values="50.45149798493998,82.23194185346134; 50.45149798493998,35.4" dur="4.79215596454575s" begin="0.059215812086601094s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="5.8" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="4.79215596454575s" begin="0.059215812086601094s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(-124.0441845621917, -39.271822501456285)">
+            <animateTransform attributeName="transform" type="translate" values="-124.0441845621917,-39.271822501456285; -124.0441845621917,-96.4" dur="5.584751896667699s" begin="3.2066269855079996s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="4.6" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="5.584751896667699s" begin="3.2066269855079996s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(-53.21037751587343, -28.604060244536)">
+            <animateTransform attributeName="transform" type="translate" values="-53.21037751587343,-28.604060244536; -53.21037751587343,-101.7" dur="5.038973088218404s" begin="1.8670905015886734s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="4.6" fill="#FFFFFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="5.038973088218404s" begin="1.8670905015886734s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(-119.02748643213448, -102.82134867792944)">
+            <animateTransform attributeName="transform" type="translate" values="-119.02748643213448,-102.82134867792944; -119.02748643213448,-145.1" dur="7.542439531084178s" begin="1.7686373426994364s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="5.4" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="7.542439531084178s" begin="1.7686373426994364s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(95.5039795984207, -14.787009420480445)">
+            <animateTransform attributeName="transform" type="translate" values="95.5039795984207,-14.787009420480445; 95.5039795984207,-72.8" dur="5.666328230765325s" begin="2.3709496706013553s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="6.9" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="5.666328230765325s" begin="2.3709496706013553s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(-189.1483316056636, -87.35773649020413)">
+            <animateTransform attributeName="transform" type="translate" values="-189.1483316056636,-87.35773649020413; -189.1483316056636,-156.1" dur="5.499453526742042s" begin="1.959094463840533s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="4.6" fill="#FFFFFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="5.499453526742042s" begin="1.959094463840533s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(-95.71517277213087, -117.72273085922568)">
+            <animateTransform attributeName="transform" type="translate" values="-95.71517277213087,-117.72273085922568; -95.71517277213087,-191.0" dur="5.195183317062128s" begin="0.05773758549889818s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="5.3" fill="#FFFFFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="5.195183317062128s" begin="0.05773758549889818s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(-25.319922320003627, 43.083473837740314)">
+            <animateTransform attributeName="transform" type="translate" values="-25.319922320003627,43.083473837740314; -25.319922320003627,-11.0" dur="5.894556365077145s" begin="2.5190594058474023s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="4.9" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="5.894556365077145s" begin="2.5190594058474023s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(86.37640816141288, -61.28391716628832)">
+            <animateTransform attributeName="transform" type="translate" values="86.37640816141288,-61.28391716628832; 86.37640816141288,-137.3" dur="3.7265304113138615s" begin="0.4820728328296413s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="6.3" fill="#FFFFFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="3.7265304113138615s" begin="0.4820728328296413s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(32.32453511445223, 134.7455562731874)">
+            <animateTransform attributeName="transform" type="translate" values="32.32453511445223,134.7455562731874; 32.32453511445223,75.3" dur="3.2978901382525576s" begin="0.9437191226995596s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="4.4" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="3.2978901382525576s" begin="0.9437191226995596s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(66.90560567205591, 83.37771929906961)">
+            <animateTransform attributeName="transform" type="translate" values="66.90560567205591,83.37771929906961; 66.90560567205591,28.4" dur="7.4909009209212964s" begin="3.9016610979995243s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="6.6" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="7.4909009209212964s" begin="3.9016610979995243s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(181.17158355781208, 56.80312569549284)">
+            <animateTransform attributeName="transform" type="translate" values="181.17158355781208,56.80312569549284; 181.17158355781208,-10.1" dur="5.889712948173776s" begin="0.011330766532044123s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="7.1" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="5.889712948173776s" begin="0.011330766532044123s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(-28.172665627691487, -26.793384041467633)">
+            <animateTransform attributeName="transform" type="translate" values="-28.172665627691487,-26.793384041467633; -28.172665627691487,-86.2" dur="5.527709416419846s" begin="1.532165665429012s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="4.5" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="5.527709416419846s" begin="1.532165665429012s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(138.41140793513284, 115.9816629598468)">
+            <animateTransform attributeName="transform" type="translate" values="138.41140793513284,115.9816629598468; 138.41140793513284,69.8" dur="3.749931163654938s" begin="0.25557910426648744s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="7.0" fill="#FFFFFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="3.749931163654938s" begin="0.25557910426648744s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(161.86187122726983, 120.19084897591131)">
+            <animateTransform attributeName="transform" type="translate" values="161.86187122726983,120.19084897591131; 161.86187122726983,64.7" dur="6.075070376966531s" begin="0.1120548633863101s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="5.2" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="6.075070376966531s" begin="0.1120548633863101s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(5.1451804608708755, 134.73808341587272)">
+            <animateTransform attributeName="transform" type="translate" values="5.1451804608708755,134.73808341587272; 5.1451804608708755,60.4" dur="7.441612085466016s" begin="3.299884364222198s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="5.2" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="7.441612085466016s" begin="3.299884364222198s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(109.08049370025009, 127.31747540454114)">
+            <animateTransform attributeName="transform" type="translate" values="109.08049370025009,127.31747540454114; 109.08049370025009,53.1" dur="6.671507469077765s" begin="2.0878640975724956s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="4.7" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="6.671507469077765s" begin="2.0878640975724956s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(160.52654261158597, -38.567820645898635)">
+            <animateTransform attributeName="transform" type="translate" values="160.52654261158597,-38.567820645898635; 160.52654261158597,-105.2" dur="7.900139406640084s" begin="3.1510822965424423s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="6.5" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="7.900139406640084s" begin="3.1510822965424423s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(128.0824279606631, 138.85800744460516)">
+            <animateTransform attributeName="transform" type="translate" values="128.0824279606631,138.85800744460516; 128.0824279606631,81.6" dur="4.476818300203524s" begin="0.6213032018886033s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="6.8" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="4.476818300203524s" begin="0.6213032018886033s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(-0.3244533842057251, 21.073397268684033)">
+            <animateTransform attributeName="transform" type="translate" values="-0.3244533842057251,21.073397268684033; -0.3244533842057251,-32.4" dur="6.725812825598336s" begin="0.8487424317975356s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="4.6" fill="#FFFFFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="6.725812825598336s" begin="0.8487424317975356s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(148.29883504147136, -112.7852833204131)">
+            <animateTransform attributeName="transform" type="translate" values="148.29883504147136,-112.7852833204131; 148.29883504147136,-177.3" dur="4.952673301860225s" begin="1.2122470572742556s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="6.7" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="4.952673301860225s" begin="1.2122470572742556s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(23.3532075950547, -57.19857283323846)">
+            <animateTransform attributeName="transform" type="translate" values="23.3532075950547,-57.19857283323846; 23.3532075950547,-131.5" dur="7.259663362952912s" begin="1.0885363126278058s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="6.4" fill="#FFFFFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="7.259663362952912s" begin="1.0885363126278058s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(79.96780679373023, -12.320869621786926)">
+            <animateTransform attributeName="transform" type="translate" values="79.96780679373023,-12.320869621786926; 79.96780679373023,-59.1" dur="7.634674054869709s" begin="2.1367918742817156s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="5.2" fill="#B14DFF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="7.634674054869709s" begin="2.1367918742817156s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(41.164711342424084, 144.73348119934212)">
+            <animateTransform attributeName="transform" type="translate" values="41.164711342424084,144.73348119934212; 41.164711342424084,96.7" dur="3.9550717655100622s" begin="3.7637664644383415s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="7.0" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="3.9550717655100622s" begin="3.7637664644383415s" repeatCount="indefinite"/>
+                0
+            </text>
+        </g>
+        
+        <g transform="translate(-35.79628969651, 30.46512971353397)">
+            <animateTransform attributeName="transform" type="translate" values="-35.79628969651,30.46512971353397; -35.79628969651,-38.9" dur="6.361561444101374s" begin="3.2774825593333707s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="5.4" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="6.361561444101374s" begin="3.2774825593333707s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+        <g transform="translate(167.88582624197954, -92.63197082626482)">
+            <animateTransform attributeName="transform" type="translate" values="167.88582624197954,-92.63197082626482; 167.88582624197954,-142.6" dur="4.3538896896948565s" begin="0.9744442633065042s" repeatCount="indefinite"/>
+            <text x="0" y="0" font-family="'JetBrains Mono', monospace" font-size="5.9" fill="#00E5FF" opacity="0" filter="url(#glow-ring)">
+                <animate attributeName="opacity" values="0;0.7;0" dur="4.3538896896948565s" begin="0.9744442633065042s" repeatCount="indefinite"/>
+                1
+            </text>
+        </g>
+        
+    </g>
+
+    <g transform="translate(200, 510)" filter="url(#plaque-shadow)">
+        <polygon points="-160,-40 160,-40 170,0 160,40 -160,40 -170,0" fill="#080A12" stroke="url(#cyan-grad)" stroke-width="2"/>
+        
+        <polygon points="-152,-32 152,-32 160,0 152,32 -152,32 -160,0" fill="none" stroke="url(#magenta-grad)" stroke-width="1" stroke-dasharray="15 5" opacity="0.7"/>
+        
+        <text x="0" y="2" text-anchor="middle" class="usenix-title" font-size="34" fill="#FFFFFF" filter="url(#glow-cyan)">USENIX</text>
+        
+        <path d="M-80 12 L0 11.5 L80 12 L0 12.5 Z" fill="#00E5FF" opacity="0.8"/>
+        <polygon points="0,10.5 3,12 0,13.5 -3,12" fill="#FF007F" filter="url(#glow-ring)"/>
+
+        <text x="0" y="22" text-anchor="middle" class="usenix-sub" font-size="8.5" fill="url(#cyan-grad)" opacity="0.95">SECURITY SYMPOSIUM</text>
+        
+        <text x="0" y="28" text-anchor="middle" class="usenix-micro" font-size="4.5" fill="#A8B2C1" opacity="0.8">ADVANCED COMPUTING SYSTEMS // SINCE 1992</text>
+
+        <circle cx="-145" cy="0" r="3" fill="#FF007F" filter="url(#glow-ring)">
+            <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="-145" cy="0" r="1.5" fill="#FFF"/>
+        
+        <circle cx="145" cy="0" r="3" fill="#00E5FF" filter="url(#glow-cyan)">
+            <animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="145" cy="0" r="1.5" fill="#FFF"/>
+    </g>
+</svg>

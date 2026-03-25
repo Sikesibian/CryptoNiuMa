@@ -1,0 +1,200 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Deeper cyber-red background -->
+        <radialGradient id="asia-bg" cx="50%" cy="50%" r="75%">
+            <stop offset="0%" stop-color="#4c0519"/>
+            <stop offset="40%" stop-color="#22000a"/>
+            <stop offset="80%" stop-color="#050002"/>
+            <stop offset="100%" stop-color="#000000"/>
+        </radialGradient>
+        
+        <!-- Enhanced Glowing Core -->
+        <radialGradient id="asia-glow-core" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fb7185" stop-opacity="0.4"/>
+            <stop offset="40%" stop-color="#e11d48" stop-opacity="0.2"/>
+            <stop offset="100%" stop-color="#881337" stop-opacity="0"/>
+        </radialGradient>
+        
+        <!-- Premium Gold for Asian motifs -->
+        <linearGradient id="asia-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fef08a"/>
+            <stop offset="30%" stop-color="#f59e0b"/>
+            <stop offset="70%" stop-color="#d97706"/>
+            <stop offset="100%" stop-color="#78350f"/>
+        </linearGradient>
+
+        <linearGradient id="asia-neon" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#fda4af"/>
+            <stop offset="50%" stop-color="#f43f5e"/>
+            <stop offset="100%" stop-color="#be123c"/>
+        </linearGradient>
+
+        <filter id="asia-glow-intense" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="8" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        <filter id="asia-glow-soft">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+
+        <!-- Dynamic Tech Pattern -->
+        <pattern id="asia-matrix" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 40 M 0 0 L 40 40" fill="none" stroke="#4c0519" stroke-width="0.5" opacity="0.5"/>
+            <circle cx="20" cy="20" r="1" fill="#f43f5e" opacity="0.4">
+                 <animate attributeName="opacity" values="0.2;0.8;0.2" dur="4s" repeatCount="indefinite"/>
+            </circle>
+            <rect x="0" y="0" width="4" height="4" fill="#881337" opacity="0.3"/>
+            <rect x="20" y="20" width="4" height="4" fill="#881337" opacity="0.3"/>
+        </pattern>
+    </defs>
+
+    <rect width="400" height="600" fill="url(#asia-bg)"/>
+    <rect width="400" height="600" fill="url(#asia-matrix)"/>
+    
+    <!-- Central Pulsing Core -->
+    <circle cx="200" cy="240" r="160" fill="url(#asia-glow-core)" filter="url(#asia-glow-intense)">
+        <animate attributeName="r" values="150;170;150" dur="6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="6s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Fiber Optic Data Streams -->
+    <g fill="none" stroke-linecap="round" filter="url(#asia-glow-soft)">
+        <!-- Wave 1: Fast Data -->
+        <path d="M-50 160 Q 150 60 250 200 T 450 160" stroke="url(#asia-neon)" stroke-width="1.5" opacity="0.6">
+            <animate attributeName="d" values="M-50 160 Q 150 60 250 200 T 450 160; M-50 160 Q 250 260 150 100 T 450 160; M-50 160 Q 150 60 250 200 T 450 160" dur="8s" repeatCount="indefinite"/>
+        </path>
+        <path d="M-50 160 Q 150 60 250 200 T 450 160" stroke="#fff" stroke-width="2" stroke-dasharray="10 40" opacity="0.8">
+            <animate attributeName="stroke-dashoffset" values="50;0" dur="1.5s" repeatCount="indefinite"/>
+             <animate attributeName="d" values="M-50 160 Q 150 60 250 200 T 450 160; M-50 160 Q 250 260 150 100 T 450 160; M-50 160 Q 150 60 250 200 T 450 160" dur="8s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Wave 2: Slower Encrypted Stream -->
+        <path d="M-50 320 Q 100 420 200 240 T 450 320" stroke="url(#asia-gold)" stroke-width="2" stroke-dasharray="4 8" opacity="0.5">
+            <animate attributeName="stroke-dashoffset" values="24;0" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="d" values="M-50 320 Q 100 420 200 240 T 450 320; M-50 320 Q 200 180 100 360 T 450 320; M-50 320 Q 100 420 200 240 T 450 320" dur="12s" repeatCount="indefinite"/>
+        </path>
+    </g>
+
+    <!-- Orbital Cyber-Mandala Rings -->
+    <g transform="translate(200, 240)" fill="none" filter="url(#asia-glow-soft)">
+        <!-- Outer synchronization ring -->
+        <circle cx="0" cy="0" r="145" stroke="#9f1239" stroke-width="1.5" stroke-dasharray="8 4">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="30s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="0" cy="0" r="130" stroke="#f43f5e" stroke-width="0.5" opacity="0.5"/>
+        
+        <!-- Complex Hexagonal Frame -->
+        <g opacity="0.7">
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="45s" repeatCount="indefinite"/>
+            <polygon points="0,-115 99.6,-57.5 99.6,57.5 0,115 -99.6,57.5 -99.6,-57.5" stroke="url(#asia-neon)" stroke-width="1.5"/>
+            <polygon points="0,-125 108.2,-62.5 108.2,62.5 0,125 -108.2,62.5 -108.2,-62.5" stroke="#fb7185" stroke-width="0.5" stroke-dasharray="4 4"/>
+             <!-- Nodes at hexagon corners -->
+             <circle cx="0" cy="-115" r="2" fill="#fef08a"/>
+             <circle cx="99.6" cy="-57.5" r="2" fill="#fef08a"/>
+             <circle cx="99.6" cy="57.5" r="2" fill="#fef08a"/>
+             <circle cx="0" cy="115" r="2" fill="#fef08a"/>
+             <circle cx="-99.6" cy="57.5" r="2" fill="#fef08a"/>
+             <circle cx="-99.6" cy="-57.5" r="2" fill="#fef08a"/>
+        </g>
+    </g>
+
+    <!-- Central Cyber-Origami / Asian Architecture Fusion -->
+    <g transform="translate(200, 240)" filter="url(#asia-glow-intense)">
+        <!-- Layered Pagoda/Shield structure -->
+        <!-- Deep Base Shadow -->
+        <path d="M 0 -95 L 85 -10 L 45 95 L -45 95 L -85 -10 Z" fill="#2a000d" stroke="#4c0519" stroke-width="4"/>
+        
+        <!-- Architectural Body -->
+        <path d="M 0 -90 L 80 -15 L 40 85 L -40 85 L -80 -15 Z" fill="#4c0519" stroke="#881337" stroke-width="2"/>
+        
+        <!-- Intricate Golden Tracing (Roof-like sweeps) -->
+        <path d="M -80 -15 Q 0 -45 80 -15 Q 35 35 40 85 L -40 85 Q -35 35 -80 -15 Z" fill="rgba(225, 29, 72, 0.2)" stroke="url(#asia-gold)" stroke-width="2.5"/>
+        
+        <!-- Mid Layer Diamond -->
+        <polygon points="0,-65 60,0 0,65 -60,0" fill="#7f1d1d" stroke="url(#asia-neon)" stroke-width="2"/>
+        
+        <!-- Core Structure -->
+        <polygon points="0,-45 40,0 0,45 -40,0" fill="#2a000d" stroke="#fecdd3" stroke-width="1.5" stroke-dasharray="2 2"/>
+        
+        <!-- Glowing Core Lattice -->
+        <g stroke="#fef08a" stroke-width="1.5" opacity="0.9">
+            <line x1="-25" y1="0" x2="25" y2="0"/>
+            <line x1="0" y1="-25" x2="0" y2="25"/>
+            <circle cx="0" cy="0" r="16" fill="#4c0519" stroke="url(#asia-neon)" stroke-width="3"/>
+            <!-- Inner Eye -->
+            <circle cx="0" cy="0" r="6" fill="#fef08a">
+                 <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="0" cy="0" r="2" fill="#fff"/>
+        </g>
+        
+        <!-- Floating Security Nodes (Satellites) -->
+        <g fill="#f43f5e">
+             <circle cx="0" cy="-75" r="4"><animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/></circle>
+             <circle cx="50" cy="55" r="3"><animate attributeName="opacity" values="0.4;1;0.4" dur="2s" begin="0.6s" repeatCount="indefinite"/></circle>
+             <circle cx="-50" cy="55" r="3"><animate attributeName="opacity" values="0.4;1;0.4" dur="2s" begin="1.3s" repeatCount="indefinite"/></circle>
+        </g>
+    </g>
+
+    <!-- Futuristic Digital Chop (Seal) -->
+    <g transform="translate(290, 80)" filter="url(#asia-glow-intense)">
+        <g transform="rotate(15)">
+            <!-- Seal Base -->
+            <rect x="-35" y="-45" width="70" height="90" rx="6" fill="#9f1239" stroke="url(#asia-gold)" stroke-width="3" opacity="0.95"/>
+            <rect x="-29" y="-39" width="58" height="78" rx="3" fill="none" stroke="#fcd34d" stroke-width="1" stroke-dasharray="3 3"/>
+            
+            <!-- Holographic Scanline (Authentication) -->
+            <line x1="-33" y1="-40" x2="33" y2="-40" stroke="#ffffff" stroke-width="2.5" opacity="0.8">
+                <animate attributeName="y1" values="-40;40;-40" dur="2.5s" repeatCount="indefinite" keyTimes="0;0.5;1" keySplines="0 0.5 0.5 1; 0.5 0 1 0.5"/>
+                <animate attributeName="y2" values="-40;40;-40" dur="2.5s" repeatCount="indefinite" keyTimes="0;0.5;1" keySplines="0 0.5 0.5 1; 0.5 0 1 0.5"/>
+            </line>
+            
+            <!-- Decorative Separator -->
+            <line x1="-20" y1="12" x2="20" y2="12" stroke="#fcd34d" stroke-width="1.5" opacity="0.9"/>
+            
+            <!-- Modern Calligraphic Characters -->
+            <text x="0" y="-12" text-anchor="middle" fill="#ffffff" font-family="'SimSun', 'Times New Roman', serif" font-size="24" font-weight="900" letter-spacing="2">亚</text>
+            <text x="0" y="8" text-anchor="middle" fill="#ffffff" font-family="'SimSun', 'Times New Roman', serif" font-size="24" font-weight="900" letter-spacing="2">洲</text>
+            <text x="0" y="32" text-anchor="middle" fill="#fef08a" font-family="'Courier New', Courier, monospace" font-size="14" font-weight="bold" letter-spacing="1">ACM</text>
+            
+            <!-- Glitch effect on text occasionally -->
+             <g opacity="0">
+                 <animate attributeName="opacity" values="0;0;0.8;0;0" dur="4s" keyTimes="0;0.8;0.85;0.9;1" repeatCount="indefinite"/>
+                  <text x="2" y="-12" text-anchor="middle" fill="#0ff" font-family="'SimSun', 'Times New Roman', serif" font-size="24" font-weight="900">亚</text>
+                  <text x="-2" y="8" text-anchor="middle" fill="#f0f" font-family="'SimSun', 'Times New Roman', serif" font-size="24" font-weight="900">洲</text>
+             </g>
+        </g>
+    </g>
+
+    <!-- Typography framing & Title -->
+    <g transform="translate(200, 480)" filter="url(#asia-glow-intense)">
+        <!-- High-tech sci-fi bracket -->
+        <path d="M -150 -15 L -100 -15 L -85 10 L 85 10 L 100 -15 L 150 -15" fill="none" stroke="url(#asia-neon)" stroke-width="2"/>
+        <line x1="-150" y1="-15" x2="-150" y2="-5" stroke="url(#asia-neon)" stroke-width="4"/>
+        <line x1="150" y1="-15" x2="150" y2="-5" stroke="url(#asia-neon)" stroke-width="4"/>
+        
+        <!-- Glowing Data Accents -->
+        <rect x="-140" y="-18" width="10" height="6" fill="#f87171"/>
+        <rect x="130" y="-18" width="10" height="6" fill="#f87171"/>
+        
+        <text x="0" y="2" text-anchor="middle" fill="#ffe4e6" font-family="'Courier New', Courier, monospace" font-size="42" font-weight="900" letter-spacing="6">AsiaCCS</text>
+    </g>
+
+    <g transform="translate(200, 540)" filter="url(#asia-glow-soft)">
+        <!-- Elegant cyber subtitle panel -->
+        <path d="M -170 -14 L -160 8 L 160 8 L 170 -14 Z" fill="#2a000d" stroke="#e11d48" stroke-width="1.5" opacity="0.8"/>
+        
+        <text x="0" y="-2" text-anchor="middle" fill="#fda4af" font-family="'Arial', sans-serif" font-size="11" letter-spacing="2.5" font-weight="bold">ACM Conference on Computer</text>
+        <text x="0" y="14" text-anchor="middle" fill="#fda4af" font-family="'Arial', sans-serif" font-size="11" letter-spacing="2.5" font-weight="bold">and Communications Security</text>
+        
+        <!-- Status Blips -->
+        <circle cx="-150" cy="-3" r="2" fill="#fb7185">
+             <animate attributeName="opacity" values="1;0.2;1" dur="1s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="150" cy="-3" r="2" fill="#fb7185">
+             <animate attributeName="opacity" values="1;0.2;1" dur="1s" begin="0.5s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+</svg>

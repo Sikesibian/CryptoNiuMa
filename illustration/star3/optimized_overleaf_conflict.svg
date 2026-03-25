@@ -1,0 +1,136 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Unstable Cloud Server Background -->
+        <radialGradient id="cloud-bg" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#050510"/>
+            <stop offset="100%" stop-color="#000000"/>
+        </radialGradient>
+        
+        <filter id="glow-conflict">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+
+        <!-- Glitching Sync Connection -->
+        <filter id="glitch-sync">
+            <feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="2" result="noise">
+                 <animate attributeName="baseFrequency" values="0.01; 0.8; 0.01" dur="0.3s" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        
+        <pattern id="grid-conflict" width="30" height="30" patternUnits="userSpaceOnUse">
+            <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="1"/>
+            <circle cx="0" cy="0" r="1" fill="#3b82f6" opacity="0.5"/>
+        </pattern>
+
+        <linearGradient id="sync-beam" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#3b82f6" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#3b82f6" stop-opacity="0.8"/>
+            <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+        </linearGradient>
+    </defs>
+    
+    <rect width="400" height="600" fill="url(#cloud-bg)"/>
+    <rect width="400" height="600" fill="url(#grid-conflict)"/>
+    
+    <g transform="translate(200, 240)">
+        
+        <!-- The Overleaf / Cloud Server UI at the top -->
+        <g transform="translate(-10, -180)">
+            <path d="M -40 -10 Q -40 -30 -20 -30 Q -10 -50 10 -50 Q 30 -50 40 -30 Q 60 -30 60 -10 Z" fill="#0f172a" stroke="#3b82f6" stroke-width="2"/>
+            <path d="M -40 -10 L 60 -10" stroke="#3b82f6" stroke-width="2"/>
+            <text x="0" y="5" fill="#60a5fa" font-family="'Courier New', monospace" font-size="12" text-anchor="middle" font-weight="bold">Cloud.Project</text>
+            <circle cx="-30" cy="-20" r="3" fill="#ef4444">
+                <animate attributeName="opacity" values="1; 0; 1" dur="0.5s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+
+        <!-- Two Users Collaborating -->
+        <!-- User A (You) Local Editor -->
+        <g transform="translate(-100, -20)">
+            <rect x="-60" y="-80" width="120" height="140" rx="4" fill="#0f172a" stroke="#3b82f6" stroke-width="3" filter="url(#glow-conflict)"/>
+            <rect x="-60" y="-80" width="120" height="20" rx="4" fill="#1e293b"/>
+            <text x="-50" y="-66" fill="#93c5fd" font-family="monospace" font-size="10">User_A [You]</text>
+            
+            <g font-family="monospace" font-size="8" fill="#cbd5e1" transform="translate(-50, -40)">
+                <text x="0" y="0">1 \section{Intro}</text>
+                <text x="0" y="15" fill="#3b82f6">2 We show that</text>
+                <text x="0" y="30" fill="#3b82f6">3 X = Y + Z.</text>
+                <text x="0" y="45">4 \end{section}</text>
+            </g>
+            
+            <!-- Upload Beam -->
+            <path d="M 0 -80 Q 20 -150 100 -180" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5 5">
+                <animate attributeName="stroke-dashoffset" values="10; 0" dur="0.5s" repeatCount="indefinite"/>
+            </path>
+        </g>
+
+        <!-- User B (Co-Author) Editor -->
+        <g transform="translate(100, -20)">
+            <rect x="-60" y="-80" width="120" height="140" rx="4" fill="#2a0a0a" stroke="#ef4444" stroke-width="3" filter="url(#glow-conflict)"/>
+            <rect x="-60" y="-80" width="120" height="20" rx="4" fill="#450a0a"/>
+            <text x="-50" y="-66" fill="#fca5a5" font-family="monospace" font-size="10">User_B [Tutor]</text>
+            
+            <g font-family="monospace" font-size="8" fill="#cbd5e1" transform="translate(-50, -40)">
+                <text x="0" y="0">1 \section{Intro}</text>
+                <text x="0" y="15" fill="#ef4444">2 We prove that</text>
+                <text x="0" y="30" fill="#ef4444">3 X > Y + Z !!!</text>
+                <text x="0" y="45">4 \end{section}</text>
+            </g>
+
+            <!-- Upload Beam (Conflicting) -->
+            <path d="M 0 -80 Q -20 -150 -100 -180" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="5 5">
+                <animate attributeName="stroke-dashoffset" values="10; 0" dur="0.4s" repeatCount="indefinite"/>
+            </path>
+        </g>
+
+        <!-- THE MERGE CONFLICT ZONE (Center Bottom) -->
+        <g transform="translate(0, 100)">
+            <!-- Downloading the broken state -->
+            <path d="M -100 -30 Q -50 0 0 20" fill="none" stroke="#ef4444" stroke-width="4" filter="url(#glitch-sync)"/>
+            <path d="M 100 -30 Q 50 0 0 20" fill="none" stroke="#ef4444" stroke-width="4" filter="url(#glitch-sync)"/>
+            
+            <!-- Git Conflict Box -->
+            <rect x="-140" y="20" width="280" height="100" fill="#000" stroke="#f59e0b" stroke-width="3" stroke-dasharray="10 5">
+                <animate attributeName="stroke-dashoffset" values="0; 15" dur="1s" repeatCount="indefinite"/>
+            </rect>
+
+            <g font-family="'Courier New', monospace" font-size="12" font-weight="bold">
+                <rect x="-140" y="20" width="280" height="20" fill="#ef4444" opacity="0.3"/>
+                <text x="-130" y="35" fill="#ef4444">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD (You)</text>
+                
+                <text x="-130" y="55" fill="#cbd5e1">We show that X = Y + Z.</text>
+                
+                <rect x="-140" y="60" width="280" height="20" fill="#f59e0b" opacity="0.3"/>
+                <text x="-130" y="75" fill="#f59e0b">=======</text>
+                
+                <text x="-130" y="95" fill="#cbd5e1">We prove that X > Y + Z !!!</text>
+                
+                <rect x="-140" y="100" width="280" height="20" fill="#3b82f6" opacity="0.3"/>
+                <text x="-130" y="115" fill="#3b82f6">&gt;&gt;&gt;&gt;&gt;&gt;&gt; e4b2a1c (Tutor)</text>
+            </g>
+            
+            <!-- Warning Sign -->
+            <g transform="translate(0, -10)">
+                <polygon points="0,-25 25,15 -25,15" fill="#ef4444" filter="url(#glow-conflict)">
+                    <animate attributeName="opacity" values="0.5; 1; 0.5" dur="0.5s" repeatCount="indefinite"/>
+                </polygon>
+                <text x="0" y="10" fill="#fff" font-family="'Impact', sans-serif" font-size="24" text-anchor="middle">!</text>
+            </g>
+        </g>
+
+    </g>
+
+    <!-- Bottom Error Badge -->
+    <g transform="translate(200, 540)">
+        <rect x="-120" y="-20" width="240" height="40" rx="5" fill="#4c0519" stroke="#ef4444" stroke-width="2">
+            <animate attributeName="stroke" values="#ef4444; #f59e0b; #ef4444" dur="2s" repeatCount="indefinite"/>
+        </rect>
+        <text x="0" y="5" text-anchor="middle" fill="#fca5a5" font-family="'Times New Roman', serif" font-size="16" font-weight="bold">代码被导师覆盖</text>
+        <g>
+            <animate attributeName="opacity" values="1; 0; 1" dur="1s" repeatCount="indefinite"/>
+            <text x="0" y="-25" text-anchor="middle" fill="#f59e0b" font-family="'Courier New', Courier, monospace" font-size="12" letter-spacing="1" font-weight="bold">MERGE_CONFLICT_DETECTED</text>
+        </g>
+    </g>
+</svg>

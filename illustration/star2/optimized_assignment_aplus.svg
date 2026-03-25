@@ -1,0 +1,85 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="aplus-paper" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFCF2"/>
+      <stop offset="50%" stop-color="#FFF3CD"/>
+      <stop offset="100%" stop-color="#FFE066"/>
+    </linearGradient>
+    <filter id="aplus-dropshadow">
+      <feDropShadow dx="0" dy="30" stdDeviation="30" flood-color="#D4AC0D" flood-opacity="0.4"/>
+    </filter>
+    <radialGradient id="aplus-seal" cx="35%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#FF4D4D"/>
+      <stop offset="50%" stop-color="#E53935"/>
+      <stop offset="100%" stop-color="#B71C1C"/>
+    </radialGradient>
+    <filter id="aplus-glow">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <linearGradient id="aplus-ribbon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E88E5"/>
+      <stop offset="100%" stop-color="#1565C0"/>
+    </linearGradient>
+  </defs>
+
+  <g filter="url(#aplus-dropshadow)">
+    <g style="transform-origin: 512px 512px;">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-25; 0,0" dur="3.5s" repeatCount="indefinite" ease-in-out="ease-in-out" />
+      
+      <!-- Epic Paper Base -->
+      <rect x="212" y="112" width="600" height="800" rx="20" fill="url(#aplus-paper)" />
+      
+      <!-- Ornate Border -->
+      <rect x="252" y="152" width="520" height="720" rx="10" fill="none" stroke="#D4AC0D" stroke-width="8" opacity="0.6" />
+      <rect x="264" y="164" width="496" height="696" rx="6" fill="none" stroke="#D4AC0D" stroke-width="2" opacity="0.4" />
+      
+      <!-- Elegant Header Ribbon -->
+      <path d="M 212 250 L 812 250 L 780 300 L 812 350 L 212 350 L 244 300 Z" fill="url(#aplus-ribbon)" filter="url(#aplus-glow)" />
+      <text x="512" y="318" font-family="'Times New Roman', serif" font-size="48" font-weight="bold" fill="#FFF" text-anchor="middle" letter-spacing="4">EXCELLENCE</text>
+      
+      <!-- Magic Writing Animation (Perfect Score) -->
+      <g stroke="#5D4037" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none">
+        <path d="M320 450 L700 450" stroke-dasharray="380" stroke-dashoffset="380">
+          <animate attributeName="stroke-dashoffset" values="380; 0; 0" dur="4s" repeatCount="indefinite" />
+        </path>
+        <path d="M320 540 L640 540" stroke-dasharray="320" stroke-dashoffset="320">
+          <animate attributeName="stroke-dashoffset" values="320; 0; 0" dur="4s" begin="0.8s" repeatCount="indefinite" />
+        </path>
+        <path d="M320 630 L550 630" stroke-dasharray="230" stroke-dashoffset="230">
+          <animate attributeName="stroke-dashoffset" values="230; 0; 0" dur="4s" begin="1.6s" repeatCount="indefinite" />
+        </path>
+        <path d="M320 720 L480 720" stroke-dasharray="160" stroke-dashoffset="160">
+          <animate attributeName="stroke-dashoffset" values="160; 0; 0" dur="4s" begin="2.4s" repeatCount="indefinite" />
+        </path>
+      </g>
+      
+      <!-- Floating Holographic A+ Seal -->
+      <g transform="translate(700, 750) rotate(-15) scale(1.6)" filter="url(#aplus-glow)">
+        <animateTransform attributeName="transform" type="translate" values="700,750; 700,730; 700,750" dur="2s" repeatCount="indefinite" />
+        <animateTransform attributeName="transform" type="scale" values="1.6; 1.7; 1.6" dur="2s" repeatCount="indefinite" additive="sum" />
+        
+        <!-- Serrated Seal Edge -->
+        <path d="M 0 -80 L 15 -65 L 35 -75 L 45 -55 L 65 -55 L 65 -35 L 85 -20 L 75 0 L 85 20 L 65 35 L 65 55 L 45 55 L 35 75 L 15 65 L 0 80 L -15 65 L -35 75 L -45 55 L -65 55 L -65 35 L -85 20 L -75 0 L -85 -20 L -65 -35 L -65 -55 L -45 -55 L -35 -75 L -15 -65 Z" fill="url(#aplus-seal)" />
+        
+        <!-- Seal Inner Rings -->
+        <circle cx="0" cy="0" r="55" fill="none" stroke="#FFCDD2" stroke-width="4" stroke-dasharray="8 6" />
+        <circle cx="0" cy="0" r="45" fill="none" stroke="#FF5252" stroke-width="2" />
+        
+        <!-- Giant A+ Text -->
+        <text x="0" y="25" font-family="'Georgia', serif" font-weight="900" font-size="70" fill="#FFF" text-anchor="middle" filter="url(#aplus-glow)">A+</text>
+      </g>
+      
+      <!-- Golden Sparkles -->
+      <g fill="#FFD54F" filter="url(#aplus-glow)">
+        <circle cx="850" cy="500" r="15"><animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="0.2s" repeatCount="indefinite"/></circle>
+        <circle cx="500" cy="850" r="20"><animate attributeName="opacity" values="0;1;0" dur="2s" begin="0.7s" repeatCount="indefinite"/></circle>
+        <circle cx="150" cy="650" r="12"><animate attributeName="opacity" values="0;1;0" dur="1.8s" begin="0.4s" repeatCount="indefinite"/></circle>
+        <polygon points="120,300 130,330 160,340 130,350 120,380 110,350 80,340 110,330" fill="#FFC107">
+          <animate attributeName="opacity" values="0;0.8;0" dur="2.5s" repeatCount="indefinite" />
+        </polygon>
+      </g>
+
+    </g>
+  </g>
+</svg>

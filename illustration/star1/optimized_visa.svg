@@ -1,0 +1,32 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="visa-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="15" stdDeviation="20" flood-color="#1A237E" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <g filter="url(#visa-glow)">
+    <g style="transform-origin: 512px 512px;">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 0,-15; 0,0" dur="3s" repeatCount="indefinite" />
+      
+      <!-- Passport Cover -->
+      <rect x="210" y="120" width="604" height="800" rx="40" fill="#1A237E" />
+      
+      <circle cx="512" cy="400" r="120" fill="none" stroke="#FFB300" stroke-width="8" />
+      <circle cx="512" cy="400" r="100" fill="none" stroke="#FFB300" stroke-width="2" stroke-dasharray="8 8" />
+      
+      <!-- Passport Seal simplified symbol -->
+      <path d="M472 380 l40 -40 l40 40 l-40 80 z" fill="#FFB300" />
+      <path d="M432 400 q 80 120 160 0" fill="none" stroke="#FFB300" stroke-width="6" />
+      
+      <rect x="362" y="600" width="300" height="24" rx="12" fill="#FFB300" />
+      <rect x="412" y="660" width="200" height="16" rx="8" fill="#FFB300" opacity="0.6" />
+      
+      <!-- Approval Stamp -->
+      <g transform="translate(640, 720) rotate(-15)">
+        <animateTransform attributeName="transform" type="scale" values="1.2; 1; 1; 1" dur="2s" fill="freeze" calcMode="spline" keyTimes="0; 0.2; 1" keySplines="0.4 0 0.2 1; 1 0 1 1" repeatCount="indefinite" />
+        <rect x="-100" y="-40" width="200" height="80" rx="10" fill="none" stroke="#E53935" stroke-width="8" />
+        <text x="0" y="10" font-family="'Courier New', Courier, monospace" font-weight="bold" font-size="44" fill="#E53935" text-anchor="middle">APPROVED</text>
+      </g>
+    </g>
+  </g>
+</svg>

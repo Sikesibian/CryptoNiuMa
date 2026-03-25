@@ -1,0 +1,147 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- 核心深渊背景 -->
+        <radialGradient id="ins-bg" cx="50%" cy="50%" r="80%">
+            <stop offset="0%" stop-color="#151025"/>
+            <stop offset="60%" stop-color="#090614"/>
+            <stop offset="100%" stop-color="#030206"/>
+        </radialGradient>
+        
+        <!-- 赛博幻彩光弧渐变 -->
+        <linearGradient id="ins-neon-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00ffcc"/>
+            <stop offset="100%" stop-color="#0066ff"/>
+        </linearGradient>
+        <linearGradient id="ins-neon-purple" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#f800ff"/>
+            <stop offset="100%" stop-color="#6a00ff"/>
+        </linearGradient>
+
+        <filter id="hyper-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="6" result="blur1"/>
+            <feGaussianBlur stdDeviation="15" result="blur2"/>
+            <feMerge>
+                <feMergeNode in="blur2"/>
+                <feMergeNode in="blur1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+
+        <!-- 密码学蜂窝网格背景 -->
+        <pattern id="crypto-hex" width="40" height="69.28" patternUnits="userSpaceOnUse" patternTransform="scale(0.4)">
+            <path d="M 40 17.32 L 40 51.96 L 20 69.28 L 0 51.96 L 0 17.32 L 20 0 Z" fill="none" stroke="rgba(0, 255, 204, 0.08)" stroke-width="0.5"/>
+            <circle cx="20" cy="34.64" r="2" fill="rgba(138, 43, 226, 0.15)"/>
+        </pattern>
+        
+        <!-- 数据扫描线遮罩 -->
+        <pattern id="scan-lines" width="4" height="4" patternUnits="userSpaceOnUse">
+            <rect width="4" height="2" fill="rgba(0,255,204,0.03)"/>
+        </pattern>
+    </defs>
+    
+    <rect width="400" height="600" fill="url(#ins-bg)"/>
+    <rect width="400" height="600" fill="url(#crypto-hex)"/>
+    <rect width="400" height="600" fill="url(#scan-lines)"/>
+
+    <!-- UI 边角科幻瞄准锁定框 -->
+    <g fill="none" stroke="url(#ins-neon-cyan)" stroke-width="2" filter="url(#hyper-glow)" opacity="0.8">
+        <path d="M 20 60 L 20 20 L 60 20" />
+        <circle cx="20" cy="20" r="3" fill="#00ffcc"/>
+        
+        <path d="M 380 60 L 380 20 L 340 20" />
+        <circle cx="380" cy="20" r="3" fill="#00ffcc"/>
+        
+        <path d="M 20 540 L 20 580 L 60 580" />
+        <path d="M 380 540 L 380 580 L 340 580" />
+    </g>
+
+    <!-- 抬头显示 (HUD) 及周边数据流仪表盘 -->
+    <g font-family="'Orbitron', 'Courier New', monospace" font-size="8" fill="#00ffcc" opacity="0.6">
+        <text x="30" y="32">SYS.CORE_// ONLINE</text>
+        <text x="370" y="32" text-anchor="end">ENC_ALG: SHA-256/RSA</text>
+        <text x="30" y="570">SEC_LVL: OMEGA</text>
+        <text x="370" y="570" text-anchor="end">NODE: 0x9F4A</text>
+    </g>
+
+    <!-- 背景传输电路与光子脉冲 -->
+    <g fill="none" stroke-width="1.5" filter="url(#hyper-glow)" opacity="0.3">
+        <!-- 脉冲路径 1 -->
+        <path d="M 40 100 L 80 140 L 80 200 L 140 260" stroke="#00ffcc">
+            <animate attributeName="opacity" values="0.1;0.8;0.1" dur="3s" repeatCount="indefinite" />
+        </path>
+        <circle cx="140" cy="260" r="2" fill="#00ffcc"/>
+        
+        <!-- 脉冲路径 2 -->
+        <path d="M 360 100 L 320 140 L 320 180 L 260 240" stroke="#f800ff">
+            <animate attributeName="opacity" values="0.1;0.9;0.1" dur="4s" repeatCount="indefinite" />
+        </path>
+        <circle cx="260" cy="240" r="2" fill="#f800ff"/>
+        
+        <!-- 脉冲路径 3 -->
+        <path d="M 60 500 L 100 460 L 160 460 L 180 400" stroke="#0066ff"/>
+        <path d="M 340 500 L 300 460 L 250 460 L 220 400" stroke="#6a00ff"/>
+    </g>
+
+    <!-- 中央视觉枢纽：多层HUD旋转核心 -->
+    <g transform="translate(200, 280)">
+        <!-- 最外层雷达刻度环 -->
+        <g opacity="0.4">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite"/>
+            <circle cx="0" cy="0" r="145" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" stroke-dasharray="2 4"/>
+            <circle cx="0" cy="0" r="140" fill="none" stroke="url(#ins-neon-purple)" stroke-width="2" stroke-dasharray="40 80"/>
+        </g>
+
+        <!-- 次外层：不对称数据圆环 -->
+        <g opacity="0.7">
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="25s" repeatCount="indefinite"/>
+            <circle cx="0" cy="0" r="125" fill="none" stroke="url(#ins-neon-cyan)" stroke-width="1.5" stroke-dasharray="100 30 20 60" filter="url(#hyper-glow)"/>
+            <!-- 环上节点 -->
+            <circle cx="125" cy="0" r="3" fill="#ffffff" filter="url(#hyper-glow)"/>
+            <circle cx="-62.5" cy="108.2" r="3" fill="#ffffff" filter="url(#hyper-glow)"/>
+        </g>
+        
+        <!-- 密码锁内环 -->
+        <g opacity="0.9">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="15s" repeatCount="indefinite"/>
+            <circle cx="0" cy="0" r="105" fill="none" stroke="#2a1b4d" stroke-width="10" />
+            <circle cx="0" cy="0" r="105" fill="none" stroke="url(#ins-neon-purple)" stroke-width="10" stroke-dasharray="10 40 50 30" filter="url(#hyper-glow)"/>
+            
+            <!-- 内部跳动的几何框 -->
+            <rect x="-60" y="-60" width="120" height="120" fill="none" stroke="url(#ins-neon-cyan)" stroke-width="1" transform="rotate(45)">
+                <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="-60" y="-60" width="120" height="120" fill="none" stroke="url(#ins-neon-purple)" stroke-width="1" transform="rotate(60)">
+                <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="15s" repeatCount="indefinite"/>
+            </rect>
+        </g>
+        
+        <!-- 悬浮的玻璃态核心展板 -->
+        <rect x="-80" y="-80" width="160" height="160" fill="rgba(15, 10, 25, 0.6)" stroke="rgba(0, 255, 204, 0.3)" stroke-width="1.5" rx="20"/>
+        
+        <!-- 主标题（重构的极简高级版排版） -->
+        <text x="0" y="-12" text-anchor="middle" fill="#ffffff" font-family="'PingFang SC', 'HarmonyOS Sans SC', 'Microsoft YaHei', sans-serif" font-size="36" font-weight="900" letter-spacing="6" filter="drop-shadow(0px 0px 10px rgba(0, 255, 204, 0.9))">密码</text>
+        <text x="0" y="32" text-anchor="middle" fill="#d0d0eb" font-family="'PingFang SC', 'HarmonyOS Sans SC', 'Microsoft YaHei', sans-serif" font-size="22" font-weight="500" letter-spacing="12" filter="drop-shadow(0px 0px 6px rgba(248, 0, 255, 0.7))">学会</text>
+        
+        <!-- 下方发光微章 -->
+        <g transform="translate(0, 58)">
+            <rect x="-45" y="-10" width="90" height="20" fill="url(#ins-neon-cyan)" rx="10" opacity="0.85" filter="url(#hyper-glow)"/>
+            <text x="0" y="3" text-anchor="middle" fill="#030206" font-family="'Orbitron', 'Montserrat', sans-serif" font-size="11" font-weight="900" letter-spacing="2">INSCRYPT</text>
+        </g>
+    </g>
+
+    <!-- 底部：更强烈的数字区块与信息铭牌 -->
+    <g transform="translate(200, 500)">
+        <!-- 居中扫描指示器 -->
+        <path d="M -30 -15 L 0 -22 L 30 -15" fill="none" stroke="rgba(0,255,204,0.4)" stroke-width="2"/>
+        <polygon points="-15,0 15,0 5,5 -5,5" fill="#f800ff" filter="url(#hyper-glow)"/>
+        
+        <text x="0" y="25" text-anchor="middle" fill="#ffffff" font-family="'Orbitron', 'Montserrat', sans-serif" font-size="17" font-weight="900" letter-spacing="3" filter="drop-shadow(0px 0px 8px rgba(0, 255, 204, 0.6))">INFORMATION SECURITY</text>
+        
+        <!-- 渐变字效 -->
+        <text x="0" y="45" text-anchor="middle" fill="url(#ins-neon-cyan)" font-family="'Roboto', 'Consolas', sans-serif" font-size="12" font-weight="600" letter-spacing="6">AND CRYPTOLOGY</text>
+    </g>
+
+    <!-- 底部硬核数据条 -->
+    <path d="M 0 585 L 120 585 L 140 595 L 260 595 L 280 585 L 400 585" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+    <path d="M 160 595 L 240 595" fill="none" stroke="url(#ins-neon-purple)" stroke-width="4" filter="url(#hyper-glow)"/>
+</svg>

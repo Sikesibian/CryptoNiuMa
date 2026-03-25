@@ -1,0 +1,88 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <radialGradient id="despair-bg" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#2a0000">
+                <animate attributeName="stop-color" values="#2a0000;#1a0000;#4a0000;#2a0000" dur="4s" repeatCount="indefinite"/>
+            </stop>
+            <stop offset="100%" stop-color="#000000"/>
+        </radialGradient>
+        <filter id="evil-glow">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feBlend in="SourceGraphic" in2="blur" mode="screen"/>
+        </filter>
+        <filter id="shake">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" result="noise">
+                <animate attributeName="baseFrequency" values="0.9;0.1;0.9" dur="0.1s" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        <marker id="claw" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 L2,3 Z" fill="#ff0000"/>
+        </marker>
+    </defs>
+    
+    <rect width="400" height="600" fill="url(#despair-bg)"/>
+    
+    <!-- Sinister Reviewer Entity -->
+    <g transform="translate(200, 100)">
+        <!-- Glowing Eyes -->
+        <path d="M -60 -10 Q -40 -30 -20 -10 Q -40 -5 -60 -10" fill="#ff0000" filter="url(#evil-glow)">
+            <animate attributeName="d" values="M -60 -10 Q -40 -30 -20 -10 Q -40 -5 -60 -10;M -60 -15 Q -40 -25 -20 -15 Q -40 -10 -60 -15;M -60 -10 Q -40 -30 -20 -10 Q -40 -5 -60 -10" dur="3s" repeatCount="indefinite"/>
+        </path>
+        <path d="M 60 -10 Q 40 -30 20 -10 Q 40 -5 60 -10" fill="#ff0000" filter="url(#evil-glow)">
+            <animate attributeName="d" values="M 60 -10 Q 40 -30 20 -10 Q 40 -5 60 -10;M 60 -15 Q 40 -25 20 -15 Q 40 -10 60 -15;M 60 -10 Q 40 -30 20 -10 Q 40 -5 60 -10" dur="3s" repeatCount="indefinite"/>
+        </path>
+        <text x="0" y="40" fill="#ff0000" font-family="'Impact', sans-serif" font-size="36" text-anchor="middle" letter-spacing="8" filter="url(#evil-glow)" opacity="0.8">R E V I E W E R  2</text>
+    </g>
+    
+    <!-- The Torn Submission -->
+    <g transform="translate(200, 320)">
+        <!-- Animated Shake applied to the paper -->
+        <g filter="url(#shake)">
+            <!-- Crumpled/Torn paper base -->
+            <path d="M -130 -140 L 140 -150 L 120 120 L 50 140 L 0 110 L -40 150 L -140 130 Z" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+            
+            <!-- Aggressive Red Ink Marks -->
+            <path d="M -110 -100 L 110 -80 M -100 -60 L 120 -40 M -120 -20 L 100 0" stroke="#ef4444" stroke-width="8" stroke-opacity="0.3" stroke-linecap="round"/>
+            
+            <text x="-100" y="-110" fill="#dc2626" font-family="'Courier New', monospace" font-size="22" font-weight="bold" transform="rotate(2)">"FATALLY FLAWED"</text>
+            <text x="-90" y="-70" fill="#dc2626" font-family="'Courier New', monospace" font-size="18" font-weight="bold" transform="rotate(-3)">"LACKS NOVELTY"</text>
+            <text x="-110" y="-30" fill="#dc2626" font-family="'Courier New', monospace" font-size="20" font-weight="bold" transform="rotate(4)">"POOR LIT REVIEW"</text>
+            <text x="-100" y="10" fill="#dc2626" font-family="'Courier New', monospace" font-size="13" font-weight="bold" transform="rotate(-2)">"WHY DIDN'T YOU CITE [R2, 1998]?"</text>
+            
+            <!-- Bleeding Reject Stamp -->
+            <g transform="rotate(-15) translate(0, 40)">
+                <rect x="-110" y="-35" width="220" height="70" fill="none" stroke="#991b1b" stroke-width="8" rx="8"/>
+                <text x="0" y="15" fill="#991b1b" font-family="'Impact', sans-serif" font-size="48" text-anchor="middle" letter-spacing="4" filter="url(#evil-glow)">REJECT</text>
+                <!-- Blood drips -->
+                <path d="M -80 35 L -80 70 M -40 35 L -40 50 M 20 35 L 20 80 M 60 35 L 60 60" stroke="#991b1b" stroke-width="4" stroke-linecap="round">
+                    <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="2s" repeatCount="indefinite" />
+                </path>
+            </g>
+        </g>
+    </g>
+    
+    <!-- Author's Breakdown Status -->
+    <g transform="translate(200, 520)">
+        <text x="0" y="0" fill="#cbd5e1" font-family="'Courier New', monospace" font-size="14" text-anchor="middle" opacity="0.6">Author.sanity -= 100;</text>
+        <text x="0" y="20" fill="#cbd5e1" font-family="'Courier New', monospace" font-size="12" text-anchor="middle" opacity="0.4">"But I worked on this for 2 years..."</text>
+        
+        <!-- Animated Despair Tears -->
+        <path d="M -120 40 Q 0 80 120 40" fill="none" stroke="#3b82f6" stroke-width="2" opacity="0.3"/>
+        <circle cx="-50" cy="20" r="2" fill="#60a5fa">
+            <animate attributeName="cy" values="20;60" dur="1s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;0" dur="1s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="50" cy="10" r="2.5" fill="#60a5fa">
+            <animate attributeName="cy" values="10;55" dur="1.3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;0" dur="1.3s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="0" cy="30" r="1.5" fill="#60a5fa">
+            <animate attributeName="cy" values="30;70" dur="0.8s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;0" dur="0.8s" repeatCount="indefinite"/>
+        </circle>
+    </g>
+    
+    <!-- Vignette/Shadow Overlay -->
+    <rect width="400" height="600" fill="none" stroke="#000" stroke-width="40" opacity="0.8"/>
+</svg>

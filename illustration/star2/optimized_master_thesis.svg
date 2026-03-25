@@ -1,0 +1,190 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Premium Gradients -->
+    <radialGradient id="mt-bg" cx="50%" cy="50%" r="70%">
+      <stop stop-color="#020617" /> <!-- Dark Slate -->
+    </radialGradient>
+    <linearGradient id="mt-glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.20" />
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.02" />
+    </linearGradient>
+    <linearGradient id="mt-gold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D97706" />
+      <stop offset="25%" stop-color="#FCD34D" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="75%" stop-color="#FEF3C7" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+    <linearGradient id="mt-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#A5B4FC" stop-opacity="0" />
+      <stop offset="50%" stop-color="#A5B4FC" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#A5B4FC" stop-opacity="0" />
+    </linearGradient>
+    
+    <!-- Filters -->
+    <filter id="mt-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="32" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+    <filter id="mt-glow">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="mt-intense-glow">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1024" height="1024" fill="url(#mt-bg)" rx="100" />
+
+  <!-- Rotating Academic Verification Rings -->
+  <g filter="url(#mt-glow)" opacity="0.4" style="transform-origin: 512px 512px;">
+    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="60s" repeatCount="indefinite" linear="linear" />
+    <circle cx="512" cy="512" r="420" fill="none" stroke="#818CF8" stroke-width="2" stroke-dasharray="4 12" />
+    <circle cx="512" cy="512" r="380" fill="none" stroke="url(#mt-gold)" stroke-width="3" stroke-dasharray="100 40 20 40" />
+    <circle cx="512" cy="512" r="340" fill="none" stroke="#6366F1" stroke-width="4" stroke-opacity="0.8" />
+    <polygon points="512,132 841,682 183,682" fill="none" stroke="#818CF8" stroke-width="2" stroke-opacity="0.5" />
+    <polygon points="512,892 183,342 841,342" fill="none" stroke="#818CF8" stroke-width="2" stroke-opacity="0.5" />
+  </g>
+
+  <!-- Data Flow Background Elements -->
+  <g stroke="#4F46E5" stroke-width="3" stroke-dasharray="4 8" opacity="0.6">
+    <line x1="200" y1="200" x2="350" y2="350" />
+    <line x1="824" y1="200" x2="674" y2="350" />
+    <line x1="200" y1="824" x2="350" y2="674" />
+  </g>
+  <g opacity="0.8" filter="url(#mt-glow)">
+    <circle cx="200" cy="200" r="8" fill="#A5B4FC" />
+    <circle cx="824" cy="200" r="8" fill="#A5B4FC" />
+    <circle cx="200" cy="824" r="8" fill="#A5B4FC" />
+  </g>
+
+  <!-- Main Floating Thesis/Certificate Document -->
+  <g transform="translate(512, 480)" filter="url(#mt-shadow)">
+    <animateTransform attributeName="transform" type="translate" values="512,480; 512,460; 512,480" dur="7s" repeatCount="indefinite" ease-in-out="ease-in-out" />
+    
+    <!-- Document Backdrop (Bright Frontend) -->
+    <rect x="-260" y="-320" width="520" height="680" rx="20" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="2.5" />
+    <rect x="-260" y="-320" width="520" height="680" rx="20" fill="url(#mt-glass)" />
+
+    <!-- Top Header Banner inside Doc (Window Style - Light) -->
+    <path d="M-260 -260 L260 -260 L260 -300 C260 -311 -251 -320 -240 -320 L240 -320 C251 -320 260 -311 260 -300 Z" fill="#F8FAFC" opacity="0.9" />
+    <rect x="-220" y="-295" width="200" height="10" rx="5" fill="#E2E8F0" />
+    <line x1="-260" y1="-260" x2="260" y2="-260" stroke="#E2E8F0" stroke-width="2" />
+    
+    <!-- Windows Style Control Buttons (Dark controls for light theme) -->
+    <g transform="translate(160, -300)" fill="none" stroke="#64748B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <!-- Minimize (-) -->
+      <line x1="0" y1="14" x2="12" y2="14" />
+      <!-- Maximize ([]) -->
+      <rect x="28" y="4" width="12" height="12" />
+      <!-- Close (X) -->
+      <line x1="56" y1="4" x2="68" y2="16" />
+      <line x1="68" y1="4" x2="56" y2="16" />
+    </g>
+
+    <!-- Internal Margins/Border -->
+    <rect x="-220" y="-220" width="440" height="480" rx="8" fill="none" stroke="#94A3B8" stroke-width="2" stroke-dasharray="10 5" opacity="0.5" />
+
+    <!-- Mock Academic Content (Graphs & Text) -->
+    <g opacity="0.95">
+      <!-- Title Line -->
+      <rect x="-180" y="-180" width="300" height="16" rx="4" fill="url(#mt-gold)" />
+      <rect x="-180" y="-140" width="200" height="10" rx="3" fill="#818CF8" />
+      
+      <!-- Abstract / Text Lines -->
+      <g fill="#CBD5E1" rx="3">
+        <rect x="-180" y="-100" width="360" height="6" />
+        <rect x="-180" y="-80" width="340" height="6" />
+        <rect x="-180" y="-60" width="300" height="6" />
+        <rect x="-180" y="-40" width="350" height="6" />
+      </g>
+
+      <!-- Data Visualization / Chart in thesis (Light) -->
+      <rect x="-180" y="0" width="160" height="120" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5" />
+      <polyline points="-160,100 -130,50 -100,80 -60,20 -40,40" fill="none" stroke="#4F46E5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="-160" cy="100" r="5" fill="#F59E0B" />
+      <circle cx="-130" cy="50" r="5" fill="#F59E0B" />
+      <circle cx="-100" cy="80" r="5" fill="#F59E0B" />
+      <circle cx="-60" cy="20" r="5" fill="#F59E0B" />
+      
+      <rect x="-180" y="140" width="120" height="8" rx="4" fill="#94A3B8" />
+
+      <!-- Diagram 2 / Neural Net / Formula (Light) -->
+      <rect x="20" y="0" width="160" height="120" rx="8" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1.5" />
+      <circle cx="60" cy="40" r="8" fill="#4F46E5" />
+      <circle cx="60" cy="80" r="8" fill="#4F46E5" />
+      <circle cx="130" cy="60" r="10" fill="url(#mt-gold)" />
+      <line x1="68" y1="40" x2="120" y2="60" stroke="#94A3B8" stroke-width="2" />
+      <line x1="68" y1="80" x2="120" y2="60" stroke="#94A3B8" stroke-width="2" />
+      <rect x="20" y="140" width="100" height="8" rx="4" fill="#94A3B8" />
+      
+      <rect x="-180" y="200" width="360" height="6" rx="3" fill="#CBD5E1" />
+      <rect x="-180" y="220" width="280" height="6" rx="3" fill="#CBD5E1" />
+    </g>
+    
+    <!-- Glowing Scanner Line over the document -->
+    <rect x="-240" y="-200" width="480" height="4" fill="url(#mt-accent)" filter="url(#mt-intense-glow)">
+      <animate attributeName="y" values="-300; 320; -300" dur="5s" repeatCount="indefinite" ease-in-out="ease-in-out" />
+    </rect>
+  </g>
+
+  <!-- Giant Premium Gold "PASSED" Seal / Crest (Bottom Right overlapping) -->
+  <g transform="translate(740, 700)" filter="url(#mt-shadow)">
+    <animateTransform attributeName="transform" type="translate" values="740,700; 740,685; 740,700" dur="8s" repeatCount="indefinite" ease-in-out="ease-in-out" />
+    
+    <!-- Golden Sunburst Edge -->
+    <path d="M0 -110 L15 -90 L40 -100 L45 -75 L70 -70 L65 -45 L90 -30 L75 -10 L95 10 L75 30 L90 50 L65 65 L70 90 L45 85 L40 110 L15 100 L0 120 L-15 100 L-40 110 L-45 85 L-70 90 L-65 65 L-90 50 L-75 30 L-95 10 L-75 -10 L-90 -30 L-65 -45 L-70 -70 L-45 -75 L-40 -100 L-15 -90 Z" fill="url(#mt-gold)" />
+    
+    <!-- Inner Badge Background -->
+    <circle cx="0" cy="0" r="90" fill="#FFFBEB" />
+    
+    <!-- Rotating Detailed Rings -->
+    <g style="transform-origin: 0px 0px;">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="20s" repeatCount="indefinite" linear="linear" />
+      <circle cx="0" cy="0" r="80" fill="none" stroke="url(#mt-gold)" stroke-width="3" stroke-dasharray="10 5" />
+      <circle cx="0" cy="0" r="72" fill="none" stroke="#F59E0B" stroke-width="1.5" />
+    </g>
+
+    <!-- Graduation Cap Logo inside Badge -->
+    <g transform="translate(0, -15)">
+      <path d="M0 -25 L45 0 L0 25 L-45 0 Z" fill="url(#mt-gold)" />
+      <path d="M-25 15 L-25 35 Q0 50, 25 35 L25 15 Z" fill="#FFFFFF" stroke="url(#mt-gold)" stroke-width="3" />
+      <!-- Small Tassel -->
+      <path d="M0 0 L30 15 L30 40" fill="none" stroke="#D97706" stroke-width="2.5" />
+      <circle cx="30" cy="40" r="4" fill="#D97706" filter="url(#mt-glow)" />
+    </g>
+    
+    <!-- Text -->
+    <text x="0" y="55" font-family="'Segoe UI', Roboto, sans-serif" font-weight="900" font-size="28" fill="#D97706" text-anchor="middle" letter-spacing="4">PASS</text>
+    
+    <!-- Glowing Ambient Overlay -->
+    <circle cx="0" cy="0" r="90" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.4" filter="url(#mt-glow)" />
+  </g>
+
+  <!-- Clean Floating Tech/Academic Geo Elements -->
+  <g filter="url(#mt-shadow)">
+    <!-- Green Success Tick/Hexagon Info Chip -->
+    <g transform="translate(180, 280)">
+      <animateTransform attributeName="transform" type="translate" values="180,280; 180,260; 180,280" dur="5.5s" repeatCount="indefinite" />
+      <polygon points="0,-40 35,-20 35,20 0,40 -35,20 -35,-20" fill="url(#mt-glass)" stroke="#4ADE80" stroke-width="2" />
+      <path d="M-15 0 L-5 10 L20 -10" fill="none" stroke="#4ADE80" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" filter="url(#mt-glow)" />
+      <circle cx="0" cy="0" r="45" fill="none" stroke="#818CF8" stroke-width="2" stroke-dasharray="4 4" opacity="0.7">
+         <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite" />
+      </circle>
+    </g>
+    
+    <!-- Floating Glass Core -->
+    <g transform="translate(850, 250)">
+      <animateTransform attributeName="transform" type="translate" values="850,250; 850,280; 850,250" dur="6.5s" repeatCount="indefinite" />
+      <polygon points="0,-35 25,0 0,35 -25,0" fill="#312E81" stroke="url(#mt-gold)" stroke-width="2.5" opacity="0.9" />
+      <circle cx="0" cy="0" r="10" fill="#FCD34D" filter="url(#mt-intense-glow)" />
+    </g>
+  </g>
+
+  <!-- Soft Foreground Light Flare -->
+  <path d="M-200 1024 L1024 -200" stroke="url(#mt-glass)" stroke-width="200" opacity="0.4" style="mix-blend-mode: overlay;" />
+
+</svg>

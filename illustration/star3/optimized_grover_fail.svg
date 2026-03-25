@@ -1,0 +1,203 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Background Gradients -->
+        <linearGradient id="grover-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#020617"/>
+            <stop offset="50%" stop-color="#0f172a"/>
+            <stop offset="100%" stop-color="#020617"/>
+        </linearGradient>
+        
+        <filter id="neon-cyan-grover">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="neon-red-grover">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        
+        <pattern id="grid-grover" width="30" height="30" patternUnits="userSpaceOnUse">
+            <circle cx="15" cy="15" r="1.5" fill="#1e293b"/>
+            <path d="M 0 15 H 30 M 15 0 V 30" stroke="#0f172a" stroke-width="0.5"/>
+        </pattern>
+    </defs>
+
+    <!-- Base Layer -->
+    <rect width="400" height="600" fill="url(#grover-bg)"/>
+    <rect width="400" height="600" fill="url(#grid-grover)"/>
+
+    <!-- Header Overlay -->
+    <g transform="translate(10, 10)">
+        <path d="M 0 10 L 10 0 H 160 L 170 10" fill="none" stroke="#334155" stroke-width="1"/>
+        <text x="15" y="10" fill="#64748b" font-family="'Courier New', monospace" font-size="8">PROC: AMPLITUDE_AMPLIFICATION</text>
+    </g>
+
+    <!-- Probability Histogram Panel -->
+    <g transform="translate(10, 40)">
+        <rect x="0" y="0" width="380" height="120" rx="6" fill="#0f172a" stroke="#1e293b" opacity="0.8"/>
+        <text x="10" y="15" fill="#94a3b8" font-family="'Courier New', monospace" font-size="8">State Probability |Ψ|² Distribution</text>
+        
+        <g transform="translate(15, 100)">
+            <!-- X Axis -->
+            <line x1="0" y1="0" x2="350" y2="0" stroke="#334155" stroke-width="1"/>
+            
+            <!-- Histogram Bars (Upward Scaling) -->
+            <g transform="scale(1, -1)">
+                <!-- Non-Target States -->
+                <g fill="#3b82f6" opacity="0.6">
+                    <animateTransform attributeName="transform" type="scale" values="1 1; 1 0.1; 1 1; 1 0.1; 1 1" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1"/>
+                    <rect x="10" y="0" width="14" height="25" />
+                    <rect x="35" y="0" width="14" height="25" />
+                    <rect x="60" y="0" width="14" height="25" />
+                    <rect x="85" y="0" width="14" height="25" />
+                    <rect x="110" y="0" width="14" height="25" />
+                    <rect x="135" y="0" width="14" height="25" />
+                    <!-- Gap for Target -->
+                    <rect x="185" y="0" width="14" height="25" />
+                    <rect x="210" y="0" width="14" height="25" />
+                    <rect x="235" y="0" width="14" height="25" />
+                    <rect x="260" y="0" width="14" height="25" />
+                    <rect x="285" y="0" width="14" height="25" />
+                    <rect x="310" y="0" width="14" height="25" />
+                </g>
+                
+                <!-- Target State |w> -->
+                <g>
+                    <animateTransform attributeName="transform" type="scale" values="1 0.05; 1 1; 1 0.05; 1 1; 1 0.05" dur="6s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1; 0.4 0 0.6 1"/>
+                    <rect x="160" y="0" width="14" height="75" fill="#0ea5e9" filter="url(#neon-cyan-grover)">
+                        <animate attributeName="fill" values="#0ea5e9; #22c55e; #ef4444; #22c55e; #0ea5e9" dur="6s" repeatCount="indefinite" />
+                    </rect>
+                </g>
+            </g>
+            
+            <!-- Axis Labels -->
+            <text x="75" y="15" fill="#64748b" font-family="'Courier New', monospace" font-size="9" text-anchor="middle">|s'&gt;</text>
+            <text x="250" y="15" fill="#64748b" font-family="'Courier New', monospace" font-size="9" text-anchor="middle">|s'&gt;</text>
+            <text x="167" y="15" fill="#eab308" font-family="'Courier New', monospace" font-size="10" text-anchor="middle" font-weight="bold">|w&gt;</text>
+        </g>
+    </g>
+
+    <!-- Phase Plane Monitor -->
+    <g transform="translate(200, 320)">
+        <!-- Radar Circles -->
+        <circle cx="0" cy="0" r="110" fill="#020617" stroke="#1e293b" stroke-width="2"/>
+        <circle cx="0" cy="0" r="75" fill="none" stroke="#0f172a" stroke-width="1.5"/>
+        <circle cx="0" cy="0" r="40" fill="none" stroke="#0f172a" stroke-width="1"/>
+        
+        <!-- Measurement Windows (Sector Arcs) -->
+        <!-- Optimal Zone 1 (around -90 deg / Top) -->
+        <!-- x = r*cos(-105)=-28.4  y = r*sin(-105)=-106.3 to x=28.4 y=-106.3 -->
+        <path d="M 0 0 L -28.4 -106.3 A 110 110 0 0 1 28.4 -106.3 Z" fill="#22c55e" opacity="0.15" />
+        <path d="M -28.4 -106.3 A 110 110 0 0 1 28.4 -106.3" fill="none" stroke="#22c55e" stroke-width="3" filter="url(#neon-cyan-grover)">
+            <animate attributeName="opacity" values="0.2; 1; 0.2; 0.2; 0.2" keyTimes="0; 0.25; 0.5; 0.75; 1" dur="6s" repeatCount="indefinite"/>
+        </path>
+        
+        <!-- Optimal Zone 2 (around +90 deg / Bottom / -270 deg) -->
+        <path d="M 0 0 L 28.4 106.3 A 110 110 0 0 1 -28.4 106.3 Z" fill="#22c55e" opacity="0.15" />
+        <path d="M 28.4 106.3 A 110 110 0 0 1 -28.4 106.3" fill="none" stroke="#22c55e" stroke-width="3" filter="url(#neon-cyan-grover)">
+            <animate attributeName="opacity" values="0.2; 0.2; 0.2; 1; 0.2" keyTimes="0; 0.25; 0.5; 0.75; 1" dur="6s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- Coordinate Axes -->
+        <line x1="-120" y1="0" x2="120" y2="0" stroke="#334155" stroke-width="1" stroke-dasharray="2,2"/>
+        <line x1="0" y1="-120" x2="0" y2="120" stroke="#334155" stroke-width="1" stroke-dasharray="2,2"/>
+        <text x="110" y="15" fill="#475569" font-family="'Courier New', monospace" font-size="10">|s'&gt;</text>
+        <text x="-20" y="-105" fill="#475569" font-family="'Courier New', monospace" font-size="10">|w&gt;</text>
+
+        <!-- Animated State Vector -->
+        <g>
+            <animateTransform attributeName="transform" type="rotate" values="0; -90; -180; -270; -360" dur="6s" repeatCount="indefinite" />
+            
+            <line x1="0" y1="0" x2="95" y2="0" stroke="#0ea5e9" stroke-width="3" filter="url(#neon-cyan-grover)">
+                <animate attributeName="stroke" values="#0ea5e9; #22c55e; #ef4444; #22c55e; #0ea5e9" dur="6s" repeatCount="indefinite"/>
+            </line>
+            <polygon points="95,-5 105,0 95,5" fill="#0ea5e9">
+                <animate attributeName="fill" values="#0ea5e9; #22c55e; #ef4444; #22c55e; #0ea5e9" dur="6s" repeatCount="indefinite"/>
+            </polygon>
+            
+            <!-- Theta arc mapping -->
+            <path d="M 35 0 A 35 35 0 0 0 0 -35" fill="none" stroke="#0ea5e9" stroke-width="1" opacity="0.5"/>
+            <text x="35" y="-15" fill="#0ea5e9" font-family="monospace" font-size="10" transform="rotate(25)">θ</text>
+        </g>
+        
+        <!-- Error Zone Indicator (Overshoot) -->
+        <g opacity="0">
+            <animate attributeName="opacity" values="0; 0; 1; 0; 0" keyTimes="0; 0.25; 0.5; 0.75; 1" dur="6s" repeatCount="indefinite"/>
+            <path d="M 0 0 L -106.3 -28.4 A 110 110 0 0 0 -106.3 28.4 Z" fill="#ef4444" opacity="0.2" />
+            <path d="M -60 -15 L -80 -35 M -80 -15 L -60 -35" stroke="#ef4444" stroke-width="2" filter="url(#neon-red-grover)"/>
+            <text x="-70" y="-45" fill="#fca5a5" font-family="'Courier New', monospace" font-size="10" font-weight="bold" text-anchor="middle" filter="url(#neon-red-grover)">OVERSHOOT</text>
+        </g>
+    </g>
+
+    <!-- Lower Status Terminal -->
+    <g transform="translate(10, 480)">
+        <rect x="0" y="0" width="380" height="100" rx="6" fill="#0f172a" fill-opacity="0.9" stroke="#334155" stroke-width="1"/>
+        <path d="M 0 6 A 6 6 0 0 1 6 0 H 374 A 6 6 0 0 1 380 6 V 20 H 0 Z" fill="#1e293b"/>
+        
+        <!-- Header dots -->
+        <circle cx="15" cy="10" r="3" fill="#ef4444"/>
+        <circle cx="25" cy="10" r="3" fill="#eab308"/>
+        <circle cx="35" cy="10" r="3" fill="#22c55e"/>
+        <text x="50" y="13" fill="#94a3b8" font-family="'Courier New', monospace" font-size="9">syslog: grover_iterator_ctrl</text>
+
+        <!-- Stats Grid -->
+        <text x="15" y="45" fill="#94a3b8" font-family="'Courier New', monospace" font-size="10">Target Prob |w|²:</text>
+        <text x="140" y="45" fill="#0ea5e9" font-family="'Courier New', monospace" font-size="10" font-weight="bold">
+            <animate attributeName="opacity" values="1; 0; 0; 0; 1" keyTimes="0; 0.25; 0.5; 0.75; 1" dur="6s" repeatCount="indefinite" />
+            0.024
+        </text>
+        <text x="140" y="45" fill="#22c55e" font-family="'Courier New', monospace" font-size="10" font-weight="bold">
+            <animate attributeName="opacity" values="0; 1; 0; 1; 0" keyTimes="0; 0.25; 0.5; 0.75; 1" dur="6s" repeatCount="indefinite" />
+            0.989
+        </text>
+        <text x="140" y="45" fill="#ef4444" font-family="'Courier New', monospace" font-size="10" font-weight="bold">
+            <animate attributeName="opacity" values="0; 0; 1; 0; 0" keyTimes="0; 0.25; 0.5; 0.75; 1" dur="6s" repeatCount="indefinite" />
+            0.003
+        </text>
+
+        <text x="210" y="45" fill="#94a3b8" font-family="'Courier New', monospace" font-size="10">Iter(k):</text>
+        <text x="280" y="45" fill="#0ea5e9" font-family="'Courier New', monospace" font-size="10">
+            <animate attributeName="opacity" values="1; 0; 0; 0; 1" keyTimes="0; 0.25; 0.5; 0.75; 1" dur="6s" repeatCount="indefinite" />
+            02  [SEARCHING]
+        </text>
+        <text x="280" y="45" fill="#22c55e" font-family="'Courier New', monospace" font-size="10">
+            <animate attributeName="opacity" values="0; 1; 0; 1; 0" keyTimes="0; 0.25; 0.5; 0.75; 1" dur="6s" repeatCount="indefinite" />
+            11  [OPTIMAL]
+        </text>
+        <text x="280" y="45" fill="#ef4444" font-family="'Courier New', monospace" font-size="10">
+            <animate attributeName="opacity" values="0; 0; 1; 0; 0" keyTimes="0; 0.25; 0.5; 0.75; 1" dur="6s" repeatCount="indefinite" />
+            22  [EXCEEDED]
+        </text>
+
+        <!-- Dynamic Status Frame & Log -->
+        <!-- INFO (0s and 6s) -->
+        <g>
+            <animate attributeName="opacity" values="1; 0; 0; 0; 1" keyTimes="0; 0.25; 0.5; 0.75; 1" dur="6s" repeatCount="indefinite"/>
+            <rect x="10" y="65" width="360" height="22" fill="#0c4a6e" stroke="#0ea5e9" stroke-width="1" stroke-dasharray="4 2"/>
+            <text x="18" y="80" fill="#7dd3fc" font-family="'Courier New', monospace" font-size="11" font-weight="bold" letter-spacing="1">
+                [INFO] AMPLIFYING AMPLITUDE...
+            </text>
+        </g>
+        
+        <!-- SUCCESS (1.5s and 4.5s) -->
+        <g>
+            <animate attributeName="opacity" values="0; 1; 0; 1; 0" keyTimes="0; 0.25; 0.5; 0.75; 1" dur="6s" repeatCount="indefinite"/>
+            <rect x="10" y="65" width="360" height="22" fill="#064e3b" stroke="#22c55e" stroke-width="1"/>
+            <text x="18" y="80" fill="#86efac" font-family="'Courier New', monospace" font-size="11" font-weight="bold" letter-spacing="1">
+                [OK] PEAK REACHED. MEASURE NOW.
+            </text>
+        </g>
+
+        <!-- WARNING (3.0s) -->
+        <g>
+            <animate attributeName="opacity" values="0; 0; 1; 0; 0" keyTimes="0; 0.25; 0.5; 0.75; 1" dur="6s" repeatCount="indefinite"/>
+            <rect x="10" y="65" width="360" height="22" fill="#4c0519" stroke="#e11d48" stroke-width="1.5" stroke-dasharray="4 2">
+                <animate attributeName="stroke-dashoffset" values="0; -12" dur="1s" repeatCount="indefinite"/>
+            </rect>
+            <text x="18" y="80" fill="#fca5a5" font-family="'Courier New', monospace" font-size="11" font-weight="bold" letter-spacing="1">
+                [WARN] OVERSHOOT (k &gt; π/4 √N)
+            </text>
+            <text x="350" y="80" fill="#ef4444" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">!</text>
+        </g>
+    </g>
+</svg>

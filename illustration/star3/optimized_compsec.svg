@@ -1,0 +1,87 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <radialGradient id="compsec-bg" cx="50%" cy="50%" r="80%">
+            <stop offset="0%" stop-color="#022c22"/>
+            <stop offset="60%" stop-color="#064e3b"/>
+            <stop offset="100%" stop-color="#020617"/>
+        </radialGradient>
+        <linearGradient id="compsec-neon" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#34d399"/>
+            <stop offset="50%" stop-color="#10b981"/>
+            <stop offset="100%" stop-color="#047857"/>
+        </linearGradient>
+        <linearGradient id="compsec-dark" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#065f46"/>
+            <stop offset="100%" stop-color="#064e3b"/>
+        </linearGradient>
+        <filter id="compsec-glow">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        <pattern id="compsec-hex" width="30" height="51.96" patternUnits="userSpaceOnUse" patternTransform="scale(0.8)">
+            <path d="M 15 0 L 30 8.66 L 30 25.98 L 15 34.64 L 0 25.98 L 0 8.66 Z" fill="none" stroke="#059669" stroke-width="0.5" opacity="0.3"/>
+            <path d="M 15 51.96 L 30 43.3 L 30 25.98 L 15 34.64 L 0 25.98 L 0 43.3 Z" fill="none" stroke="#059669" stroke-width="0.5" opacity="0.3"/>
+        </pattern>
+    </defs>
+    <rect width="400" height="600" fill="url(#compsec-bg)"/>
+    <rect width="400" height="600" fill="url(#compsec-hex)"/>
+
+    <!-- Cascading Binary Data -->
+    <g font-family="'Courier New', Courier, monospace" font-size="10" fill="#34d399" opacity="0.4" font-weight="bold">
+        <text x="30" y="80">01000011</text>
+        <text x="30" y="100">01001111</text>
+        <text x="30" y="120">01001101</text>
+        <text x="30px" y="140">01010000</text>
+        
+        <text x="320" y="200">01010011</text>
+        <text x="320" y="220">01000101</text>
+        <text x="320" y="240">01000011</text>
+        <text x="320" y="260">01010101</text>
+
+        <text x="60" y="400">11001010</text>
+        <text x="60" y="420">10110101</text>
+
+        <text x="290" y="440">10100100</text>
+        <text x="290" y="460">00111000</text>
+    </g>
+
+    <!-- Circuit Board Connections -->
+    <g fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.7">
+        <path d="M 200 40 L 200 110" stroke-width="3"/>
+        <path d="M 200 400 L 200 480" stroke-width="3"/>
+        <path d="M 80 255 L 110 255"/>
+        <path d="M 320 255 L 290 255"/>
+        <path d="M 120 150 L 150 180 M 280 150 L 250 180"/>
+        <path d="M 120 360 L 150 330 M 280 360 L 250 330"/>
+        <circle cx="80" cy="255" r="4" fill="#34d399"/>
+        <circle cx="320" cy="255" r="4" fill="#34d399"/>
+        <circle cx="120" cy="150" r="4" fill="#34d399"/>
+        <circle cx="280" cy="150" r="4" fill="#34d399"/>
+        <circle cx="120" cy="360" r="4" fill="#34d399"/>
+        <circle cx="280" cy="360" r="4" fill="#34d399"/>
+    </g>
+
+    <!-- Main Central Emblem -->
+    <g transform="translate(200, 255)" filter="url(#compsec-glow)">
+        <!-- Triple Shield Design -->
+        <path d="M 0 -115 L 95 -75 L 95 40 C 95 100 0 150 0 150 C 0 150 -95 100 -95 40 L -95 -75 Z" fill="#022c22" stroke="url(#compsec-neon)" stroke-width="4"/>
+        <path d="M 0 -95 L 75 -60 L 75 30 C 75 80 0 120 0 120 C 0 120 -75 80 -75 30 L -75 -60 Z" fill="url(#compsec-dark)" stroke="#34d399" stroke-width="2"/>
+        <path d="M 0 -75 L 55 -45 L 55 20 C 55 60 0 90 0 90 C 0 90 -55 60 -55 20 L -55 -45 Z" fill="url(#compsec-neon)" opacity="0.2"/>
+        
+        <!-- Cyberspace Core Ring -->
+        <circle cx="0" cy="0" r="45" fill="#020617" stroke="#6ee7b7" stroke-width="3"/>
+        <circle cx="0" cy="0" r="35" fill="none" stroke="#10b981" stroke-width="1" stroke-dasharray="6 6">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Center Cyber Brain -->
+        <rect x="-15" y="-15" width="30" height="30" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+        <path d="M-15 0 L15 0 M0 -15 L0 15" stroke="#34d399" stroke-width="2"/>
+        <circle cx="0" cy="0" r="6" fill="#6ee7b7"/>
+        
+        <path d="M -45 0 L -65 0 M 45 0 L 65 0 M 0 -45 L 0 -65 M 0 45 L 0 65" stroke="#6ee7b7" stroke-width="3" stroke-linecap="round"/>
+    </g>
+
+    <text x="200" y="520" text-anchor="middle" fill="#a7f3d0" font-family="'Courier New', Courier, monospace" font-size="28" font-weight="900" letter-spacing="3" filter="url(#compsec-glow)">COMPSEC</text>
+    <text x="200" y="555" text-anchor="middle" fill="#34d399" font-family="'Times New Roman', Times, serif" font-size="16" letter-spacing="1">Computers &amp; Security</text>
+</svg>

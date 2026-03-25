@@ -1,0 +1,53 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="rsa-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#0a101d"/>
+            <stop offset="100%" stop-color="#040608"/>
+        </linearGradient>
+        <linearGradient id="rsa-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ffb703"/>
+            <stop offset="100%" stop-color="#f94144"/>
+        </linearGradient>
+        <filter id="rsa-glow">
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <radialGradient id="aurora" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255,183,3,0.15)"/>
+            <stop offset="100%" stop-color="transparent"/>
+        </radialGradient>
+    </defs>
+
+    <rect width="400" height="600" fill="url(#rsa-bg)"/>
+    <circle cx="200" cy="300" r="250" fill="url(#aurora)"/>
+
+    <g transform="translate(200, 260)">
+        <circle cx="0" cy="0" r="140" fill="none" stroke="#219ebc" stroke-width="1" stroke-dasharray="2 6"/>
+        
+        <circle cx="0" cy="0" r="110" fill="none" stroke="url(#rsa-gold)" stroke-width="3" stroke-dasharray="40 20 10 20">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="0" cy="0" r="80" fill="none" stroke="#f94144" stroke-width="2" stroke-dasharray="15 15">
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="15s" repeatCount="indefinite"/>
+        </circle>
+        
+        <polygon points="0,-40 35,20 -35,20" fill="rgba(255,183,3,0.2)" stroke="#ffb703" stroke-width="3" filter="url(#rsa-glow)"/>
+        <line x1="0" y1="20" x2="0" y2="40" stroke="#ffb703" stroke-width="3"/>
+        <circle cx="0" cy="45" r="5" fill="#f94144"/>
+
+        <text x="-85" y="-85" fill="#f94144" font-family="'Courier New', monospace" font-size="20" font-weight="bold">p</text>
+        <text x="75" y="100" fill="#219ebc" font-family="'Courier New', monospace" font-size="20" font-weight="bold">q</text>
+    </g>
+
+    <path d="M 20 20 L 50 20 L 60 30" fill="none" stroke="#ffb703" stroke-width="2"/>
+    <path d="M 380 20 L 350 20 L 340 30" fill="none" stroke="#ffb703" stroke-width="2"/>
+
+    <rect x="100" y="470" width="200" height="40" fill="none" stroke="#ffb703" stroke-width="1"/>
+    <text x="200" y="498" text-anchor="middle" fill="#ffb703" font-family="'Orbitron', sans-serif" font-size="28" font-weight="bold" filter="url(#rsa-glow)" letter-spacing="3">CT-RSA</text>
+    
+    <text x="200" y="550" text-anchor="middle" fill="#219ebc" font-family="monospace" font-size="12" letter-spacing="1">CRYPTOGRAPHERS' TRACK RSA</text>
+</svg>

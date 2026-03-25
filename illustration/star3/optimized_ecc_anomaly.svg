@@ -1,0 +1,136 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" style="background-color: #010205; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; overflow: hidden;">
+    <defs>
+        <linearGradient id="anom-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#05030a"/>
+            <stop offset="50%" stop-color="#11050a"/>
+            <stop offset="100%" stop-color="#000000"/>
+        </linearGradient>
+        
+        <filter id="anom-glow-cyan"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="anom-glow-gold"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="anom-glow-red"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="anom-glow-purp"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        
+        <pattern id="anom-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+            <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#2e1065" stroke-width="0.8"/>
+            <circle cx="0" cy="0" r="1.2" fill="#4c1d95"/>
+        </pattern>
+
+        <marker id="anom-arr-purp" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#c084fc"/></marker>
+        <marker id="anom-arr-cyan" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#22d3ee"/></marker>
+        <marker id="anom-arr-red" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ef4444"/></marker>
+        
+        <style>
+            @keyframes anom-flow-dash { from { stroke-dashoffset: 40; } to { stroke-dashoffset: 0; } }
+            @keyframes anom-float-node { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+            @keyframes anom-pulse-ring { 0% { transform: scale(0.9); opacity: 0.8; } 50% { transform: scale(1.05); opacity: 0.3; } 100% { transform: scale(0.9); opacity: 0.8; } }
+            @keyframes anom-pulse-core { 0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 5px #ef4444); } 50% { opacity: 1; filter: drop-shadow(0 0 15px #ef4444); } }
+            
+            .anom-flow { fill: none; stroke: rgba(192, 132, 252, 0.6); stroke-width: 2; stroke-dasharray: 6 4; animation: anom-flow-dash 1.5s linear infinite; }
+            .anom-flow-cyan { fill: none; stroke: rgba(34, 211, 238, 0.8); stroke-width: 2.5; stroke-dasharray: 6 4; animation: anom-flow-dash 1s linear infinite; }
+            .anom-flow-red { fill: none; stroke: rgba(239, 68, 68, 0.8); stroke-width: 2.5; stroke-dasharray: 6 4; animation: anom-flow-dash 1s linear infinite; }
+            
+            .anom-float { animation: anom-float-node 4s ease-in-out infinite; }
+            .anom-pulse { animation: anom-pulse-ring 3s ease-in-out infinite; transform-origin: center; }
+            .anom-math-text { font-family: 'Courier New', monospace; font-size: 10px; }
+            .anom-bold-math { font-family: 'Courier New', monospace; font-size: 11px; font-weight: bold; }
+            .anom-alert-text { font-family: 'Impact', sans-serif; letter-spacing: 2px; }
+        </style>
+    </defs>
+
+    <rect width="400" height="600" fill="url(#anom-bg)"/>
+    <rect width="400" height="600" fill="url(#anom-grid)"/>
+
+    <!-- Header -->
+    <g transform="translate(200, 45)">
+        <rect x="-160" y="-20" width="320" height="45" rx="6" fill="rgba(225, 29, 72, 0.1)" stroke="#e11d48" stroke-width="1.5" stroke-dasharray="4 2"/>
+        <text y="0" class="anom-bold-math" fill="#fda4af" text-anchor="middle">Smart's Attack: Anomalous Curves</text>
+        <text y="15" class="anom-math-text" fill="#fecdd3" text-anchor="middle">#E(F_p) = p  (Trace of Frobenius t = 1)</text>
+    </g>
+
+    <!-- Base E(F_p) L -->
+    <g transform="translate(100, 160)">
+        <g class="anom-float" style="animation-delay: 0s;">
+            <circle cx="0" cy="0" r="45" class="anom-pulse" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.5"/>
+            <circle cx="0" cy="0" r="38" fill="rgba(15, 23, 42, 0.8)" stroke="#38bdf8" stroke-width="2" filter="url(#anom-glow-cyan)"/>
+            
+            <circle cx="-15" cy="-15" r="1.5" fill="#bae6fd" opacity="0.6"/>
+            <circle cx="10" cy="-5" r="1.5" fill="#bae6fd" opacity="0.6"/>
+            <circle cx="-5" cy="15" r="1.5" fill="#bae6fd" opacity="0.6"/>
+            <circle cx="15" cy="20" r="1.5" fill="#bae6fd" opacity="0.6"/>
+            <circle cx="-25" cy="-5" r="1.5" fill="#bae6fd" opacity="0.6"/>
+            
+            <circle cx="-18" cy="5" r="3" fill="#fcd34d" filter="url(#anom-glow-gold)"/>
+            <text x="-28" y="9" class="anom-bold-math" fill="#fef08a">P</text>
+            
+            <circle cx="18" cy="-12" r="3" fill="#fca5a5" filter="url(#anom-glow-red)"/>
+            <text x="28" y="-14" class="anom-bold-math" fill="#fecaca">Q</text>
+
+            <text y="-52" class="anom-bold-math" fill="#7dd3fc" text-anchor="middle">Base E(F_p)</text>
+            <text y="65" class="anom-math-text" fill="#bae6fd" text-anchor="middle">Discrete Points</text>
+        </g>
+    </g>
+
+    <!-- E(Q_p) Manifold R -->
+    <g transform="translate(300, 160)">
+        <g class="anom-float" style="animation-delay: -2s;">
+            <circle cx="0" cy="0" r="45" class="anom-pulse" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+            <circle cx="0" cy="0" r="38" fill="rgba(69, 26, 3, 0.8)" stroke="#f59e0b" stroke-width="2" filter="url(#anom-glow-gold)"/>
+            
+            <path d="M -25,25 Q 0,-15 25,-25" fill="none" stroke="#fde047" stroke-width="2" opacity="0.8"/>
+            <path d="M -25,-15 Q 0,15 25,25" fill="none" stroke="#fde047" stroke-width="1" stroke-dasharray="2 2" opacity="0.4"/>
+            
+            <circle cx="-12" cy="7" r="3" fill="#fcd34d" filter="url(#anom-glow-gold)"/>
+            <text x="-22" y="18" class="anom-bold-math" fill="#fef08a">P'</text>
+            
+            <circle cx="12" cy="-17" r="3" fill="#fca5a5" filter="url(#anom-glow-red)"/>
+            <text x="22" y="-10" class="anom-bold-math" fill="#fecaca">Q'</text>
+            
+            <text y="-52" class="anom-bold-math" fill="#fcd34d" text-anchor="middle">Lifted E(Q_p)</text>
+            <text y="65" class="anom-math-text" fill="#fde68a" text-anchor="middle">p-adic Manifold</text>
+        </g>
+    </g>
+
+    <!-- Trans 1 -->
+    <path d="M 155,160 L 245,160" class="anom-flow" marker-end="url(#anom-arr-purp)"/>
+    <rect x="160" y="130" width="80" height="20" rx="4" fill="#4a044e" stroke="#c026d3" stroke-width="1"/>
+    <text x="200" y="143" class="anom-math-text" fill="#e9d5ff" text-anchor="middle">Hensel Lift</text>
+
+    <!-- Trans 2 -->
+    <path d="M 300,215 C 285,260 255,280 220,310" class="anom-flow-cyan" marker-end="url(#anom-arr-cyan)"/>
+    <rect x="250" y="250" width="105" height="20" rx="4" fill="#083344" stroke="#06b6d4" stroke-width="1"/>
+    <text x="302" y="263" class="anom-math-text" fill="#cffafe" text-anchor="middle">Elliptic Log ψ_p</text>
+
+    <!-- pZ_p Additive Group Node -->
+    <g style="animation: anom-pulse-core 2s infinite;" transform="translate(200, 360)">
+        <circle cx="0" cy="0" r="55" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 4"/>
+        <circle cx="0" cy="0" r="45" fill="rgba(69, 10, 10, 0.8)" stroke="#ef4444" stroke-width="2" filter="url(#anom-glow-red)"/>
+        
+        <circle cx="0" cy="0" r="28" fill="none" stroke="#fca5a5" stroke-width="1" stroke-dasharray="4 2" opacity="0.7"/>
+        <circle cx="-20" cy="-18" r="3.5" fill="#fcd34d" filter="url(#anom-glow-gold)"/> 
+        <text x="-40" y="-18" class="anom-bold-math" fill="#fef08a">ψ_p(P')</text>
+        
+        <circle cx="20" cy="18" r="3.5" fill="#fca5a5" filter="url(#anom-glow-red)"/>
+        <text x="45" y="23" class="anom-bold-math" fill="#fecaca">ψ_p(Q')</text>
+
+        <path d="M -15,-10 C 5,-10 10,5 15,12" fill="none" stroke="#fca5a5" stroke-width="2" marker-end="url(#anom-arr-red)"/>
+        <text x="0" y="3" class="anom-math-text" fill="#fee2e2" text-anchor="middle">× d</text>
+
+        <text y="-65" class="anom-bold-math" fill="#fca5a5" text-anchor="middle">Formal Group pZ_p</text>
+        <text y="75" class="anom-math-text" fill="#fecaca" text-anchor="middle">Linear Rel: ψ(Q') = d·ψ(P')</text>
+    </g>
+
+    <!-- Final Execution Data flow -->
+    <path d="M 200,425 L 200,470" class="anom-flow-red" marker-end="url(#anom-arr-red)"/>
+    
+    <g transform="translate(200, 500)">
+        <rect x="-140" y="-20" width="280" height="38" rx="4" fill="#2d0615" stroke="#f43f5e" stroke-width="1.5"/>
+        <text x="0" y="-3" class="anom-bold-math" fill="#fecaca" text-anchor="middle">Target Secret d = ψ(Q') / ψ(P') mod p</text>
+        <text x="0" y="11" class="anom-math-text" fill="#fda4af" text-anchor="middle">Trivial Division Operation!</text>
+    </g>
+
+    <g transform="translate(200, 570)">
+        <rect x="-150" y="-18" width="300" height="36" rx="4" fill="#4c0519" stroke="#ef4444" stroke-width="2"/>
+        <text x="0" y="5" class="anom-alert-text" fill="#fca5a5" font-size="16" text-anchor="middle" filter="url(#anom-glow-red)">ECDLP REDUCED TO O(1) TIME</text>
+    </g>
+</svg>

@@ -1,0 +1,40 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="poster-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="20" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <g filter="url(#poster-glow)">
+    <g style="transform-origin: 512px 512px;" transform="perspective(500)">
+      <animateTransform attributeName="transform" type="scale" values="1; 1.05; 1" dur="4s" repeatCount="indefinite" />
+      <!-- Poster Board Background -->
+      <rect x="162" y="112" width="700" height="800" rx="10" fill="#FFFFFF" stroke="#BDC3C7" stroke-width="10" />
+      
+      <!-- Header -->
+      <rect x="212" y="162" width="600" height="120" rx="8" fill="#3498DB" />
+      
+      <!-- Columns -->
+      <rect x="212" y="322" width="280" height="540" rx="8" fill="#ECF0F1" />
+      <rect x="532" y="322" width="280" height="540" rx="8" fill="#ECF0F1" />
+      
+      <!-- Content Elements Left -->
+      <rect x="232" y="342" width="240" height="160" rx="4" fill="#E74C3C" />
+      <rect x="232" y="522" width="240" height="16" rx="8" fill="#95A5A6" />
+      <rect x="232" y="552" width="200" height="16" rx="8" fill="#95A5A6" />
+      
+      <circle cx="352" cy="722" r="80" fill="#9B59B6" />
+      
+      <!-- Content Elements Right -->
+      <rect x="552" y="342" width="240" height="16" rx="8" fill="#95A5A6" />
+      <rect x="552" y="372" width="200" height="16" rx="8" fill="#95A5A6" />
+      
+      <!-- Bar Chart -->
+      <rect x="562" y="442" width="40" height="120" fill="#2ECC71" />
+      <rect x="622" y="502" width="40" height="60" fill="#F1C40F" />
+      <rect x="682" y="402" width="40" height="160" fill="#E67E22" />
+      <line x1="552" y1="562" x2="772" y2="562" stroke="#7F8C8D" stroke-width="4" />
+      
+      <rect x="552" y="622" width="240" height="140" rx="4" fill="#34495E" />
+    </g>
+  </g>
+</svg>

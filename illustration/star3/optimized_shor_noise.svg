@@ -1,0 +1,243 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Deep Quantum Background -->
+        <linearGradient id="shor-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#020617"/>
+            <stop offset="60%" stop-color="#0f172a"/>
+            <stop offset="100%" stop-color="#020617"/>
+        </linearGradient>
+        
+        <!-- Filters -->
+        <filter id="neon-blue-shor">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="neon-red-shor">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="quantum-noise" x="-20%" y="-20%" width="140%" height="140%">
+            <!-- Generate high frequency turbulence -->
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" result="noise"/>
+            <feColorMatrix type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.2 0" in="noise" result="coloredNoise"/>
+            <!-- Composite noise onto source -->
+            <feComposite operator="in" in="coloredNoise" in2="SourceGraphic" result="glitch"/>
+            <!-- Slowly fade the glitch in and out -->
+            <feMerge>
+                <feMergeNode in="SourceGraphic"/>
+                <feMergeNode in="glitch"/>
+            </feMerge>
+        </filter>
+
+        <!-- Wave Pattern -->
+        <pattern id="grid-shor" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="10" cy="10" r="1" fill="#1e293b"/>
+        </pattern>
+        
+        <!-- Quantum Gate definition -->
+        <g id="q-gate" class="gate">
+            <rect x="-12" y="-12" width="24" height="24" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+            <text x="0" y="4" fill="#93c5fd" font-family="'Courier New', monospace" font-size="10" text-anchor="middle" font-weight="bold">H</text>
+        </g>
+        <g id="c-phase-gate" class="gate">
+            <rect x="-14" y="-14" width="28" height="28" rx="4" fill="#0f172a" stroke="#0ea5e9" stroke-width="1.5"/>
+            <text x="0" y="5" fill="#bae6fd" font-family="'Courier New', monospace" font-size="12" text-anchor="middle" font-weight="bold">R_k</text>
+        </g>
+    </defs>
+
+    <rect width="400" height="600" fill="url(#shor-bg)"/>
+    <rect width="400" height="600" fill="url(#grid-shor)"/>
+
+    <!-- Header Overlay -->
+    <g transform="translate(10, 10)">
+        <path d="M 0 10 L 10 0 H 210 L 220 10" fill="none" stroke="#334155" stroke-width="1"/>
+        <text x="15" y="10" fill="#64748b" font-family="'Courier New', monospace" font-size="8">PROC: QFT_PERIOD_FINDING (FAULTY)</text>
+    </g>
+
+    <!-- SECTION 1: Quantum Circuit (QFT) -->
+    <g transform="translate(10, 40)">
+        <rect x="0" y="0" width="380" height="150" rx="6" fill="#0f172a" stroke="#1e293b" opacity="0.8"/>
+        <text x="10" y="15" fill="#94a3b8" font-family="'Courier New', monospace" font-size="8">Quantum Fourier Transform Circuit</text>
+        
+        <g transform="translate(40, 40)">
+            <!-- Qubit Lines -->
+            <line x1="0" y1="0" x2="300" y2="0" stroke="#334155" stroke-width="2"/>
+            <line x1="0" y1="40" x2="300" y2="40" stroke="#334155" stroke-width="2"/>
+            <line x1="0" y1="80" x2="300" y2="80" stroke="#334155" stroke-width="2"/>
+            
+            <!-- Qubit Labels -->
+            <text x="-15" y="4" fill="#94a3b8" font-family="monospace" font-size="10">|q0&gt;</text>
+            <text x="-15" y="44" fill="#94a3b8" font-family="monospace" font-size="10">|q1&gt;</text>
+            <text x="-15" y="84" fill="#94a3b8" font-family="monospace" font-size="10">|q2&gt;</text>
+
+            <!-- Measurements -->
+            <path d="M 280 -10 v 20 h 20 v -20 z" fill="#1e293b" stroke="#64748b"/>
+            <path d="M 285 5 a 10 10 0 0 1 10 0" fill="none" stroke="#64748b" stroke-width="1"/>
+            <line x1="290" y1="5" x2="295" y2="-2" stroke="#64748b" stroke-width="1"/>
+            
+            <path d="M 280 30 v 20 h 20 v -20 z" fill="#1e293b" stroke="#64748b"/>
+            <path d="M 285 45 a 10 10 0 0 1 10 0" fill="none" stroke="#64748b" stroke-width="1"/>
+            <line x1="290" y1="45" x2="295" y2="38" stroke="#64748b" stroke-width="1"/>
+            
+            <path d="M 280 70 v 20 h 20 v -20 z" fill="#1e293b" stroke="#64748b"/>
+            <path d="M 285 85 a 10 10 0 0 1 10 0" fill="none" stroke="#64748b" stroke-width="1"/>
+            <line x1="290" y1="85" x2="295" y2="78" stroke="#64748b" stroke-width="1"/>
+
+            <!-- Execution Scanner -->
+            <line x1="20" y1="-20" x2="20" y2="100" stroke="#0ea5e9" stroke-width="2" opacity="0.6" filter="url(#neon-blue-shor)">
+                <!-- Scanning animation (0% to 62.5% for visual finish, hold for the rest) -->
+                <animate attributeName="x1" values="0; 320; 320" keyTimes="0; 0.625; 1" dur="8s" repeatCount="indefinite" calcMode="linear"/>
+                <animate attributeName="x2" values="0; 320; 320" keyTimes="0; 0.625; 1" dur="8s" repeatCount="indefinite" calcMode="linear"/>
+            </line>
+
+            <!-- H Gates -->
+            <use href="#q-gate" x="30" y="0">
+                 <!-- Light up when scanner passes -->
+                 <animate attributeName="filter" values="none; url(#neon-blue-shor); none; none" keyTimes="0; 0.06; 0.15; 1" dur="8s" repeatCount="indefinite"/>
+            </use>
+            <use href="#q-gate" x="120" y="40">
+                 <animate attributeName="filter" values="none; none; url(#neon-blue-shor); none; none" keyTimes="0; 0.2; 0.23; 0.3; 1" dur="8s" repeatCount="indefinite"/>
+            </use>
+            <use href="#q-gate" x="220" y="80">
+                 <animate attributeName="filter" values="none; none; url(#neon-blue-shor); none; none" keyTimes="0; 0.4; 0.43; 0.5; 1" dur="8s" repeatCount="indefinite"/>
+            </use>
+
+            <!-- Controlled Phase Rotations with NOISE -->
+            <g>
+                <!-- Line connecting control to target -->
+                <line x1="75" y1="0" x2="75" y2="40" stroke="#0ea5e9" stroke-width="1.5">
+                     <animate attributeName="stroke" values="#0ea5e9; #ef4444; #0ea5e9; #0ea5e9" keyTimes="0; 0.15; 0.25; 1" dur="8s" repeatCount="indefinite"/>
+                </line>
+                <circle cx="75" cy="40" r="4" fill="#0ea5e9"/>
+                <use href="#c-phase-gate" x="75" y="0">
+                    <!-- Over-rotate / Phase error glitch when executed -->
+                    <animateTransform attributeName="transform" type="rotate" values="0 75 0; 0 75 0; 15 75 0; -10 75 0; 0 75 0; 0 75 0" keyTimes="0; 0.14; 0.15; 0.17; 0.2; 1" dur="8s" repeatCount="indefinite"/>
+                    <animate attributeName="stroke" values="#0ea5e9; #0ea5e9; #ef4444; #ef4444; #0ea5e9; #0ea5e9" keyTimes="0; 0.14; 0.15; 0.17; 0.25; 1" dur="8s" repeatCount="indefinite"/>
+                </use>
+                
+                <!-- Noise indicator -->
+                <path d="M 60 -15 L 65 -5 L 75 -20" fill="none" stroke="#ef4444" stroke-width="1.5" opacity="0">
+                     <animate attributeName="opacity" values="0; 0; 1; 0; 0" keyTimes="0; 0.14; 0.15; 0.25; 1" dur="8s" repeatCount="indefinite"/>
+                </path>
+            </g>
+
+            <g>
+                <line x1="170" y1="40" x2="170" y2="80" stroke="#0ea5e9" stroke-width="1.5">
+                     <animate attributeName="stroke" values="#0ea5e9; #ef4444; #0ea5e9; #0ea5e9" keyTimes="0; 0.33; 0.45; 1" dur="8s" repeatCount="indefinite"/>
+                </line>
+                <circle cx="170" cy="80" r="4" fill="#0ea5e9"/>
+                <use href="#c-phase-gate" x="170" y="40">
+                    <animateTransform attributeName="transform" type="rotate" values="0 170 40; 0 170 40; -20 170 40; 15 170 40; 0 170 40; 0 170 40" keyTimes="0; 0.32; 0.33; 0.35; 0.38; 1" dur="8s" repeatCount="indefinite"/>
+                    <animate attributeName="stroke" values="#0ea5e9; #0ea5e9; #ef4444; #ef4444; #0ea5e9; #0ea5e9" keyTimes="0; 0.32; 0.33; 0.35; 0.43; 1" dur="8s" repeatCount="indefinite"/>
+                </use>
+            </g>
+        </g>
+    </g>
+
+    <!-- SECTION 2: Periodic Function Probability Spectrum (Before & After Noise) -->
+    <g transform="translate(10, 200)">
+        <rect x="0" y="0" width="380" height="150" rx="6" fill="#0f172a" stroke="#1e293b" opacity="0.8"/>
+        <text x="10" y="15" fill="#94a3b8" font-family="'Courier New', monospace" font-size="8">Output Probability Spectrum (Peaks = Period r)</text>
+        
+        <!-- Y-Axis and X-Axis -->
+        <line x1="20" y1="30" x2="20" y2="130" stroke="#334155" stroke-width="1"/>
+        <line x1="20" y1="130" x2="360" y2="130" stroke="#334155" stroke-width="1"/>
+        
+        <g transform="translate(20, 130)">
+            <!-- Ideal Theoretical Peaks (Dashed Blue Lines) -->
+            <path d="M 40 0 L 40 -80 M 110 0 L 110 -80 M 180 0 L 180 -80 M 250 0 L 250 -80 M 320 0 L 320 -80" fill="none" stroke="#0ea5e9" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.5"/>
+            <circle cx="40" cy="-80" r="3" fill="#0ea5e9" opacity="0.5"/>
+            <circle cx="110" cy="-80" r="3" fill="#0ea5e9" opacity="0.5"/>
+            <circle cx="180" cy="-80" r="3" fill="#0ea5e9" opacity="0.5"/>
+            <circle cx="250" cy="-80" r="3" fill="#0ea5e9" opacity="0.5"/>
+            <circle cx="320" cy="-80" r="3" fill="#0ea5e9" opacity="0.5"/>
+            
+            <text x="180" y="-95" fill="#0ea5e9" font-family="'Courier New', monospace" font-size="10" text-anchor="middle" filter="url(#neon-blue-shor)">Ideal Period r = 15</text>
+
+            <!-- Actual Noisy Measurement Distribution (Red Jagged Lines) -->
+            <path d="M 0 0 L 10 -10 L 20 -5 L 35 -30 L 45 -45 L 60 -15 L 75 -5 L 90 -25 L 115 -50 L 140 -20 L 155 -5 L 175 -35 L 185 -40 L 200 -10 L 220 -5 L 245 -55 L 270 -15 L 290 -25 L 315 -60 L 330 -20 L 350 0" 
+                  fill="none" stroke="#ef4444" stroke-width="2" filter="url(#quantum-noise)">
+                <!-- Animate path drawing left to right synced with scanner -->
+                <animate attributeName="stroke-dasharray" values="0, 1000; 1000, 0; 1000, 0" keyTimes="0; 0.625; 1" dur="8s" repeatCount="indefinite"/>
+            </path>
+            
+            <!-- Decayed Peaks highlight -->
+            <circle cx="45" cy="-45" r="3" fill="#ef4444" opacity="0">
+                <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.08; 0.09; 0.95; 1" dur="8s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="115" cy="-50" r="3" fill="#ef4444" opacity="0">
+                <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.22; 0.23; 0.95; 1" dur="8s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="185" cy="-40" r="3" fill="#ef4444" opacity="0">
+                <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.35; 0.36; 0.95; 1" dur="8s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="315" cy="-60" r="3" fill="#ef4444" opacity="0">
+                <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.60; 0.61; 0.95; 1" dur="8s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+    </g>
+
+    <!-- SECTION 3: Number Factoring Resolution (Math output) -->
+    <g transform="translate(10, 360)">
+        <rect x="0" y="0" width="380" height="90" rx="6" fill="#0f172a" fill-opacity="0.9" stroke="#334155" stroke-width="1"/>
+        
+        <text x="15" y="20" fill="#94a3b8" font-family="'Courier New', monospace" font-size="10">Target N = 2279 (RSA Modulus)</text>
+        <text x="15" y="40" fill="#64748b" font-family="'Courier New', monospace" font-size="10">Measured Period r ≈ </text>
+        
+        <!-- Animated math result -->
+        <text x="140" y="40" fill="#fca5a5" font-family="'Courier New', monospace" font-size="12" font-weight="bold">
+            <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.625; 0.63; 0.95; 1" dur="8s" repeatCount="indefinite"/>
+            14.721 ± ε
+        </text>
+        <text x="240" y="40" fill="#ef4444" font-family="'Courier New', monospace" font-size="10">
+            <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.625; 0.63; 0.95; 1" dur="8s" repeatCount="indefinite"/>
+            [ NON-INTEGER ]
+        </text>
+
+        <!-- GCD Check -->
+        <text x="15" y="65" fill="#64748b" font-family="'Courier New', monospace" font-size="10">gcd( x^(r/2) ± 1, N ) = </text>
+        <text x="160" y="65" fill="#fca5a5" font-family="'Courier New', monospace" font-size="12" font-weight="bold">
+            <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.625; 0.63; 0.95; 1" dur="8s" repeatCount="indefinite"/>
+            TRIVIAL FACTOR
+        </text>
+
+        <!-- Failed Status Bar -->
+        <g>
+            <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.625; 0.63; 0.95; 1" dur="8s" repeatCount="indefinite"/>
+            <rect x="250" y="55" width="115" height="20" rx="3" fill="#4c0519" stroke="#e11d48"/>
+            <text x="260" y="69" fill="#fca5a5" font-family="'Courier New', monospace" font-size="10" font-weight="bold">FACTOR FAILED</text>
+        </g>
+    </g>
+
+    <!-- Lower Status Terminal -->
+    <g transform="translate(10, 460)">
+        <rect x="0" y="0" width="380" height="120" rx="6" fill="#0f172a" fill-opacity="0.9" stroke="#334155" stroke-width="1"/>
+        <path d="M 0 6 A 6 6 0 0 1 6 0 H 374 A 6 6 0 0 1 380 6 V 20 H 0 Z" fill="#1e293b"/>
+        
+        <circle cx="15" cy="10" r="3" fill="#ef4444"/>
+        <circle cx="25" cy="10" r="3" fill="#eab308"/>
+        <circle cx="35" cy="10" r="3" fill="#22c55e"/>
+        <text x="50" y="13" fill="#94a3b8" font-family="'Courier New', monospace" font-size="9">syslog: shor_qft_monitor</text>
+
+        <!-- Log Texts -->
+        <g font-family="'Courier New', monospace" font-size="11" transform="translate(15, 40)">
+            <g><animate attributeName="opacity" values="1; 1; 0" keyTimes="0; 0.95; 1" dur="8s" repeatCount="indefinite"/>
+               <text x="0" y="0" fill="#94a3b8">Init QFT execution pipeline...</text></g>
+            
+            <!-- Phase execution logs synced with scanner -->
+            <g><animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.15; 0.95; 1" dur="8s" repeatCount="indefinite"/>
+               <text x="0" y="20" fill="#fca5a5">&gt; Gate R_k (ctrl): DECOHERENCE ERR</text></g>
+               
+            <g><animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.33; 0.95; 1" dur="8s" repeatCount="indefinite"/>
+               <text x="0" y="40" fill="#fca5a5">&gt; Gate R_k (ctrl): PHASE OVERROTATION</text></g>
+               
+            <g><animate attributeName="opacity" values="0; 1; 1; 0" keyTimes="0; 0.50; 0.95; 1" dur="8s" repeatCount="indefinite"/>
+               <text x="0" y="60" fill="#eab308">&gt; QFT Measure: Superposition sampling...</text></g>
+
+            <!-- Final Error Block -->
+            <g><animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.625; 0.63; 0.95; 1" dur="8s" repeatCount="indefinite"/>
+               <rect x="-5" y="70" width="360" height="22" fill="#4c0519" stroke="#e11d48" stroke-dasharray="4 2"/>
+               <text x="5" y="85" fill="#fca5a5" font-weight="bold">[CRITICAL] PERIODICITY DESTROYED</text></g>
+        </g>
+    </g>
+</svg>

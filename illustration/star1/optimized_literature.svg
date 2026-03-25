@@ -1,0 +1,28 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="lit-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="15" stdDeviation="20" flood-color="#D32F2F" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <g filter="url(#lit-glow)">
+    <g style="transform-origin: 512px 512px;">
+      <animateTransform attributeName="transform" type="rotate" values="0; 2; -2; 0" dur="4s" repeatCount="indefinite" />
+      
+      <path d="M256 128 h352 l224 224 v544 a40 40 0 0 1 -40 40 h-536 a40 40 0 0 1 -40 -40 v-728 a40 40 0 0 1 40 -40 z" fill="#FAFAFA" />
+      <path d="M608 128 v184 a40 40 0 0 0 40 40 h184 z" fill="#E0E0E0" />
+      
+      <!-- Red Bookmark/Ribbon -->
+      <path d="M216 350 h400 v180 h-400 z" fill="#D32F2F" />
+      <text x="310" y="475" font-family="Arial, sans-serif" font-weight="bold" font-size="100" fill="#FFFFFF">PDF</text>
+      
+      <!-- Text Lines -->
+      <rect x="320" y="600" width="420" height="24" rx="12" fill="#BDBDBD" />
+      <rect x="320" y="680" width="360" height="24" rx="12" fill="#BDBDBD" />
+      <rect x="320" y="760" width="280" height="24" rx="12" fill="#BDBDBD" />
+      
+      <!-- Abstract Shapes on Paper -->
+      <circle cx="440" cy="240" r="40" fill="#1976D2" opacity="0.8" />
+      <rect x="320" y="220" width="60" height="40" rx="10" fill="#388E3C" opacity="0.8" />
+    </g>
+  </g>
+</svg>

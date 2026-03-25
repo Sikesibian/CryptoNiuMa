@@ -1,0 +1,647 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&amp;family=Cormorant+Garamond:wght@700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap');
+        </style>
+
+        <radialGradient id="nebula-bg" cx="50%" cy="40%" r="80%">
+            <stop offset="0%" stop-color="#1B0A33"/>
+            <stop offset="35%" stop-color="#0E0D26"/>
+            <stop offset="70%" stop-color="#05060A"/>
+            <stop offset="100%" stop-color="#000000"/>
+        </radialGradient>
+        
+        <linearGradient id="monument-glass" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="rgba(255, 255, 255, 0.1)"/>
+            <stop offset="50%" stop-color="rgba(10, 15, 30, 0.95)"/>
+            <stop offset="100%" stop-color="rgba(0, 0, 0, 0.98)"/>
+        </linearGradient>
+
+        <linearGradient id="grad-platinum" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="30%" stop-color="#E5E4E2"/>
+            <stop offset="70%" stop-color="#B0C4DE"/>
+            <stop offset="100%" stop-color="#FFFFFF"/>
+        </linearGradient>
+        <linearGradient id="grad-gold" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FFDF00"/><stop offset="50%" stop-color="#D4AF37"/><stop offset="100%" stop-color="#FFDF00"/>
+        </linearGradient>
+        <linearGradient id="grad-cyan" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#00FFFF"/><stop offset="50%" stop-color="#0080FF"/><stop offset="100%" stop-color="#00FFFF"/>
+        </linearGradient>
+        <linearGradient id="grad-magenta" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#FF00FF"/><stop offset="50%" stop-color="#8A2BE2"/><stop offset="100%" stop-color="#FF00FF"/>
+        </linearGradient>
+
+        <radialGradient id="core-flare" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="30%" stop-color="#FFD700"/>
+            <stop offset="100%" stop-color="rgba(212, 175, 55, 0)"/>
+        </radialGradient>
+
+        <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="glow-intense" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="8" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="drop-shadow-heavy" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="15" stdDeviation="20" flood-color="#000" flood-opacity="1"/>
+        </filter>
+
+        <path id="spiral-1" d="M 0 0 L 0.1 0.0 L 0.2 0.1 L 0.3 0.1 L 0.4 0.3 L 0.6 0.5 L 0.6 0.8 L 0.6 1.1 L 0.6 1.5 L 0.4 1.9 L 0.2 2.3 L -0.2 2.7 L -0.7 3.0 L -1.3 3.2 L -2.0 3.4 L -2.8 3.4 L -3.6 3.3 L -4.5 3.0 L -5.3 2.5 L -6.1 1.8 L -6.9 1.0 L -7.5 -0.1 L -8.0 -1.3 L -8.3 -2.6 L -8.4 -4.1 L -8.2 -5.7 L -7.7 -7.3 L -6.9 -8.9 L -5.8 -10.4 L -4.5 -11.8 L -2.8 -13.0 L -0.9 -14.0 L 1.3 -14.7 L 3.7 -15.1 L 6.1 -15.1 L 8.7 -14.6 L 11.3 -13.8 L 13.8 -12.5 L 16.2 -10.7 L 18.4 -8.5 L 20.3 -5.9 L 21.8 -2.9 L 22.8 0.4 L 23.4 3.9 L 23.3 7.7 L 22.7 11.5 L 21.5 15.3 L 19.7 18.9 L 17.2 22.4 L 14.1 25.6 L 10.5 28.3 L 6.3 30.5 L 1.7 32.1 L -3.2 32.9 L -8.3 33.1 L -13.5 32.4 L -18.8 30.9 L -23.8 28.5 L -28.6 25.3 L -33.0 21.4 L -36.8 16.6 L -39.9 11.2 L -42.2 5.3 L -43.6 -1.1 L -44.1 -7.8 L -43.5 -14.7 L -41.8 -21.5 L -39.0 -28.2 L -35.2 -34.5 L -30.4 -40.3 L -24.6 -45.4 L -17.9 -49.7 L -10.5 -53.0 L -2.5 -55.2 L 5.9 -56.1 L 14.5 -55.8 L 23.2 -54.2 L 31.7 -51.1 L 39.8 -46.8 L 47.3 -41.2 L 54.0 -34.3 L 59.7 -26.4 L 64.2 -17.5 L 67.4 -7.9 L 69.1 2.3 L 69.3 12.9 L 67.8 23.5 L 64.8 34.0 L 60.0 44.1 L 53.7 53.5 L 45.9 62.1 L 36.8 69.5 L 26.5 75.5 L 15.1 80.0 L 3.1 82.7 L -9.5 83.7 L -22.2 82.7 L -34.9 79.7 L -47.2 74.8 L -58.8 68.0 L -69.4 59.4 L -78.8 49.2 L -86.6 37.4 L -92.7 24.4 L -96.7 10.5 L -98.7 -4.2 L -98.5 -19.1 L -95.9 -34.2 L -91.1 -48.8 L -84.0 -62.8 L -74.8 -75.8 L -63.5 -87.3 L -50.5 -97.2 L -35.9 -105.2 L -20.0 -110.9 L -3.3 -114.3 L 14.0 -115.0 L 31.5 -113.2 L 48.7 -108.7 L 65.3 -101.6 L 80.8 -91.9 L 94.9 -79.8 L 107.1 -65.6 L 117.3 -49.5 L 124.9 -31.8 L 130.0 -13.0 L 132.1 6.7 L 131.3 26.7 L 127.4 46.6 L 120.5 65.9 L 110.7 84.2 L 98.0 101.0 L 82.8 116.0 L 65.4 128.6 L 46.0 138.6 L 25.0 145.6 L 3.0 149.5 L -19.6 150.0 L -42.2 147.1 L -64.5 140.7 L -85.8 131.0 L -105.6 118.1 L -123.4 102.1 L -138.8 83.4 L -151.4 62.4 L -160.8 39.6 L -166.8 15.2 L -169.0 -10.0 L -167.4 -35.5 L -162.0 -60.8 " />
+        <path id="spiral-2" d="M 0 0 L -0.1 -0.0 L -0.2 -0.1 L -0.3 -0.1 L -0.4 -0.3 L -0.6 -0.5 L -0.6 -0.8 L -0.6 -1.1 L -0.6 -1.5 L -0.4 -1.9 L -0.2 -2.3 L 0.2 -2.7 L 0.7 -3.0 L 1.3 -3.2 L 2.0 -3.4 L 2.8 -3.4 L 3.6 -3.3 L 4.5 -3.0 L 5.3 -2.5 L 6.1 -1.8 L 6.9 -1.0 L 7.5 0.1 L 8.0 1.3 L 8.3 2.6 L 8.4 4.1 L 8.2 5.7 L 7.7 7.3 L 6.9 8.9 L 5.8 10.4 L 4.5 11.8 L 2.8 13.0 L 0.9 14.0 L -1.3 14.7 L -3.7 15.1 L -6.1 15.1 L -8.7 14.6 L -11.3 13.8 L -13.8 12.5 L -16.2 10.7 L -18.4 8.5 L -20.3 5.9 L -21.8 2.9 L -22.8 -0.4 L -23.4 -3.9 L -23.3 -7.7 L -22.7 -11.5 L -21.5 -15.3 L -19.7 -18.9 L -17.2 -22.4 L -14.1 -25.6 L -10.5 -28.3 L -6.3 -30.5 L -1.7 -32.1 L 3.2 -32.9 L 8.3 -33.1 L 13.5 -32.4 L 18.8 -30.9 L 23.8 -28.5 L 28.6 -25.3 L 33.0 -21.4 L 36.8 -16.6 L 39.9 -11.2 L 42.2 -5.3 L 43.6 1.1 L 44.1 7.8 L 43.5 14.7 L 41.8 21.5 L 39.0 28.2 L 35.2 34.5 L 30.4 40.3 L 24.6 45.4 L 17.9 49.7 L 10.5 53.0 L 2.5 55.2 L -5.9 56.1 L -14.5 55.8 L -23.2 54.2 L -31.7 51.1 L -39.8 46.8 L -47.3 41.2 L -54.0 34.3 L -59.7 26.4 L -64.2 17.5 L -67.4 7.9 L -69.1 -2.3 L -69.3 -12.9 L -67.8 -23.5 L -64.8 -34.0 L -60.0 -44.1 L -53.7 -53.5 L -45.9 -62.1 L -36.8 -69.5 L -26.5 -75.5 L -15.1 -80.0 L -3.1 -82.7 L 9.5 -83.7 L 22.2 -82.7 L 34.9 -79.7 L 47.2 -74.8 L 58.8 -68.0 L 69.4 -59.4 L 78.8 -49.2 L 86.6 -37.4 L 92.7 -24.4 L 96.7 -10.5 L 98.7 4.2 L 98.5 19.1 L 95.9 34.2 L 91.1 48.8 L 84.0 62.8 L 74.8 75.8 L 63.5 87.3 L 50.5 97.2 L 35.9 105.2 L 20.0 110.9 L 3.3 114.3 L -14.0 115.0 L -31.5 113.2 L -48.7 108.7 L -65.3 101.6 L -80.8 91.9 L -94.9 79.8 L -107.1 65.6 L -117.3 49.5 L -124.9 31.8 L -130.0 13.0 L -132.1 -6.7 L -131.3 -26.7 L -127.4 -46.6 L -120.5 -65.9 L -110.7 -84.2 L -98.0 -101.0 L -82.8 -116.0 L -65.4 -128.6 L -46.0 -138.6 L -25.0 -145.6 L -3.0 -149.5 L 19.6 -150.0 L 42.2 -147.1 L 64.5 -140.7 L 85.8 -131.0 L 105.6 -118.1 L 123.4 -102.1 L 138.8 -83.4 L 151.4 -62.4 L 160.8 -39.6 L 166.8 -15.2 L 169.0 10.0 L 167.4 35.5 L 162.0 60.8 " />
+    </defs>
+    
+    <rect width="400" height="600" fill="url(#nebula-bg)"/>
+    
+        <circle cx="48.2" cy="185.6" r="1.9" fill="#FFF" opacity="0.55">
+            <animate attributeName="opacity" values="0.55; 0.1; 0.55" dur="6.697118358236503s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="81.0" cy="243.3" r="1.9" fill="#FFF" opacity="0.88">
+            <animate attributeName="opacity" values="0.88; 0.1; 0.88" dur="6.029838223869717s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="24.0" cy="199.8" r="1.1" fill="#FFF" opacity="0.86">
+            <animate attributeName="opacity" values="0.86; 0.1; 0.86" dur="5.887911546018648s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="203.0" cy="428.4" r="0.8" fill="#FFF" opacity="0.53">
+            <animate attributeName="opacity" values="0.53; 0.1; 0.53" dur="7.89820177575842s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="321.6" cy="437.4" r="0.6" fill="#FFF" opacity="0.39">
+            <animate attributeName="opacity" values="0.39; 0.1; 0.39" dur="6.237355096010285s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="236.8" cy="547.0" r="1.3" fill="#FFF" opacity="0.98">
+            <animate attributeName="opacity" values="0.98; 0.1; 0.98" dur="6.262521968963146s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="164.4" cy="475.9" r="1.1" fill="#FFF" opacity="0.65">
+            <animate attributeName="opacity" values="0.65; 0.1; 0.65" dur="6.683945074685133s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="55.7" cy="510.9" r="1.1" fill="#FFF" opacity="0.31">
+            <animate attributeName="opacity" values="0.31; 0.1; 0.31" dur="3.0946895249206814s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="168.3" cy="455.1" r="0.6" fill="#FFF" opacity="0.69">
+            <animate attributeName="opacity" values="0.69; 0.1; 0.69" dur="7.540944567743291s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="319.4" cy="389.7" r="1.0" fill="#FFF" opacity="0.54">
+            <animate attributeName="opacity" values="0.54; 0.1; 0.54" dur="3.1696994842793274s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="38.7" cy="441.7" r="1.7" fill="#FFF" opacity="0.32">
+            <animate attributeName="opacity" values="0.32; 0.1; 0.32" dur="4.533189964843375s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="209.9" cy="155.6" r="1.9" fill="#FFF" opacity="0.76">
+            <animate attributeName="opacity" values="0.76; 0.1; 0.76" dur="5.941023724059084s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="188.4" cy="24.6" r="0.8" fill="#FFF" opacity="0.61">
+            <animate attributeName="opacity" values="0.61; 0.1; 0.61" dur="5.613248891012929s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="272.4" cy="258.0" r="1.5" fill="#FFF" opacity="0.70">
+            <animate attributeName="opacity" values="0.70; 0.1; 0.70" dur="3.5309017264598284s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="117.6" cy="430.5" r="1.9" fill="#FFF" opacity="0.56">
+            <animate attributeName="opacity" values="0.56; 0.1; 0.56" dur="7.2333674180082275s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="17.2" cy="394.9" r="1.5" fill="#FFF" opacity="0.74">
+            <animate attributeName="opacity" values="0.74; 0.1; 0.74" dur="7.914461824147581s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="19.5" cy="456.7" r="0.9" fill="#FFF" opacity="0.68">
+            <animate attributeName="opacity" values="0.68; 0.1; 0.68" dur="7.1092800866278045s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="195.9" cy="373.5" r="1.6" fill="#FFF" opacity="0.97">
+            <animate attributeName="opacity" values="0.97; 0.1; 0.97" dur="5.385566622439024s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="40.6" cy="570.2" r="1.5" fill="#FFF" opacity="0.56">
+            <animate attributeName="opacity" values="0.56; 0.1; 0.56" dur="6.094385944270991s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="236.3" cy="590.4" r="1.6" fill="#FFF" opacity="0.55">
+            <animate attributeName="opacity" values="0.55; 0.1; 0.55" dur="7.439383546356343s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="90.9" cy="409.4" r="1.5" fill="#FFF" opacity="0.78">
+            <animate attributeName="opacity" values="0.78; 0.1; 0.78" dur="4.9376136814889025s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="220.8" cy="588.3" r="1.3" fill="#FFF" opacity="0.55">
+            <animate attributeName="opacity" values="0.55; 0.1; 0.55" dur="5.837317472344578s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="55.4" cy="34.6" r="1.5" fill="#FFF" opacity="0.62">
+            <animate attributeName="opacity" values="0.62; 0.1; 0.62" dur="4.681274850105116s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="137.6" cy="141.0" r="0.8" fill="#FFF" opacity="0.61">
+            <animate attributeName="opacity" values="0.61; 0.1; 0.61" dur="5.439496547895981s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="392.0" cy="549.8" r="1.5" fill="#FFF" opacity="0.75">
+            <animate attributeName="opacity" values="0.75; 0.1; 0.75" dur="6.601737692425241s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="112.2" cy="506.9" r="2.0" fill="#FFF" opacity="0.31">
+            <animate attributeName="opacity" values="0.31; 0.1; 0.31" dur="5.430574822412283s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="342.4" cy="171.5" r="1.9" fill="#FFF" opacity="0.95">
+            <animate attributeName="opacity" values="0.95; 0.1; 0.95" dur="4.711216890508908s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="370.9" cy="340.4" r="1.5" fill="#FFF" opacity="0.51">
+            <animate attributeName="opacity" values="0.51; 0.1; 0.51" dur="6.954912548888911s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="220.2" cy="313.7" r="1.6" fill="#FFF" opacity="0.35">
+            <animate attributeName="opacity" values="0.35; 0.1; 0.35" dur="7.528497134540449s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="218.2" cy="255.8" r="1.2" fill="#FFF" opacity="0.32">
+            <animate attributeName="opacity" values="0.32; 0.1; 0.32" dur="7.585216629964167s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="296.6" cy="99.8" r="1.1" fill="#FFF" opacity="0.51">
+            <animate attributeName="opacity" values="0.51; 0.1; 0.51" dur="3.454363743897626s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="212.9" cy="227.4" r="0.6" fill="#FFF" opacity="0.43">
+            <animate attributeName="opacity" values="0.43; 0.1; 0.43" dur="6.547251350884278s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="212.0" cy="346.2" r="1.2" fill="#FFF" opacity="0.40">
+            <animate attributeName="opacity" values="0.40; 0.1; 0.40" dur="7.739841107797089s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="44.5" cy="416.7" r="0.8" fill="#FFF" opacity="0.92">
+            <animate attributeName="opacity" values="0.92; 0.1; 0.92" dur="5.045144247845274s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="85.5" cy="209.4" r="1.0" fill="#FFF" opacity="0.33">
+            <animate attributeName="opacity" values="0.33; 0.1; 0.33" dur="7.777493491911318s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="379.8" cy="104.0" r="1.9" fill="#FFF" opacity="0.87">
+            <animate attributeName="opacity" values="0.87; 0.1; 0.87" dur="7.316635341243442s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="28.5" cy="246.4" r="1.7" fill="#FFF" opacity="0.55">
+            <animate attributeName="opacity" values="0.55; 0.1; 0.55" dur="4.069515393293776s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="36.8" cy="497.1" r="0.6" fill="#FFF" opacity="0.66">
+            <animate attributeName="opacity" values="0.66; 0.1; 0.66" dur="3.7939677556797653s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="88.9" cy="493.5" r="1.5" fill="#FFF" opacity="0.75">
+            <animate attributeName="opacity" values="0.75; 0.1; 0.75" dur="4.84055776652893s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="399.4" cy="341.5" r="1.6" fill="#FFF" opacity="0.80">
+            <animate attributeName="opacity" values="0.80; 0.1; 0.80" dur="3.4491237844330582s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="29.4" cy="434.8" r="1.2" fill="#FFF" opacity="0.78">
+            <animate attributeName="opacity" values="0.78; 0.1; 0.78" dur="3.776405692006687s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="244.2" cy="327.2" r="1.8" fill="#FFF" opacity="0.30">
+            <animate attributeName="opacity" values="0.30; 0.1; 0.30" dur="4.55878604329078s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="112.4" cy="487.3" r="0.7" fill="#FFF" opacity="0.57">
+            <animate attributeName="opacity" values="0.57; 0.1; 0.57" dur="4.667652320729752s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="104.8" cy="474.4" r="1.1" fill="#FFF" opacity="0.79">
+            <animate attributeName="opacity" values="0.79; 0.1; 0.79" dur="7.441255542519133s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="377.8" cy="406.6" r="1.2" fill="#FFF" opacity="0.43">
+            <animate attributeName="opacity" values="0.43; 0.1; 0.43" dur="5.0119748394824075s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="312.5" cy="47.1" r="1.6" fill="#FFF" opacity="0.59">
+            <animate attributeName="opacity" values="0.59; 0.1; 0.59" dur="6.624689496613486s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="272.6" cy="110.3" r="1.4" fill="#FFF" opacity="0.67">
+            <animate attributeName="opacity" values="0.67; 0.1; 0.67" dur="6.775573894320445s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="6.5" cy="421.5" r="1.8" fill="#FFF" opacity="0.92">
+            <animate attributeName="opacity" values="0.92; 0.1; 0.92" dur="7.0163481768968525s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="102.3" cy="589.4" r="1.0" fill="#FFF" opacity="0.53">
+            <animate attributeName="opacity" values="0.53; 0.1; 0.53" dur="5.342311049790951s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="379.3" cy="26.9" r="1.4" fill="#FFF" opacity="0.63">
+            <animate attributeName="opacity" values="0.63; 0.1; 0.63" dur="7.6446178044206174s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="2.5" cy="78.1" r="1.2" fill="#FFF" opacity="0.66">
+            <animate attributeName="opacity" values="0.66; 0.1; 0.66" dur="7.869503463487519s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="144.6" cy="94.6" r="0.6" fill="#FFF" opacity="0.82">
+            <animate attributeName="opacity" values="0.82; 0.1; 0.82" dur="3.7852695815260846s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="135.6" cy="573.4" r="1.8" fill="#FFF" opacity="0.86">
+            <animate attributeName="opacity" values="0.86; 0.1; 0.86" dur="4.100468258185911s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="226.2" cy="395.8" r="1.9" fill="#FFF" opacity="0.52">
+            <animate attributeName="opacity" values="0.52; 0.1; 0.52" dur="3.543539725657819s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="257.4" cy="570.1" r="1.6" fill="#FFF" opacity="0.50">
+            <animate attributeName="opacity" values="0.50; 0.1; 0.50" dur="6.296502577253275s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="129.0" cy="347.0" r="1.6" fill="#FFF" opacity="0.90">
+            <animate attributeName="opacity" values="0.90; 0.1; 0.90" dur="6.627879610537116s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="149.7" cy="213.1" r="1.6" fill="#FFF" opacity="0.45">
+            <animate attributeName="opacity" values="0.45; 0.1; 0.45" dur="5.049474497783453s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="103.1" cy="112.2" r="0.7" fill="#FFF" opacity="0.44">
+            <animate attributeName="opacity" values="0.44; 0.1; 0.44" dur="7.097323106071825s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="132.0" cy="432.8" r="0.6" fill="#FFF" opacity="0.55">
+            <animate attributeName="opacity" values="0.55; 0.1; 0.55" dur="4.241087285983092s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="392.0" cy="60.9" r="1.1" fill="#FFF" opacity="0.46">
+            <animate attributeName="opacity" values="0.46; 0.1; 0.46" dur="4.5948914355792905s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="331.7" cy="235.1" r="1.3" fill="#FFF" opacity="0.86">
+            <animate attributeName="opacity" values="0.86; 0.1; 0.86" dur="7.710360196448739s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="284.1" cy="462.4" r="1.7" fill="#FFF" opacity="0.46">
+            <animate attributeName="opacity" values="0.46; 0.1; 0.46" dur="5.746344815353346s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="174.5" cy="457.8" r="1.1" fill="#FFF" opacity="0.86">
+            <animate attributeName="opacity" values="0.86; 0.1; 0.86" dur="4.961986042341012s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="332.7" cy="126.6" r="0.7" fill="#FFF" opacity="0.32">
+            <animate attributeName="opacity" values="0.32; 0.1; 0.32" dur="6.67633181560922s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="380.9" cy="220.2" r="1.3" fill="#FFF" opacity="1.00">
+            <animate attributeName="opacity" values="1.00; 0.1; 1.00" dur="6.101945368989857s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="137.8" cy="329.0" r="1.0" fill="#FFF" opacity="0.60">
+            <animate attributeName="opacity" values="0.60; 0.1; 0.60" dur="6.899799413756322s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="105.0" cy="134.7" r="0.9" fill="#FFF" opacity="0.59">
+            <animate attributeName="opacity" values="0.59; 0.1; 0.59" dur="5.368363836629783s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="271.1" cy="50.7" r="1.8" fill="#FFF" opacity="0.66">
+            <animate attributeName="opacity" values="0.66; 0.1; 0.66" dur="5.329579042452515s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="56.7" cy="318.4" r="1.4" fill="#FFF" opacity="0.86">
+            <animate attributeName="opacity" values="0.86; 0.1; 0.86" dur="4.510943631965953s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="266.1" cy="547.3" r="1.5" fill="#FFF" opacity="0.57">
+            <animate attributeName="opacity" values="0.57; 0.1; 0.57" dur="4.588837182343674s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="244.6" cy="401.0" r="1.0" fill="#FFF" opacity="0.71">
+            <animate attributeName="opacity" values="0.71; 0.1; 0.71" dur="7.447887936782953s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="192.1" cy="420.4" r="0.8" fill="#FFF" opacity="0.79">
+            <animate attributeName="opacity" values="0.79; 0.1; 0.79" dur="4.957166182793024s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="174.0" cy="39.7" r="0.7" fill="#FFF" opacity="0.86">
+            <animate attributeName="opacity" values="0.86; 0.1; 0.86" dur="4.814526180715809s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="135.6" cy="343.7" r="0.5" fill="#FFF" opacity="0.73">
+            <animate attributeName="opacity" values="0.73; 0.1; 0.73" dur="6.279662246718001s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="221.6" cy="186.8" r="1.0" fill="#FFF" opacity="0.91">
+            <animate attributeName="opacity" values="0.91; 0.1; 0.91" dur="5.226710941308452s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="267.9" cy="252.6" r="2.0" fill="#FFF" opacity="0.32">
+            <animate attributeName="opacity" values="0.32; 0.1; 0.32" dur="6.374768186831475s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="199.2" cy="252.7" r="1.0" fill="#FFF" opacity="0.83">
+            <animate attributeName="opacity" values="0.83; 0.1; 0.83" dur="3.243243077003144s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="391.3" cy="524.1" r="0.7" fill="#FFF" opacity="0.61">
+            <animate attributeName="opacity" values="0.61; 0.1; 0.61" dur="7.725198620891789s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="373.5" cy="398.8" r="1.3" fill="#FFF" opacity="0.97">
+            <animate attributeName="opacity" values="0.97; 0.1; 0.97" dur="4.667049882329719s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="88.6" cy="102.9" r="1.7" fill="#FFF" opacity="0.98">
+            <animate attributeName="opacity" values="0.98; 0.1; 0.98" dur="6.831130559195148s" repeatCount="indefinite"/>
+        </circle>
+        
+
+    <g transform="translate(200, 240)">
+        
+        <g filter="url(#glow-soft)">
+            <animateTransform attributeName="transform" type="rotate" from='0' to='360' dur="60s" repeatCount="indefinite"/>
+            <line x1="180.0" y1="0.0" x2="90.0" y2="155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="180.0" y1="0.0" x2="0.0" y2="180.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="180.0" y1="0.0" x2="-90.0" y2="155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="180.0" y1="0.0" x2="-155.9" y2="90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="180.0" y1="0.0" x2="-180.0" y2="0.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="180.0" y1="0.0" x2="-155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="180.0" y1="0.0" x2="-90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="180.0" y1="0.0" x2="-0.0" y2="-180.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="180.0" y1="0.0" x2="90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="155.9" y1="90.0" x2="0.0" y2="180.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="155.9" y1="90.0" x2="-90.0" y2="155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="155.9" y1="90.0" x2="-155.9" y2="90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="155.9" y1="90.0" x2="-180.0" y2="0.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="155.9" y1="90.0" x2="-155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="155.9" y1="90.0" x2="-90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="155.9" y1="90.0" x2="-0.0" y2="-180.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="155.9" y1="90.0" x2="90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="155.9" y1="90.0" x2="155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="90.0" y1="155.9" x2="-90.0" y2="155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="90.0" y1="155.9" x2="-155.9" y2="90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="90.0" y1="155.9" x2="-180.0" y2="0.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="90.0" y1="155.9" x2="-155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="90.0" y1="155.9" x2="-90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="90.0" y1="155.9" x2="-0.0" y2="-180.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="90.0" y1="155.9" x2="90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="90.0" y1="155.9" x2="155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="180.0" x2="-155.9" y2="90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="180.0" x2="-180.0" y2="0.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="180.0" x2="-155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="180.0" x2="-90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="180.0" x2="-0.0" y2="-180.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="180.0" x2="90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="180.0" x2="155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-90.0" y1="155.9" x2="-180.0" y2="0.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-90.0" y1="155.9" x2="-155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-90.0" y1="155.9" x2="-90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-90.0" y1="155.9" x2="-0.0" y2="-180.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-90.0" y1="155.9" x2="90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-90.0" y1="155.9" x2="155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-155.9" y1="90.0" x2="-155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-155.9" y1="90.0" x2="-90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-155.9" y1="90.0" x2="-0.0" y2="-180.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-155.9" y1="90.0" x2="90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-155.9" y1="90.0" x2="155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-180.0" y1="0.0" x2="-90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-180.0" y1="0.0" x2="-0.0" y2="-180.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-180.0" y1="0.0" x2="90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-180.0" y1="0.0" x2="155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-155.9" y1="-90.0" x2="-0.0" y2="-180.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-155.9" y1="-90.0" x2="90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-155.9" y1="-90.0" x2="155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-90.0" y1="-155.9" x2="90.0" y2="-155.9" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-90.0" y1="-155.9" x2="155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-0.0" y1="-180.0" x2="155.9" y2="-90.0" stroke="#00F0FF" stroke-width="0.3" opacity="0.3"/>
+
+            <circle cx="0" cy="0" r="180" fill="none" stroke="#00F0FF" stroke-width="1" stroke-dasharray="2 8" opacity="0.5"/>
+        </g>
+        
+        <g filter="url(#glow-soft)">
+            <animateTransform attributeName="transform" type="rotate" from='360' to='0' dur="80s" repeatCount="indefinite"/>
+            <line x1="145.0" y1="0.0" x2="72.5" y2="125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="145.0" y1="0.0" x2="0.0" y2="145.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="145.0" y1="0.0" x2="-72.5" y2="125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="145.0" y1="0.0" x2="-125.6" y2="72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="145.0" y1="0.0" x2="-145.0" y2="0.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="145.0" y1="0.0" x2="-125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="145.0" y1="0.0" x2="-72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="145.0" y1="0.0" x2="-0.0" y2="-145.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="145.0" y1="0.0" x2="72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="125.6" y1="72.5" x2="0.0" y2="145.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="125.6" y1="72.5" x2="-72.5" y2="125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="125.6" y1="72.5" x2="-125.6" y2="72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="125.6" y1="72.5" x2="-145.0" y2="0.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="125.6" y1="72.5" x2="-125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="125.6" y1="72.5" x2="-72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="125.6" y1="72.5" x2="-0.0" y2="-145.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="125.6" y1="72.5" x2="72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="125.6" y1="72.5" x2="125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="72.5" y1="125.6" x2="-72.5" y2="125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="72.5" y1="125.6" x2="-125.6" y2="72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="72.5" y1="125.6" x2="-145.0" y2="0.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="72.5" y1="125.6" x2="-125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="72.5" y1="125.6" x2="-72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="72.5" y1="125.6" x2="-0.0" y2="-145.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="72.5" y1="125.6" x2="72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="72.5" y1="125.6" x2="125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="145.0" x2="-125.6" y2="72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="145.0" x2="-145.0" y2="0.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="145.0" x2="-125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="145.0" x2="-72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="145.0" x2="-0.0" y2="-145.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="145.0" x2="72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="145.0" x2="125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-72.5" y1="125.6" x2="-145.0" y2="0.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-72.5" y1="125.6" x2="-125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-72.5" y1="125.6" x2="-72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-72.5" y1="125.6" x2="-0.0" y2="-145.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-72.5" y1="125.6" x2="72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-72.5" y1="125.6" x2="125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-125.6" y1="72.5" x2="-125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-125.6" y1="72.5" x2="-72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-125.6" y1="72.5" x2="-0.0" y2="-145.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-125.6" y1="72.5" x2="72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-125.6" y1="72.5" x2="125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-145.0" y1="0.0" x2="-72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-145.0" y1="0.0" x2="-0.0" y2="-145.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-145.0" y1="0.0" x2="72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-145.0" y1="0.0" x2="125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-125.6" y1="-72.5" x2="-0.0" y2="-145.0" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-125.6" y1="-72.5" x2="72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-125.6" y1="-72.5" x2="125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-72.5" y1="-125.6" x2="72.5" y2="-125.6" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-72.5" y1="-125.6" x2="125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+<line x1="-0.0" y1="-145.0" x2="125.6" y2="-72.5" stroke="#B000FF" stroke-width="0.3" opacity="0.3"/>
+
+            <circle cx="0" cy="0" r="145" fill="none" stroke="#B000FF" stroke-width="1" stroke-dasharray="2 8" opacity="0.5"/>
+        </g>
+        
+        <g filter="url(#glow-soft)">
+            <animateTransform attributeName="transform" type="rotate" from='0' to='360' dur="100s" repeatCount="indefinite"/>
+            <line x1="110.0" y1="0.0" x2="55.0" y2="95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="110.0" y1="0.0" x2="0.0" y2="110.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="110.0" y1="0.0" x2="-55.0" y2="95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="110.0" y1="0.0" x2="-95.3" y2="55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="110.0" y1="0.0" x2="-110.0" y2="0.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="110.0" y1="0.0" x2="-95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="110.0" y1="0.0" x2="-55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="110.0" y1="0.0" x2="-0.0" y2="-110.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="110.0" y1="0.0" x2="55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="95.3" y1="55.0" x2="0.0" y2="110.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="95.3" y1="55.0" x2="-55.0" y2="95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="95.3" y1="55.0" x2="-95.3" y2="55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="95.3" y1="55.0" x2="-110.0" y2="0.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="95.3" y1="55.0" x2="-95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="95.3" y1="55.0" x2="-55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="95.3" y1="55.0" x2="-0.0" y2="-110.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="95.3" y1="55.0" x2="55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="95.3" y1="55.0" x2="95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="55.0" y1="95.3" x2="-55.0" y2="95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="55.0" y1="95.3" x2="-95.3" y2="55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="55.0" y1="95.3" x2="-110.0" y2="0.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="55.0" y1="95.3" x2="-95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="55.0" y1="95.3" x2="-55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="55.0" y1="95.3" x2="-0.0" y2="-110.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="55.0" y1="95.3" x2="55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="55.0" y1="95.3" x2="95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="110.0" x2="-95.3" y2="55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="110.0" x2="-110.0" y2="0.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="110.0" x2="-95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="110.0" x2="-55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="110.0" x2="-0.0" y2="-110.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="110.0" x2="55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="0.0" y1="110.0" x2="95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-55.0" y1="95.3" x2="-110.0" y2="0.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-55.0" y1="95.3" x2="-95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-55.0" y1="95.3" x2="-55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-55.0" y1="95.3" x2="-0.0" y2="-110.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-55.0" y1="95.3" x2="55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-55.0" y1="95.3" x2="95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-95.3" y1="55.0" x2="-95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-95.3" y1="55.0" x2="-55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-95.3" y1="55.0" x2="-0.0" y2="-110.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-95.3" y1="55.0" x2="55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-95.3" y1="55.0" x2="95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-110.0" y1="0.0" x2="-55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-110.0" y1="0.0" x2="-0.0" y2="-110.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-110.0" y1="0.0" x2="55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-110.0" y1="0.0" x2="95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-95.3" y1="-55.0" x2="-0.0" y2="-110.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-95.3" y1="-55.0" x2="55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-95.3" y1="-55.0" x2="95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-55.0" y1="-95.3" x2="55.0" y2="-95.3" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-55.0" y1="-95.3" x2="95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+<line x1="-0.0" y1="-110.0" x2="95.3" y2="-55.0" stroke="#FFD700" stroke-width="0.3" opacity="0.3"/>
+
+            <circle cx="0" cy="0" r="110" fill="none" stroke="#FFD700" stroke-width="1" stroke-dasharray="2 8" opacity="0.5"/>
+        </g>
+        
+        
+        <g opacity="0.6" font-family="'JetBrains Mono', monospace" font-size="5" fill="#E5E4E2" filter="url(#glow-soft)">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="40s" repeatCount="indefinite"/>
+            <text><textPath href="#spiral-1" startOffset="100%">
+                <animate attributeName="startOffset" values="100%;-100%" dur="20s" repeatCount="indefinite"/>
+                2ⁿ · 3ⁿ · 5ⁿ · 7ⁿ · 11ⁿ · 13ⁿ · 17ⁿ · 19ⁿ · 23ⁿ · 29ⁿ · 31ⁿ · 37ⁿ · 41ⁿ · 43ⁿ2ⁿ · 3ⁿ · 5ⁿ · 7ⁿ · 11ⁿ · 13ⁿ · 17ⁿ · 19ⁿ · 23ⁿ · 29ⁿ · 31ⁿ · 37ⁿ · 41ⁿ · 43ⁿ2ⁿ · 3ⁿ · 5ⁿ · 7ⁿ · 11ⁿ · 13ⁿ · 17ⁿ · 19ⁿ · 23ⁿ · 29ⁿ · 31ⁿ · 37ⁿ · 41ⁿ · 43ⁿ
+            </textPath></text>
+            <text><textPath href="#spiral-2" startOffset="100%">
+                <animate attributeName="startOffset" values="100%;-100%" dur="20s" repeatCount="indefinite"/>
+                2ⁿ · 3ⁿ · 5ⁿ · 7ⁿ · 11ⁿ · 13ⁿ · 17ⁿ · 19ⁿ · 23ⁿ · 29ⁿ · 31ⁿ · 37ⁿ · 41ⁿ · 43ⁿ2ⁿ · 3ⁿ · 5ⁿ · 7ⁿ · 11ⁿ · 13ⁿ · 17ⁿ · 19ⁿ · 23ⁿ · 29ⁿ · 31ⁿ · 37ⁿ · 41ⁿ · 43ⁿ2ⁿ · 3ⁿ · 5ⁿ · 7ⁿ · 11ⁿ · 13ⁿ · 17ⁿ · 19ⁿ · 23ⁿ · 29ⁿ · 31ⁿ · 37ⁿ · 41ⁿ · 43ⁿ
+            </textPath></text>
+        </g>
+        
+        <g>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="180s" repeatCount="indefinite"/>
+            
+        <g filter="url(#glow-intense)">
+            <path d="M 160.00 0.00 L 159.58 6.68 L 158.33 13.25 L 156.28 19.59 L 153.49 25.60 L 150.02 31.19 L 145.95 36.30 L 141.36 40.86 L 136.35 44.84 L 131.01 48.23 L 125.42 51.01 L 119.66 53.20 L 113.80 54.82 L 107.90 55.90 L 102.02 56.46 L 96.20 56.55 L 90.48 56.20 L 84.88 55.46 L 79.42 54.37 L 74.11 52.95 L 68.97 51.26 L 63.99 49.31 L 59.19 47.14 L 54.54 44.78 L 50.05 42.26 L 45.71 39.59 L 41.52 36.79 L 37.46 33.89 L 33.52 30.90 L 29.69 27.83 L 25.96 24.69 L 22.32 21.50 L 18.76 18.26 L 15.26 14.99 L 11.81 11.69 L 8.41 8.36 L 5.03 5.02 L 1.68 1.68 L -1.68 -1.68 L -5.03 -5.02 L -8.41 -8.36 L -11.81 -11.69 L -15.26 -14.99 L -18.76 -18.26 L -22.32 -21.50 L -25.96 -24.69 L -29.69 -27.83 L -33.52 -30.90 L -37.46 -33.89 L -41.52 -36.79 L -45.71 -39.59 L -50.05 -42.26 L -54.54 -44.78 L -59.19 -47.14 L -63.99 -49.31 L -68.97 -51.26 L -74.11 -52.95 L -79.42 -54.37 L -84.88 -55.46 L -90.48 -56.20 L -96.20 -56.55 L -102.02 -56.46 L -107.90 -55.90 L -113.80 -54.82 L -119.66 -53.20 L -125.42 -51.01 L -131.01 -48.23 L -136.35 -44.84 L -141.36 -40.86 L -145.95 -36.30 L -150.02 -31.19 L -153.49 -25.60 L -156.28 -19.59 L -158.33 -13.25 L -159.58 -6.68 L -160.00 -0.00 L -159.58 6.68 L -158.33 13.25 L -156.28 19.59 L -153.49 25.60 L -150.02 31.19 L -145.95 36.30 L -141.36 40.86 L -136.35 44.84 L -131.01 48.23 L -125.42 51.01 L -119.66 53.20 L -113.80 54.82 L -107.90 55.90 L -102.02 56.46 L -96.20 56.55 L -90.48 56.20 L -84.88 55.46 L -79.42 54.37 L -74.11 52.95 L -68.97 51.26 L -63.99 49.31 L -59.19 47.14 L -54.54 44.78 L -50.05 42.26 L -45.71 39.59 L -41.52 36.79 L -37.46 33.89 L -33.52 30.90 L -29.69 27.83 L -25.96 24.69 L -22.32 21.50 L -18.76 18.26 L -15.26 14.99 L -11.81 11.69 L -8.41 8.36 L -5.03 5.02 L -1.68 1.68 L 1.68 -1.68 L 5.03 -5.02 L 8.41 -8.36 L 11.81 -11.69 L 15.26 -14.99 L 18.76 -18.26 L 22.32 -21.50 L 25.96 -24.69 L 29.69 -27.83 L 33.52 -30.90 L 37.46 -33.89 L 41.52 -36.79 L 45.71 -39.59 L 50.05 -42.26 L 54.54 -44.78 L 59.19 -47.14 L 63.99 -49.31 L 68.97 -51.26 L 74.11 -52.95 L 79.42 -54.37 L 84.88 -55.46 L 90.48 -56.20 L 96.20 -56.55 L 102.02 -56.46 L 107.90 -55.90 L 113.80 -54.82 L 119.66 -53.20 L 125.42 -51.01 L 131.01 -48.23 L 136.35 -44.84 L 141.36 -40.86 L 145.95 -36.30 L 150.02 -31.19 L 153.49 -25.60 L 156.28 -19.59 L 158.33 -13.25 L 159.58 -6.68 L 160.00 -0.00" fill="none" stroke="url(#grad-gold)" stroke-width="1.5" opacity="0.4"/>
+            <path d="M 160.00 0.00 L 159.58 6.68 L 158.33 13.25 L 156.28 19.59 L 153.49 25.60 L 150.02 31.19 L 145.95 36.30 L 141.36 40.86 L 136.35 44.84 L 131.01 48.23 L 125.42 51.01 L 119.66 53.20 L 113.80 54.82 L 107.90 55.90 L 102.02 56.46 L 96.20 56.55 L 90.48 56.20 L 84.88 55.46 L 79.42 54.37 L 74.11 52.95 L 68.97 51.26 L 63.99 49.31 L 59.19 47.14 L 54.54 44.78 L 50.05 42.26 L 45.71 39.59 L 41.52 36.79 L 37.46 33.89 L 33.52 30.90 L 29.69 27.83 L 25.96 24.69 L 22.32 21.50 L 18.76 18.26 L 15.26 14.99 L 11.81 11.69 L 8.41 8.36 L 5.03 5.02 L 1.68 1.68 L -1.68 -1.68 L -5.03 -5.02 L -8.41 -8.36 L -11.81 -11.69 L -15.26 -14.99 L -18.76 -18.26 L -22.32 -21.50 L -25.96 -24.69 L -29.69 -27.83 L -33.52 -30.90 L -37.46 -33.89 L -41.52 -36.79 L -45.71 -39.59 L -50.05 -42.26 L -54.54 -44.78 L -59.19 -47.14 L -63.99 -49.31 L -68.97 -51.26 L -74.11 -52.95 L -79.42 -54.37 L -84.88 -55.46 L -90.48 -56.20 L -96.20 -56.55 L -102.02 -56.46 L -107.90 -55.90 L -113.80 -54.82 L -119.66 -53.20 L -125.42 -51.01 L -131.01 -48.23 L -136.35 -44.84 L -141.36 -40.86 L -145.95 -36.30 L -150.02 -31.19 L -153.49 -25.60 L -156.28 -19.59 L -158.33 -13.25 L -159.58 -6.68 L -160.00 -0.00 L -159.58 6.68 L -158.33 13.25 L -156.28 19.59 L -153.49 25.60 L -150.02 31.19 L -145.95 36.30 L -141.36 40.86 L -136.35 44.84 L -131.01 48.23 L -125.42 51.01 L -119.66 53.20 L -113.80 54.82 L -107.90 55.90 L -102.02 56.46 L -96.20 56.55 L -90.48 56.20 L -84.88 55.46 L -79.42 54.37 L -74.11 52.95 L -68.97 51.26 L -63.99 49.31 L -59.19 47.14 L -54.54 44.78 L -50.05 42.26 L -45.71 39.59 L -41.52 36.79 L -37.46 33.89 L -33.52 30.90 L -29.69 27.83 L -25.96 24.69 L -22.32 21.50 L -18.76 18.26 L -15.26 14.99 L -11.81 11.69 L -8.41 8.36 L -5.03 5.02 L -1.68 1.68 L 1.68 -1.68 L 5.03 -5.02 L 8.41 -8.36 L 11.81 -11.69 L 15.26 -14.99 L 18.76 -18.26 L 22.32 -21.50 L 25.96 -24.69 L 29.69 -27.83 L 33.52 -30.90 L 37.46 -33.89 L 41.52 -36.79 L 45.71 -39.59 L 50.05 -42.26 L 54.54 -44.78 L 59.19 -47.14 L 63.99 -49.31 L 68.97 -51.26 L 74.11 -52.95 L 79.42 -54.37 L 84.88 -55.46 L 90.48 -56.20 L 96.20 -56.55 L 102.02 -56.46 L 107.90 -55.90 L 113.80 -54.82 L 119.66 -53.20 L 125.42 -51.01 L 131.01 -48.23 L 136.35 -44.84 L 141.36 -40.86 L 145.95 -36.30 L 150.02 -31.19 L 153.49 -25.60 L 156.28 -19.59 L 158.33 -13.25 L 159.58 -6.68 L 160.00 -0.00" fill="none" stroke="url(#grad-gold)" stroke-width="4.5" stroke-dasharray="120 400" stroke-linecap="round" opacity="1">
+                <animate attributeName="stroke-dashoffset" from="520" to="0" dur="12s" repeatCount="indefinite" direction="normal"/>
+            </path>
+        </g>
+        
+        <g filter="url(#glow-intense)">
+            <path d="M 106.07 106.07 L 101.36 110.22 L 96.18 113.74 L 90.62 116.59 L 84.78 118.72 L 78.77 120.13 L 72.69 120.81 L 66.63 120.80 L 60.66 120.12 L 54.88 118.82 L 49.32 116.96 L 44.05 114.59 L 39.10 111.78 L 34.48 108.58 L 30.21 105.06 L 26.29 101.26 L 22.72 97.24 L 19.50 93.03 L 16.61 88.69 L 14.03 84.23 L 11.74 79.70 L 9.74 75.11 L 7.98 70.49 L 6.47 65.84 L 5.17 61.19 L 4.06 56.55 L 3.13 51.92 L 2.36 47.30 L 1.74 42.70 L 1.23 38.13 L 0.84 33.58 L 0.55 29.05 L 0.33 24.54 L 0.18 20.05 L 0.08 15.58 L 0.03 11.12 L 0.01 6.67 L 0.00 2.22 L -0.00 -2.22 L -0.01 -6.67 L -0.03 -11.12 L -0.08 -15.58 L -0.18 -20.05 L -0.33 -24.54 L -0.55 -29.05 L -0.84 -33.58 L -1.23 -38.13 L -1.74 -42.70 L -2.36 -47.30 L -3.13 -51.92 L -4.06 -56.55 L -5.17 -61.19 L -6.47 -65.84 L -7.98 -70.49 L -9.74 -75.11 L -11.74 -79.70 L -14.03 -84.23 L -16.61 -88.69 L -19.50 -93.03 L -22.72 -97.24 L -26.29 -101.26 L -30.21 -105.06 L -34.48 -108.58 L -39.10 -111.78 L -44.05 -114.59 L -49.32 -116.96 L -54.88 -118.82 L -60.66 -120.12 L -66.63 -120.80 L -72.69 -120.81 L -78.77 -120.13 L -84.78 -118.72 L -90.62 -116.59 L -96.18 -113.74 L -101.36 -110.22 L -106.07 -106.07 L -110.22 -101.36 L -113.74 -96.18 L -116.59 -90.62 L -118.72 -84.78 L -120.13 -78.77 L -120.81 -72.69 L -120.80 -66.63 L -120.12 -60.66 L -118.82 -54.88 L -116.96 -49.32 L -114.59 -44.05 L -111.78 -39.10 L -108.58 -34.48 L -105.06 -30.21 L -101.26 -26.29 L -97.24 -22.72 L -93.03 -19.50 L -88.69 -16.61 L -84.23 -14.03 L -79.70 -11.74 L -75.11 -9.74 L -70.49 -7.98 L -65.84 -6.47 L -61.19 -5.17 L -56.55 -4.06 L -51.92 -3.13 L -47.30 -2.36 L -42.70 -1.74 L -38.13 -1.23 L -33.58 -0.84 L -29.05 -0.55 L -24.54 -0.33 L -20.05 -0.18 L -15.58 -0.08 L -11.12 -0.03 L -6.67 -0.01 L -2.22 -0.00 L 2.22 0.00 L 6.67 0.01 L 11.12 0.03 L 15.58 0.08 L 20.05 0.18 L 24.54 0.33 L 29.05 0.55 L 33.58 0.84 L 38.13 1.23 L 42.70 1.74 L 47.30 2.36 L 51.92 3.13 L 56.55 4.06 L 61.19 5.17 L 65.84 6.47 L 70.49 7.98 L 75.11 9.74 L 79.70 11.74 L 84.23 14.03 L 88.69 16.61 L 93.03 19.50 L 97.24 22.72 L 101.26 26.29 L 105.06 30.21 L 108.58 34.48 L 111.78 39.10 L 114.59 44.05 L 116.96 49.32 L 118.82 54.88 L 120.12 60.66 L 120.80 66.63 L 120.81 72.69 L 120.13 78.77 L 118.72 84.78 L 116.59 90.62 L 113.74 96.18 L 110.22 101.36 L 106.07 106.07" fill="none" stroke="url(#grad-cyan)" stroke-width="1.0" opacity="0.4"/>
+            <path d="M 106.07 106.07 L 101.36 110.22 L 96.18 113.74 L 90.62 116.59 L 84.78 118.72 L 78.77 120.13 L 72.69 120.81 L 66.63 120.80 L 60.66 120.12 L 54.88 118.82 L 49.32 116.96 L 44.05 114.59 L 39.10 111.78 L 34.48 108.58 L 30.21 105.06 L 26.29 101.26 L 22.72 97.24 L 19.50 93.03 L 16.61 88.69 L 14.03 84.23 L 11.74 79.70 L 9.74 75.11 L 7.98 70.49 L 6.47 65.84 L 5.17 61.19 L 4.06 56.55 L 3.13 51.92 L 2.36 47.30 L 1.74 42.70 L 1.23 38.13 L 0.84 33.58 L 0.55 29.05 L 0.33 24.54 L 0.18 20.05 L 0.08 15.58 L 0.03 11.12 L 0.01 6.67 L 0.00 2.22 L -0.00 -2.22 L -0.01 -6.67 L -0.03 -11.12 L -0.08 -15.58 L -0.18 -20.05 L -0.33 -24.54 L -0.55 -29.05 L -0.84 -33.58 L -1.23 -38.13 L -1.74 -42.70 L -2.36 -47.30 L -3.13 -51.92 L -4.06 -56.55 L -5.17 -61.19 L -6.47 -65.84 L -7.98 -70.49 L -9.74 -75.11 L -11.74 -79.70 L -14.03 -84.23 L -16.61 -88.69 L -19.50 -93.03 L -22.72 -97.24 L -26.29 -101.26 L -30.21 -105.06 L -34.48 -108.58 L -39.10 -111.78 L -44.05 -114.59 L -49.32 -116.96 L -54.88 -118.82 L -60.66 -120.12 L -66.63 -120.80 L -72.69 -120.81 L -78.77 -120.13 L -84.78 -118.72 L -90.62 -116.59 L -96.18 -113.74 L -101.36 -110.22 L -106.07 -106.07 L -110.22 -101.36 L -113.74 -96.18 L -116.59 -90.62 L -118.72 -84.78 L -120.13 -78.77 L -120.81 -72.69 L -120.80 -66.63 L -120.12 -60.66 L -118.82 -54.88 L -116.96 -49.32 L -114.59 -44.05 L -111.78 -39.10 L -108.58 -34.48 L -105.06 -30.21 L -101.26 -26.29 L -97.24 -22.72 L -93.03 -19.50 L -88.69 -16.61 L -84.23 -14.03 L -79.70 -11.74 L -75.11 -9.74 L -70.49 -7.98 L -65.84 -6.47 L -61.19 -5.17 L -56.55 -4.06 L -51.92 -3.13 L -47.30 -2.36 L -42.70 -1.74 L -38.13 -1.23 L -33.58 -0.84 L -29.05 -0.55 L -24.54 -0.33 L -20.05 -0.18 L -15.58 -0.08 L -11.12 -0.03 L -6.67 -0.01 L -2.22 -0.00 L 2.22 0.00 L 6.67 0.01 L 11.12 0.03 L 15.58 0.08 L 20.05 0.18 L 24.54 0.33 L 29.05 0.55 L 33.58 0.84 L 38.13 1.23 L 42.70 1.74 L 47.30 2.36 L 51.92 3.13 L 56.55 4.06 L 61.19 5.17 L 65.84 6.47 L 70.49 7.98 L 75.11 9.74 L 79.70 11.74 L 84.23 14.03 L 88.69 16.61 L 93.03 19.50 L 97.24 22.72 L 101.26 26.29 L 105.06 30.21 L 108.58 34.48 L 111.78 39.10 L 114.59 44.05 L 116.96 49.32 L 118.82 54.88 L 120.12 60.66 L 120.80 66.63 L 120.81 72.69 L 120.13 78.77 L 118.72 84.78 L 116.59 90.62 L 113.74 96.18 L 110.22 101.36 L 106.07 106.07" fill="none" stroke="url(#grad-cyan)" stroke-width="3.0" stroke-dasharray="120 400" stroke-linecap="round" opacity="1">
+                <animate attributeName="stroke-dashoffset" from="520" to="0" dur="10s" repeatCount="indefinite" direction="reverse"/>
+            </path>
+        </g>
+        
+        <g filter="url(#glow-intense)">
+            <path d="M 0.00 140.00 L -5.85 139.63 L -11.59 138.54 L -17.14 136.75 L -22.40 134.30 L -27.29 131.27 L -31.76 127.70 L -35.75 123.69 L -39.24 119.31 L -42.20 114.63 L -44.64 109.74 L -46.55 104.70 L -47.97 99.57 L -48.91 94.41 L -49.40 89.27 L -49.48 84.18 L -49.18 79.17 L -48.53 74.27 L -47.57 69.49 L -46.33 64.85 L -44.85 60.35 L -43.15 56.00 L -41.25 51.79 L -39.19 47.72 L -36.98 43.79 L -34.64 40.00 L -32.20 36.33 L -29.66 32.78 L -27.04 29.33 L -24.35 25.98 L -21.60 22.72 L -18.81 19.53 L -15.98 16.41 L -13.11 13.35 L -10.23 10.34 L -7.32 7.36 L -4.40 4.40 L -1.47 1.47 L 1.47 -1.47 L 4.40 -4.40 L 7.32 -7.36 L 10.23 -10.34 L 13.11 -13.35 L 15.98 -16.41 L 18.81 -19.53 L 21.60 -22.72 L 24.35 -25.98 L 27.04 -29.33 L 29.66 -32.78 L 32.20 -36.33 L 34.64 -40.00 L 36.98 -43.79 L 39.19 -47.72 L 41.25 -51.79 L 43.15 -56.00 L 44.85 -60.35 L 46.33 -64.85 L 47.57 -69.49 L 48.53 -74.27 L 49.18 -79.17 L 49.48 -84.18 L 49.40 -89.27 L 48.91 -94.41 L 47.97 -99.57 L 46.55 -104.70 L 44.64 -109.74 L 42.20 -114.63 L 39.24 -119.31 L 35.75 -123.69 L 31.76 -127.70 L 27.29 -131.27 L 22.40 -134.30 L 17.14 -136.75 L 11.59 -138.54 L 5.85 -139.63 L 0.00 -140.00 L -5.85 -139.63 L -11.59 -138.54 L -17.14 -136.75 L -22.40 -134.30 L -27.29 -131.27 L -31.76 -127.70 L -35.75 -123.69 L -39.24 -119.31 L -42.20 -114.63 L -44.64 -109.74 L -46.55 -104.70 L -47.97 -99.57 L -48.91 -94.41 L -49.40 -89.27 L -49.48 -84.18 L -49.18 -79.17 L -48.53 -74.27 L -47.57 -69.49 L -46.33 -64.85 L -44.85 -60.35 L -43.15 -56.00 L -41.25 -51.79 L -39.19 -47.72 L -36.98 -43.79 L -34.64 -40.00 L -32.20 -36.33 L -29.66 -32.78 L -27.04 -29.33 L -24.35 -25.98 L -21.60 -22.72 L -18.81 -19.53 L -15.98 -16.41 L -13.11 -13.35 L -10.23 -10.34 L -7.32 -7.36 L -4.40 -4.40 L -1.47 -1.47 L 1.47 1.47 L 4.40 4.40 L 7.32 7.36 L 10.23 10.34 L 13.11 13.35 L 15.98 16.41 L 18.81 19.53 L 21.60 22.72 L 24.35 25.98 L 27.04 29.33 L 29.66 32.78 L 32.20 36.33 L 34.64 40.00 L 36.98 43.79 L 39.19 47.72 L 41.25 51.79 L 43.15 56.00 L 44.85 60.35 L 46.33 64.85 L 47.57 69.49 L 48.53 74.27 L 49.18 79.17 L 49.48 84.18 L 49.40 89.27 L 48.91 94.41 L 47.97 99.57 L 46.55 104.70 L 44.64 109.74 L 42.20 114.63 L 39.24 119.31 L 35.75 123.69 L 31.76 127.70 L 27.29 131.27 L 22.40 134.30 L 17.14 136.75 L 11.59 138.54 L 5.85 139.63 L 0.00 140.00" fill="none" stroke="url(#grad-magenta)" stroke-width="1.25" opacity="0.4"/>
+            <path d="M 0.00 140.00 L -5.85 139.63 L -11.59 138.54 L -17.14 136.75 L -22.40 134.30 L -27.29 131.27 L -31.76 127.70 L -35.75 123.69 L -39.24 119.31 L -42.20 114.63 L -44.64 109.74 L -46.55 104.70 L -47.97 99.57 L -48.91 94.41 L -49.40 89.27 L -49.48 84.18 L -49.18 79.17 L -48.53 74.27 L -47.57 69.49 L -46.33 64.85 L -44.85 60.35 L -43.15 56.00 L -41.25 51.79 L -39.19 47.72 L -36.98 43.79 L -34.64 40.00 L -32.20 36.33 L -29.66 32.78 L -27.04 29.33 L -24.35 25.98 L -21.60 22.72 L -18.81 19.53 L -15.98 16.41 L -13.11 13.35 L -10.23 10.34 L -7.32 7.36 L -4.40 4.40 L -1.47 1.47 L 1.47 -1.47 L 4.40 -4.40 L 7.32 -7.36 L 10.23 -10.34 L 13.11 -13.35 L 15.98 -16.41 L 18.81 -19.53 L 21.60 -22.72 L 24.35 -25.98 L 27.04 -29.33 L 29.66 -32.78 L 32.20 -36.33 L 34.64 -40.00 L 36.98 -43.79 L 39.19 -47.72 L 41.25 -51.79 L 43.15 -56.00 L 44.85 -60.35 L 46.33 -64.85 L 47.57 -69.49 L 48.53 -74.27 L 49.18 -79.17 L 49.48 -84.18 L 49.40 -89.27 L 48.91 -94.41 L 47.97 -99.57 L 46.55 -104.70 L 44.64 -109.74 L 42.20 -114.63 L 39.24 -119.31 L 35.75 -123.69 L 31.76 -127.70 L 27.29 -131.27 L 22.40 -134.30 L 17.14 -136.75 L 11.59 -138.54 L 5.85 -139.63 L 0.00 -140.00 L -5.85 -139.63 L -11.59 -138.54 L -17.14 -136.75 L -22.40 -134.30 L -27.29 -131.27 L -31.76 -127.70 L -35.75 -123.69 L -39.24 -119.31 L -42.20 -114.63 L -44.64 -109.74 L -46.55 -104.70 L -47.97 -99.57 L -48.91 -94.41 L -49.40 -89.27 L -49.48 -84.18 L -49.18 -79.17 L -48.53 -74.27 L -47.57 -69.49 L -46.33 -64.85 L -44.85 -60.35 L -43.15 -56.00 L -41.25 -51.79 L -39.19 -47.72 L -36.98 -43.79 L -34.64 -40.00 L -32.20 -36.33 L -29.66 -32.78 L -27.04 -29.33 L -24.35 -25.98 L -21.60 -22.72 L -18.81 -19.53 L -15.98 -16.41 L -13.11 -13.35 L -10.23 -10.34 L -7.32 -7.36 L -4.40 -4.40 L -1.47 -1.47 L 1.47 1.47 L 4.40 4.40 L 7.32 7.36 L 10.23 10.34 L 13.11 13.35 L 15.98 16.41 L 18.81 19.53 L 21.60 22.72 L 24.35 25.98 L 27.04 29.33 L 29.66 32.78 L 32.20 36.33 L 34.64 40.00 L 36.98 43.79 L 39.19 47.72 L 41.25 51.79 L 43.15 56.00 L 44.85 60.35 L 46.33 64.85 L 47.57 69.49 L 48.53 74.27 L 49.18 79.17 L 49.48 84.18 L 49.40 89.27 L 48.91 94.41 L 47.97 99.57 L 46.55 104.70 L 44.64 109.74 L 42.20 114.63 L 39.24 119.31 L 35.75 123.69 L 31.76 127.70 L 27.29 131.27 L 22.40 134.30 L 17.14 136.75 L 11.59 138.54 L 5.85 139.63 L 0.00 140.00" fill="none" stroke="url(#grad-magenta)" stroke-width="3.75" stroke-dasharray="120 400" stroke-linecap="round" opacity="1">
+                <animate attributeName="stroke-dashoffset" from="520" to="0" dur="15s" repeatCount="indefinite" direction="normal"/>
+            </path>
+        </g>
+        
+        <g filter="url(#glow-intense)">
+            <path d="M -91.92 91.92 L -95.52 87.84 L -98.58 83.35 L -101.04 78.54 L -102.89 73.48 L -104.11 68.27 L -104.70 63.00 L -104.69 57.74 L -104.10 52.58 L -102.98 47.56 L -101.36 42.75 L -99.31 38.18 L -96.88 33.88 L -94.11 29.88 L -91.05 26.18 L -87.76 22.78 L -84.27 19.69 L -80.63 16.90 L -76.86 14.39 L -73.00 12.16 L -69.07 10.18 L -65.10 8.44 L -61.09 6.92 L -57.06 5.60 L -53.03 4.48 L -49.01 3.52 L -44.99 2.71 L -40.99 2.05 L -37.01 1.50 L -33.04 1.07 L -29.10 0.73 L -25.18 0.47 L -21.27 0.28 L -17.38 0.16 L -13.50 0.07 L -9.63 0.03 L -5.78 0.01 L -1.93 0.00 L 1.93 -0.00 L 5.78 -0.01 L 9.63 -0.03 L 13.50 -0.07 L 17.38 -0.16 L 21.27 -0.28 L 25.18 -0.47 L 29.10 -0.73 L 33.04 -1.07 L 37.01 -1.50 L 40.99 -2.05 L 44.99 -2.71 L 49.01 -3.52 L 53.03 -4.48 L 57.06 -5.60 L 61.09 -6.92 L 65.10 -8.44 L 69.07 -10.18 L 73.00 -12.16 L 76.86 -14.39 L 80.63 -16.90 L 84.27 -19.69 L 87.76 -22.78 L 91.05 -26.18 L 94.11 -29.88 L 96.88 -33.88 L 99.31 -38.18 L 101.36 -42.75 L 102.98 -47.56 L 104.10 -52.58 L 104.69 -57.74 L 104.70 -63.00 L 104.11 -68.27 L 102.89 -73.48 L 101.04 -78.54 L 98.58 -83.35 L 95.52 -87.84 L 91.92 -91.92 L 87.84 -95.52 L 83.35 -98.58 L 78.54 -101.04 L 73.48 -102.89 L 68.27 -104.11 L 63.00 -104.70 L 57.74 -104.69 L 52.58 -104.10 L 47.56 -102.98 L 42.75 -101.36 L 38.18 -99.31 L 33.88 -96.88 L 29.88 -94.11 L 26.18 -91.05 L 22.78 -87.76 L 19.69 -84.27 L 16.90 -80.63 L 14.39 -76.86 L 12.16 -73.00 L 10.18 -69.07 L 8.44 -65.10 L 6.92 -61.09 L 5.60 -57.06 L 4.48 -53.03 L 3.52 -49.01 L 2.71 -44.99 L 2.05 -40.99 L 1.50 -37.01 L 1.07 -33.04 L 0.73 -29.10 L 0.47 -25.18 L 0.28 -21.27 L 0.16 -17.38 L 0.07 -13.50 L 0.03 -9.63 L 0.01 -5.78 L 0.00 -1.93 L -0.00 1.93 L -0.01 5.78 L -0.03 9.63 L -0.07 13.50 L -0.16 17.38 L -0.28 21.27 L -0.47 25.18 L -0.73 29.10 L -1.07 33.04 L -1.50 37.01 L -2.05 40.99 L -2.71 44.99 L -3.52 49.01 L -4.48 53.03 L -5.60 57.06 L -6.92 61.09 L -8.44 65.10 L -10.18 69.07 L -12.16 73.00 L -14.39 76.86 L -16.90 80.63 L -19.69 84.27 L -22.78 87.76 L -26.18 91.05 L -29.88 94.11 L -33.88 96.88 L -38.18 99.31 L -42.75 101.36 L -47.56 102.98 L -52.58 104.10 L -57.74 104.69 L -63.00 104.70 L -68.27 104.11 L -73.48 102.89 L -78.54 101.04 L -83.35 98.58 L -87.84 95.52 L -91.92 91.92" fill="none" stroke="url(#grad-platinum)" stroke-width="0.75" opacity="0.4"/>
+            <path d="M -91.92 91.92 L -95.52 87.84 L -98.58 83.35 L -101.04 78.54 L -102.89 73.48 L -104.11 68.27 L -104.70 63.00 L -104.69 57.74 L -104.10 52.58 L -102.98 47.56 L -101.36 42.75 L -99.31 38.18 L -96.88 33.88 L -94.11 29.88 L -91.05 26.18 L -87.76 22.78 L -84.27 19.69 L -80.63 16.90 L -76.86 14.39 L -73.00 12.16 L -69.07 10.18 L -65.10 8.44 L -61.09 6.92 L -57.06 5.60 L -53.03 4.48 L -49.01 3.52 L -44.99 2.71 L -40.99 2.05 L -37.01 1.50 L -33.04 1.07 L -29.10 0.73 L -25.18 0.47 L -21.27 0.28 L -17.38 0.16 L -13.50 0.07 L -9.63 0.03 L -5.78 0.01 L -1.93 0.00 L 1.93 -0.00 L 5.78 -0.01 L 9.63 -0.03 L 13.50 -0.07 L 17.38 -0.16 L 21.27 -0.28 L 25.18 -0.47 L 29.10 -0.73 L 33.04 -1.07 L 37.01 -1.50 L 40.99 -2.05 L 44.99 -2.71 L 49.01 -3.52 L 53.03 -4.48 L 57.06 -5.60 L 61.09 -6.92 L 65.10 -8.44 L 69.07 -10.18 L 73.00 -12.16 L 76.86 -14.39 L 80.63 -16.90 L 84.27 -19.69 L 87.76 -22.78 L 91.05 -26.18 L 94.11 -29.88 L 96.88 -33.88 L 99.31 -38.18 L 101.36 -42.75 L 102.98 -47.56 L 104.10 -52.58 L 104.69 -57.74 L 104.70 -63.00 L 104.11 -68.27 L 102.89 -73.48 L 101.04 -78.54 L 98.58 -83.35 L 95.52 -87.84 L 91.92 -91.92 L 87.84 -95.52 L 83.35 -98.58 L 78.54 -101.04 L 73.48 -102.89 L 68.27 -104.11 L 63.00 -104.70 L 57.74 -104.69 L 52.58 -104.10 L 47.56 -102.98 L 42.75 -101.36 L 38.18 -99.31 L 33.88 -96.88 L 29.88 -94.11 L 26.18 -91.05 L 22.78 -87.76 L 19.69 -84.27 L 16.90 -80.63 L 14.39 -76.86 L 12.16 -73.00 L 10.18 -69.07 L 8.44 -65.10 L 6.92 -61.09 L 5.60 -57.06 L 4.48 -53.03 L 3.52 -49.01 L 2.71 -44.99 L 2.05 -40.99 L 1.50 -37.01 L 1.07 -33.04 L 0.73 -29.10 L 0.47 -25.18 L 0.28 -21.27 L 0.16 -17.38 L 0.07 -13.50 L 0.03 -9.63 L 0.01 -5.78 L 0.00 -1.93 L -0.00 1.93 L -0.01 5.78 L -0.03 9.63 L -0.07 13.50 L -0.16 17.38 L -0.28 21.27 L -0.47 25.18 L -0.73 29.10 L -1.07 33.04 L -1.50 37.01 L -2.05 40.99 L -2.71 44.99 L -3.52 49.01 L -4.48 53.03 L -5.60 57.06 L -6.92 61.09 L -8.44 65.10 L -10.18 69.07 L -12.16 73.00 L -14.39 76.86 L -16.90 80.63 L -19.69 84.27 L -22.78 87.76 L -26.18 91.05 L -29.88 94.11 L -33.88 96.88 L -38.18 99.31 L -42.75 101.36 L -47.56 102.98 L -52.58 104.10 L -57.74 104.69 L -63.00 104.70 L -68.27 104.11 L -73.48 102.89 L -78.54 101.04 L -83.35 98.58 L -87.84 95.52 L -91.92 91.92" fill="none" stroke="url(#grad-platinum)" stroke-width="2.25" stroke-dasharray="120 400" stroke-linecap="round" opacity="1">
+                <animate attributeName="stroke-dashoffset" from="520" to="0" dur="8s" repeatCount="indefinite" direction="reverse"/>
+            </path>
+        </g>
+        
+        </g>
+        
+        
+    <g>
+        <circle cx="0" cy="0" r="25" fill="url(#core-flare)" filter="url(#glow-intense)">
+            <animate attributeName="r" values="22; 28; 22" dur="3s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.8; 1; 0.8" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        
+        <circle cx="0" cy="0" r="18" fill="none" stroke="#FFD700" stroke-width="1.5" stroke-dasharray="4 2"/>
+        <circle cx="0" cy="0" r="12" fill="#0A0B1A" stroke="#00F0FF" stroke-width="1"/>
+        
+        <text x="0" y="5" text-anchor="middle" font-family="'Cormorant Garamond', serif" font-size="16" font-weight="bold" fill="#FFF" filter="url(#glow-soft)">⊨</text>
+    </g>
+    
+    </g>
+
+    
+    <g transform="translate(200, 500)" filter="url(#drop-shadow-heavy)">
+        <polygon points="-180,-50 180,-50 195,0 180,50 -180,50 -195,0" fill="url(#monument-glass)" opacity="0.95"/>
+        <polygon points="-180,-50 180,-50 195,0 180,50 -180,50 -195,0" fill="none" stroke="url(#grad-platinum)" stroke-width="2.5" filter="url(#glow-soft)"/>
+        
+        <polygon points="-170,-40 170,-40 183,0 170,40 -170,40 -183,0" fill="none" stroke="url(#grad-cyan)" stroke-width="1" opacity="0.8"/>
+        
+        <g opacity="0.5">
+            <line x1="-160" y1="-45" x2="-100" y2="-45" stroke="#FFF" stroke-width="1" stroke-dasharray="2 4"/>
+            <line x1="160" y1="-45" x2="100" y2="-45" stroke="#FFF" stroke-width="1" stroke-dasharray="2 4"/>
+            <line x1="-160" y1="45" x2="-100" y2="45" stroke="#FFF" stroke-width="1" stroke-dasharray="2 4"/>
+            <line x1="160" y1="45" x2="100" y2="45" stroke="#FFF" stroke-width="1" stroke-dasharray="2 4"/>
+        </g>
+        
+        <text x="0" y="-4" text-anchor="middle" font-family="'Cinzel', serif" font-size="34" font-weight="900" fill="url(#grad-platinum)" letter-spacing="6" filter="url(#glow-soft)">GÖDEL PRIZE</text>
+        
+        <text x="0" y="14" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="bold" fill="#00F0FF" letter-spacing="5" opacity="0.9">OUTSTANDING PAPER AWARD</text>
+        <text x="0" y="28" text-anchor="middle" font-family="'Cinzel', serif" font-size="10" font-weight="900" fill="#FFD700" letter-spacing="5" filter="url(#glow-soft)">THEORETICAL COMPUTER SCIENCE</text>
+        
+        <polygon points="-175,0 -170,-5 -165,0 -170,5" fill="#FFD700" filter="url(#glow-intense)"/>
+        <polygon points="175,0 170,-5 165,0 170,5" fill="#FFD700" filter="url(#glow-intense)"/>
+    </g>
+    
+</svg>

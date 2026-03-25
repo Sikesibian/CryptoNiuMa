@@ -1,0 +1,142 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Deep computing background with intense yellow tint -->
+        <linearGradient id="gurobi-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#050505"/>
+            <stop offset="100%" stop-color="#141005"/>
+        </linearGradient>
+
+        <filter id="gurobi-glow-yellow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        <filter id="gurobi-glow-blue" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        <filter id="gurobi-glow-red" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+
+        <!-- Dense Data matrix background -->
+        <pattern id="gurobi-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <rect width="20" height="20" fill="none" stroke="rgba(234, 179, 8, 0.05)" stroke-width="0.5"/>
+            <text x="2" y="12" fill="rgba(234, 179, 8, 0.15)" font-family="monospace" font-size="6">01</text>
+        </pattern>
+        
+        <!-- Differential Path Tracker Component -->
+        <g id="diff-cell">
+            <rect x="-10" y="-10" width="20" height="20" fill="#0f172a" stroke="#ca8a04" stroke-width="1.5" rx="3"/>
+            <text x="0" y="3" fill="#ca8a04" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" font-weight="bold">Δ</text>
+        </g>
+    </defs>
+
+    <rect width="400" height="600" fill="url(#gurobi-bg)"/>
+    <rect width="400" height="600" fill="url(#gurobi-grid)">
+        <animateTransform attributeName="transform" type="translate" values="0,0; -20,-20; 0,0" dur="8s" repeatCount="indefinite" calcMode="ease-in-out"/>
+    </rect>
+
+    <!-- Top Section: Differential MILP Path Tracking & Bounds -->
+    <g transform="translate(200, 150)">
+        <!-- Differential Cipher States Graph (Visualizing the physical constraints being solved) -->
+        <g stroke-width="1.5" fill="none">
+            <!-- Interconnecting state variables lines -->
+            <path d="M -120,-60 L -100,-20 L -60,-20 L -40,20 L 0,20 L 20,60" stroke="#38bdf8" stroke-dasharray="3 3"/>
+            <path d="M 0,-60 L 20,-20 L 60,-20 L 80,20" stroke="#38bdf8" stroke-dasharray="3 3"/>
+            <path d="M 120,-60 L 100,-20 L 60,-20" stroke="#f43f5e" stroke-dasharray="2 4"/>
+            <path d="M -60,-20 L -40,-60" stroke="#f43f5e" stroke-dasharray="2 4"/>
+            
+            <g filter="url(#gurobi-glow-yellow)">
+                <use href="#diff-cell" x="-120" y="-60"/>
+                <use href="#diff-cell" x="0" y="-60"/>
+                <use href="#diff-cell" x="120" y="-60"/>
+                <use href="#diff-cell" x="-100" y="-20"/>
+                <use href="#diff-cell" x="-60" y="-20"/>
+                <use href="#diff-cell" x="20" y="-20"/>
+                <use href="#diff-cell" x="60" y="-20"/>
+                <use href="#diff-cell" x="-40" y="20"/>
+                <use href="#diff-cell" x="0" y="20"/>
+                <use href="#diff-cell" x="80" y="20"/>
+                <use href="#diff-cell" x="20" y="60"/>
+            </g>
+            
+            <g stroke="#f43f5e" stroke-width="2" filter="url(#gurobi-glow-red)">
+                <path d="M 50,-10 L 70,-30 M 70,-10 L 50,-30"/>
+                <path d="M -50,-50 L -30,-70 M -30,-50 L -50,-70"/>
+            </g>
+            
+            <circle cx="20" cy="60" r="14" fill="none" stroke="#2dd4bf" stroke-width="2">
+                <animate attributeName="r" values="14;20;14" dur="2s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+            </circle>
+            <!-- Overlay Label for the Graph -->
+            <text x="-140" y="-90" fill="#60a5fa" font-family="'Courier New', monospace" font-size="10" font-weight="bold">ARX-Cipher Differential Constraints</text>
+        </g>
+    </g>
+
+    <!-- Terminal Window Component -->
+    <g transform="translate(200, 380)">
+        <rect x="-185" y="-130" width="370" height="220" rx="6" fill="#0d0c07" stroke="#ca8a04" stroke-width="2" filter="url(#gurobi-glow-yellow)">
+            <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+        </rect>
+        
+        <!-- Terminal Header -->
+        <rect x="-185" y="-130" width="370" height="24" rx="6" fill="#1c1917"/>
+        <rect x="-185" y="-115" width="370" height="9" fill="#1c1917"/>
+        <circle cx="-165" cy="-118" r="4" fill="#ff5f56"/>
+        <circle cx="-150" cy="-118" r="4" fill="#ffbd2e"/>
+        <circle cx="-135" cy="-118" r="4" fill="#28c840"/>
+        <text x="0" y="-115" fill="#a8a29e" font-family="'Courier New', monospace" font-size="11" text-anchor="middle">gurobi_diff_path.sh (Time Limit)</text>
+
+        <!-- Gurobi Log Code Output -->
+        <g font-family="'Courier New', monospace" font-size="9" transform="translate(-175, -95)">
+            <text x="0" y="0" fill="#a3e635">Gurobi Optimizer version 10.0.1 build v10.0.1rc0 (linux64)</text>
+            <text x="0" y="15" fill="#78716c">Optimize a model with 154823 rows, 89324 columns, 938120 nonzeros</text>
+            <text x="0" y="30" fill="#78716c">Variable types: 45000 continuous, 44324 integer (44324 binary)</text>
+            
+            <!-- Table Header -->
+            <text x="0" y="55" fill="#60a5fa" font-weight="bold">Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | Time</text>
+            <line x1="0" y1="62" x2="350" y2="62" stroke="#3f3f46" stroke-dasharray="2 3"/>
+
+            <!-- Scrolling Table Rows (Simulated) -->
+            <g fill="#cbd5e1">
+                <text x="0" y="75">   0     0    0.00000    0  204    0.00000    0.00000  0.0%    0s</text>
+                <text x="0" y="90">   ...   ...  ...        ... ...   ...        ...      ...    ... </text>
+                
+                <!-- Approaching the timeout limit -->
+                <text x="0" y="105">9482 12024    4.91230   42   12   120.50000  120.3540  0.12%   71h</text>
+                
+                <!-- Last log line before timeout -->
+                <g>
+                    <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.2;1" dur="5s" repeatCount="indefinite"/>
+                    <text x="0" y="120" fill="#eab308">9921 12384    4.91230   42   12   120.50000  120.3540  0.12%   72h</text>
+                </g>
+            </g>
+
+            <!-- Timeout Warning Block / Glitch Effect -->
+            <g transform="translate(0, 140)">
+                <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.49;0.5;1" dur="5s" repeatCount="indefinite"/>
+                
+                <!-- Warning flash background -->
+                <rect x="-5" y="-12" width="360" height="42" fill="rgba(234, 179, 8, 0.15)" stroke="#ca8a04" stroke-width="1"/>
+                
+                <text x="5" y="2" fill="#eab308" font-weight="bold" font-size="10" filter="url(#gurobi-glow-yellow)">
+                    WARNING: Time limit reached (72h 00m 00s)
+                </text>
+                <text x="5" y="18" fill="#fda4af" font-size="8.5">Best obj(Weight) 120.500, best bound 120.354, gap 0.1212%</text>
+            </g>
+        </g>
+    </g>
+
+    <!-- Footer Banner / Title -->
+    <g transform="translate(200, 540)">
+        <polygon points="-160,-16 160,-16 170,16 -170,16" fill="#1b1505" stroke="#eab308" stroke-width="1.5"/>
+        <text x="0" y="5" text-anchor="middle" fill="#fde047" font-family="'Times New Roman', serif" font-size="15" font-weight="bold" letter-spacing="2" filter="url(#gurobi-glow-yellow)">
+            Gurobi：差分路径爆算超时
+        </text>
+        <rect x="-165" y="-12" width="330" height="24" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="5 30 60 10 15 200">
+             <animate attributeName="stroke-dashoffset" from="300" to="0" dur="3s" repeatCount="indefinite" calcMode="linear"/>
+        </rect>
+    </g>
+</svg>

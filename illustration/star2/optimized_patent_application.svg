@@ -1,0 +1,149 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Dark Ambient Background Gradients -->
+    <radialGradient id="patent-bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#020617" />
+    </radialGradient>
+    <linearGradient id="orb-blue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#2563EB" />
+    </linearGradient>
+    <linearGradient id="orb-green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    
+    <!-- Light Frost Glass (Foreground) -->
+    <linearGradient id="frost-glass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#F8FAFC" stop-opacity="0.85" />
+    </linearGradient>
+    <linearGradient id="frost-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="100%" stop-color="#E2E8F0" stop-opacity="0.5" />
+    </linearGradient>
+    
+    <!-- Premium Seal -->
+    <linearGradient id="patent-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047" />
+      <stop offset="50%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+
+    <!-- Shadows & Blurs -->
+    <filter id="ambient-blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="80" result="blur" />
+    </filter>
+    <filter id="glass-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="25" stdDeviation="35" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+    <filter id="inner-shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#patent-bg)" rx="100" />
+  
+  <!-- Ambient Floating Orbs -->
+  <g filter="url(#ambient-blur)" opacity="0.6">
+    <circle cx="300" cy="300" r="250" fill="url(#orb-blue)">
+      <animate attributeName="cx" values="300; 400; 300" dur="15s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="300; 200; 300" dur="15s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="800" cy="700" r="300" fill="url(#orb-green)">
+      <animate attributeName="cx" values="800; 700; 800" dur="18s" repeatCount="indefinite" />
+      <animate attributeName="cy" values="700; 800; 700" dur="18s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Flowing Network / Innovation Lines in Dark Background -->
+  <g fill="none" stroke="#60A5FA" stroke-width="2" opacity="0.35">
+    <path d="M -100 500 C 200 400, 400 600, 700 300 C 900 100, 1100 200, 1200 200">
+      <animate attributeName="d" values="M -100 500 C 200 400, 400 600, 700 300 C 900 100, 1100 200, 1200 200;
+                                        M -100 400 C 250 500, 350 300, 800 500 C 1000 600, 1100 400, 1200 400;
+                                        M -100 500 C 200 400, 400 600, 700 300 C 900 100, 1100 200, 1200 200" dur="20s" repeatCount="indefinite" />
+    </path>
+    <!-- Geometric nodes -->
+    <circle cx="200" cy="460" r="4" fill="#60A5FA" />
+    <circle cx="480" cy="490" r="6" fill="#60A5FA" />
+    <circle cx="700" cy="300" r="5" fill="#60A5FA" />
+  </g>
+
+  <!-- Clean Floating Document Window (Light Foreground) -->
+  <g transform="translate(512, 512)" filter="url(#glass-shadow)">
+    <animateTransform attributeName="transform" type="translate" values="512,512; 512,490; 512,512" dur="6s" repeatCount="indefinite" ease-in-out="ease-in-out"/>
+    
+    <!-- Main Glass Plate -->
+    <rect x="-320" y="-380" width="640" height="760" rx="30" fill="url(#frost-glass)" stroke="url(#frost-border)" stroke-width="2" />
+    <!-- Inner Content Area -->
+    <rect x="-280" y="-340" width="560" height="680" rx="16" fill="#FFFFFF" fill-opacity="0.8" stroke="#E2E8F0" stroke-width="1.5" />
+    
+    <!-- Document Header / Official Crest placement -->
+    <circle cx="0" cy="-260" r="40" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2" />
+    <path d="M -15 -260 L 0 -245 L 20 -275" fill="none" stroke="#10B981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <rect x="-100" y="-180" width="200" height="14" rx="7" fill="#64748B" />
+    <rect x="-150" y="-140" width="300" height="10" rx="5" fill="#94A3B8" opacity="0.6" />
+    
+    <!-- Central Technical Illustration (Abstract Idea / Patent Diagram) -->
+    <g transform="translate(0, 40)" opacity="0.9">
+      <!-- Outer Border -->
+      <rect x="-200" y="-140" width="400" height="280" rx="12" fill="none" stroke="#CBD5E1" stroke-width="2" stroke-dasharray="10 5" />
+      
+      <!-- Idea / Lightbulb / Tech structure -->
+      <g stroke="#3B82F6" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="0" cy="-30" r="50" fill="#EFF6FF" />
+        <path d="M -25 5 L 25 5 M -15 20 L 15 20 M -10 35 L 10 35" stroke="#94A3B8" />
+        <line x1="0" y1="-80" x2="0" y2="-100" stroke="#F59E0B" stroke-width="4" />
+        <line x1="-35" y1="-65" x2="-50" y2="-80" stroke="#F59E0B" stroke-width="4" />
+        <line x1="35" y1="-65" x2="50" y2="-80" stroke="#F59E0B" stroke-width="4" />
+        <!-- Node connections -->
+        <circle cx="-120" cy="-80" r="10" fill="#FFFFFF" stroke="#3B82F6" />
+        <circle cx="120" cy="-80" r="10" fill="#FFFFFF" stroke="#3B82F6" />
+        <circle cx="-100" cy="50" r="10" fill="#FFFFFF" stroke="#10B981" />
+        <circle cx="100" cy="50" r="10" fill="#FFFFFF" stroke="#10B981" />
+        <path d="M -110 -75 L -45 -45 M 110 -75 L 45 -45 M -90 45 L -35 5 M 90 45 L 35 5" stroke="#94A3B8" stroke-width="2" />
+      </g>
+    </g>
+
+    <!-- Bottom Text Lines -->
+    <g fill="#CBD5E1" rx="4">
+       <rect x="-200" y="240" width="400" height="12" />
+       <rect x="-200" y="270" width="350" height="12" />
+       <rect x="-200" y="300" width="250" height="12" />
+    </g>
+  </g>
+
+  <!-- Elegant Gold Ribbon & Seal Overlay (Bottom Right) -->
+  <g transform="translate(760, 800)" filter="url(#glass-shadow)">
+    <!-- Rotating Premium Starburst -->
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="20s" repeatCount="indefinite" />
+      <!-- Starburst -->
+      <path d="M 0 -80 L 15 -55 L 45 -65 L 40 -35 L 70 -25 L 50 0 L 70 25 L 40 35 L 45 65 L 15 55 L 0 80 L -15 55 L -45 65 L -40 35 L -70 25 L -50 0 L -70 -25 L -40 -35 L -45 -65 L -15 -55 Z" fill="url(#patent-gold)" />
+      <!-- Inner detail -->
+      <circle cx="0" cy="0" r="50" fill="#FFFFFF" opacity="0.9" />
+      <circle cx="0" cy="0" r="42" fill="none" stroke="url(#patent-gold)" stroke-width="2" stroke-dasharray="4 4" />
+    </g>
+    
+    <!-- Central Ribbon detail -->
+    <g filter="url(#inner-shadow)">
+      <path d="M -30 65 L -40 140 L 0 120 L 40 140 L 30 65 Z" fill="#FCD34D" opacity="0.9" />
+      <path d="M -20 60 L -30 130 L 0 115 L 30 130 L 20 60 Z" fill="#F59E0B" />
+    </g>
+    
+    <!-- Premium Seal Verification Mark -->
+    <path d="M -15 0 L -5 10 L 20 -15" fill="none" stroke="#F59E0B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Subtle Floating UI Elements -->
+  <g filter="url(#glass-shadow)" opacity="0.9">
+    <g transform="translate(180, 250)">
+      <animateTransform attributeName="transform" type="translate" values="180,250; 180,230; 180,250" dur="7s" repeatCount="indefinite" />
+      <rect x="0" y="0" width="80" height="80" rx="20" fill="url(#frost-glass)" stroke="#FFFFFF" stroke-width="2" />
+      <!-- Checkmark -->
+      <path d="M 25 40 L 35 50 L 55 30" fill="none" stroke="#10B981" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+    </g>
+  </g>
+</svg>

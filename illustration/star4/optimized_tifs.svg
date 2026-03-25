@@ -1,0 +1,1157 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800;900&amp;family=JetBrains+Mono:wght@200;400;700&amp;family=Cormorant+Garamond:ital,wght@0,500;1,600&amp;family=Rajdhani:wght@500;700&amp;display=swap');
+            
+            .tifs-title { font-family: 'Cinzel', serif; font-weight: 900; letter-spacing: 0.15em; }
+            .tifs-sub { font-family: 'Rajdhani', sans-serif; font-weight: 700; letter-spacing: 0.12em; }
+            .tifs-micro { font-family: 'JetBrains Mono', monospace; font-weight: 400; letter-spacing: 0.2em; }
+            
+            .math-title { font-family: 'Cinzel', serif; font-weight: 600; letter-spacing: 0.15em; }
+            .math-text { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-style: italic; letter-spacing: 0.08em; }
+            
+            .hex-text { font-family: 'JetBrains Mono', monospace; font-weight: 200; letter-spacing: 0.15em; }
+        </style>
+
+        <radialGradient id="ieee-navy" cx="50%" cy="45%" r="75%">
+            <stop offset="0%" stop-color="#0A1128"/>
+            <stop offset="50%" stop-color="#040714"/>
+            <stop offset="100%" stop-color="#010205"/>
+        </radialGradient>
+
+        <linearGradient id="cyan-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#E0FFFF"/>
+            <stop offset="50%" stop-color="#00F0FF">
+                <animate attributeName="stop-color" values="#00F0FF;#00A8FF;#00F0FF" dur="4s" repeatCount="indefinite"/>
+            </stop>
+            <stop offset="100%" stop-color="#0055B3"/>
+        </linearGradient>
+
+        <linearGradient id="amber-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFE4A0"/>
+            <stop offset="40%" stop-color="#FFB703">
+                <animate attributeName="stop-color" values="#FFB703;#FF8C00;#FFB703" dur="3s" repeatCount="indefinite"/>
+            </stop>
+            <stop offset="100%" stop-color="#B34700"/>
+        </linearGradient>
+
+        <linearGradient id="titanium" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="40%" stop-color="#CBD5E1"/>
+            <stop offset="100%" stop-color="#475569"/>
+        </linearGradient>
+
+        <linearGradient id="scanner-light" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgba(0, 240, 255, 0.4)"/>
+            <stop offset="100%" stop-color="rgba(0, 240, 255, 0)"/>
+        </linearGradient>
+
+        <filter id="glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="glow-amber" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="plaque-shadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#000" flood-opacity="0.95"/>
+        </filter>
+
+        <path id="hex-ring" d="M 0 -130 A 130 130 0 1 1 -0.1 -130" />
+    </defs>
+    
+    <rect width="400" height="600" fill="url(#ieee-navy)"/>
+    <line x1="0" y1="0" x2="400" y2="0" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="30" x2="400" y2="30" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="60" x2="400" y2="60" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="90" x2="400" y2="90" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="120" x2="400" y2="120" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="150" x2="400" y2="150" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="180" x2="400" y2="180" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="210" x2="400" y2="210" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="240" x2="400" y2="240" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="270" x2="400" y2="270" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="300" x2="400" y2="300" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="330" x2="400" y2="330" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="360" x2="400" y2="360" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="390" x2="400" y2="390" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="420" x2="400" y2="420" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="450" x2="400" y2="450" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="480" x2="400" y2="480" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="510" x2="400" y2="510" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="540" x2="400" y2="540" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="570" x2="400" y2="570" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="0" y1="0" x2="0" y2="600" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="30" y1="0" x2="30" y2="600" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="60" y1="0" x2="60" y2="600" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="90" y1="0" x2="90" y2="600" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="120" y1="0" x2="120" y2="600" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="150" y1="0" x2="150" y2="600" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="180" y1="0" x2="180" y2="600" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="210" y1="0" x2="210" y2="600" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="240" y1="0" x2="240" y2="600" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="270" y1="0" x2="270" y2="600" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="300" y1="0" x2="300" y2="600" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="330" y1="0" x2="330" y2="600" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="360" y1="0" x2="360" y2="600" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+<line x1="390" y1="0" x2="390" y2="600" stroke="#00F0FF" stroke-width="0.5" opacity="0.05"/>
+
+    
+        <g transform="translate(30, 480)" stroke="#00F0FF" stroke-width="1" opacity="0.3">
+            <line x1="-5" y1="0" x2="5" y2="0"/>
+            <line x1="0" y1="-5" x2="0" y2="5"/>
+        </g>
+        
+        <g transform="translate(90, 240)" stroke="#00F0FF" stroke-width="1" opacity="0.3">
+            <line x1="-5" y1="0" x2="5" y2="0"/>
+            <line x1="0" y1="-5" x2="0" y2="5"/>
+        </g>
+        
+        <g transform="translate(360, 450)" stroke="#00F0FF" stroke-width="1" opacity="0.3">
+            <line x1="-5" y1="0" x2="5" y2="0"/>
+            <line x1="0" y1="-5" x2="0" y2="5"/>
+        </g>
+        
+        <g transform="translate(270, 180)" stroke="#00F0FF" stroke-width="1" opacity="0.3">
+            <line x1="-5" y1="0" x2="5" y2="0"/>
+            <line x1="0" y1="-5" x2="0" y2="5"/>
+        </g>
+        
+        <g transform="translate(120, 60)" stroke="#00F0FF" stroke-width="1" opacity="0.3">
+            <line x1="-5" y1="0" x2="5" y2="0"/>
+            <line x1="0" y1="-5" x2="0" y2="5"/>
+        </g>
+        
+        <g transform="translate(120, 360)" stroke="#00F0FF" stroke-width="1" opacity="0.3">
+            <line x1="-5" y1="0" x2="5" y2="0"/>
+            <line x1="0" y1="-5" x2="0" y2="5"/>
+        </g>
+        
+        <g transform="translate(180, 300)" stroke="#00F0FF" stroke-width="1" opacity="0.3">
+            <line x1="-5" y1="0" x2="5" y2="0"/>
+            <line x1="0" y1="-5" x2="0" y2="5"/>
+        </g>
+        
+        <g transform="translate(90, 90)" stroke="#00F0FF" stroke-width="1" opacity="0.3">
+            <line x1="-5" y1="0" x2="5" y2="0"/>
+            <line x1="0" y1="-5" x2="0" y2="5"/>
+        </g>
+        
+
+    <circle cx="200" cy="230" r="160" fill="url(#cyan-grad)" opacity="0.04" filter="url(#glow-cyan)">
+        <animate attributeName="r" values="160;170;160" dur="5s" repeatCount="indefinite"/>
+    </circle>
+
+    <g transform="translate(200, 230)">
+        
+        <g>
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="180s" repeatCount="indefinite"/>
+            
+        <g transform="rotate(0.0)">
+            <line x1="140" y1="0" x2="158.3" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="162.3" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 14.1,0; 0,0" dur="1.1068256085627568s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(3.0)">
+            <line x1="140" y1="0" x2="155.8" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="159.8" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 5.7,0; 0,0" dur="1.8426717592538817s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(6.0)">
+            <line x1="140" y1="0" x2="155.5" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="159.5" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 6.9,0; 0,0" dur="1.6647961023228335s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(9.0)">
+            <line x1="140" y1="0" x2="160.8" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="164.8" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 7.0,0; 0,0" dur="2.166651559309904s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(12.0)">
+            <line x1="140" y1="0" x2="163.1" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="167.1" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 8.2,0; 0,0" dur="1.316977475444312s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(15.0)">
+            <line x1="140" y1="0" x2="158.5" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="162.5" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.6,0; 0,0" dur="1.4267242777523905s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(18.0)">
+            <line x1="140" y1="0" x2="159.1" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="163.1" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 6.7,0; 0,0" dur="2.202767528800954s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(21.0)">
+            <line x1="140" y1="0" x2="162.6" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="166.6" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 11.7,0; 0,0" dur="2.1334444034936517s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(24.0)">
+            <line x1="140" y1="0" x2="161.4" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="165.4" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 6.0,0; 0,0" dur="1.2949630604657605s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(27.0)">
+            <line x1="140" y1="0" x2="153.5" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="157.5" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 10.4,0; 0,0" dur="1.7127105912522929s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(30.0)">
+            <line x1="140" y1="0" x2="157.1" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="161.1" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 10.3,0; 0,0" dur="1.9082627335200062s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(33.0)">
+            <line x1="140" y1="0" x2="164.0" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="168.0" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.6,0; 0,0" dur="2.012725463588022s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(36.0)">
+            <line x1="140" y1="0" x2="159.6" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="163.6" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.8,0; 0,0" dur="1.933002706448434s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(39.0)">
+            <line x1="140" y1="0" x2="165.4" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="169.4" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 14.9,0; 0,0" dur="1.304205714119744s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(42.0)">
+            <line x1="140" y1="0" x2="159.5" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="163.5" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 14.7,0; 0,0" dur="1.639809543279865s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(45.0)">
+            <line x1="140" y1="0" x2="153.7" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="157.7" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 12.1,0; 0,0" dur="2.3565931197962913s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(48.0)">
+            <line x1="140" y1="0" x2="157.2" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="161.2" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 12.4,0; 0,0" dur="1.3673244770378736s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(51.0)">
+            <line x1="140" y1="0" x2="158.4" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="162.4" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 8.4,0; 0,0" dur="1.2188486684230522s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(54.0)">
+            <line x1="140" y1="0" x2="164.7" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="168.7" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 10.6,0; 0,0" dur="1.6824532127168468s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(57.0)">
+            <line x1="140" y1="0" x2="164.7" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="168.7" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 11.4,0; 0,0" dur="1.292251704983838s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(60.0)">
+            <line x1="140" y1="0" x2="170.4" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="174.4" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 5.9,0; 0,0" dur="2.479639617733258s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(63.0)">
+            <line x1="140" y1="0" x2="159.9" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="163.9" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 6.0,0; 0,0" dur="2.2812638668994443s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(66.0)">
+            <line x1="140" y1="0" x2="172.3" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="176.3" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.7,0; 0,0" dur="1.9199759925648172s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(69.0)">
+            <line x1="140" y1="0" x2="159.5" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="163.5" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 12.1,0; 0,0" dur="1.008694175178066s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(72.0)">
+            <line x1="140" y1="0" x2="164.9" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="168.9" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 10.2,0; 0,0" dur="1.8115102991026741s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(75.0)">
+            <line x1="140" y1="0" x2="169.5" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="173.5" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 11.2,0; 0,0" dur="2.1034441238629706s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(78.0)">
+            <line x1="140" y1="0" x2="162.5" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="166.5" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 11.7,0; 0,0" dur="2.0164862200615894s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(81.0)">
+            <line x1="140" y1="0" x2="164.9" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="168.9" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 10.0,0; 0,0" dur="2.2100652160205416s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(84.0)">
+            <line x1="140" y1="0" x2="155.5" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="159.5" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 6.1,0; 0,0" dur="1.774233896747172s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(87.0)">
+            <line x1="140" y1="0" x2="168.2" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="172.2" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 10.4,0; 0,0" dur="1.2619818445639863s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(90.0)">
+            <line x1="140" y1="0" x2="165.7" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="169.7" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 14.3,0; 0,0" dur="2.1129620070872677s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(93.0)">
+            <line x1="140" y1="0" x2="155.1" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="159.1" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 14.2,0; 0,0" dur="1.3445052765767125s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(96.0)">
+            <line x1="140" y1="0" x2="162.5" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="166.5" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 11.8,0; 0,0" dur="1.5863298232068266s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(99.0)">
+            <line x1="140" y1="0" x2="166.1" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="170.1" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 12.5,0; 0,0" dur="1.2136082397986505s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(102.0)">
+            <line x1="140" y1="0" x2="161.1" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="165.1" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.8,0; 0,0" dur="1.9243419697678172s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(105.0)">
+            <line x1="140" y1="0" x2="171.1" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="175.1" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 10.3,0; 0,0" dur="2.2076963357054264s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(108.0)">
+            <line x1="140" y1="0" x2="162.3" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="166.3" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 5.9,0; 0,0" dur="1.0808599332094235s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(111.0)">
+            <line x1="140" y1="0" x2="166.4" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="170.4" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 13.1,0; 0,0" dur="2.1911441538564302s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(114.0)">
+            <line x1="140" y1="0" x2="164.6" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="168.6" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 12.3,0; 0,0" dur="1.3243983697193769s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(117.0)">
+            <line x1="140" y1="0" x2="166.6" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="170.6" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 11.9,0; 0,0" dur="1.1104348160982198s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(120.0)">
+            <line x1="140" y1="0" x2="168.9" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="172.9" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 13.4,0; 0,0" dur="1.24720305527784s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(123.0)">
+            <line x1="140" y1="0" x2="179.9" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="183.9" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 13.9,0; 0,0" dur="1.2386385184802573s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(126.0)">
+            <line x1="140" y1="0" x2="172.3" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="176.3" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 7.7,0; 0,0" dur="1.1154426832069309s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(129.0)">
+            <line x1="140" y1="0" x2="182.9" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="186.9" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 13.1,0; 0,0" dur="2.2935321749522104s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(132.0)">
+            <line x1="140" y1="0" x2="181.1" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="185.1" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.9,0; 0,0" dur="1.427306998828823s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(135.0)">
+            <line x1="140" y1="0" x2="174.6" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="178.6" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 11.8,0; 0,0" dur="2.3418544675168547s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(138.0)">
+            <line x1="140" y1="0" x2="176.6" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="180.6" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 5.6,0; 0,0" dur="2.3622187628703437s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(141.0)">
+            <line x1="140" y1="0" x2="181.8" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="185.8" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 11.4,0; 0,0" dur="1.4841608021122306s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(144.0)">
+            <line x1="140" y1="0" x2="179.9" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="183.9" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 11.5,0; 0,0" dur="1.7992381291772932s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(147.0)">
+            <line x1="140" y1="0" x2="179.8" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="183.8" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.0,0; 0,0" dur="1.9555506389139659s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(150.0)">
+            <line x1="140" y1="0" x2="182.9" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="186.9" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.0,0; 0,0" dur="2.340560496865265s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(153.0)">
+            <line x1="140" y1="0" x2="172.7" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="176.7" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 13.3,0; 0,0" dur="1.1670242335889s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(156.0)">
+            <line x1="140" y1="0" x2="176.4" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="180.4" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 8.9,0; 0,0" dur="1.8436413967842629s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(159.0)">
+            <line x1="140" y1="0" x2="173.8" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="177.8" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 5.4,0; 0,0" dur="1.3445368100642072s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(162.0)">
+            <line x1="140" y1="0" x2="168.9" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="172.9" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 6.2,0; 0,0" dur="2.2040524698546076s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(165.0)">
+            <line x1="140" y1="0" x2="172.5" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="176.5" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 10.0,0; 0,0" dur="2.1871196355845584s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(168.0)">
+            <line x1="140" y1="0" x2="172.7" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="176.7" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 6.0,0; 0,0" dur="1.3917335976211536s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(171.0)">
+            <line x1="140" y1="0" x2="161.1" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="165.1" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 5.6,0; 0,0" dur="1.4634800028483168s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(174.0)">
+            <line x1="140" y1="0" x2="164.8" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="168.8" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 8.2,0; 0,0" dur="1.9839489868096232s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(177.0)">
+            <line x1="140" y1="0" x2="156.6" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="160.6" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 12.3,0; 0,0" dur="2.1276287342941305s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(180.0)">
+            <line x1="140" y1="0" x2="154.9" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="158.9" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.2,0; 0,0" dur="1.5951846149036253s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(183.0)">
+            <line x1="140" y1="0" x2="165.3" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="169.3" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.8,0; 0,0" dur="1.3777328506966262s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(186.0)">
+            <line x1="140" y1="0" x2="153.3" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="157.3" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 14.4,0; 0,0" dur="1.9015881565079438s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(189.0)">
+            <line x1="140" y1="0" x2="153.6" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="157.6" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 14.6,0; 0,0" dur="2.3125190373696825s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(192.0)">
+            <line x1="140" y1="0" x2="157.2" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="161.2" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 7.7,0; 0,0" dur="1.2646539719299472s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(195.0)">
+            <line x1="140" y1="0" x2="156.4" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="160.4" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.1,0; 0,0" dur="1.3330671507242957s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(198.0)">
+            <line x1="140" y1="0" x2="166.2" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="170.2" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 6.0,0; 0,0" dur="2.096002949264627s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(201.0)">
+            <line x1="140" y1="0" x2="152.9" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="156.9" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 8.8,0; 0,0" dur="2.017805147885925s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(204.0)">
+            <line x1="140" y1="0" x2="159.5" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="163.5" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 12.4,0; 0,0" dur="1.948011359836566s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(207.0)">
+            <line x1="140" y1="0" x2="155.5" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="159.5" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 7.3,0; 0,0" dur="1.750443681234083s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(210.0)">
+            <line x1="140" y1="0" x2="160.3" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="164.3" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 13.8,0; 0,0" dur="1.189341434372582s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(213.0)">
+            <line x1="140" y1="0" x2="155.8" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="159.8" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.6,0; 0,0" dur="1.1744297874892697s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(216.0)">
+            <line x1="140" y1="0" x2="156.0" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="160.0" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 12.4,0; 0,0" dur="1.9430351012337885s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(219.0)">
+            <line x1="140" y1="0" x2="152.8" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="156.8" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 8.5,0; 0,0" dur="1.9438661276677687s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(222.0)">
+            <line x1="140" y1="0" x2="158.3" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="162.3" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 13.2,0; 0,0" dur="1.5563039490236306s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(225.0)">
+            <line x1="140" y1="0" x2="150.9" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="154.9" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 8.0,0; 0,0" dur="2.1322341613442797s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(228.0)">
+            <line x1="140" y1="0" x2="152.8" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="156.8" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 8.8,0; 0,0" dur="1.1044496858949786s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(231.0)">
+            <line x1="140" y1="0" x2="153.4" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="157.4" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 5.0,0; 0,0" dur="1.572933986465154s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(234.0)">
+            <line x1="140" y1="0" x2="154.4" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="158.4" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 14.3,0; 0,0" dur="1.1378769268591582s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(237.0)">
+            <line x1="140" y1="0" x2="166.8" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="170.8" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.8,0; 0,0" dur="1.822292858228331s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(240.0)">
+            <line x1="140" y1="0" x2="163.5" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="167.5" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 6.7,0; 0,0" dur="2.1373285472590053s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(243.0)">
+            <line x1="140" y1="0" x2="160.0" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="164.0" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 10.8,0; 0,0" dur="1.0104815297598946s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(246.0)">
+            <line x1="140" y1="0" x2="158.1" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="162.1" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 10.2,0; 0,0" dur="1.0760391385166397s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(249.0)">
+            <line x1="140" y1="0" x2="171.1" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="175.1" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 10.7,0; 0,0" dur="1.6954720901605986s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(252.0)">
+            <line x1="140" y1="0" x2="164.6" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="168.6" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 7.6,0; 0,0" dur="1.2126722330610884s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(255.0)">
+            <line x1="140" y1="0" x2="171.0" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="175.0" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 11.8,0; 0,0" dur="1.521330023023963s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(258.0)">
+            <line x1="140" y1="0" x2="158.9" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="162.9" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 14.2,0; 0,0" dur="1.2370544058467323s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(261.0)">
+            <line x1="140" y1="0" x2="165.5" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="169.5" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 12.4,0; 0,0" dur="2.2242763111570265s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(264.0)">
+            <line x1="140" y1="0" x2="170.6" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="174.6" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 14.3,0; 0,0" dur="1.0050759693915585s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(267.0)">
+            <line x1="140" y1="0" x2="158.2" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="162.2" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 8.2,0; 0,0" dur="2.455737465125251s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(270.0)">
+            <line x1="140" y1="0" x2="162.7" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="166.7" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 13.5,0; 0,0" dur="1.9609408241739286s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(273.0)">
+            <line x1="140" y1="0" x2="166.2" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="170.2" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 5.5,0; 0,0" dur="2.436438467338694s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(276.0)">
+            <line x1="140" y1="0" x2="160.0" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="164.0" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 5.9,0; 0,0" dur="2.2158550527978536s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(279.0)">
+            <line x1="140" y1="0" x2="157.4" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="161.4" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 8.0,0; 0,0" dur="1.3455024499541468s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(282.0)">
+            <line x1="140" y1="0" x2="164.2" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="168.2" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 13.7,0; 0,0" dur="1.4821976867148998s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(285.0)">
+            <line x1="140" y1="0" x2="163.0" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="167.0" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 6.5,0; 0,0" dur="2.4532297346683256s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(288.0)">
+            <line x1="140" y1="0" x2="154.0" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="158.0" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 11.2,0; 0,0" dur="2.3362173670991284s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(291.0)">
+            <line x1="140" y1="0" x2="155.9" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="159.9" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 12.1,0; 0,0" dur="1.2090966392984654s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(294.0)">
+            <line x1="140" y1="0" x2="170.2" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="174.2" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 6.2,0; 0,0" dur="1.9718714444057868s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(297.0)">
+            <line x1="140" y1="0" x2="171.3" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="175.3" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 7.5,0; 0,0" dur="1.6011256952734279s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(300.0)">
+            <line x1="140" y1="0" x2="162.2" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="166.2" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 7.4,0; 0,0" dur="2.0847085949291273s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(303.0)">
+            <line x1="140" y1="0" x2="175.3" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="179.3" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 12.9,0; 0,0" dur="2.2521863053818665s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(306.0)">
+            <line x1="140" y1="0" x2="172.8" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="176.8" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 11.8,0; 0,0" dur="2.1543844007778126s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(309.0)">
+            <line x1="140" y1="0" x2="172.5" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="176.5" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 11.6,0; 0,0" dur="1.0728126480251388s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(312.0)">
+            <line x1="140" y1="0" x2="167.6" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="171.6" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 8.7,0; 0,0" dur="1.9164621805261803s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(315.0)">
+            <line x1="140" y1="0" x2="168.4" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="172.4" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 7.6,0; 0,0" dur="1.9844171205724845s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(318.0)">
+            <line x1="140" y1="0" x2="175.4" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="179.4" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 10.2,0; 0,0" dur="2.3062565617205038s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(321.0)">
+            <line x1="140" y1="0" x2="183.4" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="187.4" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.3,0; 0,0" dur="1.5252962650084307s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(324.0)">
+            <line x1="140" y1="0" x2="180.8" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="184.8" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 6.3,0; 0,0" dur="1.0036099340227682s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(327.0)">
+            <line x1="140" y1="0" x2="170.9" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="174.9" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 14.3,0; 0,0" dur="1.8290244501768893s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(330.0)">
+            <line x1="140" y1="0" x2="174.2" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="178.2" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 14.6,0; 0,0" dur="1.237175325432727s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(333.0)">
+            <line x1="140" y1="0" x2="178.1" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="182.1" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 11.5,0; 0,0" dur="1.278983730238609s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(336.0)">
+            <line x1="140" y1="0" x2="176.6" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="180.6" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 12.5,0; 0,0" dur="1.683063920475305s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(339.0)">
+            <line x1="140" y1="0" x2="169.3" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="173.3" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 5.6,0; 0,0" dur="1.6788191189478419s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(342.0)">
+            <line x1="140" y1="0" x2="181.5" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="185.5" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 14.6,0; 0,0" dur="2.2614385140183124s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(345.0)">
+            <line x1="140" y1="0" x2="177.1" y2="0" stroke="#FFB703" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="181.1" cy="0" r="1.2" fill="#FFB703" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 13.1,0; 0,0" dur="2.1056129661969964s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(348.0)">
+            <line x1="140" y1="0" x2="169.1" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="173.1" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 7.4,0; 0,0" dur="1.9255132060650273s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(351.0)">
+            <line x1="140" y1="0" x2="167.6" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="171.6" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 7.0,0; 0,0" dur="1.8024161148995463s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(354.0)">
+            <line x1="140" y1="0" x2="164.8" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="168.8" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 5.2,0; 0,0" dur="1.6167025353479147s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        <g transform="rotate(357.0)">
+            <line x1="140" y1="0" x2="162.4" y2="0" stroke="#00F0FF" stroke-width="1.5" opacity="0.6" filter="url(#glow-cyan)"/>
+            <circle cx="166.4" cy="0" r="1.2" fill="#00F0FF" opacity="0.8">
+                <animateTransform attributeName="transform" type="translate" values="0,0; 9.4,0; 0,0" dur="1.9182206122499665s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        
+        </g>
+
+        <g opacity="0.3" class="hex-text" font-size="5" fill="#00F0FF" filter="url(#glow-cyan)">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="90s" repeatCount="indefinite"/>
+            <text><textPath href="#hex-ring" startOffset="0%">F4 02 E4 51 C1 E8 21 1E 77 13 39 FD 3A 8C 5F 5D F9 92 87 5B 35 42 68 AF E0 A5 F9 60 14 87 F5 05 36 FF 96 24 AF B8 F7 C5</textPath></text>
+        </g>
+
+        
+    <g>
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>
+        <path d="M 0 0 L 180 -30 A 180 180 0 0 1 180 30 Z" fill="url(#scanner-light)" opacity="0.6"/>
+        <line x1="0" y1="0" x2="180" y2="30" stroke="#00F0FF" stroke-width="2" filter="url(#glow-cyan)"/>
+    </g>
+    
+
+        <g>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="60s" repeatCount="indefinite"/>
+            <circle cx="0" cy="0" r="100" fill="none" stroke="url(#cyan-grad)" stroke-width="1.5" stroke-dasharray="10 20 40 20" opacity="0.7" filter="url(#glow-cyan)"/>
+            <circle cx="0" cy="0" r="92" fill="none" stroke="url(#amber-grad)" stroke-width="0.5" opacity="0.5"/>
+            
+            <line x1="50" y1="0" x2="73.71712217137002" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.5738476258622329" transform="rotate(0)"/>
+<line x1="50" y1="0" x2="84.7310279707936" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.4582897080021386" transform="rotate(4)"/>
+<line x1="50" y1="0" x2="85.27003021517424" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.49470176936843935" transform="rotate(8)"/>
+<line x1="50" y1="0" x2="88.95164715246395" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7982192256581176" transform="rotate(12)"/>
+<line x1="50" y1="0" x2="82.11624230348139" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.5783796085468813" transform="rotate(16)"/>
+<line x1="50" y1="0" x2="60.53071542911045" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6736854027061241" transform="rotate(20)"/>
+<line x1="50" y1="0" x2="76.41073263622772" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.3611595675792014" transform="rotate(24)"/>
+<line x1="50" y1="0" x2="88.02921472953008" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.3878134669684204" transform="rotate(28)"/>
+<line x1="50" y1="0" x2="82.73316783648758" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.5656020324789899" transform="rotate(32)"/>
+<line x1="50" y1="0" x2="82.055391628779" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7782400671245924" transform="rotate(36)"/>
+<line x1="50" y1="0" x2="76.66159237495144" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.5986354263683884" transform="rotate(40)"/>
+<line x1="50" y1="0" x2="64.66694150367546" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.41765824334157203" transform="rotate(44)"/>
+<line x1="50" y1="0" x2="82.17050656366831" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6248666341353709" transform="rotate(48)"/>
+<line x1="50" y1="0" x2="75.87193362449648" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.3272623321999437" transform="rotate(52)"/>
+<line x1="50" y1="0" x2="71.27647668519433" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.46359189271582607" transform="rotate(56)"/>
+<line x1="50" y1="0" x2="77.84002716811268" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.5326319669462212" transform="rotate(60)"/>
+<line x1="50" y1="0" x2="89.90631624223546" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.39688851955650994" transform="rotate(64)"/>
+<line x1="50" y1="0" x2="89.18906816818327" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6702638949593056" transform="rotate(68)"/>
+<line x1="50" y1="0" x2="76.36923688364888" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.5526134587001186" transform="rotate(72)"/>
+<line x1="50" y1="0" x2="89.91786508723578" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6023843377170828" transform="rotate(76)"/>
+<line x1="50" y1="0" x2="87.64757115943159" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7055264236223036" transform="rotate(80)"/>
+<line x1="50" y1="0" x2="80.38091906993425" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.34899060192608644" transform="rotate(84)"/>
+<line x1="50" y1="0" x2="60.40317467889305" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.4583055070526762" transform="rotate(88)"/>
+<line x1="50" y1="0" x2="76.5507262472939" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.39846448691814257" transform="rotate(92)"/>
+<line x1="50" y1="0" x2="80.05817602862685" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.4554890689212111" transform="rotate(96)"/>
+<line x1="50" y1="0" x2="62.86809550448782" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.678337631096153" transform="rotate(100)"/>
+<line x1="50" y1="0" x2="75.61990447850977" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7547161074326096" transform="rotate(104)"/>
+<line x1="50" y1="0" x2="71.00695264236865" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.4634277803479123" transform="rotate(108)"/>
+<line x1="50" y1="0" x2="76.78623782246117" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6438046893952643" transform="rotate(112)"/>
+<line x1="50" y1="0" x2="65.10568230622243" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7613803110377095" transform="rotate(116)"/>
+<line x1="50" y1="0" x2="81.5678422228055" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.32124701334951705" transform="rotate(120)"/>
+<line x1="50" y1="0" x2="89.80786797103102" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7734977015815707" transform="rotate(124)"/>
+<line x1="50" y1="0" x2="65.37708574469136" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6135865020864094" transform="rotate(128)"/>
+<line x1="50" y1="0" x2="60.1646586499904" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7029418157866764" transform="rotate(132)"/>
+<line x1="50" y1="0" x2="81.42987737138256" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7238669878413078" transform="rotate(136)"/>
+<line x1="50" y1="0" x2="69.79870011641545" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6593075492481477" transform="rotate(140)"/>
+<line x1="50" y1="0" x2="83.60127287434935" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.38865129042962604" transform="rotate(144)"/>
+<line x1="50" y1="0" x2="89.82352251626729" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.4446492384758095" transform="rotate(148)"/>
+<line x1="50" y1="0" x2="66.01622487031851" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.44274159496307963" transform="rotate(152)"/>
+<line x1="50" y1="0" x2="71.77495805166033" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7931247115108824" transform="rotate(156)"/>
+<line x1="50" y1="0" x2="61.63567283716547" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.5219303083772548" transform="rotate(160)"/>
+<line x1="50" y1="0" x2="74.45046177642159" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7493973744505988" transform="rotate(164)"/>
+<line x1="50" y1="0" x2="88.87715121257082" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.4080118439525403" transform="rotate(168)"/>
+<line x1="50" y1="0" x2="81.99786116200289" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6433096231556117" transform="rotate(172)"/>
+<line x1="50" y1="0" x2="72.83929799267894" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.511357368648906" transform="rotate(176)"/>
+<line x1="50" y1="0" x2="75.53197870616135" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.35089832283624506" transform="rotate(180)"/>
+<line x1="50" y1="0" x2="78.09279811876591" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6324747989325719" transform="rotate(184)"/>
+<line x1="50" y1="0" x2="71.80338269465389" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.47480631772624043" transform="rotate(188)"/>
+<line x1="50" y1="0" x2="62.56609470818826" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7640642151709448" transform="rotate(192)"/>
+<line x1="50" y1="0" x2="85.78791625440802" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.589276922736952" transform="rotate(196)"/>
+<line x1="50" y1="0" x2="60.62455747705335" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6116267403363136" transform="rotate(200)"/>
+<line x1="50" y1="0" x2="82.40589098396076" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.34256811222256245" transform="rotate(204)"/>
+<line x1="50" y1="0" x2="64.44496299007419" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6596991460097593" transform="rotate(208)"/>
+<line x1="50" y1="0" x2="68.85280344375363" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.4847757688495258" transform="rotate(212)"/>
+<line x1="50" y1="0" x2="78.70098895581779" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7805340513247199" transform="rotate(216)"/>
+<line x1="50" y1="0" x2="73.55870602097389" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.4723544508497011" transform="rotate(220)"/>
+<line x1="50" y1="0" x2="84.1243734221217" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.3778649144608419" transform="rotate(224)"/>
+<line x1="50" y1="0" x2="80.27115358166918" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7526540693193585" transform="rotate(228)"/>
+<line x1="50" y1="0" x2="60.846337096448565" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6488248806291425" transform="rotate(232)"/>
+<line x1="50" y1="0" x2="85.3692657068854" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.31080425632839637" transform="rotate(236)"/>
+<line x1="50" y1="0" x2="79.07114588750613" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6439770667171576" transform="rotate(240)"/>
+<line x1="50" y1="0" x2="66.69434915527248" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6307485262425891" transform="rotate(244)"/>
+<line x1="50" y1="0" x2="89.7636412394132" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.34172653676468273" transform="rotate(248)"/>
+<line x1="50" y1="0" x2="82.00333271582295" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.4705490822605297" transform="rotate(252)"/>
+<line x1="50" y1="0" x2="68.89197454975789" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6314127370042986" transform="rotate(256)"/>
+<line x1="50" y1="0" x2="80.30030161878167" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.4257293174252748" transform="rotate(260)"/>
+<line x1="50" y1="0" x2="85.22368631118393" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7938453447293505" transform="rotate(264)"/>
+<line x1="50" y1="0" x2="65.65331709366588" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.5085872785777612" transform="rotate(268)"/>
+<line x1="50" y1="0" x2="64.06244300849369" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.5727535737570362" transform="rotate(272)"/>
+<line x1="50" y1="0" x2="77.6388918406258" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.4138130695163965" transform="rotate(276)"/>
+<line x1="50" y1="0" x2="70.82298934624933" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.49431138626848853" transform="rotate(280)"/>
+<line x1="50" y1="0" x2="74.04151891010704" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.4302847980590309" transform="rotate(284)"/>
+<line x1="50" y1="0" x2="83.26122611114613" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.30379463487453373" transform="rotate(288)"/>
+<line x1="50" y1="0" x2="85.8822588081891" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7801020918400855" transform="rotate(292)"/>
+<line x1="50" y1="0" x2="81.4815491923741" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6327337229241251" transform="rotate(296)"/>
+<line x1="50" y1="0" x2="65.40628163677863" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6971810438978467" transform="rotate(300)"/>
+<line x1="50" y1="0" x2="73.08568212245285" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.4028667934389534" transform="rotate(304)"/>
+<line x1="50" y1="0" x2="69.84324632277598" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.724226580354671" transform="rotate(308)"/>
+<line x1="50" y1="0" x2="77.4816806679645" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.5771756080590025" transform="rotate(312)"/>
+<line x1="50" y1="0" x2="79.38512846607344" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.4049677102299126" transform="rotate(316)"/>
+<line x1="50" y1="0" x2="73.75183496960504" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.45788927114130723" transform="rotate(320)"/>
+<line x1="50" y1="0" x2="79.24488939582957" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6190102450863033" transform="rotate(324)"/>
+<line x1="50" y1="0" x2="85.65245621852227" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7901419228992157" transform="rotate(328)"/>
+<line x1="50" y1="0" x2="65.90169723714854" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.484286536734775" transform="rotate(332)"/>
+<line x1="50" y1="0" x2="84.50155487193908" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7882927624160241" transform="rotate(336)"/>
+<line x1="50" y1="0" x2="75.35799737054205" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.6374135547807673" transform="rotate(340)"/>
+<line x1="50" y1="0" x2="81.39892621670748" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.40343016705318435" transform="rotate(344)"/>
+<line x1="50" y1="0" x2="60.541667449136625" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.47825658395548304" transform="rotate(348)"/>
+<line x1="50" y1="0" x2="81.42258683075619" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.7333409755106726" transform="rotate(352)"/>
+<line x1="50" y1="0" x2="64.82318082522032" y2="0" stroke="url(#amber-grad)" stroke-width="0.8" opacity="0.5268940077582758" transform="rotate(356)"/>
+
+            
+            <circle cx="0" cy="0" r="45" fill="rgba(10, 17, 40, 0.8)" stroke="url(#amber-grad)" stroke-width="2" filter="url(#glow-amber)"/>
+            <circle cx="0" cy="0" r="20" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-dasharray="2 4"/>
+            <circle cx="0" cy="0" r="12" fill="url(#cyan-grad)" opacity="0.2"/>
+            <circle cx="0" cy="0" r="4" fill="#00F0FF" filter="url(#glow-cyan)"/>
+            
+            <path d="M 0 -45 L 15 -20 M 40 -20 L 20 15 M 25 35 L -10 20 M -35 25 L -20 -10 M -25 -35 L 10 -20" stroke="url(#amber-grad)" stroke-width="1" opacity="0.6"/>
+        </g>
+
+        
+        <g transform="translate(0, -130)" text-anchor="middle" filter="url(#glow-amber)">
+            <text x="0" y="0" class="math-title" font-size="5" fill="#FFB703" opacity="0.9">DIGITAL WATERMARKING</text>
+            <text x="0" y="16" class="math-text" font-size="12" fill="#FFFFFF">
+                y = x + α · w
+            </text>
+        </g>
+        
+        <g transform="translate(0, 140)" text-anchor="middle" filter="url(#glow-cyan)">
+            <text x="0" y="0" class="math-title" font-size="5" fill="#00F0FF" opacity="0.9">MUTUAL INFORMATION</text>
+            <text x="0" y="16" class="math-text" font-size="12" fill="#FFFFFF">
+                I(X; Y) = H(X) - H(X|Y)
+            </text>
+        </g>
+        
+    </g>
+
+    <g transform="translate(200, 515)" filter="url(#plaque-shadow)">
+        <polygon points="-165,-38 165,-38 175,0 165,38 -165,38 -175,0" fill="#040712" stroke="url(#cyan-grad)" stroke-width="2"/>
+        
+        <polygon points="-157,-30 157,-30 165,0 157,30 -157,30 -165,0" fill="none" stroke="url(#amber-grad)" stroke-width="0.8" stroke-dasharray="10 4 2 4" opacity="0.6"/>
+        
+        <text x="0" y="9" text-anchor="middle" class="tifs-title" font-size="36" fill="url(#titanium)" filter="url(#glow-cyan)">TIFS</text>
+        
+        <text x="0" y="-22" text-anchor="middle" class="tifs-micro" font-size="5" fill="url(#amber-grad)" opacity="0.9" letter-spacing="3">IEEE SIGNAL PROCESSING SOCIETY</text>
+        
+        <path d="M-80 14 L0 13 L80 14 L0 15 Z" fill="url(#cyan-grad)" opacity="0.6"/>
+        <polygon points="0,12 3,14 0,16 -3,14" fill="#FFB703" filter="url(#glow-amber)"/>
+
+        <text x="0" y="25" text-anchor="middle" class="tifs-sub" font-size="7" fill="#FFFFFF" opacity="0.95">INFORMATION FORENSICS AND SECURITY</text>
+        
+        <text x="0" y="35" text-anchor="middle" class="tifs-micro" font-size="4.2" fill="#00F0FF" opacity="0.8">BIOMETRICS ❖ WATERMARKING ❖ CRYPTOGRAPHY</text>
+
+        <g transform="translate(-150, 0)">
+            <circle cx="0" cy="0" r="3.5" fill="#040712" stroke="url(#cyan-grad)" stroke-width="1.5"/>
+            <circle cx="0" cy="0" r="1.5" fill="url(#amber-grad)" filter="url(#glow-amber)">
+                <animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+        <g transform="translate(150, 0)">
+            <circle cx="0" cy="0" r="3.5" fill="#040712" stroke="url(#cyan-grad)" stroke-width="1.5"/>
+            <circle cx="0" cy="0" r="1.5" fill="url(#amber-grad)" filter="url(#glow-amber)">
+                <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+    </g>
+</svg>

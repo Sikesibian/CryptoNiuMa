@@ -1,0 +1,194 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- 极致深邃的科技暗色背景 -->
+        <linearGradient id="cyber-bg-fault" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#030712"/>
+            <stop offset="50%" stop-color="#091124"/>
+            <stop offset="100%" stop-color="#000000"/>
+        </linearGradient>
+        
+        <!-- 高级发光滤镜（柔和不刺眼） -->
+        <filter id="glow-fault-red" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="glow-fault-emerald" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="glow-fault-cyan" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+
+        <!-- 示波器高级网格背景 -->
+        <pattern id="scope-grid-fault" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(30, 58, 138, 0.3)" stroke-width="1"/>
+            <path d="M 20 0 L 20 40 M 0 20 L 40 20" fill="none" stroke="rgba(30, 58, 138, 0.15)" stroke-width="0.5" stroke-dasharray="2,2"/>
+        </pattern>
+
+        <!-- 玻璃质感面板 -->
+        <linearGradient id="glass-fault-panel" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="rgba(255, 255, 255, 0.05)"/>
+            <stop offset="100%" stop-color="rgba(255, 255, 255, 0.01)"/>
+        </linearGradient>
+        
+        <linearGradient id="trace-fade-red" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="rgba(248, 113, 113, 0)"/>
+            <stop offset="80%" stop-color="rgba(248, 113, 113, 1)"/>
+            <stop offset="100%" stop-color="rgba(248, 113, 113, 0)"/>
+        </linearGradient>
+    </defs>
+
+    <!-- 背景层 -->
+    <rect width="400" height="600" fill="url(#cyber-bg-fault)"/>
+    <rect width="400" height="230" y="20" fill="url(#scope-grid-fault)"/>
+    
+    <!-- 隐约的呼吸背光 -->
+    <circle cx="200" cy="390" r="140" fill="#10b981" opacity="0.03" filter="url(#glow-fault-emerald)">
+        <animate attributeName="opacity" values="0.02;0.06;0.02" dur="4s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" keyTimes="0; 0.5; 1"/>
+    </circle>
+
+    <!-- ================= 顶部：极客风双通道示波器 ================= -->
+    <g transform="translate(0, 20)">
+        <!-- 装饰渐变边框 -->
+        <line x1="0" y1="230" x2="400" y2="230" stroke="rgba(30, 58, 138, 0.5)" stroke-width="2"/>
+        
+        <text x="15" y="25" fill="#60a5fa" font-family="'Courier New', monospace" font-size="11" font-weight="bold" letter-spacing="1">CH1: VDD EXT. (3.3V)</text>
+        <text x="15" y="42" fill="#34d399" font-family="'Courier New', monospace" font-size="11" font-weight="bold" letter-spacing="1">CH2: VCORE INT. (1.2V)</text>
+
+        <!-- 触发扫描线核心动画 -->
+        <g opacity="0.8">
+            <line x1="0" y1="20" x2="0" y2="220" stroke="rgba(255,255,255,0.15)" stroke-width="2">
+                <animate attributeName="x1" values="-20;420" dur="3s" repeatCount="indefinite"/>
+                <animate attributeName="x2" values="-20;420" dur="3s" repeatCount="indefinite"/>
+            </line>
+            <rect x="0" y="20" width="50" height="200" fill="url(#trace-fade-red)" opacity="0.05">
+                <animate attributeName="x" values="-70;370" dur="3s" repeatCount="indefinite"/>
+            </rect>
+        </g>
+
+        <!-- CH1 毛刺波形 (Red Glitch) - 带有动态描绘特效 -->
+        <!-- 底底暗线 -->
+        <path d="M 0 100 L 140 100 L 155 190 L 170 80 L 180 100 L 400 100" fill="none" stroke="rgba(248, 113, 113, 0.2)" stroke-width="1.5"/>
+        <!-- 高亮扫描线 -->
+        <path d="M 0 100 L 140 100 L 155 190 L 170 80 L 180 100 L 400 100" fill="none" stroke="#f87171" stroke-width="2" filter="url(#glow-fault-red)" stroke-dasharray="50 800" stroke-linecap="round">
+            <animate attributeName="stroke-dashoffset" values="850; 0" dur="3s" repeatCount="indefinite" />
+        </path>
+        
+        <!-- CH2 核心平稳波形 (Green Stable) -->
+        <path d="M 0 160 L 140 160 L 155 162 L 170 158 L 180 160 L 400 160" fill="none" stroke="rgba(52, 211, 153, 0.2)" stroke-width="1.5"/>
+        <path d="M 0 160 L 140 160 L 155 162 L 170 158 L 180 160 L 400 160" fill="none" stroke="#34d399" stroke-width="2.5" filter="url(#glow-fault-emerald)" stroke-dasharray="80 800" stroke-linecap="round">
+            <animate attributeName="stroke-dashoffset" values="880; 0" dur="3s" repeatCount="indefinite"/>
+        </path>
+
+        <!-- UI 装饰标尺 -->
+        <line x1="155" y1="70" x2="155" y2="210" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-dasharray="2,4"/>
+        <text x="162" y="215" fill="#94a3b8" font-family="'Courier New', monospace" font-size="9" opacity="0.8">T=GLITCH (WIDTH: 10ns)</text>
+    </g>
+
+    <!-- ================= 中部：MCU结构透视图 ================= -->
+    <g transform="translate(200, 390)">
+        <!-- MCU 外壳与高光 -->
+        <rect x="-140" y="-80" width="280" height="150" rx="8" fill="url(#glass-fault-panel)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1.5"/>
+        <rect x="-140" y="-80" width="280" height="150" rx="8" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" stroke-dasharray="4,8"/>
+        <text x="-130" y="-88" fill="#64748b" font-family="sans-serif" font-weight="600" font-size="9" letter-spacing="2">TARGET MCU: SECURE_ENCLAVE_v2</text>
+        
+        <!-- 侧边引脚 -->
+        <g fill="#334155">
+            <rect x="-150" y="-60" width="10" height="8" rx="2"/><rect x="-150" y="-40" width="10" height="8" rx="2"/>
+            <rect x="140" y="-60" width="10" height="8" rx="2"/><rect x="140" y="-40" width="10" height="8" rx="2"/><rect x="140" y="-20" width="10" height="8" rx="2"/>
+            
+            <!-- VDD 注入引脚: 时常闪烁警示红光 -->
+            <rect x="-150" y="-20" width="10" height="8" rx="2" fill="#ef4444" filter="url(#glow-fault-red)">
+                <animate attributeName="opacity" values="1;0.3;1" dur="0.8s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" keyTimes="0; 0.5; 1"/>
+            </rect> 
+            <text x="-173" y="-12" fill="#ef4444" font-family="'Courier New', monospace" font-size="11" font-weight="bold">VDD</text>
+        </g>
+
+        <!-- 内部区域 1：LDO电源管理 (The Shield) -->
+        <rect x="-110" y="-55" width="80" height="100" rx="6" fill="rgba(15, 23, 42, 0.8)" stroke="#38bdf8" stroke-width="1.5"/>
+        <text x="-70" y="-35" fill="#7dd3fc" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" letter-spacing="1">LDO / BOR</text>
+        
+        <!-- 去耦电容图示变得更精致 -->
+        <g transform="translate(0, 5)">
+            <path d="M -80 -10 L -60 -10 M -80 0 L -60 0 M -70 -20 L -70 -10 M -70 0 L -70 15" stroke="#38bdf8" stroke-width="1.5" fill="none"/>
+            <text x="-70" y="28" fill="#38bdf8" font-family="'Courier New', monospace" font-size="8" text-anchor="middle" opacity="0.8">C_decoup</text>
+            
+            <!-- 能量吸收防护罩 (Ripple Effect) -->
+            <circle cx="-70" cy="-5" r="5" fill="none" stroke="#38bdf8" stroke-width="2" filter="url(#glow-fault-cyan)">
+                <animate attributeName="r" values="5;25;35" dur="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1" keyTimes="0; 0.6; 1"/>
+                <animate attributeName="opacity" values="1;0.5;0" dur="1.5s" repeatCount="indefinite" calcMode="spline" keySplines="0.25 0.1 0.25 1; 0.25 0.1 0.25 1" keyTimes="0; 0.6; 1"/>
+            </circle>
+            <circle cx="-70" cy="-5" r="5" fill="none" stroke="#2dd4bf" stroke-width="1">
+                <animate attributeName="r" values="5;20" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
+                <animate attributeName="opacity" values="0.8;0" dur="1.5s" begin="0.3s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+
+        <!-- 内部区域 2：被保护的CPU核心 -->
+        <rect x="15" y="-55" width="100" height="100" rx="6" fill="rgba(6, 78, 59, 0.4)" stroke="#10b981" stroke-width="1.5"/>
+        <text x="65" y="-35" fill="#6ee7b7" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" letter-spacing="1">CPU CORE</text>
+        <!-- 呼吸灯 -->
+        <circle cx="28" cy="-40" r="3" fill="#10b981" filter="url(#glow-fault-emerald)">
+            <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- CPU 运行状态 (全息UI风) -->
+        <g font-family="'Courier New', monospace" font-size="9" fill="#34d399">
+            <text x="25" y="-10">PC  : <tspan font-weight="bold" fill="#a7f3d0">0x0042</tspan></text>
+            <text x="25" y="6">R0  : <tspan font-weight="bold" fill="#a7f3d0">0xDEAD</tspan></text>
+            <text x="25" y="22">STAT: <tspan font-weight="bold" fill="#a7f3d0">RUNNING</tspan></text>
+            
+            <rect x="25" y="30" width="80" height="4" rx="2" fill="rgba(16,185,129,0.2)"/>
+            <rect x="25" y="30" width="50" height="4" rx="2" fill="#10b981" filter="url(#glow-fault-emerald)">
+                <animate attributeName="width" values="10;80;10" dur="2s" repeatCount="indefinite" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" keyTimes="0; 0.5; 1"/>
+            </rect>
+        </g>
+
+        <!-- 动态能量流动线路 -->
+        <!-- 外部毛刺侵入（闪电红） -->
+        <path d="M -140 -16 L -110 -16" stroke="#ef4444" stroke-width="3" filter="url(#glow-fault-red)"/>
+        
+        <!-- 内部安全供电（稳定绿流） -->
+        <path d="M -30 -5 L 15 -5" stroke="rgba(16, 185, 129, 0.3)" stroke-width="3"/>
+        <line x1="-30" y1="-5" x2="15" y2="-5" stroke="#10b981" stroke-width="3" stroke-dasharray="10 35" stroke-linecap="round" filter="url(#glow-fault-emerald)">
+            <animate attributeName="stroke-dashoffset" values="45;0" dur="1s" repeatCount="indefinite"/>
+        </line>
+        <text x="-22" y="-12" fill="#38bdf8" font-family="'Courier New', monospace" font-size="9" font-weight="bold">V_Core</text>
+        
+        <!-- 毛刺在此处被阻断 (能量对冲特效) -->
+        <g transform="translate(-42, -15)">
+            <path d="M -8 -8 L 8 8 M 8 -8 L -8 8" stroke="#ef4444" stroke-width="2.5" filter="url(#glow-fault-red)">
+                <animate attributeName="opacity" values="0.8;1;0.8" dur="0.5s" repeatCount="indefinite"/>
+            </path>
+            <!-- 闪电火花 -->
+            <path d="M 0 -12 L 0 -4 L -10 0 L 0 4 L 0 12 L 4 0 Z" fill="#fca5a5" filter="url(#glow-fault-red)" transform="scale(0.8)">
+                <animate attributeName="opacity" values="0;1;0" dur="1.5s" calcMode="spline" keySplines="0.4 0 0.2 1; 0.4 0 0.2 1" begin="0.2s" repeatCount="indefinite"/>
+                <animateTransform attributeName="transform" type="scale" values="0.5; 1.2; 0.5" dur="1.5s" begin="0.2s" repeatCount="indefinite"/>
+            </path>
+        </g>
+    </g>
+
+    <!-- ================= 底部：控制台面板 ================= -->
+    <g transform="translate(200, 545)">
+        <rect x="-180" y="-20" width="360" height="42" rx="4" fill="url(#glass-fault-panel)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        
+        <!-- FBI Warning 级别的指示灯 (带有心跳脉冲) -->
+        <circle cx="-160" cy="1" r="5" fill="#ef4444" filter="url(#glow-fault-red)">
+            <animate attributeName="opacity" values="1; 0.2; 1; 0.2; 1" dur="1.5s" keyTimes="0; 0.1; 0.2; 0.3; 1" repeatCount="indefinite"/>
+        </circle>
+        
+        <text x="-145" y="5" fill="#fecaca" font-family="'Courier New', monospace" font-size="12" font-weight="bold" letter-spacing="1">FAULT INJECTION FAILED</text>
+        
+        <line x1="60" y1="-15" x2="60" y2="17" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+        
+        <text x="70" y="-2" fill="#94a3b8" font-family="'Courier New', monospace" font-size="8" letter-spacing="0.5">DIAGNOSTICS_SYS:</text>
+        <text x="70" y="11" fill="#38bdf8" font-family="'Courier New', monospace" font-size="9" font-weight="bold">ABSORBED BY ...
+            <!-- 终端光标闪烁 -->
+            <tspan fill="#38bdf8">_
+                <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+            </tspan>
+        </text>
+    </g>
+</svg>

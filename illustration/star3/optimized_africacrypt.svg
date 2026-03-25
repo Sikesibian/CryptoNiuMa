@@ -1,0 +1,102 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <radialGradient id="af-cyber-bg" cx="50%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="#2a0800"/>
+            <stop offset="60%" stop-color="#0f0200"/>
+            <stop offset="100%" stop-color="#050000"/>
+        </radialGradient>
+        <linearGradient id="af-accent" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#a5350c"/>
+            <stop offset="50%" stop-color="#ff8c00"/>
+            <stop offset="100%" stop-color="#ffd700"/>
+        </linearGradient>
+        <filter id="af-glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        <pattern id="af-hex-net" width="30" height="51.96" patternUnits="userSpaceOnUse" patternTransform="scale(0.8)">
+            <path d="M15 0 L30 8.66 L30 25.98 L15 34.64 L0 25.98 L0 8.66 Z" fill="none" stroke="#ff4500" stroke-width="0.5" opacity="0.15"/>
+            <path d="M15 51.96 L30 43.3 L30 25.98 L15 34.64 L0 25.98 L0 43.3 Z" fill="none" stroke="#ff4500" stroke-width="0.5" opacity="0.15"/>
+        </pattern>
+        <clipPath id="af-shield-clip">
+            <path d="M200 80 L320 120 L320 280 Q200 420 200 450 Q200 420 80 280 L80 120 Z"/>
+        </clipPath>
+    </defs>
+
+    <rect width="400" height="600" fill="url(#af-cyber-bg)"/>
+    <rect width="400" height="600" fill="url(#af-hex-net)"/>
+
+    <!-- Geometric background elements -->
+    <g stroke="#ff8c00" stroke-width="1" opacity="0.2">
+        <circle cx="200" cy="270" r="160"/>
+        <circle cx="200" cy="270" r="130" stroke-dasharray="4 8"/>
+        <path d="M40 270 L360 270 M200 110 L200 430"/>
+    </g>
+
+    <g clip-path="url(#af-shield-clip)">
+        <rect x="0" y="0" width="400" height="600" fill="#110500" opacity="0.6"/>
+        
+        <!-- Animated glowing data rings inside shield -->
+        <g stroke="url(#af-accent)" stroke-width="2" fill="none" filter="url(#af-glow)" opacity="0.8">
+            <circle cx="200" cy="270" r="90" stroke-dasharray="10 30 50 20">
+                <animateTransform attributeName="transform" type="rotate" from="0 200 270" to="360 200 270" dur="15s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="200" cy="270" r="70" stroke-dasharray="40 10 20 15">
+                <animateTransform attributeName="transform" type="rotate" from="360 200 270" to="0 200 270" dur="10s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="200" cy="270" r="50" stroke-dasharray="10 10">
+                <animateTransform attributeName="transform" type="rotate" from="0 200 270" to="360 200 270" dur="7s" repeatCount="indefinite"/>
+            </circle>
+        </g>
+
+        <!-- Tribal pattern inspired central artifact -->
+        <g transform="translate(200, 270)" fill="url(#af-accent)" filter="url(#af-glow)">
+            <path d="M0 -30 L15 -10 L15 10 L0 30 L-15 10 L-15 -10 Z" opacity="0.9"/>
+            <path d="M0 -15 L25 -40 L30 -35 L5 -10 Z" opacity="0.7"/>
+            <path d="M0 -15 L-25 -40 L-30 -35 L-5 -10 Z" opacity="0.7"/>
+            <path d="M0 15 L25 40 L30 35 L5 10 Z" opacity="0.7"/>
+            <path d="M0 15 L-25 40 L-30 35 L-5 10 Z" opacity="0.7"/>
+            
+            <!-- Central rotating diamond -->
+            <polygon points="0,-12 8,0 0,12 -8,0" fill="#fff">
+                <animateTransform attributeName="transform" type="scale" values="1;1.3;1" dur="2s" repeatCount="indefinite"/>
+            </polygon>
+        </g>
+    </g>
+
+    <!-- Shield Border -->
+    <path d="M200 80 L320 120 L320 280 Q200 420 200 450 Q200 420 80 280 L80 120 Z" fill="none" stroke="url(#af-accent)" stroke-width="3" filter="url(#af-glow)"/>
+    <path d="M200 65 L335 110 L335 285 Q200 435 200 470 Q200 435 65 285 L65 110 Z" fill="none" stroke="#ff4500" stroke-width="1" opacity="0.5"/>
+
+    <!-- Data streams -->
+    <g fill="#ff8c00" opacity="0.6">
+        <circle cx="80" cy="120" r="4" filter="url(#af-glow)"/>
+        <circle cx="320" cy="120" r="4" filter="url(#af-glow)"/>
+        <circle cx="200" cy="80" r="5" fill="#ffd700" filter="url(#af-glow)"/>
+        <circle cx="200" cy="450" r="5" fill="#ffd700" filter="url(#af-glow)"/>
+        
+        <rect x="199" y="40" width="2" height="20" fill="#ff4500">
+            <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+        </rect>
+        <rect x="199" y="470" width="2" height="40" fill="#ff4500">
+            <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+        </rect>
+    </g>
+
+    <!-- Top floating texts/lines -->
+    <path d="M20 50 L100 50 L120 70 M380 50 L300 50 L280 70" fill="none" stroke="#ff4500" stroke-width="2" opacity="0.7"/>
+    <text x="25" y="42" fill="#ff8c00" font-family="monospace" font-size="10" opacity="0.8">SYS.SEC//AFRICA</text>
+    <text x="375" y="42" fill="#ff8c00" font-family="monospace" font-size="10" text-anchor="end" opacity="0.8">INIT_NODE: 0x8A</text>
+
+    <!-- Main Title -->
+    <text x="200" y="520" text-anchor="middle" fill="#ffd700" font-family="'Orbitron', sans-serif" font-size="28" font-weight="900" letter-spacing="4" filter="url(#af-glow)">AFRICACRYPT</text>
+    <text x="200" y="550" text-anchor="middle" fill="#ff4500" font-family="sans-serif" font-size="12" letter-spacing="2" opacity="0.9">PAN-AFRICAN CRYPTO PROTOCOL</text>
+    
+    <!-- Footer progress/status bar -->
+    <g transform="translate(100, 570)">
+        <rect width="200" height="2" fill="#331100"/>
+        <rect width="160" height="2" fill="#ff8c00" filter="url(#af-glow)">
+            <animate attributeName="width" values="0;200;160;200" dur="8s" repeatCount="indefinite"/>
+        </rect>
+    </g>
+</svg>

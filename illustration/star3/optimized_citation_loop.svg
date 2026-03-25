@@ -1,0 +1,142 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Intense BibTeX Background -->
+        <radialGradient id="cite-bg" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#1a0505"/>
+            <stop offset="100%" stop-color="#000000"/>
+        </radialGradient>
+        
+        <filter id="glow-cite">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+
+        <!-- RGB Glitch for the Circular Error -->
+        <filter id="glitch-cite">
+            <feTurbulence type="fractalNoise" baseFrequency="0.15" numOctaves="3" result="noise">
+                 <animate attributeName="baseFrequency" values="0.1; 0.8; 0.1" dur="0.2s" repeatCount="indefinite"/>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="8" xChannelSelector="R" yChannelSelector="G"/>
+        </filter>
+        
+        <!-- Danger Grid -->
+        <pattern id="grid-cite" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ef4444" stroke-width="0.5" opacity="0.2"/>
+            <path d="M 0 0 L 40 40 M 40 0 L 0 40" stroke="#ef4444" stroke-width="0.5" opacity="0.1"/>
+        </pattern>
+
+        <!-- Glowing Arrowhead -->
+        <marker id="arrowhead-cite-glow" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+            <polygon points="0 0, 12 4, 0 8" fill="#ef4444" filter="url(#glow-cite)">
+                <animate attributeName="fill" values="#ef4444; #fca5a5; #ef4444" dur="1s" repeatCount="indefinite"/>
+            </polygon>
+        </marker>
+    </defs>
+    
+    <rect width="400" height="600" fill="url(#cite-bg)"/>
+    <rect width="400" height="600" fill="url(#grid-cite)">
+         <animate attributeName="opacity" values="0.5; 1; 0.5" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    
+    <g transform="translate(200, 170)">
+        
+        <!-- Rotating Death Ring -->
+        <g>
+            <animateTransform attributeName="transform" type="rotate" values="0; 360" dur="4s" repeatCount="indefinite"/>
+            <circle cx="0" cy="0" r="70" fill="none" stroke="#ef4444" stroke-width="6" stroke-dasharray="20 10" opacity="0.3"/>
+            <circle cx="0" cy="0" r="80" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="100 200" opacity="0.5"/>
+        </g>
+        
+        <!-- The Node Graph Loop -->
+        <g filter="url(#glitch-cite)">
+            <!-- Arrows -->
+            <!-- Edge 1 to 2 -->
+            <path d="M -30 -60 Q 40 -80 60 -10" fill="none" stroke="#fca5a5" stroke-width="4" marker-end="url(#arrowhead-cite-glow)" stroke-dasharray="5 5">
+                <animate attributeName="stroke-dashoffset" values="10; 0" dur="0.5s" repeatCount="indefinite"/>
+            </path>
+            <!-- Edge 2 to 3 -->
+            <path d="M 60 10 Q 30 70 -30 60" fill="none" stroke="#ef4444" stroke-width="4" marker-end="url(#arrowhead-cite-glow)" stroke-dasharray="5 5">
+                <animate attributeName="stroke-dashoffset" values="10; 0" dur="0.5s" repeatCount="indefinite"/>
+            </path>
+            <!-- Edge 3 to 1 (Fatal Loop Back) -->
+            <path d="M -50 40 Q -80 -10 -50 -40" fill="none" stroke="#ff0000" stroke-width="8" marker-end="url(#arrowhead-cite-glow)" filter="url(#glow-cite)">
+                <animate attributeName="stroke-width" values="4; 10; 4" dur="0.3s" repeatCount="indefinite"/>
+            </path>
+            
+            <!-- Nodes -->
+            <!-- Node 1 -->
+            <g transform="translate(-40, -50)">
+                <rect x="-25" y="-15" width="50" height="30" rx="5" fill="#1e293b" stroke="#fca5a5" stroke-width="3"/>
+                <text x="0" y="5" fill="#fff" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">[1]</text>
+            </g>
+            
+            <!-- Node 2 -->
+            <g transform="translate(60, 0)">
+                <rect x="-25" y="-15" width="50" height="30" rx="5" fill="#1e293b" stroke="#fca5a5" stroke-width="3"/>
+                <text x="0" y="5" fill="#fff" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">[2]</text>
+            </g>
+
+            <!-- Node 3 -->
+            <g transform="translate(-40, 50)">
+                <rect x="-25" y="-15" width="50" height="30" rx="5" fill="#2a0a0a" stroke="#ff0000" stroke-width="4" filter="url(#glow-cite)"/>
+                <text x="0" y="5" fill="#ff0000" font-family="'Courier New', monospace" font-size="14" font-weight="bold" text-anchor="middle">[3]</text>
+            </g>
+        </g>
+
+        <!-- Center Warning Text -->
+        <g transform="translate(0, 0)">
+            <rect x="-45" y="-15" width="90" height="30" fill="#000" stroke="#ef4444" stroke-width="2"/>
+            <text x="0" y="-2" fill="#ef4444" font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle">CIRCULAR</text>
+            <text x="0" y="10" fill="#ef4444" font-family="monospace" font-size="9" font-weight="bold" text-anchor="middle">DEPENDENCY</text>
+        </g>
+    </g>
+
+    <!-- Console Window Panic Attack -->
+    <g transform="translate(200, 390)">
+        <rect x="-180" y="-120" width="360" height="200" rx="8" fill="#0f0f0f" stroke="#ef4444" stroke-width="3" filter="url(#glow-cite)">
+            <animate attributeName="stroke" values="#ef4444; #991b1b; #ef4444" dur="0.5s" repeatCount="indefinite"/>
+        </rect>
+        
+        <!-- Terminal Header -->
+        <rect x="-180" y="-120" width="360" height="25" rx="8" fill="#1e1e1e"/>
+        <rect x="-180" y="-105" width="360" height="10" fill="#1e1e1e"/>
+        <circle cx="-160" cy="-107" r="6" fill="#ff5f56"/>
+        <circle cx="-140" cy="-107" r="6" fill="#ffbd2e"/>
+        <circle cx="-120" cy="-107" r="6" fill="#27c93f"/>
+        <text x="0" y="-103" fill="#ef4444" font-family="'Courier New', Courier, monospace" font-size="12" font-weight="bold" text-anchor="middle">biber --fatal-error</text>
+
+        <!-- Glitchy Terminal Log -->
+        <g font-family="'Courier New', Courier, monospace" font-size="11" transform="translate(-165, -80)">
+            <text x="0" y="0" fill="#a3e635">user@macbook ~$ biber main</text>
+            <text x="0" y="18" fill="#94a3b8">INFO - This is Biber 2.14</text>
+            <text x="0" y="36" fill="#94a3b8">INFO - Reading 'main.bcf'</text>
+            
+            <g>
+                <animate attributeName="opacity" values="1; 0; 1" dur="0.2s" repeatCount="indefinite"/>
+                <text x="0" y="60" fill="#ef4444" font-weight="bold">> FATAL ERROR: Cycle detected!</text>
+            </g>
+
+            <rect x="-5" y="68" width="340" height="50" fill="#2a0a0a" opacity="0.5"/>
+            <text x="0" y="80" fill="#fca5a5" font-weight="bold">Entry 'smith2024' requires 'johnson2023'</text>
+            <text x="0" y="95" fill="#fca5a5" font-weight="bold">Entry 'johnson2023' requires 'lee2024'</text>
+            <text x="0" y="110" fill="#ff0000" font-weight="bold" font-size="12">Entry 'lee2024' requires 'smith2024'</text>
+            
+            <text x="0" y="135" fill="#ef4444">> Segmentation fault (core dumped)</text>
+            <!-- Cursor -->
+            <rect x="230" y="126" width="8" height="12" fill="#ef4444">
+                <animate attributeName="opacity" values="1; 0; 1" dur="0.8s" repeatCount="indefinite"/>
+            </rect>
+        </g>
+    </g>
+    
+    <!-- Final Error Badge -->
+    <g transform="translate(200, 540)">
+        <rect x="-120" y="-20" width="240" height="40" rx="5" fill="#4c0519" stroke="#ef4444" stroke-width="2">
+             <animate attributeName="stroke-width" values="2; 5; 2" dur="0.5s" repeatCount="indefinite"/>
+        </rect>
+        <text x="0" y="5" text-anchor="middle" fill="#fca5a5" font-family="'Times New Roman', serif" font-size="16" font-weight="bold">引文循环死锁崩溃</text>
+        <text x="0" y="-25" text-anchor="middle" fill="#ff0000" font-family="'Courier New', Courier, monospace" font-size="12" letter-spacing="1" font-weight="bold">
+            BIBTEX_FATAL_ERROR
+        </text>
+    </g>
+</svg>

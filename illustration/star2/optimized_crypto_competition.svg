@@ -1,0 +1,179 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="hyper-crypto-bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#020813"/>
+      <stop offset="60%" stop-color="#050C1F"/>
+      <stop offset="100%" stop-color="#000205"/>
+    </radialGradient>
+    <linearGradient id="cyber-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF8A0" />
+      <stop offset="30%" stop-color="#FFD700" />
+      <stop offset="70%" stop-color="#FF8C00" />
+      <stop offset="100%" stop-color="#B8860B" />
+    </linearGradient>
+    <linearGradient id="neon-cyan" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#00EEFF" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#00EEFF" stop-opacity="0.9" />
+    </linearGradient>
+    <linearGradient id="neon-pink" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF007F" />
+      <stop offset="100%" stop-color="#D500F9" />
+    </linearGradient>
+    <filter id="mega-glow">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="core-glow">
+      <feGaussianBlur stdDeviation="30" result="blur" />
+      <feComponentTransfer><feFuncA type="linear" slope="2.5"/></feComponentTransfer>
+      <feComposite in="SourceGraphic" operator="over" />
+    </filter>
+    <filter id="subtle-glow">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <path id="orbital-path" d="M 112 512 A 400 400 0 1 1 912 512 A 400 400 0 1 1 112 512" />
+    <path id="orbital-path-inner" d="M 162 512 A 350 350 0 1 0 862 512 A 350 350 0 1 0 162 512" />
+  </defs>
+
+  <rect width="1024" height="1024" fill="url(#hyper-crypto-bg)" rx="100" />
+
+  <!-- Deep Cyber Void Grid -->
+  <g stroke="#00EEFF" opacity="0.1" stroke-width="2">
+    <g style="transform-origin: 512px 512px; transform: scale(1.5) perspective(500px) rotateX(60deg);">
+       <!-- Multiple grid lines for floor -->
+       <path d="M 0 100 L 1024 100 M 0 200 L 1024 200 M 0 300 L 1024 300 M 0 400 L 1024 400 M 0 500 L 1024 500 M 0 600 L 1024 600 M 0 700 L 1024 700 M 0 800 L 1024 800 M 0 900 L 1024 900" />
+       <path d="M 100 0 L 100 1024 M 200 0 L 200 1024 M 300 0 L 300 1024 M 400 0 L 400 1024 M 500 0 L 500 1024 M 600 0 L 600 1024 M 700 0 L 700 1024 M 800 0 L 800 1024 M 900 0 L 900 1024" />
+    </g>
+  </g>
+
+  <!-- Cascading Hexadecimal Rain -->
+  <g font-family="'Courier New', monospace" font-size="22" fill="#00EEFF" opacity="0.4" font-weight="900" filter="url(#subtle-glow)">
+     <text x="120" y="0"><animate attributeName="y" values="-100;1100" dur="5s" repeatCount="indefinite" />0x8A</text>
+     <text x="250" y="0"><animate attributeName="y" values="-200;1100" dur="4s" repeatCount="indefinite" />0xFF</text>
+     <text x="750" y="0"><animate attributeName="y" values="-300;1100" dur="6s" repeatCount="indefinite" />0x4E</text>
+     <text x="880" y="0"><animate attributeName="y" values="-100;1100" dur="4.5s" repeatCount="indefinite" />0x00</text>
+     <text x="350" y="0"><animate attributeName="y" values="-50;1100" dur="7s" repeatCount="indefinite" />0xC3</text>
+     <text x="650" y="0"><animate attributeName="y" values="-150;1100" dur="5.5s" repeatCount="indefinite" />0x99</text>
+  </g>
+
+  <!-- Giant Holographic Astrolabe Cipher Rings -->
+  <g transform="translate(512, 512)" filter="url(#mega-glow)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite" />
+      <circle cx="0" cy="0" r="450" fill="none" stroke="url(#cyber-gold)" stroke-width="2" stroke-dasharray="20 40" opacity="0.6"/>
+      <circle cx="0" cy="0" r="430" fill="none" stroke="url(#neon-pink)" stroke-width="6" stroke-dasharray="100 150 50 30" opacity="0.8"/>
+      <circle cx="0" cy="0" r="410" fill="none" stroke="#00EEFF" stroke-width="4" stroke-dasharray="1 15" />
+    </g>
+    
+    <g>
+      <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="30s" repeatCount="indefinite" />
+      <circle cx="0" cy="0" r="370" fill="none" stroke="url(#cyber-gold)" stroke-width="8" stroke-dasharray="300 100 50 100" opacity="0.7"/>
+      <circle cx="0" cy="0" r="350" fill="none" stroke="#00EEFF" stroke-width="2" stroke-dasharray="20 5" />
+      <!-- Heavy Gear Nodes -->
+      <path d="M -340 -15 L -370 -15 L -370 15 L -340 15 Z" fill="#00EEFF" />
+      <path d="M 340 -15 L 370 -15 L 370 15 L 340 15 Z" fill="#00EEFF" />
+      <path d="M -15 -340 L -15 -370 L 15 -370 L 15 -340 Z" fill="#00EEFF" />
+      <path d="M -15 340 L -15 370 L 15 370 L 15 340 Z" fill="#00EEFF" />
+    </g>
+  </g>
+
+  <!-- Moving Typography on Orbiting Path -->
+  <g filter="url(#mega-glow)" opacity="0.85">
+     <text font-family="'Courier New', Courier, monospace" font-size="24" font-weight="900" fill="url(#cyber-gold)">
+       <textPath href="#orbital-path" startOffset="0%">
+         CRYPTO_CHAMPION_V_9.0.1 /// SECURE PAYLOAD /// DECRYPTING AES-256 /// SYSTEM OVERRIDE /// CRYPTO_CHAMPION_V_9.0.1 /// SECURE PAYLOAD /// DECRYPTING AES-256 /// SYSTEM OVERRIDE ///  
+         <animate attributeName="startOffset" from="0%" to="-100%" dur="40s" repeatCount="indefinite" />
+       </textPath>
+     </text>
+     <text font-family="'Courier New', Courier, monospace" font-size="20" font-weight="900" fill="#00EEFF">
+       <textPath href="#orbital-path-inner" startOffset="100%">
+         &gt;&gt; HASH COLLISION DETECTED &lt;&lt; &gt;&gt; ROOT ACCESS GRANTED &lt;&lt; &gt;&gt; ZERO DAY EXPLOIT EXECUTED &lt;&lt; &gt;&gt; HASH COLLISION DETECTED &lt;&lt; &gt;&gt; ROOT ACCESS GRANTED &lt;&lt; &gt;&gt; ZERO DAY EXPLOIT EXECUTED &lt;&lt;
+         <animate attributeName="startOffset" from="100%" to="0%" dur="35s" repeatCount="indefinite" />
+       </textPath>
+     </text>
+  </g>
+
+  <!-- Massive Central Energy Trophy -->
+  <g filter="url(#mega-glow)">
+     <!-- Anti-Gravity Hover Effect for entire trophy -->
+     <animateTransform attributeName="transform" type="translate" values="0,20; 0,-20; 0,20" dur="5s" repeatCount="indefinite" />
+     
+     <!-- Majestic Base Pedestal -->
+     <g transform="translate(512, 820)">
+        <polygon points="-280,60 280,60 350,140 -350,140" fill="#030814" stroke="url(#cyber-gold)" stroke-width="8" />
+        <polygon points="-200,-20 200,-20 280,60 -280,60" fill="url(#neon-pink)" opacity="0.2" stroke="url(#cyber-gold)" stroke-width="4" />
+        <!-- Glowing accent lines on pedestal -->
+        <line x1="-200" y1="-20" x2="-280" y2="60" stroke="#00EEFF" stroke-width="6"/>
+        <line x1="200" y1="-20" x2="280" y2="60" stroke="#00EEFF" stroke-width="6"/>
+        <!-- Pulsing Energy Core Base -->
+        <polygon points="-100,-20 100,-20 140,20 -140,20" fill="url(#neon-cyan)" />
+        <rect x="-140" y="70" width="280" height="30" rx="4" fill="#00EEFF" opacity="0.3" />
+        <text x="0" y="93" font-family="monospace" font-size="28" font-weight="900" fill="#FFF" text-anchor="middle" letter-spacing="8">VICTORY</text>
+     </g>
+
+     <!-- The Crystal Tech Chalice Neck -->
+     <polygon points="462,650 562,650 632,500 392,500" fill="url(#cyber-gold)" />
+     <polygon points="482,650 542,650 592,500 432,500" fill="#020813" />
+     <line x1="512" y1="650" x2="512" y2="500" stroke="#00EEFF" stroke-width="8" stroke-dasharray="20 10">
+        <animate attributeName="stroke-dashoffset" values="0; 60" dur="2s" repeatCount="indefinite" />
+     </line>
+
+     <!-- The Supreme Energy Bowl -->
+     <path d="M 220 250 L 804 250 L 680 500 L 344 500 Z" fill="rgba(3, 8, 20, 0.75)" stroke="url(#cyber-gold)" stroke-width="16" stroke-linejoin="round" />
+     <path d="M 260 270 L 764 270 L 650 470 L 374 470 Z" fill="none" stroke="url(#neon-pink)" stroke-width="6" stroke-linejoin="round" />
+     <path d="M 344 500 L 680 500 L 512 650 Z" fill="url(#cyber-gold)" opacity="0.8" />
+     
+     <!-- Energy Beam Shooting Up -->
+     <polygon points="482,300 542,300 582,0 442,0" fill="url(#neon-cyan)" opacity="0.7">
+        <animate attributeName="opacity" values="0.4; 0.9; 0.4" dur="1.5s" repeatCount="indefinite"/>
+     </polygon>
+     
+     <!-- Sharp Energy Handles -->
+     <path d="M 220 250 L 100 250 L 180 400 L 320 400" fill="none" stroke="#00EEFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="40 10"/>
+     <path d="M 804 250 L 924 250 L 844 400 L 704 400" fill="none" stroke="#00EEFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="40 10"/>
+     
+     <!-- Glowing Cryptographic Core / Quantum Star -->
+     <g transform="translate(512, 320)" filter="url(#core-glow)">
+        <!-- Outer spinning hex core -->
+        <polygon points="0,-120 104,-60 104,60 0,120 -104,60 -104,-60" fill="none" stroke="url(#cyber-gold)" stroke-width="12">
+           <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="8s" repeatCount="indefinite"/>
+        </polygon>
+        <!-- Inner counter-spinning triangle 1 -->
+        <polygon points="0,-100 86.6,50 -86.6,50" fill="url(#cyber-gold)" opacity="0.9">
+           <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="4s" repeatCount="indefinite"/>
+        </polygon>
+        <!-- Inner counter-spinning triangle 2 -->
+        <polygon points="0,100 86.6,-50 -86.6,-50" fill="url(#neon-pink)" opacity="0.8">
+           <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="4s" repeatCount="indefinite"/>
+        </polygon>
+        
+        <!-- Intense white hot center singularity -->
+        <circle cx="0" cy="0" r="30" fill="#FFFFFF" filter="url(#mega-glow)">
+           <animate attributeName="r" values="25; 45; 25" dur="1.5s" repeatCount="indefinite" />
+        </circle>
+
+        <!-- Expanding pulse rings from the core -->
+        <circle cx="0" cy="0" r="10" fill="none" stroke="#00EEFF" stroke-width="10">
+           <animate attributeName="r" values="10; 250" dur="2s" repeatCount="indefinite" />
+           <animate attributeName="opacity" values="1; 0" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <circle cx="0" cy="0" r="10" fill="none" stroke="url(#cyber-gold)" stroke-width="8">
+           <animate attributeName="r" values="10; 250" dur="2s" begin="1s" repeatCount="indefinite" />
+           <animate attributeName="opacity" values="1; 0" dur="2s" begin="1s" repeatCount="indefinite" />
+        </circle>
+     </g>
+     
+     <rect x="362" y="550" width="300" height="60" rx="10" fill="#030814" stroke="url(#cyber-gold)" stroke-width="4" />
+     <text x="512" y="590" font-family="'Courier New', monospace" font-size="30" font-weight="900" fill="url(#cyber-gold)" text-anchor="middle" letter-spacing="4">UNLOCKED</text>
+  </g>
+
+  <!-- Supernova Exploding Gold Particles -->
+  <g fill="url(#cyber-gold)" filter="url(#mega-glow)">
+    <circle cx="300" cy="200" r="10"><animate attributeName="cy" values="200; 50" dur="3s" repeatCount="indefinite" /><animate attributeName="opacity" values="1; 0" dur="3s" repeatCount="indefinite" /><animate attributeName="cx" values="300; 250" dur="3s" repeatCount="indefinite" /></circle>
+    <circle cx="724" cy="200" r="12"><animate attributeName="cy" values="200; 50" dur="2.5s" repeatCount="indefinite" /><animate attributeName="opacity" values="1; 0" dur="2.5s" repeatCount="indefinite" /><animate attributeName="cx" values="724; 774" dur="2.5s" repeatCount="indefinite" /></circle>
+    <circle cx="400" cy="400" r="8"><animate attributeName="cy" values="400; 200" dur="4s" repeatCount="indefinite" /><animate attributeName="opacity" values="1; 0" dur="4s" repeatCount="indefinite" /><animate attributeName="cx" values="400; 350" dur="4s" repeatCount="indefinite" /></circle>
+    <circle cx="624" cy="400" r="14"><animate attributeName="cy" values="400; 150" dur="3.5s" repeatCount="indefinite" /><animate attributeName="opacity" values="1; 0" dur="3.5s" repeatCount="indefinite" /><animate attributeName="cx" values="624; 680" dur="3.5s" repeatCount="indefinite" /></circle>
+    <circle cx="512" cy="150" r="16"><animate attributeName="cy" values="150; -50" dur="2s" repeatCount="indefinite" /><animate attributeName="opacity" values="1; 0" dur="2s" repeatCount="indefinite" /></circle>
+  </g>
+</svg>

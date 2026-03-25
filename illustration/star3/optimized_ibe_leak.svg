@@ -1,0 +1,154 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="ibe-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#050505"/>
+            <stop offset="50%" stop-color="#120404"/>
+            <stop offset="100%" stop-color="#240707"/>
+        </linearGradient>
+
+        <filter id="ibe-glow-red" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        <filter id="ibe-glow-gold" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+
+        <!-- Background Hex/Grid Pattern -->
+        <pattern id="ibe-hex" width="30" height="51.96" patternUnits="userSpaceOnUse">
+            <path d="M15 0 L30 8.66 L30 25.98 L15 34.64 L0 25.98 L0 8.66 Z" fill="none" stroke="#ef4444" stroke-width="0.5" stroke-opacity="0.15"/>
+            <path d="M15 51.96 L30 43.3 L30 25.98 L15 34.64 L0 25.98 L0 43.3 Z" fill="none" stroke="#ef4444" stroke-width="0.5" stroke-opacity="0.15"/>
+        </pattern>
+
+        <!-- Identity Node Definition -->
+        <g id="identity-node">
+            <!-- Sleek pill shape -->
+            <rect x="-50" y="-12" width="100" height="24" rx="12" fill="#0f172a" stroke="#3b82f6" stroke-width="1.5">
+                <animate attributeName="stroke" values="#3b82f6;#ef4444;#3b82f6" dur="1.5s" repeatCount="indefinite" begin="0s"/>
+            </rect>
+            <!-- User avatar icon (Left aligned) -->
+            <circle cx="-32" cy="-3" r="4" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+            <path d="M-38,7 Q-32,2 -26,7" fill="none" stroke="#60a5fa" stroke-width="1.5"/>
+        </g>
+    </defs>
+
+    <rect width="100%" height="100%" fill="url(#ibe-bg)"/>
+    <rect width="100%" height="100%" fill="url(#ibe-hex)">
+        <animate attributeName="opacity" values="0.4;1;0.4" dur="4s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Top Section: The Compromised PKG -->
+    <g transform="translate(200, 80)">
+        <!-- PKG Server Box -->
+        <rect x="-80" y="-40" width="160" height="80" rx="8" fill="#1e1b4b" stroke="#eab308" stroke-width="2" filter="url(#ibe-glow-gold)"/>
+        <text x="0" y="-22" fill="#fde047" font-family="'Courier New', monospace" font-size="12" font-weight="bold" text-anchor="middle" letter-spacing="1">PKG Authority</text>
+        <line x1="-80" y1="-14" x2="80" y2="-14" stroke="#eab308" stroke-width="0.5" opacity="0.6"/>
+        
+        <!-- The Master Secret Key (MSK) -->
+        <rect x="-60" y="-4" width="120" height="28" rx="4" fill="#422006" stroke="#fbbf24" stroke-width="1.5"/>
+        <text x="0" y="14" fill="#fcd34d" font-family="'Courier New', monospace" font-size="11" font-weight="bold" text-anchor="middle" filter="url(#ibe-glow-gold)">
+            [ MSK ] ROOT
+            <animate attributeName="opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite"/>
+        </text>
+
+        <!-- Red Breach Alert Overlay -->
+        <path d="M -90 -50 L -60 -50 L -40 -30" fill="none" stroke="#ef4444" stroke-width="2" filter="url(#ibe-glow-red)">
+             <animate attributeName="stroke-dasharray" values="0 50; 50 0" dur="1s" repeatCount="indefinite"/>
+        </path>
+    </g>
+
+    <!-- Middle Section: The Leak & Attacker Derivation -->
+    <g transform="translate(200, 240)">
+        <!-- Exfiltration Data Flow from Top to Middle-->
+        <path d="M 0 -120 L 0 -50" fill="none" stroke="#ef4444" stroke-width="3" stroke-dasharray="8 6" filter="url(#ibe-glow-red)">
+            <animate attributeName="stroke-dashoffset" from="28" to="0" dur="0.4s" repeatCount="indefinite" calcMode="linear"/>
+        </path>
+        
+        <!-- Broken Lock Icon on the data line -->
+        <g transform="translate(0, -85)">
+            <circle cx="0" cy="0" r="12" fill="#050505" stroke="#ef4444" stroke-width="1.5"/>
+            <path d="M -4 -2 L -4 4 L 4 4 L 4 -2 Z M -2 -2 L -2 -6 Q 0 -9 2 -6 L 5 -8" fill="none" stroke="#ef4444" stroke-width="1.5"/>
+            <line x1="-10" y1="-5" x2="10" y2="5" stroke="#ef4444" stroke-width="1.5"/>
+        </g>
+        
+        <!-- Hacker Terminal / Extraction -->
+        <rect x="-140" y="-50" width="280" height="96" rx="6" fill="#000000" stroke="#ef4444" stroke-width="2" filter="url(#ibe-glow-red)"/>
+        
+        <!-- Terminal Title Bar -->
+        <path d="M -140 -30 L -140 -44 Q -140 -50 -134 -50 L 134 -50 Q 140 -50 140 -44 L 140 -30 Z" fill="#450a0a"/>
+        <text x="-130" y="-37" fill="#fca5a5" font-family="'Courier New', monospace" font-size="10" font-weight="bold">ATTACKER TERMINAL v2.1</text>
+        <circle cx="120" cy="-40" r="3" fill="#ef4444"/>
+        <circle cx="130" cy="-40" r="3" fill="#ef4444"/>
+        
+        <!-- Terminal Logs -->
+        <text x="-125" y="-10" fill="#cbd5e1" font-family="'Courier New', monospace" font-size="11">> Extract.MSK()</text>
+        <text x="-125" y="8" fill="#4ade80" font-family="'Courier New', monospace" font-size="11">> SUCCESS: MSK Compromised</text>
+        <text x="-125" y="28" fill="#f87171" font-family="'Courier New', monospace" font-size="11" font-weight="bold">> Deriving target sk_ID...</text>
+        
+        <!-- Derivation Core Indicator (Centered correctly) -->
+        <g transform="translate(0, 70)">
+            <rect x="-10" y="-10" width="20" height="20" fill="none" stroke="#fca5a5" stroke-width="2">
+                 <animateTransform attributeName="transform" type="rotate" values="0;360" dur="2s" repeatCount="indefinite"/>
+            </rect>
+            <rect x="-6" y="-6" width="12" height="12" fill="#ef4444">
+                 <animateTransform attributeName="transform" type="rotate" values="360;0" dur="2.5s" repeatCount="indefinite"/>
+            </rect>
+        </g>
+    </g>
+
+    <!-- Bottom Section: The Target Identities being comprised -->
+    <g transform="translate(200, 420)">
+        <!-- Attack paths splitting to multiple identities (from y=-110 to y=-12) -->
+        <path d="M 0 -110 L 0 -30 L -120 -30 L -120 -12" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 2" filter="url(#ibe-glow-red)">
+            <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.4s" repeatCount="indefinite" calcMode="linear"/>
+        </path>
+        <path d="M 0 -110 L 0 -12" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 2" filter="url(#ibe-glow-red)">
+            <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.4s" repeatCount="indefinite" calcMode="linear"/>
+        </path>
+        <path d="M 0 -110 L 0 -30 L 120 -30 L 120 -12" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 2" filter="url(#ibe-glow-red)">
+            <animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.4s" repeatCount="indefinite" calcMode="linear"/>
+        </path>
+
+        <!-- Identity 1 -->
+        <g transform="translate(-120, 0)">
+            <use href="#identity-node" x="0" y="0"/>
+            <text x="6" y="3" fill="#93c5fd" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">ceo@corp</text>
+            <text x="0" y="24" fill="#ef4444" font-family="'Courier New', monospace" font-size="9" font-weight="bold" text-anchor="middle" filter="url(#ibe-glow-red)">
+                sk_id DERIVED
+                <animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite"/>
+            </text>
+        </g>
+
+        <!-- Identity 2 -->
+        <g transform="translate(0, 0)">
+            <use href="#identity-node" x="0" y="0"/>
+            <text x="6" y="3" fill="#93c5fd" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">admin_root</text>
+            <text x="0" y="24" fill="#ef4444" font-family="'Courier New', monospace" font-size="9" font-weight="bold" text-anchor="middle" filter="url(#ibe-glow-red)">
+                sk_id DERIVED
+                <animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite" begin="0.4s"/>
+            </text>
+        </g>
+
+        <!-- Identity 3 -->
+        <g transform="translate(120, 0)">
+            <use href="#identity-node" x="0" y="0"/>
+            <text x="6" y="3" fill="#93c5fd" font-family="'Courier New', monospace" font-size="10" text-anchor="middle">HR_database</text>
+            <text x="0" y="24" fill="#ef4444" font-family="'Courier New', monospace" font-size="9" font-weight="bold" text-anchor="middle" filter="url(#ibe-glow-red)">
+                sk_id DERIVED
+                <animate attributeName="opacity" values="0;1;0" dur="1.2s" repeatCount="indefinite" begin="0.8s"/>
+            </text>
+        </g>
+    </g>
+
+    <!-- Footer Banner -->
+    <g transform="translate(200, 540)">
+        <polygon points="-160,-16 160,-16 170,16 -170,16" fill="#1f070e" stroke="#ef4444" stroke-width="1.5"/>
+        <text x="0" y="5" text-anchor="middle" fill="#fca5a5" font-family="'Times New Roman', serif" font-size="15" font-weight="bold" letter-spacing="2" filter="url(#ibe-glow-red)">
+            IBE：主密钥泄露 (全网沦陷)
+        </text>
+        <rect x="-165" y="-12" width="330" height="24" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="10 30 50 15 5 200">
+             <animate attributeName="stroke-dashoffset" from="300" to="0" dur="2.5s" repeatCount="indefinite" calcMode="linear"/>
+        </rect>
+    </g>
+</svg>

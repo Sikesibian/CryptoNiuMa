@@ -1,0 +1,93 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <radialGradient id="dcc-bg" cx="50%" cy="50%" r="70%">
+            <stop offset="0%" stop-color="#3e0729"/>
+            <stop offset="60%" stop-color="#14020d"/>
+            <stop offset="100%" stop-color="#050003"/>
+        </radialGradient>
+        <linearGradient id="dcc-rose" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fda4af"/>
+            <stop offset="50%" stop-color="#e11d48"/>
+            <stop offset="100%" stop-color="#881337"/>
+        </linearGradient>
+        <linearGradient id="dcc-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#fef08a"/>
+            <stop offset="50%" stop-color="#eab308"/>
+            <stop offset="100%" stop-color="#713f12"/>
+        </linearGradient>
+        <filter id="dcc-glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="6" result="blur"/>
+            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+        </filter>
+        <pattern id="dcc-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#be123c" stroke-width="0.5" opacity="0.15"/>
+            <circle cx="0" cy="0" r="1.5" fill="#f43f5e" opacity="0.3"/>
+        </pattern>
+    </defs>
+    <rect width="400" height="600" fill="url(#dcc-bg)"/>
+    <rect width="400" height="600" fill="url(#dcc-grid)"/>
+    
+    <!-- Complex Geometric Background Matrix -->
+    <g stroke="url(#dcc-rose)" stroke-width="0.5" fill="none" opacity="0.2">
+        <path d="M-50 100 L450 300 M-50 500 L450 300 M200 -50 L200 650"/>
+        <path d="M50 150 L350 450 M50 450 L350 150" stroke-dasharray="2,5"/>
+        <circle cx="200" cy="300" r="180" stroke-dasharray="1,4"/>
+        <circle cx="200" cy="300" r="160" stroke-dasharray="4,8"/>
+        <circle cx="200" cy="300" r="140"/>
+        <circle cx="200" cy="300" r="100"/>
+    </g>
+
+    <!-- Revolving Data Nodes -->
+    <g transform="translate(200, 300)">
+        <g>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="40s" repeatCount="indefinite" />
+            <circle cx="0" cy="-160" r="4" fill="#fda4af" filter="url(#dcc-glow)"/>
+            <path d="M0 -160 L0 -140" stroke="#fda4af" stroke-width="1.5"/>
+            <circle cx="138" cy="80" r="4" fill="#fda4af" filter="url(#dcc-glow)"/>
+            <circle cx="-138" cy="80" r="4" fill="#fda4af" filter="url(#dcc-glow)"/>
+        </g>
+        <g>
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="30s" repeatCount="indefinite" />
+            <circle cx="100" cy="0" r="3" fill="#fef08a"/>
+            <circle cx="-100" cy="0" r="3" fill="#fef08a"/>
+            <circle cx="0" cy="100" r="3" fill="#fef08a"/>
+            <circle cx="0" cy="-100" r="3" fill="#fef08a"/>
+        </g>
+    </g>
+
+    <!-- Core Emblem -->
+    <g transform="translate(200, 300)" filter="url(#dcc-glow)">
+        <!-- Outer Star -->
+        <path d="M0 -120 L35 -40 L114 -37 L58 18 L71 97 L0 60 L-71 97 L-58 18 L-114 -37 L-35 -40 Z" fill="none" stroke="url(#dcc-rose)" stroke-width="1">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="45s" repeatCount="indefinite" />
+        </path>
+        <path d="M0 -100 L25 -30 L95 -27 L45 20 L55 85 L0 50 L-55 85 L-45 20 L-95 -27 L-25 -30 Z" fill="none" stroke="url(#dcc-gold)" stroke-width="0.5" opacity="0.5">
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="35s" repeatCount="indefinite" />
+        </path>
+        <!-- Hexagon Layer -->
+        <path d="M0 -80 L69 -40 L69 40 L0 80 L-69 40 L-69 -40 Z" fill="none" stroke="url(#dcc-rose)" stroke-width="2.5">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="-360" dur="25s" repeatCount="indefinite" />
+        </path>
+        <!-- Inner Polygon -->
+        <path d="M0 -60 L52 -30 L52 30 L0 60 L-52 30 L-52 -30 Z" fill="url(#dcc-rose)" opacity="0.9">
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="15s" repeatCount="indefinite" />
+        </path>
+        <!-- Center Shield -->
+        <circle cx="0" cy="0" r="45" fill="#2c041c" stroke="#fda4af" stroke-width="1"/>
+        <circle cx="0" cy="0" r="38" fill="none" stroke="#be123c" stroke-dasharray="3,3">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite"/>
+        </circle>
+        
+        <text x="0" y="8" text-anchor="middle" fill="#ffe4e6" font-family="'Times New Roman', serif" font-size="28" font-weight="900" letter-spacing="3">DCC</text>
+    </g>
+
+    <!-- Decorative Corner Elements -->
+    <path d="M 20 20 L 60 20 L 60 25 L 25 25 L 25 60 L 20 60 Z" fill="#fda4af" opacity="0.6"/>
+    <path d="M 380 20 L 340 20 L 340 25 L 375 25 L 375 60 L 380 60 Z" fill="#fda4af" opacity="0.6"/>
+    <path d="M 20 580 L 60 580 L 60 575 L 25 575 L 25 540 L 20 540 Z" fill="#fda4af" opacity="0.6"/>
+    <path d="M 380 580 L 340 580 L 340 575 L 375 575 L 375 540 L 380 540 Z" fill="#fda4af" opacity="0.6"/>
+
+    <!-- Titles -->
+    <text x="200" y="500" text-anchor="middle" fill="#ffe4e6" font-family="'Times New Roman', serif" font-size="18" font-weight="bold" letter-spacing="2" filter="url(#dcc-glow)">Designs, Codes</text>
+    <text x="200" y="525" text-anchor="middle" fill="#fda4af" font-family="'Times New Roman', serif" font-size="16" letter-spacing="4">&amp; Cryptography</text>
+</svg>

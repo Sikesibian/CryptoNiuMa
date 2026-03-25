@@ -1,0 +1,77 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="cans-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#111111"/>
+            <stop offset="100%" stop-color="#1a1a2e"/>
+        </linearGradient>
+        <linearGradient id="cans-metallic" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#e2e2e2"/>
+            <stop offset="50%" stop-color="#8a92a5"/>
+            <stop offset="100%" stop-color="#ffffff"/>
+        </linearGradient>
+        <filter id="gold-glow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feComponentTransfer in="blur" result="glow">
+                <feFuncA type="linear" slope="2"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode in="glow"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <pattern id="honeycomb" width="60" height="103.923" patternUnits="userSpaceOnUse" patternTransform="scale(0.5)">
+            <path d="M30 0 L60 17.32 L60 51.96 L30 69.28 L0 51.96 L0 17.32 Z" fill="none" stroke="rgba(255, 215, 0, 0.1)" stroke-width="1.5"/>
+            <path d="M30 103.92 L60 86.6 L60 51.96 L30 69.28 L0 51.96 L0 86.6 Z" fill="none" stroke="rgba(255, 215, 0, 0.1)" stroke-width="1.5"/>
+        </pattern>
+    </defs>
+    
+    <rect width="400" height="600" fill="url(#cans-bg)"/>
+    <rect width="400" height="600" fill="url(#honeycomb)"/>
+
+    <!-- High-tech Rings -->
+    <g transform="translate(200, 250)">
+        <circle cx="0" cy="0" r="110" fill="none" stroke="#2a2a4a" stroke-width="15"/>
+        <circle cx="0" cy="0" r="110" fill="none" stroke="url(#cans-metallic)" stroke-width="4" stroke-dasharray="50 150">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="6s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Tri-forces or Security Vectors -->
+        <polygon points="0,-80 70,40 -70,40" fill="rgba(255,215,0,0.05)" stroke="#ffd700" stroke-width="2" filter="url(#gold-glow)"/>
+        
+        <circle cx="0" cy="0" r="40" fill="#1a1a2e" stroke="url(#cans-metallic)" stroke-width="3"/>
+        <circle cx="0" cy="0" r="30" fill="none" stroke="#ffd700" stroke-width="1" stroke-dasharray="4 4">
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="10s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Center core -->
+        <circle cx="0" cy="0" r="15" fill="#ffd700" filter="url(#gold-glow)">
+            <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- Radar line -->
+        <line x1="0" y1="0" x2="0" y2="-110" stroke="#ffd700" stroke-width="2" opacity="0.6">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="4s" repeatCount="indefinite"/>
+        </line>
+    </g>
+
+    <!-- Side Tech Accents -->
+    <g fill="none" stroke="#8a92a5" stroke-width="2">
+        <path d="M20 150 L35 150 L35 450 L20 450" opacity="0.4"/>
+        <path d="M380 150 L365 150 L365 450 L380 450" opacity="0.4"/>
+    </g>
+
+    <!-- Title & Typography -->
+    <rect x="100" y="440" width="200" height="40" fill="rgba(26,26,46,0.8)" stroke="#ffd700" stroke-width="1"/>
+    <text x="200" y="468" text-anchor="middle" fill="#ffffff" font-family="'Oswald', sans-serif" font-size="28" font-weight="bold" letter-spacing="4">CANS</text>
+    
+    <text x="200" y="510" text-anchor="middle" fill="#8a92a5" font-family="monospace" font-size="12" letter-spacing="2">CRYPTOLOGY &amp;</text>
+    <text x="200" y="530" text-anchor="middle" fill="#ffd700" font-family="monospace" font-size="12" letter-spacing="1.5">NETWORK SECURITY</text>
+    
+    <!-- Small Data Streams -->
+    <g fill="#ffd700" opacity="0.8">
+        <rect x="80" y="560" width="10" height="2"/>
+        <rect x="95" y="560" width="30" height="2"/>
+        <rect x="130" y="560" width="140" height="2" fill="#8a92a5"/>
+        <rect x="275" y="560" width="30" height="2"/>
+        <rect x="310" y="560" width="10" height="2"/>
+    </g>
+</svg>

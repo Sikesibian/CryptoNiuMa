@@ -1,0 +1,80 @@
+<svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ctf-screen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#050806" />
+      <stop offset="50%" stop-color="#0B130E" />
+      <stop offset="100%" stop-color="#121D16" />
+    </linearGradient>
+    <filter id="ctf-glitch-neon">
+      <feDropShadow dx="0" dy="0" stdDeviation="15" flood-color="#00FF41" flood-opacity="0.8"/>
+    </filter>
+    <linearGradient id="ctf-flag" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF0055" />
+      <stop offset="50%" stop-color="#FF5E00" />
+      <stop offset="100%" stop-color="#FFD700" />
+    </linearGradient>
+    <filter id="ctf-flag-glow">
+      <feDropShadow dx="0" dy="0" stdDeviation="20" flood-color="#FF5E00" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <g style="transform-origin: 512px 512px;">
+    <animateTransform attributeName="transform" type="scale" values="1; 1.02; 1" dur="2s" repeatCount="indefinite" />
+    
+    <!-- Mega Terminal Body -->
+    <rect x="62" y="152" width="900" height="720" rx="20" fill="url(#ctf-screen)" stroke="#00FF41" stroke-width="6" filter="url(#ctf-glitch-neon)" />
+    
+    <!-- Mac-style Glass Header -->
+    <rect x="62" y="152" width="900" height="80" rx="20" fill="#1C2822" />
+    <rect x="62" y="192" width="900" height="40" fill="#1C2822" /> <!-- Flatten bottom curve -->
+    
+    <!-- Terminal Buttons -->
+    <circle cx="120" cy="192" r="16" fill="#FF5F56" />
+    <circle cx="180" cy="192" r="16" fill="#FFBD2E" />
+    <circle cx="240" cy="192" r="16" fill="#27C93F" />
+    <text x="512" y="200" font-family="'Courier New', monospace" font-size="24" fill="#00FF41" text-anchor="middle" opacity="0.6">root@pwn:~ / flag_hunter</text>
+    
+    <!-- Matrix Digital Rain Layer -->
+    <g font-family="'Courier New', monospace" font-size="28" fill="#00FF41" font-weight="bold" opacity="0.2">
+      <text x="150" y="300"><animate attributeName="y" values="300; 800" dur="2s" repeatCount="indefinite"/>01001010</text>
+      <text x="350" y="250"><animate attributeName="y" values="250; 800" dur="1.5s" repeatCount="indefinite"/>11011000</text>
+      <text x="650" y="400"><animate attributeName="y" values="400; 800" dur="2.5s" repeatCount="indefinite"/>00101111</text>
+      <text x="850" y="320"><animate attributeName="y" values="320; 800" dur="1.8s" repeatCount="indefinite"/>10100010</text>
+    </g>
+    
+    <!-- Exploit Code Execution Text -->
+    <g font-family="'Courier New', Courier, monospace" font-size="28" fill="#00FF41" filter="url(#ctf-glitch-neon)">
+      <text x="120" y="320">> executing payload.sh --target=0xdeadbeef</text>
+      <text x="120" y="380" opacity="0.8">> bypassing ASLR... <tspan fill="#FFD700">SUCCESS</tspan></text>
+      <text x="120" y="440" opacity="0.8">> rewriting RIP... <tspan fill="#FFD700">SUCCESS</tspan></text>
+      <text x="120" y="500">> shell spawned!</text>
+    </g>
+
+    <!-- Flashing Access Granted -->
+    <text x="120" y="620" font-family="'Courier New', monospace" font-size="54" fill="#00FF41" font-weight="900" filter="url(#ctf-glitch-neon)">
+      > ACCESS GRANTED_
+      <animate attributeName="opacity" values="1; 0; 1; 1; 0.5; 1" dur="0.8s" repeatCount="indefinite" />
+    </text>
+
+    <!-- Epic Captured 3D Flag -->
+    <g transform="translate(680, 500) scale(1.8)" filter="url(#ctf-flag-glow)">
+      <!-- Base pedestal for flag -->
+      <ellipse cx="60" cy="180" rx="80" ry="20" fill="#333" stroke="#00FF41" stroke-width="4" />
+      <ellipse cx="60" cy="170" rx="80" ry="20" fill="#111" />
+      
+      <!-- Flag pole -->
+      <path d="M60 0 L60 170" stroke="#FFFFFF" stroke-width="10" stroke-linecap="round" />
+      <circle cx="60" cy="0" r="8" fill="#FFD700" />
+      
+      <!-- High-fidelity Waving Flag -->
+      <path d="M60 10 C 120 -20, 120 40, 180 10 L 180 90 C 120 120, 120 60, 60 90 Z" fill="url(#ctf-flag)">
+        <animate attributeName="d" values="
+          M60 10 C 120 -20, 120 40, 180 10 L 180 90 C 120 120, 120 60, 60 90 Z; 
+          M60 10 C 120 40, 120 -20, 180 10 L 180 90 C 120 60, 120 120, 60 90 Z; 
+          M60 10 C 120 -20, 120 40, 180 10 L 180 90 C 120 120, 120 60, 60 90 Z
+        " dur="1s" repeatCount="indefinite" />
+      </path>
+    </g>
+
+  </g>
+</svg>

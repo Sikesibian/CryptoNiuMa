@@ -1,0 +1,126 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg" style="background-color: #010308; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; overflow: hidden;">
+    <defs>
+        <linearGradient id="sidh-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#050714"/>
+            <stop offset="50%" stop-color="#120a22"/>
+            <stop offset="100%" stop-color="#000000"/>
+        </linearGradient>
+        
+        <filter id="glow-blue"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="glow-green"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="glow-purple"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="glow-red"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        
+        <pattern id="grid-sidh" width="30" height="30" patternUnits="userSpaceOnUse">
+            <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e1b4b" stroke-width="0.8"/>
+            <circle cx="0" cy="0" r="1" fill="#312e81"/>
+        </pattern>
+
+        <marker id="arrow-purp" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#c084fc"/></marker>
+        <marker id="arrow-red" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#ef4444"/></marker>
+        <marker id="arrow-down" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#f472b6"/></marker>
+
+        <style>
+            @keyframes flow-dash { from { stroke-dashoffset: 40; } to { stroke-dashoffset: 0; } }
+            @keyframes float-node { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+            @keyframes pulse-ring { 0% { transform: scale(0.9); opacity: 0.8; } 50% { transform: scale(1.05); opacity: 0.3; } 100% { transform: scale(0.9); opacity: 0.8; } }
+            @keyframes pulse-core { 0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 5px #ef4444); } 50% { opacity: 1; filter: drop-shadow(0 0 15px #ef4444); } }
+            
+            .data-flow { fill: none; stroke: rgba(192, 132, 252, 0.6); stroke-width: 2; stroke-dasharray: 6 4; animation: flow-dash 1.5s linear infinite; }
+            .data-flow-red { fill: none; stroke: rgba(239, 68, 68, 0.8); stroke-width: 2.5; stroke-dasharray: 6 4; animation: flow-dash 1s linear infinite; }
+            .float { animation: float-node 4s ease-in-out infinite; }
+            .pulse { animation: pulse-ring 3s ease-in-out infinite; transform-origin: center; }
+            .math-text { font-family: 'Courier New', monospace; font-size: 10px; }
+            .bold-math { font-family: 'Courier New', monospace; font-size: 11px; font-weight: bold; }
+            .alert-text { font-family: 'Impact', sans-serif; letter-spacing: 2px; }
+        </style>
+
+        <g id="torus-g1">
+            <ellipse cx="0" cy="0" rx="35" ry="18" fill="rgba(15, 23, 42, 0.8)" stroke="currentColor" stroke-width="2"/>
+            <path d="M -16,-2 Q 0,10 16,-2" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M -13,0 Q 0,-8 13,0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.6"/>
+        </g>
+
+        <g id="torus-g2">
+            <ellipse cx="0" cy="0" rx="65" ry="22" fill="rgba(46, 16, 101, 0.6)" stroke="currentColor" stroke-width="2"/>
+            <path d="M -40,-2 Q -25,10 -10,-2" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M -36,0 Q -25,-8 -14,0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.6"/>
+            <path d="M 10,-2 Q 25,10 40,-2" fill="none" stroke="currentColor" stroke-width="2"/>
+            <path d="M 14,0 Q 25,-8 36,0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" opacity="0.6"/>
+        </g>
+    </defs>
+
+    <rect width="400" height="600" fill="url(#sidh-bg)"/>
+    <rect width="400" height="600" fill="url(#grid-sidh)"/>
+
+    <g transform="translate(200, 45)">
+        <rect x="-160" y="-20" width="320" height="45" rx="6" fill="rgba(147, 51, 234, 0.1)" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="4 2"/>
+        <text y="0" class="bold-math" fill="#e9d5ff" text-anchor="middle">Castryck-Decru Attack / Kani's Theorem</text>
+        <text y="15" class="math-text" fill="#c084fc" text-anchor="middle">G ⊂ E_A × C  ⇒  (E_A × C)/G ≅ J(H)</text>
+    </g>
+
+    <g transform="translate(100, 130)">
+        <g class="float" style="animation-delay: 0s;">
+            <circle cx="0" cy="0" r="45" class="pulse" fill="none" stroke="#38bdf8" stroke-width="1" opacity="0.5"/>
+            <use href="#torus-g1" style="color: #38bdf8;" filter="url(#glow-blue)"/>
+            <circle cx="-18" cy="-8" r="3" fill="#bef264"/> <circle cx="10" cy="5" r="3" fill="#bef264"/>  <text y="-25" class="bold-math" fill="#7dd3fc" text-anchor="middle">Target E_A</text>
+            <text y="30" class="math-text" fill="#bae6fd" text-anchor="middle">Public Key</text>
+        </g>
+    </g>
+
+    <g transform="translate(300, 130)">
+        <g class="float" style="animation-delay: -2s;">
+            <circle cx="0" cy="0" r="45" class="pulse" fill="none" stroke="#34d399" stroke-width="1" opacity="0.5"/>
+            <use href="#torus-g1" style="color: #34d399;" filter="url(#glow-green)"/>
+            <text y="-25" class="bold-math" fill="#6ee7b7" text-anchor="middle">Auxiliary C</text>
+            <text y="30" class="math-text" fill="#a7f3d0" text-anchor="middle">Known Curve</text>
+        </g>
+    </g>
+
+    <path d="M 120,175 C 150,200 170,210 180,230" class="data-flow" marker-end="url(#arrow-purp)"/>
+    <path d="M 280,175 C 250,200 230,210 220,230" class="data-flow" marker-end="url(#arrow-purp)"/>
+    <text x="200" y="210" class="bold-math" fill="#d8b4fe" text-anchor="middle">Gluing Isogeny ϕ: E_A × C → J(H_0)</text>
+
+    <g transform="translate(200, 265)">
+        <g class="float" style="animation-delay: -1s;">
+            <use href="#torus-g2" style="color: #c084fc;" filter="url(#glow-purple)"/>
+            <text y="-35" class="bold-math" fill="#e9d5ff" text-anchor="middle">Genus-2 Jacobian J(H_0)</text>
+        </g>
+    </g>
+
+    <path d="M 200,290 L 200,360" fill="none" stroke="#f472b6" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrow-down)"/>
+    <rect x="135" y="315" width="130" height="20" rx="4" fill="#4a044e" stroke="#c026d3" stroke-width="1"/>
+    <text x="200" y="328" class="math-text" fill="#fbcfe8" text-anchor="middle">(2,2)-Richelot Walk</text>
+
+    <g transform="translate(200, 395)">
+        <g class="float" style="animation-delay: -3s;">
+            <use href="#torus-g2" style="color: #f472b6;" filter="url(#glow-purple)"/>
+            <path d="M 0,-30 L 0,30" stroke="#ef4444" stroke-width="2" stroke-dasharray="5 3" filter="url(#glow-red)"/> <text y="-35" class="bold-math" fill="#fbcfe8" text-anchor="middle">Jacobian J(H_k) Splitting!</text>
+        </g>
+    </g>
+
+    <path d="M 170,420 C 150,435 140,450 125,470" class="data-flow-red" marker-end="url(#arrow-red)"/>
+    <path d="M 230,420 C 250,435 260,450 275,470" class="data-flow" marker-end="url(#arrow-purp)"/>
+    <text x="200" y="460" class="bold-math" fill="#fca5a5" text-anchor="middle">J(H_k) ≅ E_0 × C'</text>
+
+    <g style="animation: pulse-core 2s infinite;" transform="translate(100, 505)">
+        <circle cx="0" cy="0" r="45" fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="4 4"/>
+        <use href="#torus-g1" style="color: #ef4444;" filter="url(#glow-red)"/>
+        <circle cx="0" cy="0" r="3" fill="#fff" filter="url(#glow-red)"/>
+        <text y="-25" class="bold-math" fill="#fca5a5" text-anchor="middle">Secret E_0 !</text>
+        <text y="30" class="math-text" fill="#fecaca" text-anchor="middle">Start Curve Found</text>
+    </g>
+
+    <g transform="translate(300, 505)">
+        <g class="float" style="animation-delay: -2s;">
+            <use href="#torus-g1" style="color: #94a3b8;" opacity="0.6"/>
+            <text y="-25" class="bold-math" fill="#cbd5e1" text-anchor="middle">Curve C'</text>
+            <text y="30" class="math-text" fill="#94a3b8" text-anchor="middle">(Discarded)</text>
+        </g>
+    </g>
+
+    <g transform="translate(200, 575)">
+        <rect x="-150" y="-18" width="300" height="36" rx="4" fill="#4c0519" stroke="#ef4444" stroke-width="2"/>
+        <text x="0" y="5" class="alert-text" fill="#fca5a5" font-size="16" text-anchor="middle" filter="url(#glow-red)">SIDH COMPLETELY BROKEN!</text>
+    </g>
+</svg>

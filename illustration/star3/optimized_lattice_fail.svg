@@ -1,0 +1,134 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <!-- Deep Void Background -->
+        <linearGradient id="lat-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0b0213"/>
+            <stop offset="100%" stop-color="#19072e"/>
+        </linearGradient>
+
+        <!-- 3D Isometric Lattice Pattern (Distorted) -->
+        <pattern id="lattice-grid" width="40" height="23.09" patternUnits="userSpaceOnUse" patternTransform="scale(1.2)">
+            <path d="M 0 11.54 L 20 0 L 40 11.54 L 20 23.09 Z" fill="none" stroke="rgba(167, 139, 250, 0.15)" stroke-width="0.5"/>
+            <!-- Center lattice dots -->
+            <circle cx="20" cy="11.54" r="1.5" fill="rgba(167, 139, 250, 0.4)"/>
+            <circle cx="0" cy="0" r="1.5" fill="rgba(167, 139, 250, 0.2)"/>
+        </pattern>
+
+        <!-- Fancy Glow Filters -->
+        <filter id="lat-glow-purple" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="5" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+        <filter id="lat-glow-red" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="4" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+        </filter>
+
+        <!-- Dimensional Gradient line -->
+        <linearGradient id="lat-vector-bad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f43f5e"/>
+            <stop offset="100%" stop-color="#881337"/>
+        </linearGradient>
+    </defs>
+
+    <rect width="400" height="600" fill="url(#lat-bg)"/>
+    
+    <!-- Moving/breathing lattice grid to simulate high-dim space -->
+    <rect width="400" height="600" fill="url(#lattice-grid)">
+        <animateTransform attributeName="transform" type="translate" values="0,0; -20,-11.54; 0,0" dur="6s" repeatCount="indefinite" calcMode="ease-in-out"/>
+        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Top Visualization: The Exponential Gap in High Dimensions -->
+    <g transform="translate(200, 120)">
+        
+        <!-- Center reference point (Origin) -->
+        <circle cx="0" cy="50" r="4" fill="#fff" filter="url(#lat-glow-purple)"/>
+        <text x="-15" y="55" fill="#a78bfa" font-family="'Times New Roman', serif" font-size="14" font-style="italic">O</text>
+        
+        <!-- Optimal Target: Shortest Vector λ1 (The inner bound we want) -->
+        <circle cx="0" cy="50" r="30" fill="rgba(167, 139, 250, 0.1)" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="4 4">
+            <animateTransform attributeName="transform" type="rotate" from="0 0 50" to="-360 0 50" dur="10s" repeatCount="indefinite"/>
+        </circle>
+        
+        <!-- The actual optimal small vector vector λ_1 -->
+        <path d="M 0,50 L 25,35" fill="none" stroke="#2dd4bf" stroke-width="2.5" marker-end="url(#arrow-green)"/>
+        <circle cx="25" cy="35" r="3" fill="#2dd4bf"/>
+        <text x="35" y="32" fill="#2dd4bf" font-family="'Times New Roman', serif" font-size="14" font-weight="bold">λ<tspan dy="5" font-size="10">1</tspan></text>
+
+        <!-- Concentric circles stretching outward exponentially -->
+        <circle cx="0" cy="50" r="70" fill="none" stroke="rgba(244, 63, 94, 0.2)" stroke-width="1"/>
+        <circle cx="0" cy="50" r="120" fill="none" stroke="rgba(244, 63, 94, 0.4)" stroke-width="1" stroke-dasharray="8 8">
+            <animate attributeName="stroke-width" values="1;2;1" dur="2s" repeatCount="indefinite"/>
+        </circle>
+
+        <!-- Suboptimal BKZ Vector Found b_1 (Extremely Long) -->
+        <g>
+            <!-- Draw vector line -->
+            <path d="M 0,50 L -90,-80" fill="none" stroke="url(#lat-vector-bad)" stroke-width="3" filter="url(#lat-glow-red)">
+                <!-- Vibration to show instability -->
+                <animate attributeName="d" values="M 0,50 L -90,-80; M 0,50 L -92,-78; M 0,50 L -88,-82; M 0,50 L -90,-80" dur="0.2s" repeatCount="indefinite"/>
+            </path>
+            
+            <circle cx="-90" cy="-80" r="5" fill="#f43f5e" filter="url(#lat-glow-red)"/>
+            
+            <g transform="translate(-105, -95)">
+                <text x="0" y="0" fill="#fca5a5" font-family="'Times New Roman', serif" font-size="18" font-weight="bold">b<tspan dy="6" font-size="12">1</tspan></text>
+                <!-- Approximation Gap indicator -->
+                <text x="0" y="20" fill="#f43f5e" font-family="monospace" font-size="11">Gap: δ<tspan dy="-5" font-size="8">d</tspan></text>
+            </g>
+        </g>
+        
+        <!-- Center Floating Formula (Hermite Factor) -->
+        <g transform="translate(60, -30)" filter="url(#lat-glow-purple)">
+            <rect x="-15" y="-20" width="100" height="35" rx="4" fill="rgba(15, 23, 42, 0.8)" stroke="#a78bfa" stroke-width="1"/>
+            <text x="35" y="2" fill="#c4b5fd" font-family="'Times New Roman', serif" font-size="14" text-anchor="middle">
+                ||<tspan font-weight="bold">b</tspan><tspan dy="4" font-size="10">1</tspan><tspan dy="-4">|| ≫ λ</tspan><tspan dy="4" font-size="10">1</tspan>
+            </text>
+        </g>
+    </g>
+
+    <!-- Terminal Code execution tracking -->
+    <g transform="translate(200, 440)">
+        <rect x="-175" y="-130" width="350" height="200" rx="6" fill="#0d0c14" stroke="#4c1d95" stroke-width="2"/>
+        
+        <!-- Header -->
+        <rect x="-175" y="-130" width="350" height="24" rx="6" fill="#1e1b2e"/>
+        <rect x="-175" y="-115" width="350" height="9" fill="#1e1b2e"/>
+        <circle cx="-160" cy="-118" r="4" fill="#ff5f56"/>
+        <circle cx="-145" cy="-118" r="4" fill="#ffbd2e"/>
+        <circle cx="-130" cy="-118" r="4" fill="#28c840"/>
+        <text x="0" y="-115" fill="#8b5cf6" font-family="'Courier New', monospace" font-size="11" text-anchor="middle">fpylll_bkz.py</text>
+
+        <!-- Log Output -->
+        <g font-family="'Courier New', monospace" font-size="12">
+            <text x="-160" y="-80" fill="#c678dd">import <tspan fill="#d1d5db">fpylll</tspan></text>
+            <text x="-160" y="-60" fill="#d1d5db">B = fpylll.IntegerMatrix(1024, 1024)</text>
+            <text x="-160" y="-40" fill="#d1d5db">fpylll.BKZ.reduction(B, block_size=<tspan fill="#eab308">20</tspan>)</text>
+
+            <line x1="-160" y1="-25" x2="160" y2="-25" stroke="#4c1d95" stroke-width="1" stroke-dasharray="4 2"/>
+
+            <!-- Execution Logs -->
+            <text x="-160" y="-5" fill="#a78bfa">> Running BKZ-20 on dim=1024...</text>
+            
+            <!-- Flashing Alert Box for output Gap -->
+            <g transform="translate(0, 15)">
+                <animate attributeName="opacity" values="1;0.4;1" dur="1s" repeatCount="indefinite"/>
+                <rect x="-165" y="0" width="330" height="40" fill="rgba(244, 63, 94, 0.15)" stroke="#f43f5e" stroke-width="1"/>
+                <text x="-155" y="16" fill="#f43f5e" font-weight="bold">[WARN] Extracted Basis Suboptimal</text>
+                <text x="-155" y="32" fill="#fda4af" font-size="11">||b_1|| / λ_1 ≈ 1.015^1024 >> 4,200,000</text>
+            </g>
+        </g>
+    </g>
+
+    <!-- Footer Banner / Tag -->
+    <g transform="translate(200, 540)">
+        <polygon points="-140,-16 140,-16 150,16 -150,16" fill="#1d0a15" stroke="#f43f5e" stroke-width="1.5"/>
+        <text x="0" y="5" text-anchor="middle" fill="#f43f5e" font-family="'Microsoft YaHei', sans-serif" font-size="15" font-weight="bold" letter-spacing="2" filter="url(#lat-glow-red)">
+            高维格基规约：指数偏移发散
+        </text>
+        <rect x="-145" y="-12" width="290" height="24" fill="none" stroke="#fff" stroke-width="1.5" stroke-dasharray="10 30 50 15 5 200">
+             <animate attributeName="stroke-dashoffset" from="300" to="0" dur="2s" repeatCount="indefinite" calcMode="linear"/>
+        </rect>
+    </g>
+</svg>

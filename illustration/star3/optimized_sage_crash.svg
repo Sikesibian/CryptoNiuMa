@@ -1,0 +1,59 @@
+<svg viewBox="0 0 400 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="sage-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#111827"/>
+            <stop offset="100%" stop-color="#000000"/>
+        </linearGradient>
+        <filter id="terminal-glow">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="4" y2="0" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+            <line x1="0" y1="2" x2="4" y2="2" stroke="rgba(0,0,0,0.1)" stroke-width="1"/>
+        </pattern>
+    </defs>
+    <rect width="400" height="600" fill="url(#sage-bg)"/>
+    <rect width="400" height="600" fill="url(#scanlines)"/>
+
+    <!-- Terminal Window -->
+    <g transform="translate(200, 260)">
+        <rect x="-170" y="-140" width="340" height="280" rx="8" fill="#1e1e1e" stroke="#4b5563" stroke-width="2" filter="url(#terminal-glow)"/>
+        <!-- macOS style window buttons -->
+        <rect x="-170" y="-140" width="340" height="30" rx="8" fill="#374151"/>
+        <rect x="-170" y="-120" width="340" height="10" fill="#374151"/> <!-- hide bottom round corners of top bar -->
+        <circle cx="-150" cy="-125" r="6" fill="#ff5f56"/>
+        <circle cx="-130" cy="-125" r="6" fill="#ffbd2e"/>
+        <circle cx="-110" cy="-125" r="6" fill="#27c93f"/>
+        <text x="0" y="-121" fill="#9ca3af" font-family="'Courier New', Courier, monospace" font-size="12" text-anchor="middle">sage-math.ipy (Terminal)</text>
+
+        <!-- Code Content -->
+        <g font-family="'Courier New', Courier, monospace" font-size="13" transform="translate(0, 0)">
+            <text x="-150" y="-85" fill="#a3e635">sage: <tspan fill="#6cd27a" font-weight="bold">def</tspan> <tspan fill="#eab308">compute_isogeny</tspan>(E, point):</text>
+            <text x="-150" y="-65" fill="#a3e635">....:     <tspan fill="#d1d5db">degree = E.order()</tspan></text>
+            <text x="-150" y="-45" fill="#a3e635">....:     <tspan fill="#c678dd">return</tspan> <tspan fill="#d1d5db">E.isogeny(point, degree)</tspan></text>
+            <text x="-150" y="-20" fill="#a3e635">sage: <tspan fill="#d1d5db">compute_isogeny(E, P)</tspan></text>
+            
+            <!-- Error Traceback -->
+            <text x="-150" y="10" fill="#f87171" font-weight="bold" filter="url(#terminal-glow)">Traceback (most recent call last):</text>
+            <text x="-150" y="30" fill="#fca5a5" filter="url(#terminal-glow)">  File <tspan fill="#93c5fd">"&lt;stdin&gt;"</tspan>, line 1, in &lt;module&gt;</text>
+            <text x="-150" y="50" fill="#fca5a5" filter="url(#terminal-glow)">  File <tspan fill="#93c5fd">"isogeny.pyx"</tspan>, line 1337, in ...</text>
+            <text x="-150" y="75" fill="#ef4444" font-weight="bold" font-size="14" filter="url(#terminal-glow)">MemoryError: Out of memory</text>
+            
+            <!-- System kill -->
+            <text x="-150" y="100" fill="#f43f5e" font-weight="bold">[1]    1024 killed     sage</text>
+            
+            <!-- Blinking cursor -->
+            <rect x="-150" y="115" width="10" height="15" fill="#e2e8f0">
+                <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+            </rect>
+        </g>
+    </g>
+
+    <!-- Footer label -->
+    <g transform="translate(200, 520)">
+        <rect x="-100" y="-30" width="200" height="60" rx="5" fill="#4c0519" stroke="#ef4444" stroke-width="2"/>
+        <text x="0" y="-2" text-anchor="middle" fill="#fca5a5" font-family="'Times New Roman', serif" font-size="18" font-weight="bold">内存溢出 (OOM)</text>
+        <text x="0" y="18" text-anchor="middle" fill="#f87171" font-family="'Courier New', Courier, monospace" font-size="11" letter-spacing="1">VM RAM CAPACITY EXCEEDED</text>
+    </g>
+</svg>
